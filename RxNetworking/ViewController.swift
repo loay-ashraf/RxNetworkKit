@@ -11,7 +11,7 @@ import RxSwift
 class ViewController: UIViewController {
 
     let disposeBag: DisposeBag = .init()
-    
+       
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
