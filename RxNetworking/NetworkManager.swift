@@ -19,7 +19,15 @@ class NetworkManager {
     init(session: URLSession) {
         self.session = session
     }
-    func request<T: Decodable, AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type) -> Single<T> {
+    func request<AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
+        let urlRequest = router.asURLRequest()
+        let observable = session
+            .rx
+            .response(request: urlRequest)
+            .decodable(AE.self)
+        return observable
+    }
+    func request<T: Decodable, AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -43,7 +51,7 @@ extension UploadRouter {
     }
 }
 
-struct EmptyNetworkAPIError: NetworkAPIError {
+struct DefaultNetworkAPIError: NetworkAPIError {
     let message: String
 }
 
@@ -58,19 +66,26 @@ enum CatFactRouter: Router {
         "https"
     }
     var host: String {
-        "www.catfact.ninja"
+        "www.apimocha.com"
     }
     var path: String {
-        "fact"
+        "hi-world/test1"
     }
     var method: String {
         "GET"
     }
-    func asURLRequest() -> URLRequest {
+    var headers: [String: String] {
+        ["Accept": "application/json",
+         "Content-Type": "application/json"]
+    }
+    var url: URL? {
         let urlString = scheme + "://" + host + "/" + path
-        let url = URL(string: urlString)!
-        var request = URLRequest(url: url)
+        return URL(string: urlString)
+    }
+    func asURLRequest() -> URLRequest {
+        var request = URLRequest(url: url!)
         request.httpMethod = method
+        request.allHTTPHeaderFields = headers
         return request
     }
 }

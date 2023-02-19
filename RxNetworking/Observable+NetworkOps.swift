@@ -9,7 +9,22 @@ import Foundation
 import RxSwift
 
 extension Observable where Element == (response: HTTPURLResponse, data: Data) {
-    /// Creates observable with Decodable element type + handles transport and serialization erros.
+    /// Creates `Completable` observable with Decodable element type + handles transport errors.
+    ///
+    /// - Parameters:
+    ///   - errorType: `Decodable` api error type.
+    ///
+    /// - Returns: Observable to be observed for values.
+    func decodable<E: NetworkAPIError>(_ errorType: E.Type) -> Completable {
+        asSingle()
+            // catch any transport errors if thrown.
+            .catchTransportError()
+            // verify response status code.
+            .verifyResponse()
+            // serialize data into given error type and throw it.
+            .decode(E.self)
+    }
+    /// Creates  `Single` observable with Decodable element type + handles transport and serialization errors.
     ///
     /// - Parameters:
     ///   - modelType: `Decodable` model type.
@@ -18,7 +33,7 @@ extension Observable where Element == (response: HTTPURLResponse, data: Data) {
     /// - Returns: Observable to be observed for values.
     func decodable<M: Decodable, E: NetworkAPIError>(_ modelType: M.Type, errorType: E.Type) -> Single<M> {
         asSingle()
-            // catch any transport errors if found.
+            // catch any transport errors if thrown.
             .catchTransportError()
             // verify response status code.
             .verifyResponse()
