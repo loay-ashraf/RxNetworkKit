@@ -40,7 +40,7 @@
 		C617EA27299E82700050579A = {
 			isa = PBXGroup;
 			children = (
-				C617EA32299E82710050579A /* RXNetworking */,
+				C617EA32299E82710050579A /* RxNetworking */,
 				C617EA31299E82710050579A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,7 +53,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C617EA32299E82710050579A /* RXNetworking */ = {
+		C617EA32299E82710050579A /* RxNetworking */ = {
 			isa = PBXGroup;
 			children = (
 				C617EA33299E82710050579A /* AppDelegate.swift */,
@@ -64,7 +64,7 @@
 				C617EA3E299E82730050579A /* LaunchScreen.storyboard */,
 				C617EA41299E82730050579A /* Info.plist */,
 			);
-			path = RXNetworking;
+			path = RxNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C617EA2B299E82700050579A /* Build configuration list for PBXProject "RXNetworking" */;
+			buildConfigurationList = C617EA2B299E82700050579A /* Build configuration list for PBXProject "RxNetworking" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C617EA2B299E82700050579A /* Build configuration list for PBXProject "RXNetworking" */ = {
+		C617EA2B299E82700050579A /* Build configuration list for PBXProject "RxNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C617EA42299E82730050579A /* Debug */,
