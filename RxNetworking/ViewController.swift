@@ -7,25 +7,39 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-    let disposeBag: DisposeBag = .init()
+    @IBOutlet weak var retryButton: UIButton!
+    private let disposeBag: DisposeBag = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let manager = NetworkManager(session: session)
         let router = CatFactRouter.fact
-//        let single: Single<CatFact> = manager.request(router)
-//        single
-//            .observe(on: ConcurrentMainScheduler.instance)
-//            .subscribe(onSuccess: { debugPrint($0) }, onFailure: { debugPrint($0) })
-//            .disposed(by: disposeBag)
-        let completable: Completable = manager.request(router)
-        completable
-            .observe(on: ConcurrentMainScheduler.instance)
-            .subscribe(onCompleted: { print(#function, "Completed!") }, onError: { debugPrint($0) })
+        let single: Single<CatFact> = manager.request(router)
+        retryButton
+            .rx
+            .tap
+            .bind(onNext: {
+                single
+                    .observe(on: ConcurrentMainScheduler.instance)
+                    .subscribe(onSuccess: { debugPrint($0) }, onFailure: { debugPrint($0) })
+                    .disposed(by: self.disposeBag)
+        })
             .disposed(by: disposeBag)
+//        let completable: Completable = manager.request(router)
+//        retryButton
+//            .rx
+//            .tap
+//            .bind(onNext: {
+//            completable
+//                .observe(on: ConcurrentMainScheduler.instance)
+//                .subscribe(onCompleted: { print(#function, "Completed!") }, onError: { debugPrint($0) })
+//                .disposed(by: self.disposeBag)
+//        })
+//            .disposed(by: disposeBag)
     }
 }
 
