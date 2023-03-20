@@ -17,8 +17,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let manager = NetworkManager(session: session)
-        let router = CatFactRouter.fact
-        let single: Single<CatFact> = manager.request(router)
+        let router = TestRouter.test1
+        let single: Single<TestModel> = manager.request(router)
         retryButton
             .rx
             .tap

@@ -1,8 +1,8 @@
 //
 //  NetworkAPIError.swift
-//  RXNetworking
+//  RxNetworking
 //
-//  Created by Loay Ashraf on 19/02/2023.
+//  Created by Loay Ashraf on 20/03/2023.
 //
 
 import Foundation

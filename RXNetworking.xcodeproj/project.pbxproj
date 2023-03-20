@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA1A7D929C8ED6400DFFB83 /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */; };
+		0BA1A7DB29C8ED7700DFFB83 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */; };
+		0BA1A7DE29C8EF0600DFFB83 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DD29C8EF0600DFFB83 /* Router.swift */; };
+		0BA1A7E329C8F09000DFFB83 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */; };
+		0BA1A7E529C8F0A400DFFB83 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */; };
+		0BA1A7EE29C8F28700DFFB83 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7ED29C8F28700DFFB83 /* NetworkAPIError.swift */; };
 		C617EA34299E82710050579A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617EA33299E82710050579A /* AppDelegate.swift */; };
 		C617EA36299E82710050579A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617EA35299E82710050579A /* SceneDelegate.swift */; };
 		C617EA38299E82710050579A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617EA37299E82710050579A /* ViewController.swift */; };
@@ -20,7 +26,7 @@
 		C6ECE67429A1D8140030FBC0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECE67329A1D8140030FBC0 /* NetworkError.swift */; };
 		C6ECE67629A1D8380030FBC0 /* NetworkClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECE67529A1D8380030FBC0 /* NetworkClientError.swift */; };
 		C6ECE67829A1D8570030FBC0 /* NetworkServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECE67729A1D8570030FBC0 /* NetworkServerError.swift */; };
-		C6ECE67A29A1D86B0030FBC0 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECE67929A1D86B0030FBC0 /* NetworkAPIError.swift */; };
+		C6ECE67A29A1D86B0030FBC0 /* DefaultNetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6ECE67929A1D86B0030FBC0 /* DefaultNetworkAPIError.swift */; };
 		C6FC8DB229A0D41D00F6BAF9 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = C6FC8DB129A0D41D00F6BAF9 /* RxSwiftExt */; };
 		C6FC8DB529A0D4C900F6BAF9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C6FC8DB429A0D4C900F6BAF9 /* RxCocoa */; };
 		C6FC8DB729A0D4C900F6BAF9 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = C6FC8DB629A0D4C900F6BAF9 /* RxRelay */; };
@@ -28,6 +34,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPScheme.swift; sourceTree = "<group>"; };
+		0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		0BA1A7DD29C8EF0600DFFB83 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
+		0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		0BA1A7ED29C8F28700DFFB83 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		C617EA30299E82710050579A /* RxNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C617EA33299E82710050579A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C617EA35299E82710050579A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +55,7 @@
 		C6ECE67329A1D8140030FBC0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C6ECE67529A1D8380030FBC0 /* NetworkClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientError.swift; sourceTree = "<group>"; };
 		C6ECE67729A1D8570030FBC0 /* NetworkServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServerError.swift; sourceTree = "<group>"; };
-		C6ECE67929A1D86B0030FBC0 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
+		C6ECE67929A1D86B0030FBC0 /* DefaultNetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkAPIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,121 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BA1A7DC29C8EDCC00DFFB83 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				C617EA50299E869D0050579A /* HTTPStatusCode.swift */,
+				0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */,
+				0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		0BA1A7DF29C8F01500DFFB83 /* Test Module */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7F029C8F2E200DFFB83 /* Controller */,
+				0BA1A7EF29C8F2D200DFFB83 /* View */,
+				0BA1A7E029C8F07900DFFB83 /* Model */,
+				0BA1A7E129C8F07F00DFFB83 /* Network */,
+			);
+			path = "Test Module";
+			sourceTree = "<group>";
+		};
+		0BA1A7E029C8F07900DFFB83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BA1A7E129C8F07F00DFFB83 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0BA1A7E629C8F1B300DFFB83 /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7EB29C8F25D00DFFB83 /* Type */,
+				0BA1A7EA29C8F25200DFFB83 /* Protocol */,
+				0BA1A7E929C8F20900DFFB83 /* Extension */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		0BA1A7E729C8F1BB00DFFB83 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C617EA47299E82DE0050579A /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		0BA1A7E829C8F1EB00DFFB83 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7DD29C8EF0600DFFB83 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0BA1A7E929C8F20900DFFB83 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C6ECE66F29A1D78A0030FBC0 /* PrimitiveSequence+NetworkOps.swift */,
+				C6ECE67129A1D7D60030FBC0 /* Observable+NetworkOps.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		0BA1A7EA29C8F25200DFFB83 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7EC29C8F27A00DFFB83 /* Error */,
+				0BA1A7E829C8F1EB00DFFB83 /* Router */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		0BA1A7EB29C8F25D00DFFB83 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				C6ECE67B29A1D8890030FBC0 /* Error */,
+				0BA1A7DC29C8EDCC00DFFB83 /* HTTP */,
+				0BA1A7E729C8F1BB00DFFB83 /* Manager */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		0BA1A7EC29C8F27A00DFFB83 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7ED29C8F28700DFFB83 /* NetworkAPIError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		0BA1A7EF29C8F2D200DFFB83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C617EA39299E82710050579A /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0BA1A7F029C8F2E200DFFB83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C617EA37299E82710050579A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C617EA27299E82700050579A = {
 			isa = PBXGroup;
 			children = (
@@ -80,18 +207,13 @@
 		C617EA32299E82710050579A /* RxNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				C6ECE67B29A1D8890030FBC0 /* Error */,
+				0BA1A7E629C8F1B300DFFB83 /* Network Layer */,
+				0BA1A7DF29C8F01500DFFB83 /* Test Module */,
 				C617EA33299E82710050579A /* AppDelegate.swift */,
 				C617EA35299E82710050579A /* SceneDelegate.swift */,
-				C617EA37299E82710050579A /* ViewController.swift */,
-				C617EA39299E82710050579A /* Main.storyboard */,
 				C617EA3C299E82730050579A /* Assets.xcassets */,
 				C617EA3E299E82730050579A /* LaunchScreen.storyboard */,
 				C617EA41299E82730050579A /* Info.plist */,
-				C617EA47299E82DE0050579A /* NetworkManager.swift */,
-				C617EA50299E869D0050579A /* HTTPStatusCode.swift */,
-				C6ECE66F29A1D78A0030FBC0 /* PrimitiveSequence+NetworkOps.swift */,
-				C6ECE67129A1D7D60030FBC0 /* Observable+NetworkOps.swift */,
 			);
 			path = RxNetworking;
 			sourceTree = "<group>";
@@ -100,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				C6ECE67329A1D8140030FBC0 /* NetworkError.swift */,
-				C6ECE67929A1D86B0030FBC0 /* NetworkAPIError.swift */,
+				C6ECE67929A1D86B0030FBC0 /* DefaultNetworkAPIError.swift */,
 				C6ECE67529A1D8380030FBC0 /* NetworkClientError.swift */,
 				C6ECE67729A1D8570030FBC0 /* NetworkServerError.swift */,
 			);
@@ -196,9 +318,15 @@
 				C6ECE67229A1D7D60030FBC0 /* Observable+NetworkOps.swift in Sources */,
 				C617EA38299E82710050579A /* ViewController.swift in Sources */,
 				C617EA34299E82710050579A /* AppDelegate.swift in Sources */,
+				0BA1A7D929C8ED6400DFFB83 /* HTTPScheme.swift in Sources */,
 				C6ECE67829A1D8570030FBC0 /* NetworkServerError.swift in Sources */,
+				0BA1A7DE29C8EF0600DFFB83 /* Router.swift in Sources */,
+				0BA1A7E529C8F0A400DFFB83 /* TestModel.swift in Sources */,
+				0BA1A7E329C8F09000DFFB83 /* TestRouter.swift in Sources */,
+				0BA1A7EE29C8F28700DFFB83 /* NetworkAPIError.swift in Sources */,
+				0BA1A7DB29C8ED7700DFFB83 /* HTTPMethod.swift in Sources */,
 				C617EA36299E82710050579A /* SceneDelegate.swift in Sources */,
-				C6ECE67A29A1D86B0030FBC0 /* NetworkAPIError.swift in Sources */,
+				C6ECE67A29A1D86B0030FBC0 /* DefaultNetworkAPIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
