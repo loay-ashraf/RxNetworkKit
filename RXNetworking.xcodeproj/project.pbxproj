@@ -188,6 +188,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0BA1A7F129C8F42B00DFFB83 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0BA1A7DF29C8F01500DFFB83 /* Test Module */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		C617EA27299E82700050579A = {
 			isa = PBXGroup;
 			children = (
@@ -207,8 +215,8 @@
 		C617EA32299E82710050579A /* RxNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				0BA1A7F129C8F42B00DFFB83 /* Modules */,
 				0BA1A7E629C8F1B300DFFB83 /* Network Layer */,
-				0BA1A7DF29C8F01500DFFB83 /* Test Module */,
 				C617EA33299E82710050579A /* AppDelegate.swift */,
 				C617EA35299E82710050579A /* SceneDelegate.swift */,
 				C617EA3C299E82730050579A /* Assets.xcassets */,
