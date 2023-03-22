@@ -17,20 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmh-1I-XBQ">
-                                <rect key="frame" x="120.33333333333333" y="408.66666666666669" width="152.66666666666669" height="35"/>
+                                <rect key="frame" x="78.333333333333329" y="408.66666666666669" width="236.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Perform Request"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Upload Image from memory"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-dU-5aC">
+                                <rect key="frame" x="94" y="493.66666666666669" width="205" height="35.000000000000057"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Upload Image from disk"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="9fh-dU-5aC" firstAttribute="top" secondItem="Hmh-1I-XBQ" secondAttribute="bottom" constant="50" id="6PM-X5-CAW"/>
                             <constraint firstItem="Hmh-1I-XBQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JFs-Jh-6cS"/>
                             <constraint firstItem="Hmh-1I-XBQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q8W-dn-dL6"/>
+                            <constraint firstItem="9fh-dU-5aC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zBy-PM-oGX"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="retryButton" destination="Hmh-1I-XBQ" id="Vv2-7C-A8x"/>
+                        <outlet property="uploadImageFromDiskButton" destination="9fh-dU-5aC" id="CpD-Eq-Oen"/>
+                        <outlet property="uploadImageFromMemoryButton" destination="Hmh-1I-XBQ" id="Vv2-7C-A8x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

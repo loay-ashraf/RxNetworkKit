@@ -35,12 +35,10 @@ extension Router {
     }
 }
 
-protocol UploadRouter: Router {
-    var headers: [String: Any] { get }
-}
+protocol UploadRouter: Router { }
 
 extension UploadRouter {
-    var headers: [String: Any] {
-        [:]
+    var method: HTTPMethod {
+        .post
     }
 }
