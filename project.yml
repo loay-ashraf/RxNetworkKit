@@ -12,7 +12,7 @@ options:
   transitivelyLinkDependencies: false
 packages:
   RxSwift:
-    url: ReactiveX/RxSwift
+    github: ReactiveX/RxSwift
     from: 6.5.0
   RxSwiftExt:
     github: RxSwiftCommunity/RxSwiftExt
