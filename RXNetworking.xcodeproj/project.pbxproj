@@ -93,17 +93,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0B489F8C29CB075C0098F6D4 /* Response */ = {
-			isa = PBXGroup;
-			children = (
-				0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */,
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
 		0B96065529CD523700D66439 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
+				0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */,
 				0B96065629CD524700D66439 /* FormData.swift */,
 				0B96065829CD525900D66439 /* File.swift */,
 			);
@@ -202,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				0B96065529CD523700D66439 /* Upload */,
-				0B489F8C29CB075C0098F6D4 /* Response */,
 				C6ECE67B29A1D8890030FBC0 /* Error */,
 				0BA1A7DC29C8EDCC00DFFB83 /* HTTP */,
 				0BA1A7E729C8F1BB00DFFB83 /* Manager */,
