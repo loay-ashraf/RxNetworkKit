@@ -12,14 +12,14 @@ struct File {
     let name: String
     let url: URL?
     let data: Data?
-    let mime: HTTPMIME
+    let mimeType: HTTPMIMEType
     init?(forKey key: String, withName name: String, withData data: Data) {
         self.key = key
         self.name = name
         self.url = nil
         self.data = data
-        guard let mime = HTTPMIME(fileName: name) else { return nil }
-        self.mime = mime
+        guard let mime = HTTPMIMEType(fileName: name) else { return nil }
+        self.mimeType = mime
     }
     init?(forKey key: String, withURL url: URL) {
         let name = url.lastPathComponent
@@ -27,7 +27,7 @@ struct File {
         self.name = name
         self.url = url
         self.data = nil
-        guard let mime = HTTPMIME(fileName: name) else { return nil }
-        self.mime = mime
+        guard let mime = HTTPMIMEType(fileName: name) else { return nil }
+        self.mimeType = mime
     }
 }

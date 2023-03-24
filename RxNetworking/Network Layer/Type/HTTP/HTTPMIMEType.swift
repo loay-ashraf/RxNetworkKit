@@ -1,11 +1,11 @@
 //
-//  HTTPMIME.swift
+//  HTTPMIMEType.swift
 //  RxNetworking
 //
 //  Created by Loay Ashraf on 24/03/2023.
 //
 
-enum HTTPMIME: String {
+enum HTTPMIMEType: String {
     case aac = "audio/aac"
     case avif = "image/avif"
     case bmp = "image/bmp"
