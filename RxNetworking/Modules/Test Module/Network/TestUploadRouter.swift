@@ -13,9 +13,6 @@ enum TestUploadRouter: UploadRouter {
     var scheme: HTTPScheme {
         .https
     }
-    var method: HTTPMethod {
-        .post
-    }
     var domain: String {
         "api.upload.io"
     }
@@ -30,8 +27,7 @@ enum TestUploadRouter: UploadRouter {
     var headers: [String: String] {
         switch self {
         case .basic:
-            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4",
-                    "Content-Type": "image/png"]
+            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4"]
         case .formData:
             return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4"]
         }

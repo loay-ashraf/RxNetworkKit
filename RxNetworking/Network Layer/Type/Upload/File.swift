@@ -12,20 +12,22 @@ struct File {
     let name: String
     let url: URL?
     let data: Data?
-    let mimeType: String
-    init(forKey key: String, withName name: String, withData data: Data, withMimeType mimeType: String) {
+    let mime: HTTPMIME
+    init?(forKey key: String, withName name: String, withData data: Data) {
         self.key = key
         self.name = name
         self.url = nil
         self.data = data
-        self.mimeType = mimeType
+        guard let mime = HTTPMIME(fileName: name) else { return nil }
+        self.mime = mime
     }
-    init(forKey key: String, withURL url: URL, withMimeType mimeType: String) {
+    init?(forKey key: String, withURL url: URL) {
         let name = url.lastPathComponent
         self.key = key
         self.name = name
         self.url = url
         self.data = nil
-        self.mimeType = mimeType
+        guard let mime = HTTPMIME(fileName: name) else { return nil }
+        self.mime = mime
     }
 }

@@ -17,6 +17,7 @@ extension URLSession {
                   let fileData = try? Data(contentsOf: fileURL) {
             data = fileData
         }
+        request.setValue(file.mime.rawValue, forHTTPHeaderField: "Content-Type")
         request.httpBody = data
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
@@ -52,7 +53,7 @@ extension URLSession {
             }
             body.append("--\(boundary + lineBreak)")
             body.append("Content-Disposition: form-data; name=\"\(file.key)\"; filename=\"\(file.name)\"\(lineBreak)")
-            body.append("Content-Type: \(file.mimeType + lineBreak + lineBreak)")
+            body.append("Content-Type: \(file.mime.rawValue + lineBreak + lineBreak)")
             body.append(data)
             body.append(lineBreak)
         }

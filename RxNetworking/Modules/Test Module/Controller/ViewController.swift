@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         let router = TestUploadRouter.basic(accountId: "FW25b9Z")
         guard let image = UIImage(systemName: "person") else { return }
         guard let imageData = image.pngData() else { return }
-        let file = File(forKey: UUID().uuidString, withName: "person.png", withData: imageData, withMimeType: "image/png")
+        guard let file = File(forKey: UUID().uuidString, withName: "person.png", withData: imageData) else { return }
         let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
         uploadObservable
             .observe(on: ConcurrentMainScheduler.instance)
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         let router = TestUploadRouter.basic(accountId: "FW25b9Z")
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let imageURL = documentsURL.appending(path: "person.png")
-        let file = File(forKey: UUID().uuidString, withURL: imageURL, withMimeType: "image/png")
+        guard let file = File(forKey: UUID().uuidString, withURL: imageURL) else { return }
         let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
         uploadObservable
             .observe(on: ConcurrentMainScheduler.instance)
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
                          documentsURL.appending(path: "globe.png"),
                          documentsURL.appending(path: "folder.png"),
                          documentsURL.appending(path: "folder-fill.png")]
-        let files = imageURLs.compactMap { File(forKey: UUID().uuidString, withURL: $0, withMimeType: "image/png") }
+        let files = imageURLs.compactMap { File(forKey: UUID().uuidString, withURL: $0) }
         let formData = FormData(parameters: parameters, files: files)
         let uploadObservable: Observable<UploadEvent<FormUploadModel>> = manager.upload(router, formData)
         uploadObservable
