@@ -10,6 +10,7 @@ options:
   defaultConfig: Debug
   groupSortPosition: bottom
   transitivelyLinkDependencies: false
+  groupSortPosition: top
 packages:
   RxSwift:
     github: ReactiveX/RxSwift
