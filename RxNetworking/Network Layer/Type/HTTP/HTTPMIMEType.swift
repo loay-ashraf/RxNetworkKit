@@ -37,6 +37,9 @@ enum HTTPMIMEType: String {
     case xlsx = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     case xml = "application/xml"
     case zip = "application/zip"
+    /// Creates `HTTPMIMEType` instance.
+    ///
+    /// - Parameter fileExtension: file extention `String` ('.png', '.jpeg').
     init?(fileExtension: String) {
         switch fileExtension {
         case "aac": self = .aac
@@ -73,6 +76,9 @@ enum HTTPMIMEType: String {
         default: return nil
         }
     }
+    /// Creates `HTTPMIMEType` instance.
+    ///
+    /// - Parameter fileExtension: file name `String` ('example.png', 'example.jpeg').
     init?(fileName: String) {
         guard let fileExtensionSubString = fileName.split(separator: ".").last else { return nil }
         let fileExtensionString = String(fileExtensionSubString)
