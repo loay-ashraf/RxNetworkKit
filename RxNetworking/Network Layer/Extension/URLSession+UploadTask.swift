@@ -1,5 +1,5 @@
 //
-//  URLSession+FormUpload.swift
+//  URLSession+UploadTask.swift
 //  RxNetworking
 //
 //  Created by Loay Ashraf on 24/03/2023.
@@ -8,7 +8,7 @@
 import Foundation
 
 extension URLSession {
-    /// Creates a data task with HTTP body of given file data
+    /// Creates a data task with HTTP body of given file data.
     ///
     /// - Parameters:
     ///   - request: `URLRequest` to used to create data task.
@@ -22,7 +22,7 @@ extension URLSession {
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
     }
-    /// Creates a data task with HTTP body of given form data
+    /// Creates a data task with HTTP body of given form data.
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create data task.
@@ -37,6 +37,9 @@ extension URLSession {
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
     }
+}
+
+extension URLSession {
     /// Adapts upload url request by applying 'Content-Type' HTTP header and HTTP body.
     ///
     /// - Parameters:
@@ -45,7 +48,7 @@ extension URLSession {
     ///   - body: value for HTTP body.
     ///
     /// - Returns: Adapted `URLRequest`.
-    private func adaptUploadRequest(originalRequest: URLRequest, withContentType contentType: String, withBody body: Data?) -> URLRequest {
+    fileprivate func adaptUploadRequest(originalRequest: URLRequest, withContentType contentType: String, withBody body: Data?) -> URLRequest {
         var request = originalRequest
         request.setValue(contentType, forHTTPHeaderField: "Content-Type")
         request.httpBody = body
@@ -57,7 +60,7 @@ extension URLSession {
     /// - Parameter file: `File` object that includes data or url.
     ///
     /// - Returns: `Data` object representing the file.
-    private func extractFileData(_ file: File) -> Data? {
+    fileprivate func extractFileData(_ file: File) -> Data? {
         var data: Data? = nil
         if let fileData = file.data {
             data = fileData
@@ -74,7 +77,7 @@ extension URLSession {
     ///   - boundary: `String` boundary used to mark start of body section.
     ///
     /// - Returns: `Data` object representing HTTP body.
-    private func createFormDataBody(formData: FormData, boundary: String) -> Data {
+    fileprivate func createFormDataBody(formData: FormData, boundary: String) -> Data {
         let files = formData.files
         let lineBreak = "\r\n"
         var body = Data()
@@ -98,7 +101,7 @@ extension URLSession {
     /// Generate boundary string.
     ///
     /// - Returns: `String` boundary.
-    private func generateFormBoundary() -> String {
+    fileprivate func generateFormBoundary() -> String {
         return "Boundary-\(UUID().uuidString)"
     }
 }
