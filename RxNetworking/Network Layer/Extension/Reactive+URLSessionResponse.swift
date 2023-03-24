@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: URLSession {
-    func response(request: URLRequest, formData: FormData) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
+    func uploadResponse(request: URLRequest, file: File) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()
@@ -22,7 +22,7 @@ extension Reactive where Base: URLSession {
             } else {
                 d = nil
             }
-            let task = self.base.formUploadTask(with: request, from: formData) { data, response, error in
+            let task = self.base.fileUploadTask(with: request, from: file) { data, response, error in
                 if URLSession.rx.shouldLogRequest(request) {
                     let interval = Date().timeIntervalSince(d ?? Date())
                     print(convertURLRequestToCurlCommand(request))
@@ -53,7 +53,7 @@ extension Reactive where Base: URLSession {
         }
         return (taskProgressSubject, taskResponseSingle)
     }
-    func response(request: URLRequest, data: Data) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
+    func uploadResponse(request: URLRequest, formData: FormData) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()
@@ -65,50 +65,7 @@ extension Reactive where Base: URLSession {
             } else {
                 d = nil
             }
-            let task = self.base.uploadTask(with: request, from: data) { data, response, error in
-                if URLSession.rx.shouldLogRequest(request) {
-                    let interval = Date().timeIntervalSince(d ?? Date())
-                    print(convertURLRequestToCurlCommand(request))
-#if os(Linux)
-                    print(convertResponseToString(response, error.flatMap { $0 as NSError }, interval))
-#else
-                    print(convertResponseToString(response, error.map { $0 as NSError }, interval))
-#endif
-                }
-                guard let response = response, let data = data else {
-                    single(.failure(error ?? RxCocoaURLError.unknown))
-                    return
-                }
-                guard let httpResponse = response as? HTTPURLResponse else {
-                    single(.failure(RxCocoaURLError.nonHTTPResponse(response: response)))
-                    return
-                }
-                single(.success((httpResponse, data)))
-            }
-            taskProgressObservation = task.progress.observe(\.fractionCompleted) { progress, _ in
-                taskProgressSubject.onNext(progress)
-                if progress.fractionCompleted == 1.00 {
-                    taskProgressSubject.onCompleted()
-                }
-            }
-            task.resume()
-            return Disposables.create(with: task.cancel)
-        }
-        return (taskProgressSubject, taskResponseSingle)
-    }
-    func response(request: URLRequest, file: URL) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
-        // we must keep refernce to task progress observation object
-        var taskProgressObservation: NSKeyValueObservation?
-        let taskProgressSubject = PublishSubject<Progress>()
-        let taskResponseSingle = Single<(response: HTTPURLResponse, data: Data)>.create { single in
-            // smart compiler should be able to optimize this out
-            let d: Date?
-            if URLSession.rx.shouldLogRequest(request) {
-                d = Date()
-            } else {
-                d = nil
-            }
-            let task = self.base.uploadTask(with: request, fromFile: file) { data, response, error in
+            let task = self.base.formDataUploadTask(with: request, from: formData) { data, response, error in
                 if URLSession.rx.shouldLogRequest(request) {
                     let interval = Date().timeIntervalSince(d ?? Date())
                     print(convertURLRequestToCurlCommand(request))

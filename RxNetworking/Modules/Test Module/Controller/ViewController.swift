@@ -42,7 +42,8 @@ class ViewController: UIViewController {
         let router = TestUploadRouter.basic(accountId: "FW25b9Z")
         guard let image = UIImage(systemName: "person") else { return }
         guard let imageData = image.pngData() else { return }
-        let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, imageData)
+        let file = File(forKey: UUID().uuidString, withName: "person.png", withData: imageData, withMimeType: "image/png")
+        let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
         uploadObservable
             .observe(on: ConcurrentMainScheduler.instance)
             .subscribe(onNext: {
@@ -63,7 +64,8 @@ class ViewController: UIViewController {
         let router = TestUploadRouter.basic(accountId: "FW25b9Z")
         guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
         let imageURL = documentsURL.appending(path: "person.png")
-        let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, imageURL)
+        let file = File(forKey: UUID().uuidString, withURL: imageURL, withMimeType: "image/png")
+        let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
         uploadObservable
             .observe(on: ConcurrentMainScheduler.instance)
             .subscribe(onNext: {

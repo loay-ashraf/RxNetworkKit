@@ -12,11 +12,12 @@
 		0B489F8E29CB077C0098F6D4 /* UploadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */; };
 		0B96064E29CD49CC00D66439 /* UploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96064D29CD49CC00D66439 /* UploadModel.swift */; };
 		0B96065029CD4A1100D66439 /* FormUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96064F29CD4A1100D66439 /* FormUploadModel.swift */; };
-		0B96065229CD51B700D66439 /* URLSession+FormUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */; };
+		0B96065229CD51B700D66439 /* URLSession+UploadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065129CD51B700D66439 /* URLSession+UploadTask.swift */; };
 		0B96065429CD51FF00D66439 /* Data+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065329CD51FF00D66439 /* Data+AppendString.swift */; };
 		0B96065729CD524700D66439 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065629CD524700D66439 /* FormData.swift */; };
 		0B96065929CD525900D66439 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065829CD525900D66439 /* File.swift */; };
 		0B96065B29CD597900D66439 /* UploadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065A29CD597900D66439 /* UploadRouter.swift */; };
+		0B96065D29CD6B9000D66439 /* TestUploadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065C29CD6B9000D66439 /* TestUploadRouter.swift */; };
 		0BA1A7D929C8ED6400DFFB83 /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */; };
 		0BA1A7DB29C8ED7700DFFB83 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */; };
 		0BA1A7DE29C8EF0600DFFB83 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DD29C8EF0600DFFB83 /* Router.swift */; };
@@ -49,11 +50,12 @@
 		0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadEvent.swift; sourceTree = "<group>"; };
 		0B96064D29CD49CC00D66439 /* UploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadModel.swift; sourceTree = "<group>"; };
 		0B96064F29CD4A1100D66439 /* FormUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUploadModel.swift; sourceTree = "<group>"; };
-		0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+FormUpload.swift"; sourceTree = "<group>"; };
+		0B96065129CD51B700D66439 /* URLSession+UploadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+UploadTask.swift"; sourceTree = "<group>"; };
 		0B96065329CD51FF00D66439 /* Data+AppendString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AppendString.swift"; sourceTree = "<group>"; };
 		0B96065629CD524700D66439 /* FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
 		0B96065829CD525900D66439 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		0B96065A29CD597900D66439 /* UploadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRouter.swift; sourceTree = "<group>"; };
+		0B96065C29CD6B9000D66439 /* TestUploadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUploadRouter.swift; sourceTree = "<group>"; };
 		0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPScheme.swift; sourceTree = "<group>"; };
 		0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		0BA1A7DD29C8EF0600DFFB83 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */,
+				0B96065C29CD6B9000D66439 /* TestUploadRouter.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -176,7 +179,7 @@
 				C6ECE67129A1D7D60030FBC0 /* Observable+NetworkOps.swift */,
 				0B489F8829CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift */,
 				0B489F8A29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift */,
-				0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */,
+				0B96065129CD51B700D66439 /* URLSession+UploadTask.swift */,
 				0B96065329CD51FF00D66439 /* Data+AppendString.swift */,
 			);
 			path = Extension;
@@ -361,8 +364,9 @@
 				0B96064E29CD49CC00D66439 /* UploadModel.swift in Sources */,
 				C617EA48299E82DE0050579A /* NetworkManager.swift in Sources */,
 				C6ECE67029A1D78A0030FBC0 /* PrimitiveSequence+NetworkOps.swift in Sources */,
-				0B96065229CD51B700D66439 /* URLSession+FormUpload.swift in Sources */,
+				0B96065229CD51B700D66439 /* URLSession+UploadTask.swift in Sources */,
 				C6ECE67629A1D8380030FBC0 /* NetworkClientError.swift in Sources */,
+				0B96065D29CD6B9000D66439 /* TestUploadRouter.swift in Sources */,
 				0B96065029CD4A1100D66439 /* FormUploadModel.swift in Sources */,
 				C6ECE67229A1D7D60030FBC0 /* Observable+NetworkOps.swift in Sources */,
 				0B489F8B29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift in Sources */,

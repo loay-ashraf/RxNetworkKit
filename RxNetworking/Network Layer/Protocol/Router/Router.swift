@@ -14,7 +14,7 @@ protocol Router {
     var path: String { get }
     var headers: [String: String] { get }
     var parameters: [String: String]? { get }
-    var body: [String: String]? { get }
+    var body: [String: Any]? { get }
     var url: URL? { get }
     func asURLRequest() -> URLRequest
 }
@@ -31,7 +31,8 @@ extension Router {
         // Apply HTTP method
         request.httpMethod = method.rawValue
         // Apply HTTP body (if method is not GET)
-        if let body = body, method != .get {
+        if let body = body,
+           method != .get {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         }
         // Apply HTTP headers

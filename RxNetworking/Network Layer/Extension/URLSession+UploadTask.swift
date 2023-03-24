@@ -8,7 +8,20 @@
 import Foundation
 
 extension URLSession {
-    func formUploadTask(with request: URLRequest, from formData: FormData, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+    func fileUploadTask(with request: URLRequest, from file: File, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        var request = request
+        var data: Data? = nil
+        if let fileData = file.data {
+            data = fileData
+        } else if let fileURL = file.url,
+                  let fileData = try? Data(contentsOf: fileURL) {
+            data = fileData
+        }
+        request.httpBody = data
+        let task = dataTask(with: request, completionHandler: completionHandler)
+        return task
+    }
+    func formDataUploadTask(with request: URLRequest, from formData: FormData, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         var request = request
         let boundary = generateFormBoundary()
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
@@ -46,7 +59,7 @@ extension URLSession {
         body.append("--\(boundary)--\(lineBreak)")
         return body
     }
-    func generateFormBoundary() -> String {
+    private func generateFormBoundary() -> String {
         return "Boundary-\(UUID().uuidString)"
     }
 }

@@ -13,4 +13,7 @@ extension UploadRouter {
     var method: HTTPMethod {
         .post
     }
+    var body: [String : Any]? {
+        nil
+    }
 }
