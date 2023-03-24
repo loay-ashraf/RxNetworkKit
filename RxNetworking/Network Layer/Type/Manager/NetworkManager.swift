@@ -46,4 +46,11 @@ class NetworkManager {
             .response(request: urlRequest, file: file, modelType: T.self, apiErrorType: AE.self)
         return observable
     }
+    func upload<T: Decodable, AE: NetworkAPIError>(_ router: Router, _ formData: FormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+        let urlRequest = router.asURLRequest()
+        let observable = session
+            .rx
+            .response(request: urlRequest, formData: formData, modelType: T.self, apiErrorType: AE.self)
+        return observable
+    }
 }

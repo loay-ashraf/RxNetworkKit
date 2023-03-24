@@ -1,18 +1,13 @@
 //
-//  TestModel.swift
+//  UploadModel.swift
 //  RxNetworking
 //
-//  Created by Loay Ashraf on 20/03/2023.
+//  Created by Loay Ashraf on 24/03/2023.
 //
 
 import Foundation
 
-struct TestModel: Decodable {
-    let text: String
-    let number: Int
-}
-
-struct TestUploadModel: Decodable {
+struct UploadModel: Decodable {
     let accountId: String
     let filePath: String
     let fileURL: String

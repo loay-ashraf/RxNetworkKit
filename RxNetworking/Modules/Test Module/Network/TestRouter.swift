@@ -25,10 +25,10 @@ enum TestRouter: Router {
         ["Accept": "application/json",
          "Content-Type": "application/json"]
     }
-    var parameters: [String: String] {
+    var parameters: [String: String]? {
         ["test": "hello"]
     }
-    var body: [String: String] {
+    var body: [String: String]? {
         ["test": "hello"]
     }
     var url: URL? {
@@ -39,6 +39,7 @@ enum TestRouter: Router {
 
 enum TestUploadRouter: UploadRouter {
     case basic(accountId: String)
+    case formData(accountId: String)
     var scheme: HTTPScheme {
         .https
     }
@@ -52,17 +53,25 @@ enum TestUploadRouter: UploadRouter {
         switch self {
         case .basic(let accountId):
             return "v2/accounts/\(accountId)/uploads/binary"
+        case .formData(let accountId):
+            return "v2/accounts/\(accountId)/uploads/form_data"
         }
     }
     var headers: [String: String] {
-        ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4",
-         "Content-Type": "image/png"]
+        switch self {
+        case .basic:
+            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4",
+                    "Content-Type": "image/png"]
+        case .formData:
+            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4"]
+        }
+        
     }
-    var parameters: [String: String] {
-        [:]
+    var parameters: [String: String]? {
+        nil
     }
-    var body: [String: String] {
-        [:]
+    var body: [String: String]? {
+        nil
     }
     var url: URL? {
         let urlString = scheme.rawValue + domain + "/" + path

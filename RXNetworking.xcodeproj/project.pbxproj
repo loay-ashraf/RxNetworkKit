@@ -10,11 +10,18 @@
 		0B489F8929CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489F8829CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift */; };
 		0B489F8B29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489F8A29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift */; };
 		0B489F8E29CB077C0098F6D4 /* UploadEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */; };
+		0B96064E29CD49CC00D66439 /* UploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96064D29CD49CC00D66439 /* UploadModel.swift */; };
+		0B96065029CD4A1100D66439 /* FormUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96064F29CD4A1100D66439 /* FormUploadModel.swift */; };
+		0B96065229CD51B700D66439 /* URLSession+FormUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */; };
+		0B96065429CD51FF00D66439 /* Data+AppendString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065329CD51FF00D66439 /* Data+AppendString.swift */; };
+		0B96065729CD524700D66439 /* FormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065629CD524700D66439 /* FormData.swift */; };
+		0B96065929CD525900D66439 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065829CD525900D66439 /* File.swift */; };
+		0B96065B29CD597900D66439 /* UploadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96065A29CD597900D66439 /* UploadRouter.swift */; };
 		0BA1A7D929C8ED6400DFFB83 /* HTTPScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */; };
 		0BA1A7DB29C8ED7700DFFB83 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */; };
 		0BA1A7DE29C8EF0600DFFB83 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7DD29C8EF0600DFFB83 /* Router.swift */; };
 		0BA1A7E329C8F09000DFFB83 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */; };
-		0BA1A7E529C8F0A400DFFB83 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */; };
+		0BA1A7E529C8F0A400DFFB83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7E429C8F0A400DFFB83 /* Model.swift */; };
 		0BA1A7EE29C8F28700DFFB83 /* NetworkAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA1A7ED29C8F28700DFFB83 /* NetworkAPIError.swift */; };
 		C617EA34299E82710050579A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617EA33299E82710050579A /* AppDelegate.swift */; };
 		C617EA36299E82710050579A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C617EA35299E82710050579A /* SceneDelegate.swift */; };
@@ -40,11 +47,18 @@
 		0B489F8829CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+URLSessionResponse.swift"; sourceTree = "<group>"; };
 		0B489F8A29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+URLSessionAdaptedResponse.swift"; sourceTree = "<group>"; };
 		0B489F8D29CB077C0098F6D4 /* UploadEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadEvent.swift; sourceTree = "<group>"; };
+		0B96064D29CD49CC00D66439 /* UploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadModel.swift; sourceTree = "<group>"; };
+		0B96064F29CD4A1100D66439 /* FormUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUploadModel.swift; sourceTree = "<group>"; };
+		0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+FormUpload.swift"; sourceTree = "<group>"; };
+		0B96065329CD51FF00D66439 /* Data+AppendString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+AppendString.swift"; sourceTree = "<group>"; };
+		0B96065629CD524700D66439 /* FormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormData.swift; sourceTree = "<group>"; };
+		0B96065829CD525900D66439 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		0B96065A29CD597900D66439 /* UploadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadRouter.swift; sourceTree = "<group>"; };
 		0BA1A7D829C8ED6400DFFB83 /* HTTPScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPScheme.swift; sourceTree = "<group>"; };
 		0BA1A7DA29C8ED7700DFFB83 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		0BA1A7DD29C8EF0600DFFB83 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		0BA1A7E229C8F09000DFFB83 /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
-		0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
+		0BA1A7E429C8F0A400DFFB83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0BA1A7ED29C8F28700DFFB83 /* NetworkAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIError.swift; sourceTree = "<group>"; };
 		C617EA30299E82710050579A /* RxNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C617EA33299E82710050579A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +101,15 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		0B96065529CD523700D66439 /* Upload */ = {
+			isa = PBXGroup;
+			children = (
+				0B96065629CD524700D66439 /* FormData.swift */,
+				0B96065829CD525900D66439 /* File.swift */,
+			);
+			path = Upload;
+			sourceTree = "<group>";
+		};
 		0BA1A7DC29C8EDCC00DFFB83 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +134,9 @@
 		0BA1A7E029C8F07900DFFB83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0BA1A7E429C8F0A400DFFB83 /* TestModel.swift */,
+				0BA1A7E429C8F0A400DFFB83 /* Model.swift */,
+				0B96064D29CD49CC00D66439 /* UploadModel.swift */,
+				0B96064F29CD4A1100D66439 /* FormUploadModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -146,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				0BA1A7DD29C8EF0600DFFB83 /* Router.swift */,
+				0B96065A29CD597900D66439 /* UploadRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -157,6 +183,8 @@
 				C6ECE67129A1D7D60030FBC0 /* Observable+NetworkOps.swift */,
 				0B489F8829CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift */,
 				0B489F8A29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift */,
+				0B96065129CD51B700D66439 /* URLSession+FormUpload.swift */,
+				0B96065329CD51FF00D66439 /* Data+AppendString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -173,6 +201,7 @@
 		0BA1A7EB29C8F25D00DFFB83 /* Type */ = {
 			isa = PBXGroup;
 			children = (
+				0B96065529CD523700D66439 /* Upload */,
 				0B489F8C29CB075C0098F6D4 /* Response */,
 				C6ECE67B29A1D8890030FBC0 /* Error */,
 				0BA1A7DC29C8EDCC00DFFB83 /* HTTP */,
@@ -337,22 +366,29 @@
 			files = (
 				C617EA51299E869D0050579A /* HTTPStatusCode.swift in Sources */,
 				C6ECE67429A1D8140030FBC0 /* NetworkError.swift in Sources */,
+				0B96064E29CD49CC00D66439 /* UploadModel.swift in Sources */,
 				C617EA48299E82DE0050579A /* NetworkManager.swift in Sources */,
 				C6ECE67029A1D78A0030FBC0 /* PrimitiveSequence+NetworkOps.swift in Sources */,
+				0B96065229CD51B700D66439 /* URLSession+FormUpload.swift in Sources */,
 				C6ECE67629A1D8380030FBC0 /* NetworkClientError.swift in Sources */,
+				0B96065029CD4A1100D66439 /* FormUploadModel.swift in Sources */,
 				C6ECE67229A1D7D60030FBC0 /* Observable+NetworkOps.swift in Sources */,
 				0B489F8B29CB07200098F6D4 /* Reactive+URLSessionAdaptedResponse.swift in Sources */,
+				0B96065B29CD597900D66439 /* UploadRouter.swift in Sources */,
 				0B489F8E29CB077C0098F6D4 /* UploadEvent.swift in Sources */,
 				C617EA38299E82710050579A /* ViewController.swift in Sources */,
 				C617EA34299E82710050579A /* AppDelegate.swift in Sources */,
 				0B489F8929CB06BA0098F6D4 /* Reactive+URLSessionResponse.swift in Sources */,
+				0B96065429CD51FF00D66439 /* Data+AppendString.swift in Sources */,
 				0BA1A7D929C8ED6400DFFB83 /* HTTPScheme.swift in Sources */,
 				C6ECE67829A1D8570030FBC0 /* NetworkServerError.swift in Sources */,
 				0BA1A7DE29C8EF0600DFFB83 /* Router.swift in Sources */,
-				0BA1A7E529C8F0A400DFFB83 /* TestModel.swift in Sources */,
+				0B96065729CD524700D66439 /* FormData.swift in Sources */,
+				0BA1A7E529C8F0A400DFFB83 /* Model.swift in Sources */,
 				0BA1A7E329C8F09000DFFB83 /* TestRouter.swift in Sources */,
 				0BA1A7EE29C8F28700DFFB83 /* NetworkAPIError.swift in Sources */,
 				0BA1A7DB29C8ED7700DFFB83 /* HTTPMethod.swift in Sources */,
+				0B96065929CD525900D66439 /* File.swift in Sources */,
 				C617EA36299E82710050579A /* SceneDelegate.swift in Sources */,
 				C6ECE67A29A1D86B0030FBC0 /* DefaultNetworkAPIError.swift in Sources */,
 			);

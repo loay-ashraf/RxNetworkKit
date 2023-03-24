@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,18 +13,23 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxNetworking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hmh-1I-XBQ">
-                                <rect key="frame" x="78.333333333333329" y="408.66666666666669" width="236.33333333333337" height="35"/>
+                                <rect key="frame" x="97.000000000000014" y="448.66666666666669" width="236.33333333333337" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Upload Image from memory"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fh-dU-5aC">
-                                <rect key="frame" x="94" y="493.66666666666669" width="205" height="35.000000000000057"/>
+                                <rect key="frame" x="112.66666666666669" y="533.66666666666663" width="205" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Upload Image from disk"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZo-qT-x1z">
+                                <rect key="frame" x="116.66666666666669" y="618.66666666666663" width="197" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Upload Muliple Images"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -33,12 +38,15 @@
                             <constraint firstItem="9fh-dU-5aC" firstAttribute="top" secondItem="Hmh-1I-XBQ" secondAttribute="bottom" constant="50" id="6PM-X5-CAW"/>
                             <constraint firstItem="Hmh-1I-XBQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JFs-Jh-6cS"/>
                             <constraint firstItem="Hmh-1I-XBQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q8W-dn-dL6"/>
+                            <constraint firstItem="lZo-qT-x1z" firstAttribute="top" secondItem="9fh-dU-5aC" secondAttribute="bottom" constant="50" id="lgA-cd-GTE"/>
+                            <constraint firstItem="lZo-qT-x1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oDN-p3-72e"/>
                             <constraint firstItem="9fh-dU-5aC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zBy-PM-oGX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="uploadImageFromDiskButton" destination="9fh-dU-5aC" id="CpD-Eq-Oen"/>
                         <outlet property="uploadImageFromMemoryButton" destination="Hmh-1I-XBQ" id="Vv2-7C-A8x"/>
+                        <outlet property="uploadMultipleImages" destination="lZo-qT-x1z" id="10k-f7-knX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
