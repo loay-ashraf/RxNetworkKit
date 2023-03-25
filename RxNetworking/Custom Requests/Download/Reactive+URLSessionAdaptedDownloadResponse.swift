@@ -10,6 +10,13 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: URLSession {
+    /// Creates an observable with `DownloadEvent` type.
+    ///
+    /// - Parameters:
+    ///   - request: `URLRequest` used to create upload task and its observables.
+    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///
+    /// - Returns: a `Observable` object of `DownloadEvent` type.
     func downloadResponse<AE: NetworkAPIError>(request: URLRequest, apiErrorType: AE.Type) -> Observable<DownloadEvent> {
         let observables = downloadResponse(request: request)
         let progressObservable = observables
@@ -24,6 +31,14 @@ extension Reactive where Base: URLSession {
         let mergedObservable = responseObservable.merge(with: progressObservable)
         return mergedObservable
     }
+    /// Creates an observable with `DownloadEvent` type.
+    ///
+    /// - Parameters:
+    ///   - request: `URLRequest` used to create upload task and its observables.
+    ///   - url: `URL` used to save downloaded file to disk.
+    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///
+    /// - Returns: a `Observable` object of `DownloadEvent` type.
     func downloadResponse<AE: NetworkAPIError>(request: URLRequest, saveTo url: URL, apiErrorType: AE.Type) -> Observable<DownloadEvent> {
         let observables = downloadResponse(request: request, saveTo: url)
         let progressObservable = observables

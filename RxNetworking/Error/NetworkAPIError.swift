@@ -5,6 +5,5 @@
 //  Created by Loay Ashraf on 20/03/2023.
 //
 
-import Foundation
-
+/// API-side internal error
 protocol NetworkAPIError: Error, Decodable {  }

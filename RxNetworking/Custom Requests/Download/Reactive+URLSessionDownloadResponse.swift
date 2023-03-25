@@ -10,6 +10,13 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: URLSession {
+    /// Creates a tuple that includes progress `PublishSubject` and response and data `Single`.
+    /// This method is inspired by RxCocoa's `response` method.
+    ///
+    /// - Parameters:
+    ///   - request: `URLRequest` used to create upload task and its observables.
+    ///
+    /// - Returns: a tuple of progress `PublishSubject` and response and data `Single`
     func downloadResponse(request: URLRequest) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
@@ -53,6 +60,14 @@ extension Reactive where Base: URLSession {
         }
         return (taskProgressSubject, taskResponseSingle)
     }
+    /// Creates a tuple that includes progress `PublishSubject` and response and data `Single`.
+    /// This method is inspired by RxCocoa's `response` method.
+    ///
+    /// - Parameters:
+    ///   - request: `URLRequest` used to create upload task and its observables.
+    ///   - formData: `UploadFormData` object that includes parameters and files to be uploaded.
+    ///
+    /// - Returns: a tuple of progress `PublishSubject` and response and data `Single`.
     func downloadResponse(request: URLRequest, saveTo url: URL) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
@@ -95,46 +110,5 @@ extension Reactive where Base: URLSession {
             return Disposables.create(with: task.cancel)
         }
         return (taskProgressSubject, taskResponseSingle)
-    }
-}
-extension Reactive where Base: URLSession {
-    fileprivate func escapeTerminalString(_ value: String) -> String {
-        return value.replacingOccurrences(of: "\"", with: "\\\"", options:[], range: nil)
-    }
-    fileprivate func convertURLRequestToCurlCommand(_ request: URLRequest) -> String {
-        let method = request.httpMethod ?? "GET"
-        var returnValue = "curl -X \(method) "
-        if let httpBody = request.httpBody {
-            let maybeBody = String(data: httpBody, encoding: String.Encoding.utf8)
-            if let body = maybeBody {
-                returnValue += "-d \"\(escapeTerminalString(body))\" "
-            }
-        }
-        for (key, value) in request.allHTTPHeaderFields ?? [:] {
-            let escapedKey = escapeTerminalString(key as String)
-            let escapedValue = escapeTerminalString(value as String)
-            returnValue += "\n    -H \"\(escapedKey): \(escapedValue)\" "
-        }
-        let URLString = request.url?.absoluteString ?? "<unknown url>"
-        returnValue += "\n\"\(escapeTerminalString(URLString))\""
-        returnValue += " -i -v"
-        return returnValue
-    }
-    fileprivate func convertResponseToString(_ response: URLResponse?, _ error: NSError?, _ interval: TimeInterval) -> String {
-        let ms = Int(interval * 1000)
-        if let response = response as? HTTPURLResponse {
-            if 200 ..< 300 ~= response.statusCode {
-                return "Success (\(ms)ms): Status \(response.statusCode)"
-            } else {
-                return "Failure (\(ms)ms): Status \(response.statusCode)"
-            }
-        }
-        if let error = error {
-            if error.domain == NSURLErrorDomain && error.code == NSURLErrorCancelled {
-                return "Canceled (\(ms)ms)"
-            }
-            return "Failure (\(ms)ms): NSError > \(error)"
-        }
-        return "<Unhandled response from server>"
     }
 }

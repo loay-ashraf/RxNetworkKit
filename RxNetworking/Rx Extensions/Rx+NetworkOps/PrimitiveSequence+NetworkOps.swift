@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HTTPURLResponse, data: Data) {
-    /// Creates `Completable` observable from data.
+    /// Creates `Completable` observable.
     ///
     /// - Parameters:
     ///   - errorType: `Decodable` api error type.
@@ -27,7 +27,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
         }
         .asCompletable()
     }
-    /// Creates `Single` observable from data.
+    /// Creates `Single` observable with the same element type.
     ///
     /// - Parameters:
     ///   - errorType: `Decodable` api error type.
@@ -85,7 +85,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
             throw NetworkError.client(clientError)
         }
     }
-    /// Creates `Completable` observable with Decodable element type + handles transport errors.
+    /// Creates `Completable` observable + handles transport errors.
     ///
     /// - Parameters:
     ///   - errorType: `Decodable` api error type.

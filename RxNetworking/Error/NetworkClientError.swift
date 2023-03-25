@@ -5,8 +5,7 @@
 //  Created by Loay Ashraf on 19/02/2023.
 //
 
-import Foundation
-
+/// Client-side (transport) error
 enum NetworkClientError: Error {
     case http(HTTPStatusCode)
     case serialization(Error)

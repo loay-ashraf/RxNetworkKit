@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 extension Observable where Element == (response: HTTPURLResponse, data: Data) {
-    /// Creates `Completable` observable with Decodable element type + handles transport errors.
+    /// Creates `Completable` observable + handles transport errors.
     ///
     /// - Parameters:
     ///   - errorType: `Decodable` api error type.

@@ -11,6 +11,9 @@ enum NetworkError: Error {
     case client(NetworkClientError)
     case server(NetworkServerError)
     case api(NetworkAPIError)
+    /// Creates `NetworkError` instance.
+    ///
+    /// - Parameter response: `HTTPURLResponse` used to get response status code.
     init?(_ response: HTTPURLResponse?) {
         if let response = response,
            let httpStatusCode = HTTPStatusCode(rawValue: response.statusCode) {
