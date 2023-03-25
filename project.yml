@@ -69,7 +69,7 @@ targets:
           CURRENT_PROJECT_VERSION: '1'
           DEVELOPMENT_TEAM: Z3SPAA69G7
           GENERATE_INFOPLIST_FILE: 'YES'
-          INFOPLIST_FILE: RxNetworking/Info.plist
+          INFOPLIST_FILE: Example/App/Info.plist
           INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
           INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
           INFOPLIST_KEY_UIMainStoryboardFile: Main
@@ -88,7 +88,7 @@ targets:
           CURRENT_PROJECT_VERSION: '1'
           DEVELOPMENT_TEAM: Z3SPAA69G7
           GENERATE_INFOPLIST_FILE: 'YES'
-          INFOPLIST_FILE: RxNetworking/Info.plist
+          INFOPLIST_FILE: Example/App/Info.plist
           INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
           INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
           INFOPLIST_KEY_UIMainStoryboardFile: Main
@@ -104,4 +104,6 @@ targets:
     sources:
     - name: RxNetworking
       path: RxNetworking
+    - name: Example
+      path: Example
     type: application
