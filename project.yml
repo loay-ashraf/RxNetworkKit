@@ -1,0 +1,109 @@
+attributes:
+  BuildIndependentTargetsInParallel: '1'
+  LastSwiftUpdateCheck: '1420'
+  LastUpgradeCheck: '1420'
+configs:
+  Debug: debug
+  Release: release
+name: RxNetworking
+options:
+  defaultConfig: Debug
+  groupSortPosition: bottom
+  transitivelyLinkDependencies: false
+  groupSortPosition: top
+packages:
+  RxSwift:
+    github: ReactiveX/RxSwift
+    from: 6.5.0
+  RxSwiftExt:
+    github: RxSwiftCommunity/RxSwiftExt
+    from: 6.1.0
+schemes:
+  RxNetworking:
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+    build:
+      targets:
+        RxNetworking:
+        - running
+        - testing
+        - profiling
+        - analyzing
+        - archiving
+    profile:
+      config: Release
+    run:
+      config: Debug
+    test:
+      config: Debug
+settings:
+  configs:
+    Debug:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+      IPHONEOS_DEPLOYMENT_TARGET: '16.2'
+      MTL_ENABLE_DEBUG_INFO: INCLUDE_SOURCE
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: iphoneos
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: -Onone
+    Release:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+      IPHONEOS_DEPLOYMENT_TARGET: '16.2'
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: iphoneos
+      SWIFT_COMPILATION_MODE: wholemodule
+      SWIFT_OPTIMIZATION_LEVEL: -O
+targets:
+  RxNetworking:
+    platform: iOS
+    dependencies:
+      - package: RxSwift
+      - package: RxSwiftExt
+    settings:
+      configs:
+        Debug:
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_TEAM: Z3SPAA69G7
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: Example/App/Info.plist
+          INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
+          INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+          INFOPLIST_KEY_UIMainStoryboardFile: Main
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft
+            UIInterfaceOrientationLandscapeRight
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.loay.RxNetworking
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+        Release:
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_TEAM: Z3SPAA69G7
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: Example/App/Info.plist
+          INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: 'YES'
+          INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+          INFOPLIST_KEY_UIMainStoryboardFile: Main
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft
+            UIInterfaceOrientationLandscapeRight
+          INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
+            UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.loay.RxNetworking
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+    sources:
+    - name: RxNetworking
+      path: RxNetworking
+    - name: Example
+      path: Example
+    type: application
