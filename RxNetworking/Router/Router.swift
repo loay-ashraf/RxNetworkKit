@@ -19,6 +19,9 @@ protocol Router {
     func asURLRequest() -> URLRequest
 }
 extension Router {
+    /// Creates `URLRequest` object using router properties.
+    ///
+    /// - Returns: `URLRequest` created using router properties.
     func asURLRequest() -> URLRequest {
         var url: URL? = self.url
         // Add qurey parameters

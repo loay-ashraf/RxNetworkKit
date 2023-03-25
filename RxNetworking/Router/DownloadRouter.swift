@@ -10,9 +10,11 @@ import Foundation
 protocol DownloadRouter: Router { }
 
 extension DownloadRouter {
+    /// By Default: HTTP method is GET for download requests.
     var method: HTTPMethod {
         .get
     }
+    /// By Default: HTTP body is `nil` for download requests.
     var body: [String : Any]? {
         nil
     }
