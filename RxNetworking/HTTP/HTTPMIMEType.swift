@@ -5,6 +5,7 @@
 //  Created by Loay Ashraf on 24/03/2023.
 //
 
+/// This is a list of most common HTTP MIME types.
 enum HTTPMIMEType: String {
     case aac = "audio/aac"
     case avif = "image/avif"

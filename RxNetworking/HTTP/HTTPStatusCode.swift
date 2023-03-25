@@ -191,8 +191,3 @@ enum HTTPStatusCode: Int, Error {
         }
     }
 }
-extension HTTPURLResponse {
-    var status: HTTPStatusCode? {
-        return HTTPStatusCode(rawValue: statusCode)
-    }
-}
