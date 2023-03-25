@@ -32,14 +32,14 @@ class NetworkManager {
             .decodable(T.self, errorType: AE.self)
         return observable
     }
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ file: File, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
             .uploadResponse(request: urlRequest, file: file, modelType: T.self, apiErrorType: AE.self)
         return observable
     }
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ formData: FormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
