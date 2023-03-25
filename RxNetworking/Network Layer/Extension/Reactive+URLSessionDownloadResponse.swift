@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-extension Reactive where Base == URLSession {
+extension Reactive where Base: URLSession {
     func downloadResponse(request: URLRequest) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
