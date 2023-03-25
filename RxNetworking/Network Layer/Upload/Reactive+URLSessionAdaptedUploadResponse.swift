@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: URLSession {
-    func uploadResponse<T: Decodable, AE: NetworkAPIError>(request: URLRequest, file: File, modelType: T.Type, apiErrorType: AE.Type) -> Observable<UploadEvent<T>> {
+    func uploadResponse<T: Decodable, AE: NetworkAPIError>(request: URLRequest, file: UploadFile, modelType: T.Type, apiErrorType: AE.Type) -> Observable<UploadEvent<T>> {
         let observables = uploadResponse(request: request, file: file)
         let progressObservable = observables
             .0
@@ -24,7 +24,7 @@ extension Reactive where Base: URLSession {
         let mergedObservable = responseObservable.merge(with: progressObservable)
         return mergedObservable
     }
-    func uploadResponse<T: Decodable, AE: NetworkAPIError>(request: URLRequest, formData: FormData, modelType: T.Type, apiErrorType: AE.Type) -> Observable<UploadEvent<T>> {
+    func uploadResponse<T: Decodable, AE: NetworkAPIError>(request: URLRequest, formData: UploadFormData, modelType: T.Type, apiErrorType: AE.Type) -> Observable<UploadEvent<T>> {
         let observables = uploadResponse(request: request, formData: formData)
         let progressObservable = observables
             .0

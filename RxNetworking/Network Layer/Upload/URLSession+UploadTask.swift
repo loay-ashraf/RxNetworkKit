@@ -16,7 +16,7 @@ extension URLSession {
     ///   - completionHandler: completion handler to be called on task completion.
     ///
     /// - Returns: upload`URLSessionDataTask` created using given request and file.
-    func fileUploadTask(with request: URLRequest, from file: File, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+    func fileUploadTask(with request: URLRequest, from file: UploadFile, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let fileData = extractFileData(file)
         let request = adaptUploadRequest(originalRequest: request, withContentType: file.mimeType.rawValue, withBody: fileData)
         let task = dataTask(with: request, completionHandler: completionHandler)
@@ -30,7 +30,7 @@ extension URLSession {
     ///   - completionHandler: completion handler to be called on task completion.
     ///
     /// - Returns: upload`URLSessionDataTask` created using given request and form data.
-    func formDataUploadTask(with request: URLRequest, from formData: FormData, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+    func formDataUploadTask(with request: URLRequest, from formData: UploadFormData, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let boundary = generateFormBoundary()
         let dataBody = createFormDataBody(formData: formData, boundary: boundary)
         let request = adaptUploadRequest(originalRequest: request, withContentType: "multipart/form-data; boundary=\(boundary)", withBody: dataBody)
@@ -60,7 +60,7 @@ extension URLSession {
     /// - Parameter file: `File` object that includes data or url.
     ///
     /// - Returns: `Data` object representing the file.
-    fileprivate func extractFileData(_ file: File) -> Data? {
+    fileprivate func extractFileData(_ file: UploadFile) -> Data? {
         var data: Data? = nil
         if let fileData = file.data {
             data = fileData
@@ -77,7 +77,7 @@ extension URLSession {
     ///   - boundary: `String` boundary used to mark start of body section.
     ///
     /// - Returns: `Data` object representing HTTP body.
-    fileprivate func createFormDataBody(formData: FormData, boundary: String) -> Data {
+    fileprivate func createFormDataBody(formData: UploadFormData, boundary: String) -> Data {
         let files = formData.files
         let lineBreak = "\r\n"
         var body = Data()

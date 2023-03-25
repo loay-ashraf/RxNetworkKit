@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 extension Reactive where Base: URLSession {
-    func uploadResponse(request: URLRequest, file: File) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
+    func uploadResponse(request: URLRequest, file: UploadFile) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()
@@ -53,7 +53,7 @@ extension Reactive where Base: URLSession {
         }
         return (taskProgressSubject, taskResponseSingle)
     }
-    func uploadResponse(request: URLRequest, formData: FormData) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
+    func uploadResponse(request: URLRequest, formData: UploadFormData) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
         // we must keep refernce to task progress observation object
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()

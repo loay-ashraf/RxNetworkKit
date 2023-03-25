@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UploadFile.swift
 //  RxNetworking
 //
 //  Created by Loay Ashraf on 24/03/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct File {
+struct UploadFile {
     let key: String
     let name: String
     let url: URL?
