@@ -1,5 +1,5 @@
 //
-//  DownloadRouter.swift
+//  NetworkDownloadRouter.swift
 //  RxNetworking
 //
 //  Created by Loay Ashraf on 25/03/2023.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol DownloadRouter: Router { }
+protocol NetworkDownloadRouter: NetworkRouter { }
 
-extension DownloadRouter {
+extension NetworkDownloadRouter {
     /// By Default: HTTP method is GET for download requests.
     var method: HTTPMethod {
         .get

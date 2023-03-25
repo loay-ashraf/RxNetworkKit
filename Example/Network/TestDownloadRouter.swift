@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TestDownloadRouter: DownloadRouter {
+enum TestDownloadRouter: NetworkDownloadRouter {
     case basic(accountId: String, filePath: String)
     var scheme: HTTPScheme {
         .https

@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  NetworkRouter.swift
 //  RxNetworking
 //
 //  Created by Loay Ashraf on 20/03/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol Router {
+protocol NetworkRouter {
     var scheme: HTTPScheme { get }
     var method: HTTPMethod { get }
     var domain: String { get }
@@ -18,7 +18,7 @@ protocol Router {
     var url: URL? { get }
     func asURLRequest() -> URLRequest
 }
-extension Router {
+extension NetworkRouter {
     /// Creates `URLRequest` object using router properties.
     ///
     /// - Returns: `URLRequest` created using router properties.

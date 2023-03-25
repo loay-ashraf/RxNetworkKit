@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TestUploadRouter: UploadRouter {
+enum TestUploadRouter: NetworkUploadRouter {
     case basic(accountId: String)
     case formData(accountId: String)
     var scheme: HTTPScheme {

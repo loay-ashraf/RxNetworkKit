@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TestRouter: Router {
+enum TestRouter: NetworkRouter {
     case test1
     var scheme: HTTPScheme {
         .https

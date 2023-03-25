@@ -27,7 +27,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Completable` observable encapsulating data request.
-    func request<AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
+    func request<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -43,7 +43,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Single` observable encapsulating data request.
-    func request<T: Decodable, AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
+    func request<T: Decodable, AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -59,7 +59,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating download request.
-    func download<AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+    func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -75,7 +75,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating download request.
-    func download<AE: NetworkAPIError>(_ router: Router, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+    func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -91,7 +91,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating upload request.
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
@@ -107,7 +107,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating upload request.
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: UploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let urlRequest = router.asURLRequest()
         let observable = session
             .rx
