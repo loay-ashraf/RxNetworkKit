@@ -11,7 +11,7 @@ extension URLSession {
     /// Creates a data task with HTTP body of given file data.
     ///
     /// - Parameters:
-    ///   - request: `URLRequest` to used to create data task.
+    ///   - request: `URLRequest` used to create data task.
     ///   - file: `File` object that includes name, data, url and HTTP MIME type.
     ///   - completionHandler: completion handler to be called on task completion.
     ///

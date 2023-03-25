@@ -27,6 +27,23 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
         }
         .asCompletable()
     }
+    /// Creates `Single` observable from data.
+    ///
+    /// - Parameters:
+    ///   - errorType: `Decodable` api error type.
+    ///
+    /// - Returns: `Single` observable to be observed for values.
+    func decode<E: NetworkAPIError>(_ errorType: E.Type) -> Self {
+        map {
+            let jsonDecoder = JSONDecoder()
+            if let apiError = try? jsonDecoder.decode(errorType.self, from: $0.data) {
+                let networkError = NetworkError.api(apiError)
+                throw networkError
+            } else {
+                return $0
+            }
+        }
+    }
     /// Creates `Single` observable with Decodable element type from data.
     ///
     /// - Parameters:
@@ -75,6 +92,21 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
     ///
     /// - Returns: Observable to be observed for values.
     func decodable<E: NetworkAPIError>(_ errorType: E.Type) -> Completable {
+        self
+            // catch any transport errors if thrown.
+            .catchTransportError()
+            // verify response status code.
+            .verifyResponse()
+            // serialize data into given error type and throw it.
+            .decode(E.self)
+    }
+    /// Creates `Single` observable with the same element type + handles transport errors.
+    ///
+    /// - Parameters:
+    ///   - errorType: `Decodable` api error type.
+    ///
+    /// - Returns: Observable to be observed for values.
+    func decodable<E: NetworkAPIError>(_ errorType: E.Type) -> Self {
         self
             // catch any transport errors if thrown.
             .catchTransportError()

@@ -46,4 +46,18 @@ class NetworkManager {
             .uploadResponse(request: urlRequest, formData: formData, modelType: T.self, apiErrorType: AE.self)
         return observable
     }
+    func download<AE: NetworkAPIError>(_ router: Router, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+        let urlRequest = router.asURLRequest()
+        let observable = session
+            .rx
+            .downloadResponse(request: urlRequest, apiErrorType: AE.self)
+        return observable
+    }
+    func download<AE: NetworkAPIError>(_ router: Router, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+        let urlRequest = router.asURLRequest()
+        let observable = session
+            .rx
+            .downloadResponse(request: urlRequest, saveTo: fileURL, apiErrorType: AE.self)
+        return observable
+    }
 }

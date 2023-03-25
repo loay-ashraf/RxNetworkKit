@@ -96,10 +96,12 @@ extension Reactive where Base: URLSession {
         }
         return (taskProgressSubject, taskResponseSingle)
     }
-    private func escapeTerminalString(_ value: String) -> String {
+}
+extension Reactive where Base: URLSession {
+    fileprivate func escapeTerminalString(_ value: String) -> String {
         return value.replacingOccurrences(of: "\"", with: "\\\"", options:[], range: nil)
     }
-    private func convertURLRequestToCurlCommand(_ request: URLRequest) -> String {
+    fileprivate func convertURLRequestToCurlCommand(_ request: URLRequest) -> String {
         let method = request.httpMethod ?? "GET"
         var returnValue = "curl -X \(method) "
         if let httpBody = request.httpBody {
@@ -118,7 +120,7 @@ extension Reactive where Base: URLSession {
         returnValue += " -i -v"
         return returnValue
     }
-    private func convertResponseToString(_ response: URLResponse?, _ error: NSError?, _ interval: TimeInterval) -> String {
+    fileprivate func convertResponseToString(_ response: URLResponse?, _ error: NSError?, _ interval: TimeInterval) -> String {
         let ms = Int(interval * 1000)
         if let response = response as? HTTPURLResponse {
             if 200 ..< 300 ~= response.statusCode {

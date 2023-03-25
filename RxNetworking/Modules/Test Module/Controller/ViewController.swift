@@ -10,6 +10,9 @@ import RxSwift
 import RxCocoa
 
 class ViewController: UIViewController {
+    @IBOutlet weak var downloadedImageView: UIImageView!
+    @IBOutlet weak var downloadImageToMemoryButton: UIButton!
+    @IBOutlet weak var downloadImageToDiskButton: UIButton!
     @IBOutlet weak var uploadImageFromMemoryButton: UIButton!
     @IBOutlet weak var uploadImageFromDiskButton: UIButton!
     @IBOutlet weak var uploadMultipleImages: UIButton!
@@ -37,6 +40,54 @@ class ViewController: UIViewController {
         try? globeData.write(to: globeImageURL)
         try? folderData.write(to: folderImageURL)
         try? folderFillData.write(to: folderFillImageURL)
+    }
+    private func downloadImageToMemory(using manager: NetworkManager) {
+        let router = TestDownloadRouter.basic(accountId: "FW25b9Z", filePath: "uploads/2023/03/24/person-4BpN.png")
+        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let imageURL = documentsURL.appending(path: "person-d.png")
+        let downloadObservable: Observable<DownloadEvent> = manager.download(router)
+        downloadObservable
+            .observe(on: ConcurrentMainScheduler.instance)
+            .subscribe(onNext: {
+                switch $0 {
+                case .progress(let progress):
+                    print("Image Download Task Progress: \(progress.fractionCompleted*100)%")
+                case .completedWithData(let imageData):
+                    let image = UIImage(data: imageData!)
+                    self.downloadedImageView.image = image
+                default: break
+                }
+            }, onError: {
+                print("Image Download Task Failure: \($0.localizedDescription)")
+            }, onCompleted: {
+                print("Image Download Task Completed!")
+            })
+            .disposed(by: disposeBag)
+    }
+    private func downloadImageToDisk(using manager: NetworkManager) {
+        let router = TestDownloadRouter.basic(accountId: "FW25b9Z", filePath: "uploads/2023/03/24/person-4BpN.png")
+        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
+        let imageURL = documentsURL.appending(path: "person-d.png")
+        let downloadObservable: Observable<DownloadEvent> = manager.download(router, imageURL)
+        downloadObservable
+            .observe(on: ConcurrentMainScheduler.instance)
+            .subscribe(onNext: {
+                switch $0 {
+                case .progress(let progress):
+                    print("Image Download Task Progress: \(progress.fractionCompleted*100)%")
+                case .completed:
+                    print("Image Download Task Completed!")
+                    let imageData = try? Data(contentsOf: imageURL)
+                    let image = UIImage(data: imageData!)
+                    self.downloadedImageView.image = image
+                default: break
+                }
+            }, onError: {
+                print("Image Download Task Failure: \($0.localizedDescription)")
+            }, onCompleted: {
+                print("Image Download Task Completed!")
+            })
+            .disposed(by: disposeBag)
     }
     private func uploadImageFromMemory(using manager: NetworkManager) {
         let router = TestUploadRouter.basic(accountId: "FW25b9Z")
@@ -117,6 +168,20 @@ class ViewController: UIViewController {
         writeLocalFiles()
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         let manager = NetworkManager(session: session)
+        downloadImageToMemoryButton
+            .rx
+            .tap
+            .bind(onNext: {
+                self.downloadImageToMemory(using: manager)
+            })
+            .disposed(by: disposeBag)
+        downloadImageToDiskButton
+            .rx
+            .tap
+            .bind(onNext: {
+                self.downloadImageToDisk(using: manager)
+            })
+            .disposed(by: disposeBag)
         uploadImageFromMemoryButton
             .rx
             .tap
