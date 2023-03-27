@@ -25,13 +25,7 @@ enum TestUploadRouter: NetworkUploadRouter {
         }
     }
     var headers: [String: String] {
-        switch self {
-        case .basic:
-            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4"]
-        case .formData:
-            return ["Authorization": "Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4"]
-        }
-        
+        [:]
     }
     var parameters: [String: String]? {
         nil

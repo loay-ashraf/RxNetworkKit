@@ -1,6 +1,6 @@
 //
 //  NetworkManager.swift
-//  RXNetworking
+//  RxNetworking
 //
 //  Created by Loay Ashraf on 16/02/2023.
 //
@@ -9,15 +9,18 @@ import Foundation
 import RxSwift
 import RxSwiftExt
 import RxCocoa
-import Combine
 
 class NetworkManager {
     private let session: URLSession
+    private let requestInterceptor: NetworkRequestInterceptor
     /// Creates `NetworkManager` instance.
     ///
-    /// - Parameter session: `Session` object used in performing network requests.
-    init(session: URLSession) {
+    /// - Parameters:
+    ///   - session: `Session` object used in performing network requests.
+    ///   - requestInterceptor: `NetworkRequestInterceptor` object used for intercepting requests.
+    init(session: URLSession, requestInterceptor: NetworkRequestInterceptor) {
         self.session = session
+        self.requestInterceptor = requestInterceptor
     }
     /// Creates a `Completable` observable encapsulating data request using given `Router`.
     /// Use this method if you are expecting empty response body.
@@ -28,11 +31,19 @@ class NetworkManager {
     ///
     /// - Returns: `Completable` observable encapsulating data request.
     func request<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
-        let urlRequest = router.asURLRequest()
+        
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .response(request: urlRequest)
+            .response(request: adaptedRequest)
             .decodable(AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
     /// Creates a `Single` observable encapsulating data request using given `Router`.
@@ -44,11 +55,18 @@ class NetworkManager {
     ///
     /// - Returns: `Single` observable encapsulating data request.
     func request<T: Decodable, AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
-        let urlRequest = router.asURLRequest()
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .response(request: urlRequest)
+            .response(request: adaptedRequest)
             .decodable(T.self, errorType: AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
     /// Creates a `Observable` object encapsulating download request using given `Router`.
@@ -60,10 +78,17 @@ class NetworkManager {
     ///
     /// - Returns: `Observable` object encapsulating download request.
     func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
-        let urlRequest = router.asURLRequest()
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .downloadResponse(request: urlRequest, apiErrorType: AE.self)
+            .downloadResponse(request: adaptedRequest, apiErrorType: AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
     /// Creates a `Observable` object encapsulating download request using given `Router`.
@@ -76,10 +101,17 @@ class NetworkManager {
     ///
     /// - Returns: `Observable` object encapsulating download request.
     func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
-        let urlRequest = router.asURLRequest()
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .downloadResponse(request: urlRequest, saveTo: fileURL, apiErrorType: AE.self)
+            .downloadResponse(request: adaptedRequest, saveTo: fileURL, apiErrorType: AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
     /// Creates a `Observable` object encapsulating upload request using given `Router`.
@@ -92,10 +124,17 @@ class NetworkManager {
     ///
     /// - Returns: `Observable` object encapsulating upload request.
     func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
-        let urlRequest = router.asURLRequest()
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .uploadResponse(request: urlRequest, file: file, modelType: T.self, apiErrorType: AE.self)
+            .uploadResponse(request: adaptedRequest, file: file, modelType: T.self, apiErrorType: AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
     /// Creates a `Observable` object encapsulating upload request using given `Router`.
@@ -108,10 +147,47 @@ class NetworkManager {
     ///
     /// - Returns: `Observable` object encapsulating upload request.
     func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
-        let urlRequest = router.asURLRequest()
+        let originalRequest = router.asURLRequest()
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let shouldRetry = { (error: NetworkError) in
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+        }
         let observable = session
             .rx
-            .uploadResponse(request: urlRequest, formData: formData, modelType: T.self, apiErrorType: AE.self)
+            .uploadResponse(request: adaptedRequest, formData: formData, modelType: T.self, apiErrorType: AE.self)
+            .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
+    }
+}
+
+import Foundation
+import Alamofire
+import RxSwift
+import RxCocoa
+
+final class Reachability {
+    static var shared: Reachability = .init()
+
+    /// Monitors general network reachability.
+    let reachability = NetworkReachabilityManager()
+
+    var didBecomeReachable: Signal<Void> { return _didBecomeReachable.asSignal() }
+    private let _didBecomeReachable = PublishRelay<Void>()
+
+    init() {
+//        self.isReachable = _isReachable.asDriver()
+
+        if let reachability = self.reachability {
+            reachability.startListening { [weak self] in
+                self?.update($0)
+            }
+        }
+    }
+    private func update(_ status: NetworkReachabilityManager.NetworkReachabilityStatus) {
+        if case .reachable = status {
+            _didBecomeReachable.accept(())
+        }
     }
 }

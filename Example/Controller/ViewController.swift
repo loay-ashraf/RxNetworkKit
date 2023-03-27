@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  RXNetworking
+//  RxNetworking
 //
 //  Created by Loay Ashraf on 16/02/2023.
 //
@@ -43,8 +43,6 @@ class ViewController: UIViewController {
     }
     private func downloadImageToMemory(using manager: NetworkManager) {
         let router = TestDownloadRouter.basic(accountId: "FW25b9Z", filePath: "uploads/2023/03/24/person-4BpN.png")
-        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let imageURL = documentsURL.appending(path: "person-d.png")
         let downloadObservable: Observable<DownloadEvent> = manager.download(router)
         downloadObservable
             .observe(on: ConcurrentMainScheduler.instance)
@@ -167,7 +165,31 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         writeLocalFiles()
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        let manager = NetworkManager(session: session)
+        let manager = NetworkManager(session: session, requestInterceptor: self)
+        let router = TestRouter.test1
+        let single: Single<Model> = manager.request(router)
+        single
+            .observe(on: ConcurrentMainScheduler.instance)
+            .subscribe(onSuccess: {
+                print("Test Task Response: \($0)")
+                print("Test Task Completed!")
+            }, onFailure: {
+                print("Test Task Failure: \($0.localizedDescription)")
+            }, onDisposed: {
+                print("Subscription is disposed!")
+            })
+            .disposed(by: disposeBag)
+//        let completable: Completable = manager.request(router)
+//        completable
+//            .observe(on: ConcurrentMainScheduler.instance)
+//            .subscribe(onCompleted: {
+//                print("Test Task Completed!")
+//            }, onError: {
+//                print("Test Task Failure: \($0.localizedDescription)")
+//            }, onDisposed: {
+//                print("Subscription is disposed!")
+//            })
+//            .disposed(by: disposeBag)
         downloadImageToMemoryButton
             .rx
             .tap
@@ -217,5 +239,24 @@ extension ViewController: URLSessionDelegate, URLSessionTaskDelegate {
     }
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         debugPrint(session)
+    }
+}
+
+extension ViewController: NetworkRequestInterceptor {
+    func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest {
+        var request = request
+        request.setValue("Bearer public_FW25b9ZFF26sbDfyj9zR8EsHbzA4", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+    func retryMaxAttempts(_ request: URLRequest, for session: URLSession) -> Int {
+        5
+    }
+    func retryPolicy(_ request: URLRequest, for session: URLSession) -> NetworkRequestRetryPolicy {
+        .constant(time: 5_000)
+    }
+    func shouldRetry(_ request: URLRequest, for session: URLSession, dueTo error: NetworkError) -> Bool {
+        true
     }
 }

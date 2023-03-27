@@ -1,6 +1,6 @@
 //
-//  Observable+NetworkOps.swift
-//  RXNetworking
+//  Observable+Decodable.swift
+//  RxNetworking
 //
 //  Created by Loay Ashraf on 19/02/2023.
 //
