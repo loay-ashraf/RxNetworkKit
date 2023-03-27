@@ -13,7 +13,7 @@ enum TestRouter: NetworkRouter {
         .https
     }
     var method: HTTPMethod {
-        .post
+        .get
     }
     var domain: String {
         "www.apimocha.com"
@@ -22,8 +22,7 @@ enum TestRouter: NetworkRouter {
         "hi-world/test1"
     }
     var headers: [String: String] {
-        ["Accept": "application/json",
-         "Content-Type": "application/json"]
+        [:]
     }
     var parameters: [String: String]? {
         ["test": "hello"]

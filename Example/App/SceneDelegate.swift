@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  RXNetworking
+//  RxNetworking
 //
 //  Created by Loay Ashraf on 16/02/2023.
 //
