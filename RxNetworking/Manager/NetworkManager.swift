@@ -46,7 +46,6 @@ class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
-    
     /// Creates a `Single` observable encapsulating data request using given `Router`.
     /// Use this method if you are expecting data in response body.
     ///
