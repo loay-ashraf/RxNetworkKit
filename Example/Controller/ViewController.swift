@@ -43,8 +43,6 @@ class ViewController: UIViewController {
     }
     private func downloadImageToMemory(using manager: NetworkManager) {
         let router = TestDownloadRouter.basic(accountId: "FW25b9Z", filePath: "uploads/2023/03/24/person-4BpN.png")
-        guard let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
-        let imageURL = documentsURL.appending(path: "person-d.png")
         let downloadObservable: Observable<DownloadEvent> = manager.download(router)
         downloadObservable
             .observe(on: ConcurrentMainScheduler.instance)

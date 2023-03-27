@@ -9,6 +9,9 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+// This extension is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// Here's Alex's twitter: https://twitter.com/a_grebenyuk
+
 extension PrimitiveSequence where Trait == SingleTrait, Element: Decodable {
     /// Retries the source `Single` sequence on error using a provided retry
     /// strategy.

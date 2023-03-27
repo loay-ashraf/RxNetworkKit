@@ -7,6 +7,9 @@
 
 import Foundation
 
+// This struct is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// Here's Alex's twitter: https://twitter.com/a_grebenyuk
+
 enum NetworkRequestRetryPolicy {
     case immediate
     case constant(time: Double)
@@ -15,6 +18,11 @@ enum NetworkRequestRetryPolicy {
 }
 
 extension NetworkRequestRetryPolicy {
+    /// Creates time interavel (`Double`) from current policy and given attempt count.
+    ///
+    /// - Parameter attempt: current attempt count.
+    ///
+    /// - Returns: Time interval `Double` for delay.
     func makeTimeInterval(_ attempt: Int) -> Double {
         switch self {
         case .immediate: return 0.0

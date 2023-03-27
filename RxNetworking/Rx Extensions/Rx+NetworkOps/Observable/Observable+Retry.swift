@@ -8,6 +8,9 @@
 import RxSwift
 import RxCocoa
 
+// This extension is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// Here's Alex's twitter: https://twitter.com/a_grebenyuk
+
 extension ObservableType {
     /// Retries the source `Observable` sequence on error using a provided retry
     /// strategy.
