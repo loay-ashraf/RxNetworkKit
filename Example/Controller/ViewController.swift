@@ -164,8 +164,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         writeLocalFiles()
-        let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        let manager = NetworkManager(session: session, requestInterceptor: self)
+        let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
         let router = TestRouter.test1
         let single: Single<Model> = manager.request(router)
         single
@@ -228,7 +227,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: URLSessionDelegate, URLSessionTaskDelegate {
+extension ViewController: NetworkEventMonitor {
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         debugPrint("")
     }
@@ -240,6 +239,14 @@ extension ViewController: URLSessionDelegate, URLSessionTaskDelegate {
     func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
         debugPrint(session)
     }
+    func urlSession(_ session: URLSession, didCreateTask task: URLSessionTask) {
+        debugPrint("Task created!")
+    }
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        guard let error else { return }
+        debugPrint("Task did finish with error: \(error.localizedDescription)!")
+    }
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) { }
 }
 
 extension ViewController: NetworkRequestInterceptor {
