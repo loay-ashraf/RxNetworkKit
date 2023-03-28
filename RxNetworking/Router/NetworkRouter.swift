@@ -16,6 +16,9 @@ protocol NetworkRouter {
     var parameters: [String: String]? { get }
     var body: [String: Any]? { get }
     var url: URL? { get }
+    /// Creates `URLRequest` object using router properties.
+    ///
+    /// - Returns: `URLRequest` created using router properties.
     func asURLRequest() -> URLRequest
 }
 extension NetworkRouter {

@@ -13,14 +13,17 @@ import RxCocoa
 class NetworkManager {
     private let session: URLSession
     private let requestInterceptor: NetworkRequestInterceptor
+    private let eventMonitor: NetworkEventMonitor
     /// Creates `NetworkManager` instance.
     ///
     /// - Parameters:
-    ///   - session: `Session` object used in performing network requests.
+    ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
     ///   - requestInterceptor: `NetworkRequestInterceptor` object used for intercepting requests.
-    init(session: URLSession, requestInterceptor: NetworkRequestInterceptor) {
-        self.session = session
+    ///   - eventMonitor: `NetworkEventMonitor` object for monitoring events for session.
+    init(configuration: URLSessionConfiguration, requestInterceptor: NetworkRequestInterceptor, eventMonitor: NetworkEventMonitor) {
+        self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
         self.requestInterceptor = requestInterceptor
+        self.eventMonitor = eventMonitor
     }
     /// Creates a `Completable` observable encapsulating data request using given `Router`.
     /// Use this method if you are expecting empty response body.
