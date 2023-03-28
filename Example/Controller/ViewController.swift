@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var uploadImageFromMemoryButton: UIButton!
     @IBOutlet weak var uploadImageFromDiskButton: UIButton!
     @IBOutlet weak var uploadMultipleImages: UIButton!
+    @IBOutlet weak var networkReachabilityStatusLabel: UILabel!
     private let disposeBag: DisposeBag = .init()
     private func writeLocalFiles() {
         let fileManager = FileManager.default
@@ -222,6 +223,18 @@ class ViewController: UIViewController {
             .tap
             .bind(onNext: {
                 self.uploadMultipleImages(using: manager)
+            })
+            .disposed(by: disposeBag)
+        NetworkReachability.shared.didChangeStatus
+            .observe(on: ConcurrentMainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: {
+                switch $0 {
+                case .reachable(let interfaceType):
+                    self.networkReachabilityStatusLabel.text = "Network is reachable via \(interfaceType.rawValue)."
+                case .unReachable:
+                    self.networkReachabilityStatusLabel.text = "Network is unreachable."
+                }
             })
             .disposed(by: disposeBag)
     }

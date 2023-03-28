@@ -170,27 +170,27 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
-final class Reachability {
-    static var shared: Reachability = .init()
-
-    /// Monitors general network reachability.
-    let reachability = NetworkReachabilityManager()
-
-    var didBecomeReachable: Signal<Void> { return _didBecomeReachable.asSignal() }
-    private let _didBecomeReachable = PublishRelay<Void>()
-
-    init() {
-//        self.isReachable = _isReachable.asDriver()
-
-        if let reachability = self.reachability {
-            reachability.startListening { [weak self] in
-                self?.update($0)
-            }
-        }
-    }
-    private func update(_ status: NetworkReachabilityManager.NetworkReachabilityStatus) {
-        if case .reachable = status {
-            _didBecomeReachable.accept(())
-        }
-    }
-}
+//final class Reachability {
+//    static var shared: Reachability = .init()
+//
+//    /// Monitors general network reachability.
+//    let reachability = NetworkReachabilityManager()
+//
+//    var didBecomeReachable: Signal<Void> { return _didBecomeReachable.asSignal() }
+//    private let _didBecomeReachable = PublishRelay<Void>()
+//
+//    init() {
+////        self.isReachable = _isReachable.asDriver()
+//
+//        if let reachability = self.reachability {
+//            reachability.startListening { [weak self] in
+//                self?.update($0)
+//            }
+//        }
+//    }
+//    private func update(_ status: NetworkReachabilityManager.NetworkReachabilityStatus) {
+//        if case .reachable = status {
+//            _didBecomeReachable.accept(())
+//        }
+//    }
+//}

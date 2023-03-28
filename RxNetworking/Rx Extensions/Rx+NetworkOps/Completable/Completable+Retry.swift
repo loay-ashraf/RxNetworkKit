@@ -26,7 +26,7 @@ extension PrimitiveSequence where Trait == CompletableTrait, Element == Never {
     /// - Returns: `Completable` sequence with provoded retry strategy applied.
     func retry(_ maxAttemptCount: Int = Int.max,
                delay: NetworkRequestRetryPolicy,
-               didBecomeReachable: Signal<Void> = Reachability.shared.didBecomeReachable,
+               didBecomeReachable: PublishRelay<Void> = NetworkReachability.shared.didBecomeReachable,
                shouldRetry: @escaping (NetworkError) -> Bool = { _ in true }) -> Completable {
         self
             .retry { (errors: Observable<Error>) in

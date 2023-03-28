@@ -25,7 +25,7 @@ extension ObservableType {
     /// - Returns: `Observable` sequence with provoded retry strategy applied.
     func retry(_ maxAttemptCount: Int = Int.max,
                delay: NetworkRequestRetryPolicy,
-               didBecomeReachable: Signal<Void> = Reachability.shared.didBecomeReachable,
+               didBecomeReachable: PublishRelay<Void> = NetworkReachability.shared.didBecomeReachable,
                shouldRetry: @escaping (NetworkError) -> Bool = { _ in true }) -> Observable<Element> {
         return retry { (errors: Observable<Error>) in
             return errors.enumerated().flatMap { attempt, error -> Observable<Void> in
