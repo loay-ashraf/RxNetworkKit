@@ -225,10 +225,9 @@ class ViewController: UIViewController {
                 self.uploadMultipleImages(using: manager)
             })
             .disposed(by: disposeBag)
-        NetworkReachability.shared.didChangeStatus
-            .observe(on: ConcurrentMainScheduler.instance)
-            .distinctUntilChanged()
-            .subscribe(onNext: {
+        NetworkReachability.shared.status
+            .asDriver()
+            .drive(onNext: {
                 switch $0 {
                 case .reachable(let interfaceType):
                     self.networkReachabilityStatusLabel.text = "Network is reachable via \(interfaceType.rawValue)."

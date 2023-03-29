@@ -6,85 +6,59 @@
 //
 
 import Foundation
-import SystemConfiguration
 import Network
 import RxSwift
 import RxCocoa
 
-typealias NetworkInterfaceType = NWInterface.InterfaceType
-
-enum NetworkReachabilityStatus: Equatable {
-    case reachable(interfaceType: NetworkInterfaceType)
-    case unReachable
-}
-
 class NetworkReachability {
     static let shared: NetworkReachability = .init()
-    var didChangeStatus: BehaviorRelay<NetworkReachabilityStatus> = .init(value: .unReachable)
-    var didBecomeReachable: PublishRelay<Void> = .init()
+    private(set) var status: BehaviorRelay<NetworkReachabilityStatus> = .init(value: .unReachable)
+    private(set) var didBecomeReachable: PublishRelay<Void> = .init()
+    private var _status: NetworkReachabilityStatus = .unReachable
     private var monitor: NWPathMonitor
     private let monitorQueue: DispatchQueue
+    /// Creates `NetworkReachability` instance.
     private init() {
         self.monitor = .init()
         let bundleID = Bundle.main.bundleIdentifier!
         let monitorQueueLabel = bundleID + ".reachability"
         self.monitorQueue = .init(label: monitorQueueLabel, qos: .utility)
     }
+    /// Starts network monitor on monitor dispatch queue.
     func start() {
         monitor.pathUpdateHandler = handlePathUpdate(_:)
         monitor.start(queue: monitorQueue)
     }
+    /// Stops network monitor.
     func stop() {
         monitor.cancel()
     }
+    /// Sets interface types to monitor by creating new `NWPathMonitor` instance,
+    /// Call `start` method after calling this method.
+    ///
+    /// - Parameter types: `[NetworkInterfaceType]` array of desired interface types to be monitored.
     func setInterfaceTypes(_ types: [NetworkInterfaceType]) {
         let allTypesSet: Set<NWInterface.InterfaceType> = Set(NWInterface.InterfaceType.allCases)
         let allowedTypesSet: Set<NWInterface.InterfaceType> = Set(types)
-        let prohibetedTypesSet: Set<NWInterface.InterfaceType> = allTypesSet.subtracting(allowedTypesSet)
-        let prohiptedTypes: [NWInterface.InterfaceType] = Array(prohibetedTypesSet)
-        let newMonitor = NWPathMonitor(prohibitedInterfaceTypes: prohiptedTypes)
+        let prohibtedTypesSet: Set<NWInterface.InterfaceType> = allTypesSet.subtracting(allowedTypesSet)
+        let prohibtedTypes: [NWInterface.InterfaceType] = Array(prohibtedTypesSet)
+        let newMonitor = NWPathMonitor(prohibitedInterfaceTypes: prohibtedTypes)
         monitor = newMonitor
     }
+    /// Handles netwok path updates and sends events to relays.
+    ///
+    /// - Parameter path: updated `NWPath` object.
     private func handlePathUpdate(_ path: NWPath) {
-        let status = path.status
-        switch status {
-        case .satisfied:
-            let interfaceType = path.interfaceType
-            self.didChangeStatus.accept(.reachable(interfaceType: interfaceType))
-            self.didBecomeReachable.accept(())
-            print("Network is reachable via \(interfaceType.rawValue).")
-        default:
-            self.didChangeStatus.accept(.unReachable)
-            print("Network is unreachable.")
-        }
-    }
-}
-
-extension NWInterface.InterfaceType: RawRepresentable {
-    public init?(rawValue: String) {
-        switch rawValue {
-        case "Other":
-            self = .other
-        case "Wifi":
-            self = .wifi
-        case "Cellular":
-            self = .cellular
-        case "Ethernet":
-            self = .wiredEthernet
-        case "Loopback":
-            self = .loopback
-        default:
-            return nil
-        }
-    }
-    public var rawValue: String {
-        switch self {
-        case .other: return "Other"
-        case .wifi: return "Wifi"
-        case .cellular: return "Cellular"
-        case .wiredEthernet: return "Ethernet"
-        case .loopback: return "Loopback"
-        @unknown default: return "Unsupported"
+        let newStatus = NetworkReachabilityStatus(path: path)
+        // Make sure new status doesn't equal current one to avoid duplicate events
+        // This technique is used as we cannot use `distinctUntilChanged` operator
+        // on `BehaviorRelay` observable.
+        guard newStatus != _status else { return }
+        _status = newStatus
+        // Send events via exposed relay observables.
+        status.accept(newStatus)
+        if case .reachable = newStatus {
+            didBecomeReachable.accept(())
         }
     }
 }

@@ -12,9 +12,6 @@ options:
   transitivelyLinkDependencies: false
   groupSortPosition: top
 packages:
-  Alamofire:
-    github: Alamofire/Alamofire
-    from: 5.6.4
   RxSwift:
     github: ReactiveX/RxSwift
     from: 6.5.0
@@ -62,7 +59,6 @@ targets:
   RxNetworking:
     platform: iOS
     dependencies:
-      - package: Alamofire
       - package: RxSwift
       - package: RxSwiftExt
     settings:
