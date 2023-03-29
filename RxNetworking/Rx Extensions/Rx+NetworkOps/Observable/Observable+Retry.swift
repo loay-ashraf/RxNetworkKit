@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-// This extension is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// This extension is inspired by Alex Grebenyuk's excellent blog https://kean.blog/post/smart-retry
 // Here's Alex's twitter: https://twitter.com/a_grebenyuk
 
 extension ObservableType {
