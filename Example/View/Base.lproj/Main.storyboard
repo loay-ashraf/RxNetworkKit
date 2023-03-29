@@ -23,6 +23,11 @@
                                     <constraint firstAttribute="height" constant="128" id="wh8-De-shQ"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-Xx-d82">
+                                <rect key="frame" x="94.666666666666686" y="278.66666666666669" width="241" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Download Image To Memory"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woR-aZ-vOC">
                                 <rect key="frame" x="109.66666666666669" y="363.66666666666669" width="211" height="35"/>
                                 <state key="normal" title="Button"/>
@@ -43,15 +48,17 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Upload Muliple Images"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hz8-Xx-d82">
-                                <rect key="frame" x="94.666666666666686" y="278.66666666666669" width="241" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Download Image To Memory"/>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdm-Il-HKx">
+                                <rect key="frame" x="194" y="753.66666666666663" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cdm-Il-HKx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3li-gh-YLK"/>
                             <constraint firstItem="9fh-dU-5aC" firstAttribute="top" secondItem="Hmh-1I-XBQ" secondAttribute="bottom" constant="50" id="6PM-X5-CAW"/>
                             <constraint firstItem="woR-aZ-vOC" firstAttribute="top" secondItem="hz8-Xx-d82" secondAttribute="bottom" constant="50" id="Apn-h3-wog"/>
                             <constraint firstItem="hz8-Xx-d82" firstAttribute="top" secondItem="i0B-e5-Muz" secondAttribute="bottom" constant="50" id="H5X-8U-tmz"/>
@@ -63,6 +70,7 @@
                             <constraint firstItem="lZo-qT-x1z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oDN-p3-72e"/>
                             <constraint firstItem="hz8-Xx-d82" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1J-bg-A3X"/>
                             <constraint firstItem="woR-aZ-vOC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ubL-bp-VJa"/>
+                            <constraint firstItem="cdm-Il-HKx" firstAttribute="top" secondItem="lZo-qT-x1z" secondAttribute="bottom" constant="100" id="yf8-Db-eU7"/>
                             <constraint firstItem="9fh-dU-5aC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zBy-PM-oGX"/>
                         </constraints>
                     </view>
@@ -70,6 +78,7 @@
                         <outlet property="downloadImageToDiskButton" destination="woR-aZ-vOC" id="k87-yu-dvc"/>
                         <outlet property="downloadImageToMemoryButton" destination="hz8-Xx-d82" id="WtI-iz-ePj"/>
                         <outlet property="downloadedImageView" destination="i0B-e5-Muz" id="ZFa-P3-ew8"/>
+                        <outlet property="networkReachabilityStatusLabel" destination="cdm-Il-HKx" id="Qbx-V1-Bq1"/>
                         <outlet property="uploadImageFromDiskButton" destination="9fh-dU-5aC" id="CpD-Eq-Oen"/>
                         <outlet property="uploadImageFromMemoryButton" destination="Hmh-1I-XBQ" id="Vv2-7C-A8x"/>
                         <outlet property="uploadMultipleImages" destination="lZo-qT-x1z" id="10k-f7-knX"/>

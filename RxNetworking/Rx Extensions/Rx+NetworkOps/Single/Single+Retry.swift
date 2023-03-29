@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-// This extension is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// This extension is inspired by Alex Grebenyuk's excellent blog https://kean.blog/post/smart-retry
 // Here's Alex's twitter: https://twitter.com/a_grebenyuk
 
 extension PrimitiveSequence where Trait == SingleTrait, Element: Decodable {
@@ -26,7 +26,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element: Decodable {
     /// - Returns: `Single` sequence with provoded retry strategy applied.
     func retry(_ maxAttemptCount: Int = Int.max,
                delay: NetworkRequestRetryPolicy,
-               didBecomeReachable: Signal<Void> = Reachability.shared.didBecomeReachable,
+               didBecomeReachable: PublishRelay<Void> = NetworkReachability.shared.didBecomeReachable,
                shouldRetry: @escaping (NetworkError) -> Bool = { _ in true }) -> Single<Element> {
         self
             .retry { (errors: Observable<Error>) in
