@@ -26,9 +26,15 @@ class ViewModel {
         self.networkManager = networkManager
         bindOutput()
     }
+    /// Creates observable sequence that results in image data.
+    ///
+    /// - Parameter router: `DownloadRouter` used to download image data.
+    ///
+    /// - Returns: observable sequence that results in image data.
     func downloadImage(_ router: DownloadRouter) -> Observable<DownloadEvent> {
         networkManager.download(router)
     }
+    /// Binds output sequence to input sequence.
     private func bindOutput() {
         // Create default sequence with default API call request.
         let loadObservable = viewState

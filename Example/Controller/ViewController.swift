@@ -116,6 +116,11 @@ class ViewController: UIViewController {
             }
             .disposed(by: disposeBag)
     }
+    /// Downloads image data to be displayed inside `TableViewCell` object
+    ///
+    /// - Parameters:
+    ///   - url: `URL` used to download image data.
+    ///   - cell: `TableViewCell` that the image data will be applied to.
     private func downloadTableViewCellImage(using url: URL, applyTo cell: TableViewCell) {
         viewModel.downloadImage(DownloadRouter.default(url: url))
             .observe(on: MainScheduler.instance)
