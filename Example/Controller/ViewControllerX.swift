@@ -26,6 +26,8 @@ enum LoadType {
 
 class ViewControllerX: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var reachbilityView: UIView!
+    @IBOutlet weak var reachabilityLabel: UILabel!
     @IBOutlet weak var errorView: UIStackView!
     @IBOutlet weak var errorImageView: UIImageView!
     @IBOutlet weak var errorLabel: UILabel!
@@ -83,6 +85,24 @@ class ViewControllerX: UIViewController {
         viewModel.error
             .map({ $0.localizedDescription })
             .drive(errorLabel.rx.text)
+            .disposed(by: disposeBag)
+        NetworkReachability.shared.status
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: {
+                var reachabilityText = ""
+                switch $0 {
+                case .reachable(let interfaceType):
+                    reachabilityText = "Network is reachable via \(interfaceType.rawValue)."
+                case .unReachable:
+                    reachabilityText = "Network is unreachable."
+                }
+                self.reachabilityLabel.text = reachabilityText
+                self.reachbilityView.isHidden = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self.reachabilityLabel.text = ""
+                    self.reachbilityView.isHidden = true
+                }
+            })
             .disposed(by: disposeBag)
     }
     private func bindUIEvents() {
