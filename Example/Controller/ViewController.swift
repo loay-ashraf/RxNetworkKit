@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-import Kingfisher
 import SafariServices
 
 class ViewController: UIViewController {
