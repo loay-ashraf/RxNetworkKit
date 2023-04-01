@@ -18,6 +18,9 @@ packages:
   RxSwiftExt:
     github: RxSwiftCommunity/RxSwiftExt
     from: 6.1.0
+  RxDataSources:
+    github: RxSwiftCommunity/RxDataSources
+    from: 5.0.2
 schemes:
   RxNetworking:
     analyze:
@@ -61,6 +64,7 @@ targets:
     dependencies:
       - package: RxSwift
       - package: RxSwiftExt
+      - package: RxDataSources
     settings:
       configs:
         Debug:

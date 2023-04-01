@@ -8,6 +8,14 @@
 import Foundation
 
 struct Model: Decodable {
-    let text: String
-    let number: Int
+    let id: Int
+    let avatarURL: URL
+    let htmlURL: URL
+    let login: String
+    enum CodingKeys: String, CodingKey {
+        case id
+        case avatarURL = "avatar_url"
+        case htmlURL = "html_url"
+        case login
+    }
 }

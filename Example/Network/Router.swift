@@ -1,14 +1,14 @@
 //
-//  TestRouter.swift
+//  Router.swift
 //  RxNetworking
 //
-//  Created by Loay Ashraf on 20/03/2023.
+//  Created by Loay Ashraf on 01/04/2023.
 //
 
 import Foundation
 
-enum TestRouter: NetworkRouter {
-    case test1
+enum Router: NetworkRouter {
+    case `default`
     var scheme: HTTPScheme {
         .https
     }
@@ -16,19 +16,19 @@ enum TestRouter: NetworkRouter {
         .get
     }
     var domain: String {
-        "www.apimocha.com"
+        "api.github.com"
     }
     var path: String {
-        "hi-world/test1"
+        "users"
     }
-    var headers: [String: String] {
-        [:]
+    var headers: [String : String] {
+        ["Accept": "application/vnd.github+json"]
     }
-    var parameters: [String: String]? {
-        ["test": "hello"]
+    var parameters: [String : String]? {
+        nil
     }
-    var body: [String: Any]? {
-        ["test": "hello"]
+    var body: [String : Any]? {
+        nil
     }
     var url: URL? {
         let urlString = scheme.rawValue + domain + "/" + path
