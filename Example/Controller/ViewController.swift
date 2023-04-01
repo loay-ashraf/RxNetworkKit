@@ -111,10 +111,24 @@ class ViewController: UIViewController {
     private func bindTableViewItems() {
         viewModel.users
             .drive(tableView.rx.items(cellIdentifier: "customCell", cellType: TableViewCell.self)) { index, model, cell in
-                cell.customImageView.kf.setImage(with: model.avatarURL)
                 cell.customTextLabel.text = model.login
+                self.downloadTableViewCellImage(using: model.avatarURL, applyTo: cell)
             }
             .disposed(by: disposeBag)
+    }
+    private func downloadTableViewCellImage(using url: URL, applyTo cell: TableViewCell) {
+        viewModel.downloadImage(DownloadRouter.default(url: url))
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: {
+                switch $0 {
+                case .completedWithData(let data):
+                    guard let data = data, let image = UIImage(data: data) else { return }
+                    cell.customImageView.image = image
+                default:
+                    return
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
     /// Bind activityIndicator's isAnimating property to view state.
     private func bindActivityIndicatorIsAnimating() {
