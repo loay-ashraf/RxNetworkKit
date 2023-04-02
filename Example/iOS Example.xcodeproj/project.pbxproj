@@ -53,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0B77E0FA29D977390077FBC0 /* RxNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworking.xcodeproj; path = ../RxNetworking.xcodeproj; sourceTree = "<group>"; };
-		0B77E10429D97A3E0077FBC0 /* RxNetworkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxNetworkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B77E10429D97A3E0077FBC0 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B77E10C29D97BE20077FBC0 /* RxNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/RxNetworking-eiibnmobpoxsaidsupycjqznzecs/Build/Products/Release-iphonesimulator/RxNetworking.framework"; sourceTree = "<group>"; };
 		23795F79829D049A83D55440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417337DBE1D0E25D426FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		045E34205091BBFDC877D65F /* RxNetworkingExample */ = {
+		045E34205091BBFDC877D65F /* iOS Example */ = {
 			isa = PBXGroup;
 			children = (
 				36E7F1463C2C9E9F2036FAA5 /* App */,
@@ -96,7 +96,7 @@
 				4A90A627BF6330AF8C9D1785 /* View */,
 				BA9109AFAC6C900555940948 /* View Model */,
 			);
-			path = RxNetworkingExample;
+			path = "iOS Example";
 			sourceTree = "<group>";
 		};
 		0B77E0FB29D977390077FBC0 /* Products */ = {
@@ -110,7 +110,7 @@
 		0B77E10529D97A3E0077FBC0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E10429D97A3E0077FBC0 /* RxNetworkingExample.app */,
+				0B77E10429D97A3E0077FBC0 /* iOS Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,7 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				0B77E0FA29D977390077FBC0 /* RxNetworking.xcodeproj */,
-				045E34205091BBFDC877D65F /* RxNetworkingExample */,
+				045E34205091BBFDC877D65F /* iOS Example */,
 				0B77E10529D97A3E0077FBC0 /* Products */,
 				0B77E10629D97A4A0077FBC0 /* Frameworks */,
 			);
@@ -194,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		26E9FD5EEA5FDD0B3C83D665 /* RxNetworkingExample */ = {
+		26E9FD5EEA5FDD0B3C83D665 /* iOS Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4E47229CC52234BEA5B37B83 /* Build configuration list for PBXNativeTarget "RxNetworkingExample" */;
+			buildConfigurationList = 4E47229CC52234BEA5B37B83 /* Build configuration list for PBXNativeTarget "iOS Example" */;
 			buildPhases = (
 				97EC71B25102A34723F5A8C0 /* Sources */,
 				DB03F5F61AE8A3039BD18A18 /* Resources */,
@@ -207,12 +207,12 @@
 			);
 			dependencies = (
 			);
-			name = RxNetworkingExample;
+			name = "iOS Example";
 			packageProductDependencies = (
 				819F858F2F093441234733F7 /* RxDataSources */,
 			);
 			productName = RxNetworkingExample;
-			productReference = 0B77E10429D97A3E0077FBC0 /* RxNetworkingExample.app */;
+			productReference = 0B77E10429D97A3E0077FBC0 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -230,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9FD25977D48238AD026449E4 /* Build configuration list for PBXProject "RxNetworkingExample" */;
+			buildConfigurationList = 9FD25977D48238AD026449E4 /* Build configuration list for PBXProject "iOS Example" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -252,7 +252,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				26E9FD5EEA5FDD0B3C83D665 /* RxNetworkingExample */,
+				26E9FD5EEA5FDD0B3C83D665 /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
@@ -412,6 +412,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkingExample;
+				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -449,6 +450,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkingExample;
+				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -518,7 +520,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4E47229CC52234BEA5B37B83 /* Build configuration list for PBXNativeTarget "RxNetworkingExample" */ = {
+		4E47229CC52234BEA5B37B83 /* Build configuration list for PBXNativeTarget "iOS Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				294D477698C4ADFDBE8A000E /* Debug */,
@@ -527,7 +529,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		9FD25977D48238AD026449E4 /* Build configuration list for PBXProject "RxNetworkingExample" */ = {
+		9FD25977D48238AD026449E4 /* Build configuration list for PBXProject "iOS Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				212842DF457F91197C7C74FF /* Debug */,

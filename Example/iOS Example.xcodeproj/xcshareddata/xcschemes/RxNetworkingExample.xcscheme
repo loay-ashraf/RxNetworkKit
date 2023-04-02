@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "26E9FD5EEA5FDD0B3C83D665"
-               BuildableName = "RxNetworkingExample.app"
-               BlueprintName = "RxNetworkingExample"
+               BuildableName = "iOS Example.app"
+               BlueprintName = "iOS Example"
                ReferencedContainer = "container:iOS Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -31,8 +31,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26E9FD5EEA5FDD0B3C83D665"
-            BuildableName = "RxNetworkingExample.app"
-            BlueprintName = "RxNetworkingExample"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
             ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26E9FD5EEA5FDD0B3C83D665"
-            BuildableName = "RxNetworkingExample.app"
-            BlueprintName = "RxNetworkingExample"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
             ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -71,8 +71,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "26E9FD5EEA5FDD0B3C83D665"
-            BuildableName = "RxNetworkingExample.app"
-            BlueprintName = "RxNetworkingExample"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
             ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
