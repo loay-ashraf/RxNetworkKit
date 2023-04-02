@@ -145,7 +145,6 @@
 			children = (
 				0B77E04B29D965D30077FBC0 /* Custom Requests */,
 				0B77E05929D965D30077FBC0 /* Request Interceptor */,
-				0B77E05E29D965D30077FBC0 /* RxNetworking.h */,
 				0B77E05F29D965D30077FBC0 /* Manager */,
 				0B77E06129D965D30077FBC0 /* HTTP */,
 				0B77E06729D965D30077FBC0 /* Reachability */,
@@ -153,6 +152,7 @@
 				0B77E07029D965D30077FBC0 /* Error */,
 				0B77E07629D965D30077FBC0 /* Rx Extensions */,
 				0B77E08529D965D30077FBC0 /* Router */,
+				0B77E05E29D965D30077FBC0 /* RxNetworking.h */,
 			);
 			path = RxNetworking;
 			sourceTree = "<group>";
