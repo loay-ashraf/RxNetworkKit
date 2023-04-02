@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxNetworking
 
 extension ViewController: NetworkRequestInterceptor {
     func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest {

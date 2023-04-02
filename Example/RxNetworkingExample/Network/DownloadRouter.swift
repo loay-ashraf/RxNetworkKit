@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxNetworking
 
 enum DownloadRouter: NetworkDownloadRouter {
     case `default`(url: URL)

@@ -10,7 +10,7 @@ import RxSwift
 import RxSwiftExt
 import RxCocoa
 
-class NetworkManager {
+public class NetworkManager {
     private let session: URLSession
     private let requestInterceptor: NetworkRequestInterceptor
     private let eventMonitor: NetworkEventMonitor
@@ -20,7 +20,7 @@ class NetworkManager {
     ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
     ///   - requestInterceptor: `NetworkRequestInterceptor` object used for intercepting requests.
     ///   - eventMonitor: `NetworkEventMonitor` object for monitoring events for session.
-    init(configuration: URLSessionConfiguration, requestInterceptor: NetworkRequestInterceptor, eventMonitor: NetworkEventMonitor) {
+    public init(configuration: URLSessionConfiguration, requestInterceptor: NetworkRequestInterceptor, eventMonitor: NetworkEventMonitor) {
         self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
         self.requestInterceptor = requestInterceptor
         self.eventMonitor = eventMonitor
@@ -33,7 +33,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Completable` observable encapsulating data request.
-    func request<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
+    public func request<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Completable {
         
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
@@ -57,7 +57,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Single` observable encapsulating data request.
-    func request<T: Decodable, AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
+    public func request<T: Decodable, AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Single<T> {
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
         let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
@@ -80,7 +80,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating download request.
-    func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+    public func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
         let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
@@ -103,7 +103,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating download request.
-    func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
+    public func download<AE: NetworkAPIError>(_ router: NetworkRouter, _ fileURL: URL, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<DownloadEvent> {
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
         let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
@@ -126,7 +126,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating upload request.
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    public func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ file: UploadFile, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
         let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
@@ -149,7 +149,7 @@ class NetworkManager {
     ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Observable` object encapsulating upload request.
-    func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
+    public func upload<T: Decodable, AE: NetworkAPIError>(_ router: NetworkUploadRouter, _ formData: UploadFormData, _ apiErrorType: AE.Type = DefaultNetworkAPIError.self) -> Observable<UploadEvent<T>> {
         let originalRequest = router.asURLRequest()
         let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
         let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)

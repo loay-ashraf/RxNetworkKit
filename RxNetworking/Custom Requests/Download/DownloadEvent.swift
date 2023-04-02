@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum DownloadEvent {
+public enum DownloadEvent {
     case completed
     case completedWithData(data: Data?)
     case progress(progress: Progress)

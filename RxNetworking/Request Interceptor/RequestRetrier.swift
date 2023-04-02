@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NetworkRequestRetrier {
+public protocol NetworkRequestRetrier {
     func retryMaxAttempts(_ request: URLRequest, for session: URLSession) -> Int
     func retryPolicy(_ request: URLRequest, for session: URLSession) -> NetworkRequestRetryPolicy
     func shouldRetry(_ request: URLRequest, for session: URLSession, dueTo error: NetworkError) -> Bool

@@ -5,7 +5,7 @@
 //  Created by Loay Ashraf on 20/03/2023.
 //
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get = "GET"
     case put = "PUT"
     case post = "POST"

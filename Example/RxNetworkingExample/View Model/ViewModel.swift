@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxNetworking
 
 class ViewModel {
     // MARK: Input

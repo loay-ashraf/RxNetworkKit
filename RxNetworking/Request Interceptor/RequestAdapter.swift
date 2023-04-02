@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol NetworkRequestAdapter {
+public protocol NetworkRequestAdapter {
     func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest
 }

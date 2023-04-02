@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case client(NetworkClientError)
     case server(NetworkServerError)
     case api(NetworkAPIError)

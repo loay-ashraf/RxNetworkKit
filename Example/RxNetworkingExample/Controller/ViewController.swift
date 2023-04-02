@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SafariServices
+import RxNetworking
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

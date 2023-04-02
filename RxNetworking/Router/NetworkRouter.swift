@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol NetworkRouter {
+public protocol NetworkRouter {
     var scheme: HTTPScheme { get }
     var method: HTTPMethod { get }
     var domain: String { get }
@@ -21,7 +21,7 @@ protocol NetworkRouter {
     /// - Returns: `URLRequest` created using router properties.
     func asURLRequest() -> URLRequest
 }
-extension NetworkRouter {
+public extension NetworkRouter {
     /// Creates `URLRequest` object using router properties.
     ///
     /// - Returns: `URLRequest` created using router properties.

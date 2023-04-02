@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxNetworking
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

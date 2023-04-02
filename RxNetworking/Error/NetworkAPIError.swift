@@ -6,4 +6,4 @@
 //
 
 /// API-side internal error
-protocol NetworkAPIError: Error, Decodable {  }
+public protocol NetworkAPIError: Error, Decodable {  }

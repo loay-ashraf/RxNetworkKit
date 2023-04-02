@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum UploadEvent<T: Decodable> {
+public enum UploadEvent<T: Decodable> {
     case completed(model: T)
     case progress(progress: Progress)
 }

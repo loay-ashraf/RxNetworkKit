@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol NetworkUploadRouter: NetworkRouter { }
+public protocol NetworkUploadRouter: NetworkRouter { }
 
-extension NetworkUploadRouter {
+public extension NetworkUploadRouter {
     /// By Default: HTTP method is `POST` for upload requests.
     var method: HTTPMethod {
         .post

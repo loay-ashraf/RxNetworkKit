@@ -6,7 +6,7 @@
 //
 
 /// Client-side (transport) error
-enum NetworkClientError: Error {
+public enum NetworkClientError: Error {
     case http(HTTPStatusCode)
     case serialization(Error)
     case transport(Error)

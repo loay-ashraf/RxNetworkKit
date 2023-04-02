@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol NetworkDownloadRouter: NetworkRouter { }
+public protocol NetworkDownloadRouter: NetworkRouter { }
 
-extension NetworkDownloadRouter {
+public extension NetworkDownloadRouter {
     /// By Default: HTTP method is GET for download requests.
     var method: HTTPMethod {
         .get

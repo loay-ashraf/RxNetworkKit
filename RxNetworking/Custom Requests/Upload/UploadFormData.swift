@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UploadFormData {
+public struct UploadFormData {
     /// parameters (text data fields) to be included in the form HTTP body.
     let parameters: [String: String]
     /// files to be included in the form HTTP body.

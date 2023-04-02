@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-enum NetworkReachabilityStatus: Equatable {
+public enum NetworkReachabilityStatus: Equatable {
     case reachable(interfaceType: NetworkInterfaceType)
     case unReachable
     /// Creates `NetworkReachabilityStatus` instance.

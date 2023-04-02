@@ -10,10 +10,10 @@ import Network
 import RxSwift
 import RxCocoa
 
-class NetworkReachability {
-    static let shared: NetworkReachability = .init()
-    private(set) var status: BehaviorRelay<NetworkReachabilityStatus> = .init(value: .unReachable)
-    private(set) var didBecomeReachable: PublishRelay<Void> = .init()
+public class NetworkReachability {
+    public static let shared: NetworkReachability = .init()
+    public private(set) var status: BehaviorRelay<NetworkReachabilityStatus> = .init(value: .unReachable)
+    public private(set) var didBecomeReachable: PublishRelay<Void> = .init()
     private var _status: NetworkReachabilityStatus = .unReachable
     private var monitor: NWPathMonitor
     private let monitorQueue: DispatchQueue
@@ -25,19 +25,19 @@ class NetworkReachability {
         self.monitorQueue = .init(label: monitorQueueLabel, qos: .utility)
     }
     /// Starts network monitor on monitor dispatch queue.
-    func start() {
+    public func start() {
         monitor.pathUpdateHandler = handlePathUpdate(_:)
         monitor.start(queue: monitorQueue)
     }
     /// Stops network monitor.
-    func stop() {
+    public func stop() {
         monitor.cancel()
     }
     /// Sets interface types to monitor by creating new `NWPathMonitor` instance,
     /// Call `start` method after calling this method.
     ///
     /// - Parameter types: `[NetworkInterfaceType]` array of desired interface types to be monitored.
-    func setInterfaceTypes(_ types: [NetworkInterfaceType]) {
+    public func setInterfaceTypes(_ types: [NetworkInterfaceType]) {
         let allTypesSet: Set<NWInterface.InterfaceType> = Set(NWInterface.InterfaceType.allCases)
         let allowedTypesSet: Set<NWInterface.InterfaceType> = Set(types)
         let prohibtedTypesSet: Set<NWInterface.InterfaceType> = allTypesSet.subtracting(allowedTypesSet)

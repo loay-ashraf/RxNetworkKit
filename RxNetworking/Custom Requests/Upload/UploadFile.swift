@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UploadFile {
+public struct UploadFile {
     let key: String
     let name: String
     let url: URL?

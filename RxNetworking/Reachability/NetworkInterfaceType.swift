@@ -8,4 +8,4 @@
 import Foundation
 import Network
 
-typealias NetworkInterfaceType = NWInterface.InterfaceType
+public typealias NetworkInterfaceType = NWInterface.InterfaceType

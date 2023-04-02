@@ -6,7 +6,7 @@
 //
 
 /// Server-side error
-enum NetworkServerError: Error {
+public enum NetworkServerError: Error {
     case http(HTTPStatusCode)
     case generic(Error)
 }
