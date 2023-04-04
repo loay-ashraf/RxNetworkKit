@@ -1,4 +1,6 @@
 Pod::Spec.new do |s|
+    s.platform = :ios
+    s.ios.deployment_target = '14.0'
     s.name             = 'RxNetworking'  
     s.version          = '0.0.1'  
     s.summary          = 'a lightweight reactive networking framework.' 
@@ -7,6 +9,10 @@ Pod::Spec.new do |s|
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'loay-ashraf' => 'loay.ashraf.96@gmail.com' }
     s.source           = { :git => 'https://github.com/loay-ashraf/RxNetworking.git', :tag => s.version.to_s }
-    s.ios.deployment_target = '14.0'
+    s.framework = "Foundation"
+    s.dependency 'RxSwift', '~> 6.5.0'
+    s.dependency 'RxCocoa', '~> 6.5.0'
+    s.dependency 'RxSwiftExt', '~> 6.0.1'
     s.source_files = 'RxNetworking/*'
+    s.swift_version = '5.0'
     end
