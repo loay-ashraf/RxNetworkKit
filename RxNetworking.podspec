@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
-    s.platform = :ios
+    s.platform = :ios, :macos
     s.ios.deployment_target = '14.0'
+    s.macos.deployment_target = '11.0'
     s.name             = 'RxNetworking'  
     s.version          = '0.0.1'  
     s.summary          = 'a lightweight reactive networking framework.' 
