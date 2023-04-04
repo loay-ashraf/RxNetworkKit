@@ -17,6 +17,15 @@
         "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
         "version" : "6.5.0"
       }
+    },
+    {
+      "identity" : "rxswiftext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxSwiftExt",
+      "state" : {
+        "revision" : "a42af9caeab63f2dbde318f1f3dc424f05871a37",
+        "version" : "6.1.0"
+      }
     }
   ],
   "version" : 2
