@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				0B6BD87329DC0A9400502F47 /* Package.swift */,
-				0B77E04A29D965D30077FBC0 /* RxNetworking */,
+				0B77E04A29D965D30077FBC0 /* Source */,
 				0B77DFD729D964D40077FBC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0B77E04A29D965D30077FBC0 /* RxNetworking */ = {
+		0B77E04A29D965D30077FBC0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				0B77E04B29D965D30077FBC0 /* Custom Requests */,
@@ -156,7 +156,7 @@
 				0B77E08529D965D30077FBC0 /* Router */,
 				0B77E05E29D965D30077FBC0 /* RxNetworking.h */,
 			);
-			path = RxNetworking;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		0B77E04B29D965D30077FBC0 /* Custom Requests */ = {
