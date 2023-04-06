@@ -1,6 +1,6 @@
 //
 //  NetworkManager.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 16/02/2023.
 //

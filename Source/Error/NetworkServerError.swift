@@ -1,6 +1,6 @@
 //
 //  NetworkServerError.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 19/02/2023.
 //
