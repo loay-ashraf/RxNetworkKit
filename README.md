@@ -81,12 +81,8 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 - Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
 - In the tab bar at the top of that window, open the "General" panel.
 - Click on the `+` button under the "Embedded Binaries" section.
-- You will see two different `RxNetworkKit.xcodeproj` folders each with two different versions of the `RxNetworkKit.framework` nested inside a `Products` folder.
-
-    > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `RxNetworkKit.framework`.
-- Select the top `RxNetworkKit.framework` for iOS and the bottom one for macOS.
-
-    > You can verify which one you selected by inspecting the build log for your project. The build target for `RxNetworkKit` will be listed as `RxNetworkKit iOS` or `RxNetworkKit macOS`.
+- You will see one `RxNetworkKit.xcodeproj` folder with one `RxNetworkKit.framework` nested inside it.
+- Select the `RxNetworkKit.framework`.
 - And that's it!
 
   > The `RxNetworkKit.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
