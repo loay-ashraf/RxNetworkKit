@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RxNetworking.xcodeproj">
+      location = "group:/Users/loayashraf/Desktop/Self Study/RxNetworking/RxNetworkKit.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:Example/iOS Example.xcodeproj">

@@ -1,6 +1,6 @@
 //
 //  UploadEvent.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 22/03/2023.
 //

@@ -1,12 +1,12 @@
 //
 //  ViewController+NetworkRequestInterceptor.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 01/04/2023.
 //
 
 import Foundation
-import RxNetworking
+import RxNetworkKit
 
 extension ViewController: NetworkRequestInterceptor {
     func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest {

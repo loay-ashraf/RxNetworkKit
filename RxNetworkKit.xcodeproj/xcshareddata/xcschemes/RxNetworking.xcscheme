@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0B77DFD529D964D40077FBC0"
-               BuildableName = "RxNetworking.framework"
-               BlueprintName = "RxNetworking"
-               ReferencedContainer = "container:RxNetworking.xcodeproj">
+               BuildableName = "RxNetworkKit.framework"
+               BlueprintName = "RxNetworkKit"
+               ReferencedContainer = "container:RxNetworkKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0B77DFD529D964D40077FBC0"
-            BuildableName = "RxNetworking.framework"
-            BlueprintName = "RxNetworking"
-            ReferencedContainer = "container:RxNetworking.xcodeproj">
+            BuildableName = "RxNetworkKit.framework"
+            BlueprintName = "RxNetworkKit"
+            ReferencedContainer = "container:RxNetworkKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
