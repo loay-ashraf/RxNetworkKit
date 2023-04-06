@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '14.0'
     s.macos.deployment_target = '11.0'
     s.name             = 'RxNetworkKit'  
-    s.version          = '0.1.0'  
+    s.version          = '0.0.1'  
     s.summary          = 'a lightweight FRP networking framework.' 
     s.description      = 'a FRP networking framework built on top of URLSession and uses RxSwift and RxCocoa.'
     s.homepage         = 'https://github.com/loay-ashraf/RxNetworkKit'
