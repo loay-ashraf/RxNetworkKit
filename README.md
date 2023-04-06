@@ -93,4 +93,4 @@ If you prefer not to use any of the aforementioned dependency managers, you can 
 
 ## Credits
 
-This project uses the 'Smart Retry' operator from this blog [Smart Retry](https://kean.blog/post/smart-retry) written by [Alex Grebenyuk](https://twitter.com/a_grebenyuk)
+This project uses the `Smart Retry` operator from this blog [Smart Retry](https://kean.blog/post/smart-retry) written by [Alex Grebenyuk](https://twitter.com/a_grebenyuk)
