@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
     s.dependency 'RxSwift', '~> 6.5.0'
     s.dependency 'RxCocoa', '~> 6.5.0'
     s.dependency 'RxSwiftExt', '~> 6.0.1'
-    s.source_files = 'RxNetworking/**/*.{swift,m,h}'
+    s.source_files = 'Source/**/*.{swift,m,h}'
     s.swift_version = '5.0'
     end
