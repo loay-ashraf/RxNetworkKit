@@ -37,8 +37,9 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 [CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate RxNetworkKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-pod 'RxNetworkKit'
+pod 'RxNetworkKitX'
 ```
+We had to postfix with 'X' as there's a pod on trunk with same name but different case 🤦‍♂️
 
 ### Swift Package Manager
 
