@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B568E4D29DED67300E51B21 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */; };
-		0B568E4E29DED67300E51B21 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B568E5829DEDBEC00E51B21 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */; };
+		0B568E5929DEDBEC00E51B21 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 819F858F2F093441234733F7 /* RxDataSources */; };
 		39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */; };
 		3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3894E572FDCE188F82EDC /* ViewState.swift */; };
@@ -38,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B14FF4F29DEC0F200DF136A /* Embed Frameworks */ = {
+		0B568E5A29DEDBEC00E51B21 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B568E4E29DED67300E51B21 /* RxNetworkKit.framework in Embed Frameworks */,
+				0B568E5929DEDBEC00E51B21 /* RxNetworkKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B568E4D29DED67300E51B21 /* RxNetworkKit.framework in Frameworks */,
+				0B568E5829DEDBEC00E51B21 /* RxNetworkKit.framework in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,7 +201,7 @@
 				97EC71B25102A34723F5A8C0 /* Sources */,
 				DB03F5F61AE8A3039BD18A18 /* Resources */,
 				0624E543E0F1109CF4C762FE /* Frameworks */,
-				0B14FF4F29DEC0F200DF136A /* Embed Frameworks */,
+				0B568E5A29DEDBEC00E51B21 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
