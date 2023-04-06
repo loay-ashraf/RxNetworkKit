@@ -3,9 +3,9 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '14.0'
     s.macos.deployment_target = '11.0'
     s.name             = 'RxNetworking'  
-    s.version          = '0.0.1'  
-    s.summary          = 'a lightweight reactive networking framework.' 
-    s.description      = 'a reactive networking framework built on top of URLSession and uses RxSwift and RxCocoa.'
+    s.version          = '0.1.0'  
+    s.summary          = 'a lightweight FRP networking framework.' 
+    s.description      = 'a FRP networking framework built on top of URLSession and uses RxSwift and RxCocoa.'
     s.homepage         = 'https://github.com/loay-ashraf/RxNetworking'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
     s.author           = { 'loay-ashraf' => 'loay.ashraf.96@gmail.com' }
