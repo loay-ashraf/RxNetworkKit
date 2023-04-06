@@ -21,7 +21,7 @@ let package = Package(
         .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt", .upToNextMajor(from: "6.1.0")),
     ],
     targets: [
-        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt",  .product(name: "RxCocoa", package: "RxSwift")], path: "RxNetworkKit"),
+        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt",  .product(name: "RxCocoa", package: "RxSwift")], path: "Source"),
     ],
     swiftLanguageVersions: [.v5]
 )
