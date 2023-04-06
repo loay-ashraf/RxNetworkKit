@@ -48,7 +48,7 @@ Once you have your Swift package set up, adding RxNetworking as a dependency is 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loay-ashraf/RxNetworking.git", .upToNextMajor(from: "0.0.1"))
+    .package(url: "https://github.com/loay-ashraf/RxNetworking.git", .upToNextMajor(from: "0.1.0"))
 ]
 ```
 
