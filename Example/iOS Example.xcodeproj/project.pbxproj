@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B77E10D29D97BE20077FBC0 /* RxNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B77E10C29D97BE20077FBC0 /* RxNetworking.framework */; };
-		0B77E10E29D97BE20077FBC0 /* RxNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B77E10C29D97BE20077FBC0 /* RxNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B14FF4D29DEC0F200DF136A /* RxNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B77E0FF29D977390077FBC0 /* RxNetworking.framework */; };
+		0B14FF4E29DEC0F200DF136A /* RxNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B77E0FF29D977390077FBC0 /* RxNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 819F858F2F093441234733F7 /* RxDataSources */; };
 		39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */; };
 		3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3894E572FDCE188F82EDC /* ViewState.swift */; };
@@ -38,13 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B77E10A29D97A4A0077FBC0 /* Embed Frameworks */ = {
+		0B14FF4F29DEC0F200DF136A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B77E10E29D97BE20077FBC0 /* RxNetworking.framework in Embed Frameworks */,
+				0B14FF4E29DEC0F200DF136A /* RxNetworking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -54,7 +54,6 @@
 /* Begin PBXFileReference section */
 		0B77E0FA29D977390077FBC0 /* RxNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworking.xcodeproj; path = ../RxNetworking.xcodeproj; sourceTree = "<group>"; };
 		0B77E10429D97A3E0077FBC0 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B77E10C29D97BE20077FBC0 /* RxNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxNetworking.framework; path = "../../../Library/Developer/Xcode/DerivedData/RxNetworking-eiibnmobpoxsaidsupycjqznzecs/Build/Products/Release-iphonesimulator/RxNetworking.framework"; sourceTree = "<group>"; };
 		23795F79829D049A83D55440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417337DBE1D0E25D426FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B77E10D29D97BE20077FBC0 /* RxNetworking.framework in Frameworks */,
+				0B14FF4D29DEC0F200DF136A /* RxNetworking.framework in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,14 +112,6 @@
 				0B77E10429D97A3E0077FBC0 /* iOS Example.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0B77E10629D97A4A0077FBC0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0B77E10C29D97BE20077FBC0 /* RxNetworking.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		1FDF345BB924980CA278023D /* Controller */ = {
@@ -187,7 +178,6 @@
 				0B77E0FA29D977390077FBC0 /* RxNetworking.xcodeproj */,
 				045E34205091BBFDC877D65F /* iOS Example */,
 				0B77E10529D97A3E0077FBC0 /* Products */,
-				0B77E10629D97A4A0077FBC0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,7 +191,7 @@
 				97EC71B25102A34723F5A8C0 /* Sources */,
 				DB03F5F61AE8A3039BD18A18 /* Resources */,
 				0624E543E0F1109CF4C762FE /* Frameworks */,
-				0B77E10A29D97A4A0077FBC0 /* Embed Frameworks */,
+				0B14FF4F29DEC0F200DF136A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -397,7 +387,7 @@
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/RxNetworkingExample",
+					"$(PROJECT_DIR)/Example",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
@@ -436,7 +426,7 @@
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/RxNetworkingExample",
+					"$(PROJECT_DIR)/Example",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
