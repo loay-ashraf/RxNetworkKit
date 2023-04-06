@@ -48,7 +48,7 @@ Once you have your Swift package set up, adding RxNetworkKit as a dependency is 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "0.1.0"))
+    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "0.0.1"))
 ]
 ```
 
