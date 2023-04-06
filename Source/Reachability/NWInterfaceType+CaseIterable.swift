@@ -1,6 +1,6 @@
 //
 //  NWInterfaceType+CaseIterable.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 28/03/2023.
 //

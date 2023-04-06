@@ -1,12 +1,12 @@
 //
 //  ViewController+NetworkEventMonitor.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 01/04/2023.
 //
 
 import Foundation
-import RxNetworking
+import RxNetworkKit
 
 extension ViewController: NetworkEventMonitor {
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {

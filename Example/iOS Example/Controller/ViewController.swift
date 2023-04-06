@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 31/03/2023.
 //
@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import SafariServices
-import RxNetworking
+import RxNetworkKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

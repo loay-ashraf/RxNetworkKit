@@ -1,6 +1,6 @@
 //
 //  NWInterfaceType+RawRepresentable.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 29/03/2023.
 //

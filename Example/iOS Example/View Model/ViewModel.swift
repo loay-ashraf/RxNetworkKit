@@ -1,6 +1,6 @@
 //
 //  ViewModel.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 31/03/2023.
 //
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import RxNetworking
+import RxNetworkKit
 
 class ViewModel {
     // MARK: Input

@@ -1,18 +1,18 @@
 //
-//  RxNetworking.h
-//  RxNetworking
+//  RxNetworkKit.h
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 02/04/2023.
 //
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for RxNetworking.
-FOUNDATION_EXPORT double RxNetworkingVersionNumber;
+//! Project version number for RxNetworkKit.
+FOUNDATION_EXPORT double RxNetworkKitVersionNumber;
 
-//! Project version string for RxNetworking.
-FOUNDATION_EXPORT const unsigned char RxNetworkingVersionString[];
+//! Project version string for RxNetworkKit.
+FOUNDATION_EXPORT const unsigned char RxNetworkKitVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <RxNetworking/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <RxNetworkKit/PublicHeader.h>
 
 

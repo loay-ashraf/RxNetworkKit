@@ -1,12 +1,12 @@
 //
 //  AppDelegate.swift
-//  RxNetworking
+//  RxNetworkKit
 //
 //  Created by Loay Ashraf on 16/02/2023.
 //
 
 import UIKit
-import RxNetworking
+import RxNetworkKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
