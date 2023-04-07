@@ -1,5 +1,5 @@
 # RxNetworkKit
-![Swift](https://img.shields.io/badge/Swift-5.5-orange)
+![Swift](https://img.shields.io/badge/Swift-5.3-orange)
 ![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS-yellowgreen)
 ![iOS](https://img.shields.io/badge/iOS-14.0%2B-black)
 ![macOS](https://img.shields.io/badge/macOS-11.0%2B-black)
@@ -24,11 +24,97 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 - includes a request interceptor protocol that can be implemented for request adaptation and retry on failure.
 - comes with a reachability class that you can observe from anywhere for reachability status.
 
+## Practical Examples
+
+### Simple API Call:
+
+```
+// Create 'Network Manager' instance.
+let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
+// Create request router object.
+let router = Router.default
+// Make request observable sequence using request router.
+let single: Single<Model> = manager.request(router)
+// Subscrible to sequence and observe events.
+single
+    .observe(on: MainScheduler.instance)
+    .subscribe(onSuccess: {
+        print("Task Response: \($0)")
+        print("Task Completed!")
+    }, onFailure: {
+        print("Task Failure: \($0.localizedDescription)")
+    }, onDisposed: {
+        print("Subscription is disposed!")
+    })
+    // Dispose subscription by dispose bag.
+    .disposed(by: disposeBag)
+```
+
+### Download Request:
+
+```
+// Create 'Network Manager' instance.
+let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
+// Create download request router object.
+let router = DownloadRouter.default
+// Make download request observable sequence using request router.
+let downloadObservable: Observable<DownloadEvent> = manager.download(router)
+// Subscrible to sequence and observe events.
+downloadObservable
+    .observe(on: MainScheduler.instance)
+    .subscribe(onNext: {
+        switch $0 {
+            case .progress(let progress):
+                print("Download Task Progress: \(progress.fractionCompleted*100)%")
+            case .completedWithData(let data):
+                print("Download Task Completed with data: \(data).")
+            default: break
+         }
+    }, onError: {
+        print("Download Task Failure: \($0.localizedDescription)")
+    }, onCompleted: {
+        print("Download Task Completed!")
+    })
+    // Dispose subscription by dispose bag.
+    .disposed(by: disposeBag)
+```
+
+### Upload Request:
+
+```
+// Create 'Network Manager' instance.
+let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
+// Create upload request router object.
+let router = UploadRouter.default
+// Make 'UploadFile' object.
+let fileData = Data()
+guard let file = UploadFile(forKey: UUID().uuidString, withName: "testFile.txt", withData: fileData) else { return }
+// Make upload request observable sequence using request router and uploa file object.
+let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
+// Subscrible to sequence and observe events.
+uploadObservable
+    .observe(on: MainScheduler.instance)
+    .subscribe(onNext: {
+        switch $0 {
+            case .progress(let progress):
+                print("Upload Task Progress: \(progress.fractionCompleted*100)%")
+            case .completed(let model):
+                print("Upload Task Completed with Response: \(model)")
+        }
+    }, onError: {
+        print("Upload Task Failure: \($0.localizedDescription)")
+    }, onCompleted: {
+        print("Upload Task Completed!")
+    })
+    // Dispose subscription by dispose bag.
+    .disposed(by: disposeBag)
+```
+
 ## Requirements
 
 | Platform | Minimum Swift Version | Installation | Status |
 | --- | --- | --- | --- |
-| iOS 14.0+ / macOS 11.0+ | 5.5 | [CocoaPods](#cocoapods), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
+| iOS 14.0+ / macOS 11.0+ | 5.3 | [CocoaPods](#cocoapods), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
 
@@ -39,7 +125,7 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 ```ruby
 pod 'RxNetworkKitX'
 ```
-We had to postfix with 'X' as there's a pod on trunk with same name but different case 🤦‍♂️
+P.S: We had to postfix with 'X' as there's a pod on trunk with same name but different case 🤦‍♂️
 
 ### Swift Package Manager
 
