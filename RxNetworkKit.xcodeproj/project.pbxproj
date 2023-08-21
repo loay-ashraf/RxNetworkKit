@@ -59,6 +59,9 @@
 		0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BF29D969370077FBC0 /* RxSwiftExt */; };
 		C6A9BEF62A93E2AE00459E32 /* DefaultHTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */; };
 		C6A9BEF82A93E2D600459E32 /* HTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */; };
+		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
+		C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */; };
+		C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +115,9 @@
 		0B77E08829D965D30077FBC0 /* NetworkUploadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUploadRouter.swift; sourceTree = "<group>"; };
 		C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPErrorBody.swift; sourceTree = "<group>"; };
 		C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorBody.swift; sourceTree = "<group>"; };
+		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
+		C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setUserAgentHTTPHeader.swift"; sourceTree = "<group>"; };
+		C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+operatingSystemName.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				0B77E06029D965D30077FBC0 /* NetworkManager.swift */,
+				C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */,
+				C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */,
+				C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -431,6 +440,7 @@
 				0B77E0AE29D965D30077FBC0 /* Single+VerifyResponse.swift in Sources */,
 				0B77E0B429D965D30077FBC0 /* NetworkDownloadRouter.swift in Sources */,
 				0B77E09A29D965D30077FBC0 /* HTTPMIMEType.swift in Sources */,
+				C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */,
 				0B77E08E29D965D30077FBC0 /* UploadFile.swift in Sources */,
 				0B77E09729D965D30077FBC0 /* RequestRetrier.swift in Sources */,
 				0B77E09E29D965D30077FBC0 /* HTTPStatusCode.swift in Sources */,
@@ -441,7 +451,9 @@
 				0B77E0B129D965D30077FBC0 /* Observable+Decodable.swift in Sources */,
 				0B77E09929D965D30077FBC0 /* NetworkManager.swift in Sources */,
 				0B77E08A29D965D30077FBC0 /* DownloadEvent.swift in Sources */,
+				C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */,
 				0B77E09129D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift in Sources */,
+				C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */,
 				0B77E0A629D965D30077FBC0 /* DefaultNetworkAPIError.swift in Sources */,
 				0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */,
 				0B77E0B229D965D30077FBC0 /* Completable+Retry.swift in Sources */,
