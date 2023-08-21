@@ -21,6 +21,9 @@ public class NetworkManager {
     ///   - requestInterceptor: `NetworkRequestInterceptor` object used for intercepting requests.
     ///   - eventMonitor: `NetworkEventMonitor` object for monitoring events for session.
     public init(configuration: URLSessionConfiguration, requestInterceptor: NetworkRequestInterceptor, eventMonitor: NetworkEventMonitor) {
+        // Apply User-Agent header as a part of HTTP aditional headers.
+        configuration.setUserAgentHTTPHeader()
+        // Initialize manager's properties.
         self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
         self.requestInterceptor = requestInterceptor
         self.eventMonitor = eventMonitor
