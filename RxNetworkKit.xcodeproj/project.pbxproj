@@ -57,6 +57,8 @@
 		0B77E0BB29D968DE0077FBC0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BA29D968DE0077FBC0 /* RxRelay */; };
 		0B77E0BD29D968DE0077FBC0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BC29D968DE0077FBC0 /* RxSwift */; };
 		0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BF29D969370077FBC0 /* RxSwiftExt */; };
+		C6A9BEF62A93E2AE00459E32 /* DefaultHTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */; };
+		C6A9BEF82A93E2D600459E32 /* HTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		0B77E08629D965D30077FBC0 /* NetworkDownloadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDownloadRouter.swift; sourceTree = "<group>"; };
 		0B77E08729D965D30077FBC0 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		0B77E08829D965D30077FBC0 /* NetworkUploadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUploadRouter.swift; sourceTree = "<group>"; };
+		C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPErrorBody.swift; sourceTree = "<group>"; };
+		C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorBody.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,11 +219,13 @@
 		0B77E06129D965D30077FBC0 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */,
+				C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */,
 				0B77E06229D965D30077FBC0 /* HTTPMIMEType.swift */,
 				0B77E06329D965D30077FBC0 /* HTTPMethod.swift */,
 				0B77E06429D965D30077FBC0 /* HTTPScheme.swift */,
-				0B77E06529D965D30077FBC0 /* HTTPURLResponse+StatusCode.swift */,
 				0B77E06629D965D30077FBC0 /* HTTPStatusCode.swift */,
+				0B77E06529D965D30077FBC0 /* HTTPURLResponse+StatusCode.swift */,
 			);
 			path = HTTP;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				0B77E0B529D965D30077FBC0 /* NetworkRouter.swift in Sources */,
 				0B77E09529D965D30077FBC0 /* RequestRetryPolicy.swift in Sources */,
 				0B77E0B329D965D30077FBC0 /* Reactive+Curl.swift in Sources */,
+				C6A9BEF82A93E2D600459E32 /* HTTPErrorBody.swift in Sources */,
 				0B77E0A929D965D30077FBC0 /* NetworkError.swift in Sources */,
 				0B77E09F29D965D30077FBC0 /* NWPath+InterfaceType.swift in Sources */,
 				0B77E09C29D965D30077FBC0 /* HTTPScheme.swift in Sources */,
@@ -442,6 +449,7 @@
 				0B77E08B29D965D30077FBC0 /* URLSession+DownloadTask.swift in Sources */,
 				0B77E0A729D965D30077FBC0 /* NetworkServerError.swift in Sources */,
 				0B77E0B629D965D30077FBC0 /* NetworkUploadRouter.swift in Sources */,
+				C6A9BEF62A93E2AE00459E32 /* DefaultHTTPErrorBody.swift in Sources */,
 				0B77E0AB29D965D30077FBC0 /* Single+Retry.swift in Sources */,
 				0B77E08F29D965D30077FBC0 /* URLSession+UploadTask.swift in Sources */,
 				0B77E08C29D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift in Sources */,
