@@ -11,6 +11,7 @@ import UIKit
 #endif
 
 extension ProcessInfo {
+    /// Name of current operating system (iOS, iPadOS, watchOS, etc.)
     var operatingSystemName: String {
         var osName: String = ""
 #if os(iOS)
