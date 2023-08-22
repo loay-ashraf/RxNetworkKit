@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DefaultHTTPErrorBody: HTTPErrorBody {
+public struct DefaultHTTPErrorBody: HTTPErrorBody {
     let statusCode: Int?
     let message: String?
     let supportId: String?
