@@ -12,7 +12,7 @@
 		C639752B2A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */; };
 		C639752C2A95166A00D0AC13 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975162A95166A00D0AC13 /* ViewState.swift */; };
 		C639752D2A95166A00D0AC13 /* ViewLoadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975172A95166A00D0AC13 /* ViewLoadType.swift */; };
-		C639752E2A95166A00D0AC13 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975182A95166A00D0AC13 /* TableViewCell.swift */; };
+		C639752E2A95166A00D0AC13 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975182A95166A00D0AC13 /* TableCellView.swift */; };
 		C63975302A95166A00D0AC13 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639751C2A95166A00D0AC13 /* Model.swift */; };
 		C63975312A95166A00D0AC13 /* DownloadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639751E2A95166A00D0AC13 /* DownloadRouter.swift */; };
 		C63975322A95166A00D0AC13 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639751F2A95166A00D0AC13 /* Router.swift */; };
@@ -56,7 +56,7 @@
 		C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkEventMonitor.swift"; sourceTree = "<group>"; };
 		C63975162A95166A00D0AC13 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		C63975172A95166A00D0AC13 /* ViewLoadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoadType.swift; sourceTree = "<group>"; };
-		C63975182A95166A00D0AC13 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		C63975182A95166A00D0AC13 /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		C639751C2A95166A00D0AC13 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C639751E2A95166A00D0AC13 /* DownloadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRouter.swift; sourceTree = "<group>"; };
 		C639751F2A95166A00D0AC13 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -106,10 +106,10 @@
 		C63975152A95166A00D0AC13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C69FBA1D2A9408770062BFD7 /* Main.storyboard */,
+				C63975182A95166A00D0AC13 /* TableCellView.swift */,
 				C63975162A95166A00D0AC13 /* ViewState.swift */,
 				C63975172A95166A00D0AC13 /* ViewLoadType.swift */,
-				C63975182A95166A00D0AC13 /* TableViewCell.swift */,
-				C69FBA1D2A9408770062BFD7 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C69FBA132A9408740062BFD7 = {
 						CreatedOnToolsVersion = 14.2;
@@ -285,7 +285,7 @@
 				C63975302A95166A00D0AC13 /* Model.swift in Sources */,
 				C639752B2A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift in Sources */,
 				C63975312A95166A00D0AC13 /* DownloadRouter.swift in Sources */,
-				C639752E2A95166A00D0AC13 /* TableViewCell.swift in Sources */,
+				C639752E2A95166A00D0AC13 /* TableCellView.swift in Sources */,
 				C63975292A95166A00D0AC13 /* ViewControllerOld.swift in Sources */,
 				C639752C2A95166A00D0AC13 /* ViewState.swift in Sources */,
 				C639752A2A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift in Sources */,
@@ -343,6 +343,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -403,6 +404,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -433,6 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -462,6 +465,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
