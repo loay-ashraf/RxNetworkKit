@@ -8,41 +8,39 @@
 import Cocoa
 import RxSwift
 import RxCocoa
-import RxDataSources
-import SafariServices
 import RxNetworkKit
 
 class ViewController: NSViewController {
-
     @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet weak var reachbilityView: NSView!
+    @IBOutlet weak var reachabilityLabel: NSTextField!
+    @IBOutlet weak var errorView: NSStackView!
+    @IBOutlet weak var errorImageView: NSImageView!
+    @IBOutlet weak var errorLabel: NSTextField!
+    @IBOutlet weak var errorRetryButton: NSButton!
     @IBOutlet weak var activityIndicator: NSProgressIndicator!
     private var viewModel: ViewModel!
-    private var users: BehaviorRelay<[Model]> = .init(value: [])
+    private var items: BehaviorRelay<[Model]> = .init(value: [])
+    private var refreshItems: PublishRelay<Void> = .init()
     private let disposeBag: DisposeBag = .init()
-    
+    /// View has loaded successfully.
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewModel()
         setupUI()
         bindUI()
-        // Do any additional setup after loading the view.
     }
-    override func viewDidAppear() {
-        super.viewDidAppear()
+    /// View is about to appear on screen.
+    override func viewWillAppear() {
+        super.viewWillAppear()
         viewModel.viewState.accept(.loading(loadType: .initial))
     }
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+    /// called when `Refresh Items` menu items is tapped.
+    ///
+    /// - Parameter sender: `NSMenuItem` object that sent event.
+    @IBAction func refreshItems(_ sender: NSMenuItem) {
+        refreshItems.accept(())
     }
-//    /// View is about to appear on screen.
-//    ///
-//    /// - Parameter animated: whether to animate view appearance or not
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        viewModel.viewState.accept(.loading(loadType: .initial))
-//    }
     /// Initializes ViewModel object.
     private func setupViewModel() {
         let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
@@ -52,8 +50,8 @@ class ViewController: NSViewController {
     private func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
-//        tableViewRefreshControl = UIRefreshControl()
-//        tableView.refreshControl = tableViewRefreshControl
+        reachbilityView.wantsLayer = true
+        reachbilityView.layer?.backgroundColor = NSColor.systemIndigo.cgColor
     }
     // MARK: - Bindings
     /// Binds view state and events.
@@ -65,12 +63,11 @@ class ViewController: NSViewController {
     /// Binds view state.
     private func bindUIState() {
         bindTableViewIsHidden()
-        bindTableViewRefreshControlIsRefreshing()
         bindTableViewItems()
         bindActivityIndicatorIsAnimating()
-//        bindErrorViewIsHidden()
-//        bindErrorViewText()
-//        bindReachabilityText()
+        bindErrorViewIsHidden()
+        bindErrorViewText()
+        bindReachabilityText()
     }
     /// Presents new reachability status.
     ///
@@ -83,22 +80,20 @@ class ViewController: NSViewController {
         case .unReachable:
             reachabilityText = "Network is unreachable."
         }
-//        self.reachabilityLabel.text = reachabilityText
-//        self.reachbilityView.isHidden = false
+        self.reachabilityLabel.stringValue = reachabilityText
+        self.reachbilityView.isHidden = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-//            self.reachabilityLabel.text = ""
-//            self.reachbilityView.isHidden = true
+            self.reachabilityLabel.stringValue = ""
+            self.reachbilityView.isHidden = true
         }
     }
     // MARK: UI Events Bindings
     /// Binds view events.
     private func bindUIEvents() {
-        // Bind tableView's item selection to user profile navigation action.
-        bindTableViewSelectionEvent()
-        // Bind tableView's refreshControl to viewModel's viewState.
-//        bindTableViewRefreshControlEvent()
+        // Bind Refresh Items' tap event to viewModel's viewState.
+        bindRefreshItemsEvent()
         // Bind errorView's retryButton to viewModel's viewState.
-//        bindErrorViewRetryEvent()
+        bindErrorViewRetryEvent()
     }
     /// Bind tableView's isHidden property to view state.
     private func bindTableViewIsHidden() {
@@ -107,33 +102,16 @@ class ViewController: NSViewController {
             .bind(to: tableView.rx.isHidden)
             .disposed(by: disposeBag)
     }
-    /// Bind tableViewRefreshControl's isRefreshing property to view state.
-    private func bindTableViewRefreshControlIsRefreshing() {
-//        viewModel.viewState
-//            .map({ $0 == .loading(loadType: .refresh) })
-//            .bind(to: tableViewRefreshControl.rx.isRefreshing)
-//            .disposed(by: disposeBag)
-    }
     /// Bind viewModel's users sequence to tableView's items.
     private func bindTableViewItems() {
-//        viewModel.users
-//            .drive(tableView.rx.items(cellIdentifier: "customCell", cellType: TableViewCell.self)) { index, model, cell in
-//                cell.customTextLabel.text = model.login
-//                self.downloadTableViewCellImage(using: model.avatarURL, applyTo: cell)
-//            }
-//            .disposed(by: disposeBag)
         viewModel.users
-            .drive(users)
+            .drive(items)
             .disposed(by: disposeBag)
-        users
+        items
             .subscribe(onNext: { _ in
                 self.tableView.reloadData()
             })
             .disposed(by: disposeBag)
-//            .drive(onNext: { users in
-//
-//            })
-//            .disposed(by: disposeBag)
     }
     /// Downloads image data to be displayed inside `TableViewCell` object
     ///
@@ -168,76 +146,60 @@ class ViewController: NSViewController {
             .disposed(by: disposeBag)
     }
     /// Bind errorView's isHidden property to view state.
-//    private func bindErrorViewIsHidden() {
-//        viewModel.viewState
-//            .map({ $0 != .error })
-//            .bind(to: errorView.rx.isHidden)
-//            .disposed(by: disposeBag)
-//    }
-//    /// Bind viewModel's error sequence to errorLabel's text.
-//    private func bindErrorViewText() {
-//        viewModel.error
-//            .map({ $0.localizedDescription })
-//            .drive(errorLabel.rx.text)
-//            .disposed(by: disposeBag)
-//    }
-//    /// Bind NetworkReachability's status sequence to reachabiliytView and reachabilityLabel.
-//    private func bindReachabilityText() {
-//        NetworkReachability.shared.status
-//            .observe(on: MainScheduler.instance)
-//            .bind(onNext: {
-//                self.presentReachabilityStatus($0)
-//            })
-//            .disposed(by: disposeBag)
-//    }
-    /// Bind tableView's item selection to user profile navigation action.
-    private func bindTableViewSelectionEvent() {
-//        let itemSelected = tableView.rx
-//            .itemSelected
-//        let modelSelected = tableView.rx
-//            .modelSelected(Model.self)
-//        Observable.zip(itemSelected, modelSelected)
-//            .bind(onNext: { selctedIndex, selectedModel in
-//                self.tableView.deselectRow(at: selctedIndex, animated: true)
-//                self.navigateToUserProfile(with: selectedModel.htmlURL)
-//            })
-//            .disposed(by: disposeBag)
+    private func bindErrorViewIsHidden() {
+        viewModel.viewState
+            .map({ $0 != .error })
+            .bind(to: errorView.rx.isHidden)
+            .disposed(by: disposeBag)
     }
-    /// Bind tableView's item selection to user profile navigation action.
-//    private func bindTableViewRefreshControlEvent() {
-//        tableViewRefreshControl.rx
-//            .controlEvent(.valueChanged)
-//            .map({ .loading(loadType: .refresh) })
-//            .bind(to: viewModel.viewState)
-//            .disposed(by: disposeBag)
-//    }
+    /// Bind viewModel's error sequence to errorLabel's text.
+    private func bindErrorViewText() {
+        viewModel.error
+            .map({ $0.localizedDescription })
+            .drive(errorLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    /// Bind NetworkReachability's status sequence to reachabiliytView and reachabilityLabel.
+    private func bindReachabilityText() {
+        NetworkReachability.shared.status
+            .observe(on: MainScheduler.instance)
+            .bind(onNext: {
+                self.presentReachabilityStatus($0)
+            })
+            .disposed(by: disposeBag)
+    }
+    /// Bind Refresh Items' tap event to viewModel's viewState.
+    private func bindRefreshItemsEvent() {
+        refreshItems
+            .map({ .loading(loadType: .refresh) })
+            .bind(to: viewModel.viewState)
+            .disposed(by: disposeBag)
+    }
     /// Bind errorView's retryButton to viewModel's viewState.
-//    private func bindErrorViewRetryEvent() {
-//        errorRetryButton.rx
-//            .tap
-//            .map({ .loading(loadType: .initial) })
-//            .bind(to: viewModel.viewState)
-//            .disposed(by: disposeBag)
-//    }
+    private func bindErrorViewRetryEvent() {
+        errorRetryButton.rx
+            .tap
+            .map({ .loading(loadType: .initial) })
+            .bind(to: viewModel.viewState)
+            .disposed(by: disposeBag)
+    }
     /// Navigates to user profile.
     ///
     /// - Parameter url: HTML `URL` to user profile.
     private func navigateToUserProfile(with url: URL) {
         NSWorkspace.shared.open(url)
     }
-
-
 }
 
 extension ViewController: NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        users.value.count
+        items.value.count
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         130
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let user = users.value[row]
+        let user = items.value[row]
         guard let cellView = tableView.makeView(withIdentifier: tableColumn!.identifier, owner: nil) as? TableCellView else { return nil }
         cellView.customTextField.stringValue = user.login
         downloadTableViewCellImage(using: user.avatarURL, applyTo: cellView)
@@ -251,7 +213,7 @@ extension ViewController: NSTableViewDelegate {
         let rowIndex = tableView.selectedRow
         guard rowIndex >= 0 else { return }
         tableView.deselectRow(rowIndex)
-        let user = users.value[rowIndex]
+        let user = items.value[rowIndex]
         navigateToUserProfile(with: user.htmlURL)
     }
 }

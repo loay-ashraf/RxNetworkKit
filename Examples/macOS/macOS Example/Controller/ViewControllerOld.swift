@@ -111,7 +111,7 @@ class ViewControllerOld: UIViewController {
     }
     /// Bind viewModel's users sequence to tableView's items.
     private func bindTableViewItems() {
-        viewModel.users
+        viewModel.items
             .drive(tableView.rx.items(cellIdentifier: "customCell", cellType: TableViewCell.self)) { index, model, cell in
                 cell.customTextLabel.text = model.login
                 self.downloadTableViewCellImage(using: model.avatarURL, applyTo: cell)
