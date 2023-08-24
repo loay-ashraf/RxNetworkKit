@@ -25,10 +25,11 @@ jobs:
           xcode-version: latest-stable
       - name: Build Framework
         env:
+          workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
           destination: ${{ matrix.destination }}
         run: |
-          xcodebuild clean build -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
   example:
     name: Build Example Scheme
     runs-on: macos-13
@@ -46,8 +47,9 @@ jobs:
           xcode-version: latest-stable
       - name: Build Example
         env:
+          workspace: RxNetworkKit.xcworkspace
           scheme: macOS Example
           destination: ${{ matrix.destination }}
         run: |
-          xcodebuild clean build -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
 
