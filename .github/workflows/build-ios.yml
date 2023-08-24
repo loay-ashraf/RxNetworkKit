@@ -53,4 +53,4 @@ jobs:
           scheme: iOS Example
           destination: ${{ matrix.destination }}
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
