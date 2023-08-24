@@ -12,6 +12,12 @@ jobs:
   build:
     name: Build and analyse default scheme using xcodebuild command
     runs-on: macos-latest
+    strategy:
+        matrix:
+          destination: ['platform=iOS Simulator,OS=14.0,name=iPhone 12 Pro Max']
+          destination: ['platform=iOS Simulator,OS=15.0,name=iPhone 13 Pro Max']
+          destination: ['platform=iOS Simulator,OS=16.0,name=iPhone 14 Pro Max']
+          destination: ['platform=macOS,name=My Mac']
 
     steps:
       - name: Checkout
