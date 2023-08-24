@@ -15,13 +15,13 @@ jobs:
     strategy:
         matrix:
           destination: ['platform=iOS Simulator,name=Any iOS Simulator Device',
-           'platform=macOS,name=Any Mac']
+           'platform=macOS,name=My Mac']
 
     steps:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: latest-stable
+          xcode-version: '14.3.1'
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
