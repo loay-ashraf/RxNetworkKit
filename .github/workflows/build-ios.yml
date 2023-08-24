@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build and analyse default scheme using xcodebuild command
-    runs-on: macos-13-x5
+    runs-on: macos-13.3
     strategy:
         matrix:
           destination: ['generic/platform=iOS Simulator',
