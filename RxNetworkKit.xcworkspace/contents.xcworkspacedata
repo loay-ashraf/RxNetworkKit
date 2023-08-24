@@ -5,9 +5,6 @@
       location = "container:RxNetworkKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "container:Examples/iOS/iOS Example.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Examples/macOS/macOS Example.xcodeproj">
+      location = "container:Example/iOS Example.xcodeproj">
    </FileRef>
 </Workspace>
