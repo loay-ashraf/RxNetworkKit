@@ -29,7 +29,7 @@ jobs:
           scheme: RxNetworkKit
           destination: ${{ matrix.destination }}
         run: |
-          xcodebuild clean build -scheme '${scheme}' -destination '${destination}' | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
       - name: Build Example
         env:
           scheme: iOS Example
