@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import RxDataSources
 import RxNetworkKit
 
 @main
