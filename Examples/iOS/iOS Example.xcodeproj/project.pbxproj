@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B568E5829DEDBEC00E51B21 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */; };
-		0B568E5929DEDBEC00E51B21 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 819F858F2F093441234733F7 /* RxDataSources */; };
 		39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */; };
 		3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3894E572FDCE188F82EDC /* ViewState.swift */; };
@@ -24,11 +22,13 @@
 		9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C68630CA1328C530E000D /* ViewModel.swift */; };
 		A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */; };
 		BBC4FB455DB9EFC760A182E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23795F79829D049A83D55440 /* Assets.xcassets */; };
+		C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; };
+		C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0B568E5229DED93D00E51B21 /* PBXContainerItemProxy */ = {
+		C68C3F672A9401960036FF9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */;
 			proxyType = 2;
@@ -44,7 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0B568E5929DEDBEC00E51B21 /* RxNetworkKit.framework in Embed Frameworks */,
+				C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
+		0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
 		0B77E10429D97A3E0077FBC0 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23795F79829D049A83D55440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417337DBE1D0E25D426FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B568E5829DEDBEC00E51B21 /* RxNetworkKit.framework in Frameworks */,
+				C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,14 +105,6 @@
 				0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0B568E4F29DED93D00E51B21 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		0B77E10529D97A3E0077FBC0 /* Products */ = {
@@ -181,6 +173,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		C68C3F642A9401920036FF9D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C68C3F682A9401960036FF9D /* RxNetworkKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		EDB69B1E108A08763BE6EEC7 = {
 			isa = PBXGroup;
 			children = (
@@ -221,8 +221,9 @@
 		8FDDFD68FFEB45324727C0BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					26E9FD5EEA5FDD0B3C83D665 = {
 						DevelopmentTeam = Z3SPAA69G7;
@@ -246,7 +247,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 0B568E4F29DED93D00E51B21 /* Products */;
+					ProductGroup = C68C3F642A9401920036FF9D /* Products */;
 					ProjectRef = 0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */;
 				},
 			);
@@ -258,11 +259,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		0B568E5329DED93D00E51B21 /* RxNetworkKit.framework */ = {
+		C68C3F682A9401960036FF9D /* RxNetworkKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RxNetworkKit.framework;
-			remoteRef = 0B568E5229DED93D00E51B21 /* PBXContainerItemProxy */;
+			remoteRef = C68C3F672A9401960036FF9D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -397,7 +398,7 @@
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Example",
+					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
@@ -411,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
@@ -436,7 +437,7 @@
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Example",
+					"$(PROJECT_DIR)",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
@@ -450,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;

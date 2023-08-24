@@ -7,7 +7,7 @@
 
 /// Client-side (transport) error
 public enum NetworkClientError: Error {
-    case http(HTTPStatusCode)
+    case http(HTTPStatusCode, HTTPErrorBody?)
     case serialization(Error)
     case transport(Error)
 }
