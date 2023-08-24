@@ -3,7 +3,7 @@ name: Publish Podspec
 on:
   push:
     branches:
-        - 'main'
+        - '**'
 
 jobs:
   publish-podspec:
