@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C63975292A95166A00D0AC13 /* ViewControllerOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975122A95166A00D0AC13 /* ViewControllerOld.swift */; };
 		C639752A2A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975132A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift */; };
 		C639752B2A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */; };
 		C639752C2A95166A00D0AC13 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975162A95166A00D0AC13 /* ViewState.swift */; };
@@ -51,7 +50,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C63975122A95166A00D0AC13 /* ViewControllerOld.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerOld.swift; sourceTree = "<group>"; };
 		C63975132A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkRequestInterceptor.swift"; sourceTree = "<group>"; };
 		C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkEventMonitor.swift"; sourceTree = "<group>"; };
 		C63975162A95166A00D0AC13 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				C69FBA192A9408740062BFD7 /* ViewController.swift */,
-				C63975122A95166A00D0AC13 /* ViewControllerOld.swift */,
 				C63975132A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift */,
 				C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */,
 			);
@@ -286,7 +283,6 @@
 				C639752B2A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift in Sources */,
 				C63975312A95166A00D0AC13 /* DownloadRouter.swift in Sources */,
 				C639752E2A95166A00D0AC13 /* TableCellView.swift in Sources */,
-				C63975292A95166A00D0AC13 /* ViewControllerOld.swift in Sources */,
 				C639752C2A95166A00D0AC13 /* ViewState.swift in Sources */,
 				C639752A2A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift in Sources */,
 				C639752D2A95166A00D0AC13 /* ViewLoadType.swift in Sources */,
