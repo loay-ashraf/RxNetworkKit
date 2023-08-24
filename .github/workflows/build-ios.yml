@@ -12,10 +12,6 @@ jobs:
   framework-ios-simulator:
     name: Build Framework For iOS Simulator
     runs-on: macos-13
-#    strategy:
-#        matrix:
-#          destination: ['generic/platform=iOS Simulator',
-#           'generic/platform=iOS']
 
     steps:
       - name: Checkout
@@ -35,10 +31,6 @@ jobs:
   framework-ios:
     name: Build Framework For iOS Device
     runs-on: macos-13
-#    strategy:
-#        matrix:
-#          destination: ['generic/platform=iOS Simulator',
-#           'generic/platform=iOS']
 
     steps:
       - name: Checkout
@@ -58,10 +50,6 @@ jobs:
   example-ios-simulator:
     name: Build Example For iOS Simulator
     runs-on: macos-13
-#    strategy:
-#        matrix:
-#          destination: ['generic/platform=iOS Simulator',
-#           'generic/platform=iOS']
     needs: framework-ios-simulator
     
     steps:
@@ -82,10 +70,6 @@ jobs:
   example-ios:
     name: Build Example For iOS Device
     runs-on: macos-13
-#    strategy:
-#        matrix:
-#          destination: ['generic/platform=iOS Simulator',
-#           'generic/platform=iOS']
     needs: framework-ios
     
     steps:

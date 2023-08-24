@@ -9,12 +9,9 @@ on:
         - '**'
 
 jobs:
-  framework:
+  framework-macos:
     name: Build Framework Scheme
     runs-on: macos-13
-    strategy:
-        matrix:
-          destination: ['generic/platform=macOS']
 
     steps:
       - name: Checkout
@@ -27,16 +24,14 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
-          destination: ${{ matrix.destination }}
+          destination: generic/platform=macOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
-  example:
+          
+  example-macos:
     name: Build Example Scheme
     runs-on: macos-13
-    strategy:
-        matrix:
-          destination: ['generic/platform=macOS']
-    needs: framework
+    needs: framework-macos
     
     steps:
       - name: Checkout
@@ -49,7 +44,7 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: macOS Example
-          destination: ${{ matrix.destination }}
+          destination: generic/platform=macOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
 
