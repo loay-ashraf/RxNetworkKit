@@ -14,10 +14,8 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,arch=x86_64,name=Any iOS Simulator',
-           'platform=iOS Simulator,arch=arm64,name=Any iOS Simulator',
-           'platform=macOS,arch=x86_64,name=Any Mac',
-           'platform=macOS,arch=arm64,name=Any Mac']
+          destination: ['platform=iOS Simulator,name=Any iOS Simulator Device',
+           'platform=macOS,name=Any Mac']
 
     steps:
       - name: Set Xcode Version
