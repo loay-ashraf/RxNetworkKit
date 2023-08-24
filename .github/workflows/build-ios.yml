@@ -14,10 +14,12 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=14.0,name=iPhone 12 Pro Max']
-          destination: ['platform=iOS Simulator,OS=15.0,name=iPhone 13 Pro Max']
-          destination: ['platform=iOS Simulator,OS=16.0,name=iPhone 14 Pro Max']
-          destination: ['platform=macOS,name=My Mac']
+          destination: ['platform=iOS Simulator,OS=14.0,name=iPhone 12 Pro Max', ]
+          platform: ['iOS Simulator']
+          OS: [14.0, 15.0, 16.0]
+#          destination: ['platform=iOS Simulator,OS=15.0,name=iPhone 13 Pro Max']
+#          destination: ['platform=iOS Simulator,OS=16.0,name=iPhone 14 Pro Max']
+#          destination: ['platform=macOS,name=My Mac']
 
     steps:
       - name: Checkout
@@ -31,6 +33,8 @@ jobs:
       - name: Build
         env:
           scheme: ${{ 'default' }}
+          platform: ${{ matrix.platform }}
+          OS: ${{ matrix.OS }}
         run: |
           if [ $scheme = default ]; then scheme=$(cat default); fi
           if [ "`ls -A | grep -i \\.xcworkspace\$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \\.xcworkspace\$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \\.xcodeproj\$`"; fi
