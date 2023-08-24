@@ -16,8 +16,8 @@ jobs:
         matrix:
           destination: ['platform=iOS Simulator,arch=x86_64,name: Any iOS Simulator Device',
            'platform=iOS Simulator,arch=arm64,name: Any iOS Simulator Device',
-           'platform=macOS,arch=x86_64,Name: Any Mac',
-           'platform=macOS,arch=arm64,Name: Any Mac']
+           'platform=macOS,arch=x86_64,name: Any Mac',
+           'platform=macOS,arch=arm64,name: Any Mac']
 
     steps:
       - name: Set Xcode Version
