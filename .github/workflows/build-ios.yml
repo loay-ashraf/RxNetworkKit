@@ -9,13 +9,13 @@ on:
         - '**'
 
 jobs:
-  framework:
-    name: Build Framework Scheme
+  framework-ios-simulator:
+    name: Build Framework For iOS Simulator
     runs-on: macos-13
-    strategy:
-        matrix:
-          destination: ['generic/platform=iOS Simulator',
-           'generic/platform=iOS']
+#    strategy:
+#        matrix:
+#          destination: ['generic/platform=iOS Simulator',
+#           'generic/platform=iOS']
 
     steps:
       - name: Checkout
@@ -28,17 +28,41 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
-          destination: ${{ matrix.destination }}
+          destination: generic/platform=iOS Simulator
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
-  example:
-    name: Build Example Scheme
+          
+  framework-ios:
+    name: Build Framework For iOS Device
     runs-on: macos-13
-    strategy:
-        matrix:
-          destination: ['generic/platform=iOS Simulator',
-           'generic/platform=iOS']
-    needs: framework
+#    strategy:
+#        matrix:
+#          destination: ['generic/platform=iOS Simulator',
+#           'generic/platform=iOS']
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Build Framework
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: RxNetworkKit
+          destination: generic/platform=iOS
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-ios-simulator:
+    name: Build Example For iOS Simulator
+    runs-on: macos-13
+#    strategy:
+#        matrix:
+#          destination: ['generic/platform=iOS Simulator',
+#           'generic/platform=iOS']
+    needs: framework-ios-simulator
     
     steps:
       - name: Checkout
@@ -51,6 +75,30 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: iOS Example
-          destination: ${{ matrix.destination }}
+          destination: generic/platform=iOS Simulator
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-ios:
+    name: Build Example For iOS Device
+    runs-on: macos-13
+#    strategy:
+#        matrix:
+#          destination: ['generic/platform=iOS Simulator',
+#           'generic/platform=iOS']
+    needs: framework-ios
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Build Example
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: iOS Example
+          destination: generic/platform=iOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
