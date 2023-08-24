@@ -221,8 +221,9 @@
 		8FDDFD68FFEB45324727C0BA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					26E9FD5EEA5FDD0B3C83D665 = {
 						DevelopmentTeam = Z3SPAA69G7;
@@ -411,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
@@ -450,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;

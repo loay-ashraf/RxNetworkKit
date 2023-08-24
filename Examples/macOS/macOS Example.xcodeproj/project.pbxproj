@@ -20,7 +20,6 @@
 		C69FBA1A2A9408740062BFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA192A9408740062BFD7 /* ViewController.swift */; };
 		C69FBA1C2A9408770062BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1B2A9408770062BFD7 /* Assets.xcassets */; };
 		C69FBA1F2A9408770062BFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1D2A9408770062BFD7 /* Main.storyboard */; };
-		C69FBA2F2A940AD80062BFD7 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = C69FBA2E2A940AD80062BFD7 /* RxDataSources */; };
 		C69FBA322A940B090062BFD7 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */; };
 		C69FBA332A940B090062BFD7 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -75,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C69FBA322A940B090062BFD7 /* RxNetworkKit.framework in Frameworks */,
-				C69FBA2F2A940AD80062BFD7 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +201,6 @@
 			);
 			name = "macOS Example";
 			packageProductDependencies = (
-				C69FBA2E2A940AD80062BFD7 /* RxDataSources */,
 			);
 			productName = "macOS Example";
 			productReference = C69FBA142A9408740062BFD7 /* macOS Example.app */;
@@ -443,7 +440,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitMacOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -473,7 +470,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitMacOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -514,14 +511,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		C69FBA2E2A940AD80062BFD7 /* RxDataSources */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C69FBA2D2A940AD80062BFD7 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = RxDataSources;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C69FBA0C2A9408740062BFD7 /* Project object */;
 }
