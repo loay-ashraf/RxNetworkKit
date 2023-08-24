@@ -13,9 +13,9 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
     /// Verifies response's status code.
     ///
     /// - Returns: `Single` observable to be observed for values.
-    func verifyResponse<E: HTTPErrorBody>(_ httpErrorType: E.Type) -> Single<Element> {
+    func verifyResponse() -> Single<Element> {
         map { (response: HTTPURLResponse, data: Data) in
-            if let networkError = NetworkError.init(response, data: data, errorType: E.self) {
+            if let networkError = NetworkError.init(response) {
                 throw networkError
             } else {
                 return (response, data)

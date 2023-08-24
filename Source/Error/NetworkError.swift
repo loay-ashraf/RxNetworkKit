@@ -14,20 +14,15 @@ public enum NetworkError: Error {
     /// Creates `NetworkError` instance.
     ///
     /// - Parameter response: `HTTPURLResponse` used to get response status code.
-    init?<E: HTTPErrorBody>(_ response: HTTPURLResponse?, data: Data?, errorType: E.Type) {
+    init?(_ response: HTTPURLResponse?) {
         if let response = response,
-           let httpStatusCode = response.status {
-            // Get Error body from response data if possible.
-            var httpErrorBody: E?
-            if let data = data {
-                httpErrorBody = try? JSONDecoder().decode(errorType.self, from: data)
-            }
+           let httpStatusCode = HTTPStatusCode(rawValue: response.statusCode) {
             // Get Error from response status code
             switch httpStatusCode.responseType {
             case .clientError:
-                self = .client(.http(httpStatusCode, httpErrorBody))
+                self = .client(.http(httpStatusCode))
             case .serverError:
-                self = .server(.http(httpStatusCode, httpErrorBody))
+                self = .server(.http(httpStatusCode))
             default:
                 return nil
             }
