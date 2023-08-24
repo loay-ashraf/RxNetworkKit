@@ -14,12 +14,16 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,arch=x86_64',
-           'platform=iOS Simulator,arch=arm64',
-           'platform=macOS,arch=x86_64',
-           'platform=macOS,arch=arm64']
+          destination: ['platform=iOS Simulator,arch=x86_64,name: Any iOS Simulator Device',
+           'platform=iOS Simulator,arch=arm64,name: Any iOS Simulator Device',
+           'platform=macOS,arch=x86_64,Name: Any Mac',
+           'platform=macOS,arch=arm64,Name: Any Mac']
 
     steps:
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
       - name: Checkout
         uses: actions/checkout@v3
       - name: Set Default Scheme
