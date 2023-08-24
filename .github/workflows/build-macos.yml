@@ -10,7 +10,7 @@ on:
 
 jobs:
   framework-macos:
-    name: Build Framework Scheme
+    name: Build Framework For macOS
     runs-on: macos-13
 
     steps:
@@ -29,7 +29,7 @@ jobs:
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
           
   example-macos:
-    name: Build Example Scheme
+    name: Build Example For macOS
     runs-on: macos-13
     needs: framework-macos
     
