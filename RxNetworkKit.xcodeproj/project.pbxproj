@@ -22,7 +22,6 @@
 		0B77E09529D965D30077FBC0 /* RequestRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E05B29D965D30077FBC0 /* RequestRetryPolicy.swift */; };
 		0B77E09629D965D30077FBC0 /* RequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E05C29D965D30077FBC0 /* RequestAdapter.swift */; };
 		0B77E09729D965D30077FBC0 /* RequestRetrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E05D29D965D30077FBC0 /* RequestRetrier.swift */; };
-		0B77E09829D965D30077FBC0 /* RxNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B77E05E29D965D30077FBC0 /* RxNetworking.h */; };
 		0B77E09929D965D30077FBC0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06029D965D30077FBC0 /* NetworkManager.swift */; };
 		0B77E09A29D965D30077FBC0 /* HTTPMIMEType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06229D965D30077FBC0 /* HTTPMIMEType.swift */; };
 		0B77E09B29D965D30077FBC0 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06329D965D30077FBC0 /* HTTPMethod.swift */; };
@@ -57,6 +56,7 @@
 		0B77E0BB29D968DE0077FBC0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BA29D968DE0077FBC0 /* RxRelay */; };
 		0B77E0BD29D968DE0077FBC0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BC29D968DE0077FBC0 /* RxSwift */; };
 		0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BF29D969370077FBC0 /* RxSwiftExt */; };
+		C6049B162A95307800E5727E /* RxNetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C6049B152A95307800E5727E /* RxNetworkKit.h */; };
 		C6A9BEF62A93E2AE00459E32 /* DefaultHTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */; };
 		C6A9BEF82A93E2D600459E32 /* HTTPErrorBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */; };
 		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
@@ -82,7 +82,6 @@
 		0B77E05B29D965D30077FBC0 /* RequestRetryPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRetryPolicy.swift; sourceTree = "<group>"; };
 		0B77E05C29D965D30077FBC0 /* RequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestAdapter.swift; sourceTree = "<group>"; };
 		0B77E05D29D965D30077FBC0 /* RequestRetrier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRetrier.swift; sourceTree = "<group>"; };
-		0B77E05E29D965D30077FBC0 /* RxNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxNetworking.h; sourceTree = "<group>"; };
 		0B77E06029D965D30077FBC0 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		0B77E06229D965D30077FBC0 /* HTTPMIMEType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMIMEType.swift; sourceTree = "<group>"; };
 		0B77E06329D965D30077FBC0 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -113,6 +112,7 @@
 		0B77E08629D965D30077FBC0 /* NetworkDownloadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkDownloadRouter.swift; sourceTree = "<group>"; };
 		0B77E08729D965D30077FBC0 /* NetworkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
 		0B77E08829D965D30077FBC0 /* NetworkUploadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkUploadRouter.swift; sourceTree = "<group>"; };
+		C6049B152A95307800E5727E /* RxNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxNetworkKit.h; sourceTree = "<group>"; };
 		C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPErrorBody.swift; sourceTree = "<group>"; };
 		C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPErrorBody.swift; sourceTree = "<group>"; };
 		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 				0B77E07029D965D30077FBC0 /* Error */,
 				0B77E07629D965D30077FBC0 /* Rx Extensions */,
 				0B77E08529D965D30077FBC0 /* Router */,
-				0B77E05E29D965D30077FBC0 /* RxNetworking.h */,
+				C6049B152A95307800E5727E /* RxNetworkKit.h */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B77E09829D965D30077FBC0 /* RxNetworking.h in Headers */,
+				C6049B162A95307800E5727E /* RxNetworkKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +383,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					0B77DFD529D964D40077FBC0 = {
 						CreatedOnToolsVersion = 14.2;
@@ -609,6 +609,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -616,6 +617,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -627,6 +629,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -643,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -650,6 +655,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -661,6 +667,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
