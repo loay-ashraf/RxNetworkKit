@@ -2,8 +2,6 @@ name: Build macOS
 
 on:
   workflow_call:
-    inputs:
-    secrets:
 #  push:
 #    branches:
 #        - '**'
