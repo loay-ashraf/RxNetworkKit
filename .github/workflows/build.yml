@@ -16,4 +16,3 @@ jobs:
   build-macos:
     name: Build For macOS
     uses: ./.github/workflows/build-macos.yml
-

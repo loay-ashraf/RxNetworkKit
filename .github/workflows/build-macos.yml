@@ -2,12 +2,6 @@ name: Build macOS
 
 on:
   workflow_call:
-#  push:
-#    branches:
-#        - '**'
-#  pull_request:
-#    branches:
-#        - '**'
 
 jobs:
   framework-macos:

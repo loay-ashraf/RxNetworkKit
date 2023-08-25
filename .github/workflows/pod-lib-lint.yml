@@ -1,12 +1,6 @@
 name: Cocoapods Library Lint
 
 on:
-#  push:
-#    branches-ignore:
-#        - 'main'
-#  pull_request:
-#    branches-ignore:
-#        - 'main'
   workflow_run:
     workflows:
         - 'Build'

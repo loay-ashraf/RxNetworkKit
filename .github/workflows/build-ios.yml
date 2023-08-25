@@ -2,13 +2,7 @@ name: Build iOS
 
 on:
   workflow_call:
-#  push:
-#    branches:
-#        - '**'
-#  pull_request:
-#    branches:
-#        - '**'
-
+  
 jobs:
   framework-ios-simulator:
     name: Build Framework For iOS Simulator

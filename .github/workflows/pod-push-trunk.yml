@@ -1,4 +1,4 @@
-name: Publish Podspec
+name: Cocoapods Trunk Push
 
 on:
   push:
