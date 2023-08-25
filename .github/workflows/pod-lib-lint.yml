@@ -8,9 +8,13 @@ on:
 #    branches-ignore:
 #        - 'main'
   workflow_run:
-    workflows: ['Build iOS', 'Build macOS']
-    types: [completed]
-    branches-ignore: ['main']
+    workflows:
+        - 'Build iOS'
+        - 'Build macOS'
+    types:
+        - completed
+    branches-ignore:
+        - 'main'
 
 jobs:
   pod-lib-lint:
