@@ -1,12 +1,13 @@
 name: Build iOS
 
 on:
-  push:
-    branches:
-        - '**'
-  pull_request:
-    branches:
-        - '**'
+  workflow_call:
+#  push:
+#    branches:
+#        - '**'
+#  pull_request:
+#    branches:
+#        - '**'
 
 jobs:
   framework-ios-simulator:

@@ -9,8 +9,7 @@ on:
 #        - 'main'
   workflow_run:
     workflows:
-        - 'Build iOS'
-        - 'Build macOS'
+        - 'Build'
     types:
         - completed
     branches-ignore:
@@ -35,5 +34,3 @@ jobs:
       - name: Library Lint
         run: |
           pod lib lint --allow-warnings --verbose
-
-
