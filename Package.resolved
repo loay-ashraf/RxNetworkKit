@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
-          "version": "6.5.0"
+          "revision": "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+          "version": "6.6.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxSwiftExt",
         "state": {
           "branch": null,
-          "revision": "a42af9caeab63f2dbde318f1f3dc424f05871a37",
-          "version": "6.1.0"
+          "revision": "a8065d19acbdee55c6e2b2d9a17a420e34ab8d83",
+          "version": "6.2.0"
         }
       }
     ]
