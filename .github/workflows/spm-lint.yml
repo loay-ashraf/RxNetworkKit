@@ -34,6 +34,7 @@ jobs:
         env:
           project: ./.github/workflows/SPMDummy/SPMDummy.xcodeproj
           scheme: SPMDummy
+          destination: ${{ matrix.destination }}
         run: |
           xcodebuild clean build -project "${project}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
           
