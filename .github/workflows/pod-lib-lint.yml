@@ -1,0 +1,28 @@
+name: Cocoapods Library Lint
+
+on:
+  push:
+    branches:
+        - '!main'
+  pull_request:
+    branches:
+        - '!main'
+
+jobs:
+  pod-lib-lint:
+    name: Lint Library For Cocoapods
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '14.2'
+      - name: Install Cocoapods
+        run: |
+          sudo gem install cocoapods
+      - name: Library Lint
+        run: |
+          pod lib lint --allow-warnings --verbose
