@@ -709,16 +709,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				kind = exactVersion;
+				version = 6.5.0;
 			};
 		};
 		0B77E0BE29D969370077FBC0 /* XCRemoteSwiftPackageReference "RxSwiftExt" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxSwiftExt";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
+				kind = exactVersion;
+				version = 6.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

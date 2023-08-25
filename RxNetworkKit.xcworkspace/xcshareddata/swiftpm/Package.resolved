@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxSwiftExt",
       "state" : {
-        "revision" : "a42af9caeab63f2dbde318f1f3dc424f05871a37",
-        "version" : "6.1.0"
+        "revision" : "827bd11853983383b708feaf7da95c560982b2b8",
+        "version" : "6.0.1"
       }
     }
   ],
