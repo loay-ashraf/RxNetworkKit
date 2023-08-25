@@ -1,0 +1,32 @@
+name: Cocoapods Trunk Push
+
+on:
+  workflow_run:
+    workflows:
+        - 'Build'
+    types:
+        - completed
+    branches:
+        - 'main'
+
+jobs:
+  publish-podspec:
+    name: Push Podspec File To Trunk
+    runs-on: macos-13
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '14.2'
+      - name: Install Cocoapods
+        run: |
+          sudo gem install cocoapods
+      - name: Trunk Push
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: |
+          pod trunk push --allow-warnings --verbose
