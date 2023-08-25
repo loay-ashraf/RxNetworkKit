@@ -1,17 +1,22 @@
 name: Cocoapods Library Lint
 
 on:
-  push:
-    branches-ignore:
-        - 'main'
-  pull_request:
-    branches-ignore:
-        - 'main'
+#  push:
+#    branches-ignore:
+#        - 'main'
+#  pull_request:
+#    branches-ignore:
+#        - 'main'
+  workflow_run:
+    workflows: [Build iOS, Build macOS]
+    types: [completed]
+    branches-ignore: [main]
 
 jobs:
   pod-lib-lint:
     name: Lint Library For Cocoapods
     runs-on: macos-13
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout
