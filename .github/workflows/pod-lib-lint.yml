@@ -2,11 +2,11 @@ name: Cocoapods Library Lint
 
 on:
   push:
-    branches:
-        - '!main'
+    branches-ignore:
+        - 'main'
   pull_request:
-    branches:
-        - '!main'
+    branches-ignore:
+        - 'main'
 
 jobs:
   pod-lib-lint:
