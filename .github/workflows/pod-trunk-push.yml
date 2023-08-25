@@ -1,7 +1,11 @@
 name: Cocoapods Trunk Push
 
 on:
-  push:
+  workflow_run:
+    workflows:
+        - 'Build'
+    types:
+        - completed
     branches:
         - 'main'
 
@@ -9,6 +13,7 @@ jobs:
   publish-podspec:
     name: Push Podspec File To Trunk
     runs-on: macos-13
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout
