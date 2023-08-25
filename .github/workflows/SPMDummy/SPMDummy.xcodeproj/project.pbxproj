@@ -10,9 +10,10 @@
 		C60771B52A98525600268543 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60771B42A98525600268543 /* AppDelegate.swift */; };
 		C60771B72A98525600268543 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60771B62A98525600268543 /* SceneDelegate.swift */; };
 		C60771B92A98525600268543 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60771B82A98525600268543 /* ViewController.swift */; };
-		C60771BC2A98525600268543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60771BA2A98525600268543 /* Main.storyboard */; };
+		C60771BC2A98525600268543 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60771BA2A98525600268543 /* Main.storyboard */; platformFilter = ios; };
 		C60771BE2A98525A00268543 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60771BD2A98525A00268543 /* Assets.xcassets */; };
-		C60771C12A98525A00268543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60771BF2A98525A00268543 /* LaunchScreen.storyboard */; };
+		C60771C12A98525A00268543 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C60771BF2A98525A00268543 /* LaunchScreen.storyboard */; platformFilter = ios; };
+		C6C5417E2A98CDCD00BDA70B /* RxNetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = C6C5417D2A98CDCD00BDA70B /* RxNetworkKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C5417E2A98CDCD00BDA70B /* RxNetworkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +104,7 @@
 			);
 			name = SPMDummy;
 			packageProductDependencies = (
+				C6C5417D2A98CDCD00BDA70B /* RxNetworkKit */,
 			);
 			productName = SPMDummy;
 			productReference = C60771B12A98525600268543 /* SPMDummy.app */;
@@ -322,6 +325,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.SPMDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,6 +356,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.SPMDummy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,6 +387,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C6C5417D2A98CDCD00BDA70B /* RxNetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxNetworkKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C60771A92A98525600268543 /* Project object */;
 }
