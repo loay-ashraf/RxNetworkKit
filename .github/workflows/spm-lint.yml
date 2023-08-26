@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: $
+          ref: ${{ github.event.workflow_run.head_branch }}
       - run: git branch
       - run: env
       - name: Set Xcode Version
