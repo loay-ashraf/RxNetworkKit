@@ -12,9 +12,9 @@ Pod::Spec.new do |s|
     s.author           = { 'loay-ashraf' => 'loay.ashraf.96@gmail.com' }
     s.source           = { :git => 'https://github.com/loay-ashraf/RxNetworkKit.git', :tag => s.version.to_s }
     s.framework = "Foundation"
-    s.dependency 'RxSwift', '~> 6.5.0'
-    s.dependency 'RxCocoa', '~> 6.5.0'
-    s.dependency 'RxSwiftExt', '~> 6.0.1'
+    s.dependency 'RxSwift', '~> 6.5'
+    s.dependency 'RxCocoa', '~> 6.5'
+    s.dependency 'RxSwiftExt', '~> 6.0'
     s.source_files = 'Source/**/*.{swift,m,h}'
     s.swift_version = '5.0'
     end
