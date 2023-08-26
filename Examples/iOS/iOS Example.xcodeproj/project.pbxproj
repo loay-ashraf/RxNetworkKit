@@ -22,8 +22,8 @@
 		9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C68630CA1328C530E000D /* ViewModel.swift */; };
 		A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */; };
 		BBC4FB455DB9EFC760A182E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23795F79829D049A83D55440 /* Assets.xcassets */; };
-		C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; };
-		C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; platformFilter = ios; };
+		C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -421,7 +421,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -460,7 +460,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

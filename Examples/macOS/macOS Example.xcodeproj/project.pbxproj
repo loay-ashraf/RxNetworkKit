@@ -231,7 +231,6 @@
 			);
 			mainGroup = C69FBA0B2A9408740062BFD7;
 			packageReferences = (
-				C69FBA2D2A940AD80062BFD7 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = C69FBA152A9408740062BFD7 /* Products */;
 			projectDirPath = "";
@@ -500,17 +499,6 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		C69FBA2D2A940AD80062BFD7 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = C69FBA0C2A9408740062BFD7 /* Project object */;
 }
