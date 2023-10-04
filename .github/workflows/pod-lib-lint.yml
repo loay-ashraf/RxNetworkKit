@@ -16,7 +16,7 @@ jobs:
   pod-lib-lint:
     name: Lint Library For Cocoapods
     runs-on: macos-13
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+#    if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
       - name: Checkout
