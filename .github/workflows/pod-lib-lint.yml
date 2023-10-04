@@ -33,6 +33,7 @@ jobs:
           sudo mkdir arc
           cd arc
           sudo git clone https://github.com/kamyarelyasi/Libarclite-Files.git
+          ls
       - name: Install Cocoapods
         run: |
           sudo gem install cocoapods
