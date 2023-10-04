@@ -62,6 +62,13 @@
 		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
 		C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */; };
 		C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */; };
+		C6BDFFE82ACDF3830022F675 /* Reactive+receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFE72ACDF3830022F675 /* Reactive+receive.swift */; };
+		C6BDFFEA2ACDF3D90022F675 /* Reactive+send.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFE92ACDF3D90022F675 /* Reactive+send.swift */; };
+		C6BDFFEC2ACDF4100022F675 /* Reactive+ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFEB2ACDF4100022F675 /* Reactive+ping.swift */; };
+		C6BDFFEE2ACDF46A0022F675 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */; };
+		C6BDFFF02ACDF4AB0022F675 /* WebSocketCloseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */; };
+		C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */; };
+		C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +125,13 @@
 		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
 		C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setUserAgentHTTPHeader.swift"; sourceTree = "<group>"; };
 		C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+operatingSystemName.swift"; sourceTree = "<group>"; };
+		C6BDFFE72ACDF3830022F675 /* Reactive+receive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+receive.swift"; sourceTree = "<group>"; };
+		C6BDFFE92ACDF3D90022F675 /* Reactive+send.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+send.swift"; sourceTree = "<group>"; };
+		C6BDFFEB2ACDF4100022F675 /* Reactive+ping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+ping.swift"; sourceTree = "<group>"; };
+		C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketCloseHandler.swift; sourceTree = "<group>"; };
+		C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
+		C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketCloseCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +169,7 @@
 		0B77E04A29D965D30077FBC0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				C6BDFFE62ACDF3260022F675 /* Web Socket */,
 				0B77E04B29D965D30077FBC0 /* Custom Requests */,
 				0B77E05929D965D30077FBC0 /* Request Interceptor */,
 				0B77E05F29D965D30077FBC0 /* Manager */,
@@ -181,9 +196,9 @@
 		0B77E04C29D965D30077FBC0 /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E04D29D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift */,
 				0B77E04E29D965D30077FBC0 /* DownloadEvent.swift */,
 				0B77E04F29D965D30077FBC0 /* URLSession+DownloadTask.swift */,
+				0B77E04D29D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift */,
 				0B77E05029D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift */,
 			);
 			path = Download;
@@ -196,9 +211,9 @@
 				0B77E05329D965D30077FBC0 /* UploadFile.swift */,
 				0B77E05429D965D30077FBC0 /* URLSession+UploadTask.swift */,
 				0B77E05529D965D30077FBC0 /* Data+AppendString.swift */,
-				0B77E05629D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift */,
 				0B77E05729D965D30077FBC0 /* UploadEvent.swift */,
 				0B77E05829D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift */,
+				0B77E05629D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -338,6 +353,28 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		C6BDFFE62ACDF3260022F675 /* Web Socket */ = {
+			isa = PBXGroup;
+			children = (
+				C6BDFFF12ACDF4CB0022F675 /* Extensions */,
+				C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */,
+				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
+				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
+				C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */,
+			);
+			path = "Web Socket";
+			sourceTree = "<group>";
+		};
+		C6BDFFF12ACDF4CB0022F675 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6BDFFE72ACDF3830022F675 /* Reactive+receive.swift */,
+				C6BDFFE92ACDF3D90022F675 /* Reactive+send.swift */,
+				C6BDFFEB2ACDF4100022F675 /* Reactive+ping.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -427,12 +464,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6BDFFF02ACDF4AB0022F675 /* WebSocketCloseHandler.swift in Sources */,
 				0B77E0AD29D965D30077FBC0 /* Single+CatchErrors.swift in Sources */,
 				0B77E0B529D965D30077FBC0 /* NetworkRouter.swift in Sources */,
 				0B77E09529D965D30077FBC0 /* RequestRetryPolicy.swift in Sources */,
 				0B77E0B329D965D30077FBC0 /* Reactive+Curl.swift in Sources */,
 				C6A9BEF82A93E2D600459E32 /* HTTPErrorBody.swift in Sources */,
 				0B77E0A929D965D30077FBC0 /* NetworkError.swift in Sources */,
+				C6BDFFEA2ACDF3D90022F675 /* Reactive+send.swift in Sources */,
 				0B77E09F29D965D30077FBC0 /* NWPath+InterfaceType.swift in Sources */,
 				0B77E09C29D965D30077FBC0 /* HTTPScheme.swift in Sources */,
 				0B77E0A029D965D30077FBC0 /* NetworkReachabilityStatus.swift in Sources */,
@@ -454,11 +493,13 @@
 				C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */,
 				0B77E09129D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift in Sources */,
 				C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */,
+				C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */,
 				0B77E0A629D965D30077FBC0 /* DefaultNetworkAPIError.swift in Sources */,
 				0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */,
 				0B77E0B229D965D30077FBC0 /* Completable+Retry.swift in Sources */,
 				0B77E0B029D965D30077FBC0 /* Observable+Retry.swift in Sources */,
 				0B77E08B29D965D30077FBC0 /* URLSession+DownloadTask.swift in Sources */,
+				C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */,
 				0B77E0A729D965D30077FBC0 /* NetworkServerError.swift in Sources */,
 				0B77E0B629D965D30077FBC0 /* NetworkUploadRouter.swift in Sources */,
 				C6A9BEF62A93E2AE00459E32 /* DefaultHTTPErrorBody.swift in Sources */,
@@ -469,13 +510,16 @@
 				0B77E09629D965D30077FBC0 /* RequestAdapter.swift in Sources */,
 				0B77E0A829D965D30077FBC0 /* NetworkClientError.swift in Sources */,
 				0B77E0A229D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift in Sources */,
+				C6BDFFEE2ACDF46A0022F675 /* WebSocket.swift in Sources */,
 				0B77E09329D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift in Sources */,
 				0B77E09B29D965D30077FBC0 /* HTTPMethod.swift in Sources */,
 				0B77E0AC29D965D30077FBC0 /* Single+Decode.swift in Sources */,
 				0B77E0A329D965D30077FBC0 /* NetworkInterfaceType.swift in Sources */,
 				0B77E09229D965D30077FBC0 /* UploadEvent.swift in Sources */,
 				0B77E09029D965D30077FBC0 /* Data+AppendString.swift in Sources */,
+				C6BDFFE82ACDF3830022F675 /* Reactive+receive.swift in Sources */,
 				0B77E08929D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift in Sources */,
+				C6BDFFEC2ACDF4100022F675 /* Reactive+ping.swift in Sources */,
 				0B77E0AA29D965D30077FBC0 /* NetworkAPIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
