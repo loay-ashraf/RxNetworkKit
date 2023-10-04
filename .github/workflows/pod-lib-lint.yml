@@ -3,7 +3,7 @@ name: Cocoapods Library Lint
 on:
   push:
     branches:
-       - **
+       - '**'
 #  workflow_run:
 #    workflows:
 #        - 'Build'
