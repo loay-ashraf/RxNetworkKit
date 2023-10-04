@@ -1,5 +1,5 @@
-name: Build
-
+#name: Build
+#
 #on:
 #  push:
 #    branches:
@@ -7,12 +7,12 @@ name: Build
 #  pull_request:
 #    branches:
 #        - '**'
-
-jobs:
-  build-ios:
-    name: Build For iOS
-    uses: ./.github/workflows/build-ios.yml
-        
-  build-macos:
-    name: Build For macOS
-    uses: ./.github/workflows/build-macos.yml
+#
+#jobs:
+#  build-ios:
+#    name: Build For iOS
+#    uses: ./.github/workflows/build-ios.yml
+#        
+#  build-macos:
+#    name: Build For macOS
+#    uses: ./.github/workflows/build-macos.yml
