@@ -24,6 +24,7 @@ public class NetworkManager {
         // Apply User-Agent header as a part of HTTP aditional headers.
         configuration.setUserAgentHTTPHeader()
         // Initialize manager's properties.
+        URLSession.rx.shouldLogRequest = { _ in false }
         self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
         self.requestInterceptor = requestInterceptor
         self.eventMonitor = eventMonitor
@@ -171,5 +172,18 @@ public class NetworkManager {
             .uploadResponse(request: adaptedRequest, formData: formData, modelType: T.self, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
+    }
+    /// Creates websocket object and establishes connection using provided url and protocols.
+    ///
+    /// - Parameters:
+    ///   - url: `URL` of websocket server.
+    ///   - protocols: `[String]` websocket connection protocols.
+    ///   - closeHandler: `WebSocketCloseHandler` used to provide close coda and reason upon connection closure.
+    ///
+    /// - Returns: `WebSocket` object that represents the connection.
+    public func webSocket<T: Decodable>(_ url: URL, _ protocols: [String], _ closeHandler: WebSocketCloseHandler) -> WebSocket<T> {
+        let task = session.webSocketTask(with: url, protocols: protocols)
+        let webSocket = WebSocket<T>(task: task, closeHandler: closeHandler)
+        return webSocket
     }
 }
