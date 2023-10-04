@@ -173,7 +173,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
-    /// Creats websocket object and establishes connection using provided url and protocols.
+    /// Creates websocket object and establishes connection using provided url and protocols.
     ///
     /// - Parameters:
     ///   - url: `URL` of websocket server.
