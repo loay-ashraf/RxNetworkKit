@@ -29,8 +29,7 @@ jobs:
           xcode-version: '14.3.1'
       - name: List Apps
         run: |
-          cd ~/Applications
-          ls
+          which Xcode
       - name: Install Cocoapods
         run: |
           sudo gem install cocoapods
