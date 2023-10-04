@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveX/RxSwift",
       "state" : {
-        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
-        "version" : "6.6.0"
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
       }
     },
     {
@@ -23,8 +23,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxSwiftExt",
       "state" : {
-        "revision" : "a8065d19acbdee55c6e2b2d9a17a420e34ab8d83",
-        "version" : "6.2.0"
+        "revision" : "827bd11853983383b708feaf7da95c560982b2b8",
+        "version" : "6.0.1"
       }
     }
   ],
