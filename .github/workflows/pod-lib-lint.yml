@@ -29,7 +29,7 @@ jobs:
           xcode-version: '14.3.1'
       - name: List Apps
         run: |
-          cd ./Applications
+          cd ~/Applications
           ls
       - name: Install Cocoapods
         run: |
