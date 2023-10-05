@@ -46,8 +46,8 @@ jobs:
 #        id: deployment
 #        uses: actions/deploy-pages@v1
 
-  build-deploy-docs:
-    needs: build
+  deploy:
+    needs: build-deploy-docs
     runs-on: ubuntu-latest
     environment:
       name: github-pages
