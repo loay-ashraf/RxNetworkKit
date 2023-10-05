@@ -32,6 +32,7 @@ jobs:
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
           $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
+          echo "<script>window.location.href += \"/documentation/rxnetworkkit\"</script>" > docs/index.html;
       - name: Upload Docs artifact
         uses: actions/upload-pages-artifact@v1
         with:
