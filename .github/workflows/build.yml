@@ -7,7 +7,12 @@ on:
   pull_request:
     branches:
         - '**'
-        
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
   group: "build"
   cancel-in-progress: true
