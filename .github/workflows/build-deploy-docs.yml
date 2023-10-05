@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
-          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
+          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path loay-ashraf/RxNetworkKit --output-path docs
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
