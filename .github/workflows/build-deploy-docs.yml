@@ -30,7 +30,7 @@ jobs:
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
           zip -r RxNetworkKitDocCArchive.zip docArchives/RxNetworkKit.doccarchive
-      - name: Upload Doc Archive
+      - name: Upload Docs Archive
         uses: actions/upload-artifact@v3
         with:
           name: doc-archive-zip
@@ -44,7 +44,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Download Derived Data
+      - name: Download Docs Archive
         uses: actions/download-artifact@v3
         with:
           name: doc-archive-zip
