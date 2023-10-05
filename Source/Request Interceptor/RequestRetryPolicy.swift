@@ -7,9 +7,10 @@
 
 import Foundation
 
-// This struct is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
+// This enum is inspired by Alex Grebenyuk excellent blog https://kean.blog/post/smart-retry
 // Here's Alex's twitter: https://twitter.com/a_grebenyuk
 
+/// Policy for retrying failed requests.
 public enum NetworkRequestRetryPolicy {
     case immediate
     case constant(time: Double)

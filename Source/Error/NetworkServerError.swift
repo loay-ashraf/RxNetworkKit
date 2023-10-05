@@ -5,7 +5,7 @@
 //  Created by Loay Ashraf on 19/02/2023.
 //
 
-/// Server-side error
+/// Server-side network error.
 public enum NetworkServerError: Error {
     case http(HTTPStatusCode, HTTPErrorBody?)
     case generic(Error)

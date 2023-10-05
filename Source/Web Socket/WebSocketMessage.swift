@@ -7,4 +7,5 @@
 
 import Foundation
 
+///  An enumeration of the types of messages sent and received.
 public typealias WebSocketMessage = URLSessionWebSocketTask.Message

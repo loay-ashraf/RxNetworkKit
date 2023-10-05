@@ -8,13 +8,18 @@
 import Foundation
 import RxSwift
 import RxSwiftExt
-import RxCocoa
 
+/// Entry point for creating and managing network requests.
 public class NetworkManager {
+    
+    /// Principal `URLSession` used to create request tasks.
     private let session: URLSession
+    /// Principal `NetworkRequestInterceptor` used to intercept requests.
     private let requestInterceptor: NetworkRequestInterceptor
+    /// Principal `NetworkEventMonitor` used to monitor request tasks.
     private let eventMonitor: NetworkEventMonitor
-    /// Creates `NetworkManager` instance.
+    
+    /// Creates a `NetworkManager` instance.
     ///
     /// - Parameters:
     ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
@@ -29,6 +34,7 @@ public class NetworkManager {
         self.requestInterceptor = requestInterceptor
         self.eventMonitor = eventMonitor
     }
+    
     /// Creates a `Completable` observable encapsulating data request using given `Router`.
     /// Use this method if you are expecting empty response body.
     ///
@@ -54,6 +60,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates a `Single` observable encapsulating data request using given `Router`.
     /// Use this method if you are expecting data in response body.
     ///
@@ -78,6 +85,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates a `Observable` object encapsulating download request using given `Router`.
     /// Use this method if you are downloading a relatively small file (keeps data in memory).
     ///
@@ -101,6 +109,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates a `Observable` object encapsulating download request using given `Router`.
     /// Use this method if you are downloading a relatively small file (saves file to disk).
     ///
@@ -125,6 +134,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates a `Observable` object encapsulating upload request using given `Router`.
     /// Use this method if you are uploading single file at a time.
     ///
@@ -149,6 +159,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates a `Observable` object encapsulating upload request using given `Router`.
     /// Use this method if you are uploading multiple files at a time.
     ///
@@ -173,6 +184,7 @@ public class NetworkManager {
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
     }
+    
     /// Creates websocket object and establishes connection using provided url and protocols.
     ///
     /// - Parameters:
@@ -186,4 +198,5 @@ public class NetworkManager {
         let webSocket = WebSocket<T>(task: task, closeHandler: closeHandler)
         return webSocket
     }
+    
 }

@@ -8,6 +8,7 @@
 import Foundation
 import Network
 
+/// Status for network reachability.
 public enum NetworkReachabilityStatus: Equatable {
     case reachable(interfaceType: NetworkInterfaceType)
     case unReachable

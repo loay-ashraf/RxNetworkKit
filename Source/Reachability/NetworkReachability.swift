@@ -10,29 +10,38 @@ import Network
 import RxSwift
 import RxCocoa
 
+/// Monitors network reachbility status.
 public class NetworkReachability {
+    
+    /// Shared `NetworkReachability` instance.
     public static let shared: NetworkReachability = .init()
+    /// a `BehaviorRelay` object for current reachability status.
     public private(set) var status: BehaviorRelay<NetworkReachabilityStatus> = .init(value: .unReachable)
+    /// a `PublishRelay` object that notifies subscribers when network is reachable.
     public private(set) var didBecomeReachable: PublishRelay<Void> = .init()
     private var _status: NetworkReachabilityStatus = .unReachable
     private var monitor: NWPathMonitor
     private let monitorQueue: DispatchQueue
-    /// Creates `NetworkReachability` instance.
+    
+    /// Creates a `NetworkReachability` instance.
     private init() {
         self.monitor = .init()
         let bundleID = Bundle.main.bundleIdentifier!
         let monitorQueueLabel = bundleID + ".reachability"
         self.monitorQueue = .init(label: monitorQueueLabel, qos: .utility)
     }
+    
     /// Starts network monitor on monitor dispatch queue.
     public func start() {
         monitor.pathUpdateHandler = handlePathUpdate(_:)
         monitor.start(queue: monitorQueue)
     }
+    
     /// Stops network monitor.
     public func stop() {
         monitor.cancel()
     }
+    
     /// Sets interface types to monitor by creating new `NWPathMonitor` instance,
     /// Call `start` method after calling this method.
     ///
@@ -45,6 +54,7 @@ public class NetworkReachability {
         let newMonitor = NWPathMonitor(prohibitedInterfaceTypes: prohibtedTypes)
         monitor = newMonitor
     }
+    
     /// Handles netwok path updates and sends events to relays.
     ///
     /// - Parameter path: updated `NWPath` object.
@@ -61,4 +71,5 @@ public class NetworkReachability {
             didBecomeReachable.accept(())
         }
     }
+    
 }

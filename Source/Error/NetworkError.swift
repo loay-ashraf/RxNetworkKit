@@ -7,10 +7,12 @@
 
 import Foundation
 
+/// Generic network error (client, server or api).
 public enum NetworkError: Error {
     case client(NetworkClientError)
     case server(NetworkServerError)
     case api(NetworkAPIError)
+    
     /// Creates `NetworkError` instance.
     ///
     /// - Parameter response: `HTTPURLResponse` used to get response status code.
@@ -35,4 +37,5 @@ public enum NetworkError: Error {
             return nil
         }
     }
+    
 }

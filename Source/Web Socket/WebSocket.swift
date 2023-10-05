@@ -9,16 +9,21 @@ import Foundation
 import RxSwift
 import RxRelay
 
+/// Encapsulates a connection to websocket server.
 public class WebSocket<T: Decodable> {
+    
+    /// a `PublishRelay` object for text messages received from websocket server.
     public let text: PublishRelay<String> = .init()
+    /// a generic `PublishRelay` object for data messages received from websocket server.
     public let data: PublishRelay<T> = .init()
+    /// a `PublishRelay` object for errors encountered while receiving/sending from/to websocket server.
     public let error: PublishRelay<Error> = .init()
     private let task: URLSessionWebSocketTask
     private let closeHandler: WebSocketCloseHandler
     private let receiveObservable: Observable<WebSocketMessage>
     private let disposeBag: DisposeBag = .init()
     
-    /// Creates `WebSocket` instance with generic tyoe `T`.
+    /// Creates a `WebSocket` instance with generic tyoe `T`.
     ///
     /// - Parameters:
     ///   - task: `URLSessionWebSocketTask` that represents the connection to websocket server.
@@ -29,15 +34,18 @@ public class WebSocket<T: Decodable> {
         self.receiveObservable = task.rx.receive(closeHandler: closeHandler)
         setupBindings()
     }
+    
     /// Resumes current task to establish the connection.
     public func connect() {
         task.resume()
     }
+    
     /// Cancels the request associated with current task to close the connection.
     public func disconnect() {
         let request = task.currentRequest
         task.cancel(with: closeHandler.code(for: request), reason: closeHandler.reason(for: request))
     }
+    
     /// Sends message to the websocket server.
     ///
     /// - Parameter message: `WebSocketMessage` to be sent to websocket server.
@@ -46,12 +54,14 @@ public class WebSocket<T: Decodable> {
     public func send(_ message: WebSocketMessage) -> Completable {
         task.rx.send(message: message)
     }
+    
     /// Sends a ping to the websocket server.
     ///
     /// - Returns: `Completable` observable encapsulating send ping operation.
     public func ping() -> Completable {
         task.rx.ping()
     }
+    
     /// Sets up internal observable bindings.
     private func setupBindings() {
         receiveObservable
@@ -87,4 +97,5 @@ public class WebSocket<T: Decodable> {
             .bind(to: error)
             .disposed(by: disposeBag)
     }
+    
 }

@@ -7,21 +7,35 @@
 
 import Foundation
 
+/// Holds request details.
 public protocol NetworkRouter {
+    
+    /// http scheme of the request.
     var scheme: HTTPScheme { get }
+    /// http method of the request.
     var method: HTTPMethod { get }
+    /// url domain of the request, eg.: `github.com`.
     var domain: String { get }
+    /// url path of the request, eg.:  `api/users`.
     var path: String { get }
+    /// http headers of the request.
     var headers: [String: String] { get }
+    /// url query parameters of the request.
     var parameters: [String: String]? { get }
+    /// http body of the request.
     var body: [String: Any]? { get }
+    /// full url of the request (including: domain, path and query parameters).
     var url: URL? { get }
-    /// Creates `URLRequest` object using router properties.
+    
+    /// Creates a `URLRequest` object using router properties.
     ///
     /// - Returns: `URLRequest` created using router properties.
     func asURLRequest() -> URLRequest
+    
 }
+
 public extension NetworkRouter {
+    
     /// Creates `URLRequest` object using router properties.
     ///
     /// - Returns: `URLRequest` created using router properties.
@@ -45,4 +59,5 @@ public extension NetworkRouter {
         request.allHTTPHeaderFields = headers
         return request
     }
+    
 }

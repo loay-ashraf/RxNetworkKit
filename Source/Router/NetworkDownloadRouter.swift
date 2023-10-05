@@ -7,9 +7,11 @@
 
 import Foundation
 
+/// Holds download request details.
 public protocol NetworkDownloadRouter: NetworkRouter { }
 
 public extension NetworkDownloadRouter {
+    
     /// By Default: HTTP method is GET for download requests.
     var method: HTTPMethod {
         .get
@@ -18,4 +20,5 @@ public extension NetworkDownloadRouter {
     var body: [String : Any]? {
         nil
     }
+    
 }
