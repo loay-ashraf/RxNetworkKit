@@ -26,6 +26,8 @@ jobs:
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
       - name: Deploy Docs
         run: |
+          cd docArchives
+          ls
           $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
 
   framework-ios-simulator:
