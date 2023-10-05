@@ -8,6 +8,15 @@ on:
     branches:
         - '**'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "build"
+  cancel-in-progress: true
+
 jobs:
   build-ios:
     name: Build For iOS
@@ -16,3 +25,7 @@ jobs:
   build-macos:
     name: Build For macOS
     uses: ./.github/workflows/build-macos.yml
+    
+  build-deploy-docs:
+    name: Build and Deploy Docs
+    uses: ./.github/workflows/build-deploy-docs.yml
