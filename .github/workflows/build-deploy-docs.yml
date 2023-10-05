@@ -12,9 +12,6 @@ permissions:
 jobs:
   build-deploy-docs:
     name: Build and Deploy Docs
-#    environment:
-#      name: github-pages
-#      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: macos-13
 
     steps:
