@@ -7,6 +7,7 @@
 
 import Foundation
 
-/// To monitor network events in a given session, all you have to do
-/// is implement its delegate methods, easy and simple isn't it? 🤔.
+// To monitor network events in a given session, all you have to do
+// is implement its delegate methods, easy and simple isn't it? 🤔.
+///  Session and Tasks delegate.
 public typealias NetworkEventMonitor = URLSessionDelegate & URLSessionTaskDelegate & URLSessionDataDelegate & URLSessionStreamDelegate & URLSessionDownloadDelegate & URLSessionWebSocketDelegate

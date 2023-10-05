@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// An enumeration of the types of events received during a download operation.
 public enum DownloadEvent {
     case completed
     case completedWithData(data: Data?)

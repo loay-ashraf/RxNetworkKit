@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Holds upload request details.
 public protocol NetworkUploadRouter: NetworkRouter { }
 
 public extension NetworkUploadRouter {

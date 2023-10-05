@@ -7,12 +7,20 @@
 
 import Foundation
 
+/// Holds file details for multipart form upload,
 public struct UploadFile {
+    
+    /// key used for file record.
     let key: String
+    /// name of file in the file record.
     let name: String
+    /// local url of the file.
     let url: URL?
+    /// data of the file.
     let data: Data?
+    /// MIME type of the file.
     let mimeType: HTTPMIMEType
+    
     /// Creates `File` instance, use this initializer for relativley small files.
     ///
     /// - Parameters:
@@ -27,6 +35,7 @@ public struct UploadFile {
         guard let mime = HTTPMIMEType(fileName: name) else { return nil }
         self.mimeType = mime
     }
+    
     /// Creates `File` instance, use this initializer for relativley large files.
     ///
     /// - Parameters:
@@ -41,4 +50,5 @@ public struct UploadFile {
         guard let mime = HTTPMIMEType(fileName: name) else { return nil }
         self.mimeType = mime
     }
+    
 }

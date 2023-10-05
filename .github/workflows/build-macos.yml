@@ -21,7 +21,7 @@ jobs:
           scheme: RxNetworkKit
           destination: generic/platform=macOS
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" docbuild | xcpretty && exit ${PIPESTATUS[0]}
           
   example-macos:
     name: Build Example For macOS

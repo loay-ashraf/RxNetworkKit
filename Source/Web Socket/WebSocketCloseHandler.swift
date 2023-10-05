@@ -7,9 +7,12 @@
 
 import Foundation
 
+/// Provides close code and reason for websocket connection.
 public class WebSocketCloseHandler {
+    
     private let _code: (URLRequest?) -> WebSocketCloseCode
     private let _reason: (URLRequest?) -> Data?
+    
     /// Creates `WebSocketCloseHandler` instance.
     ///
     /// - Parameters:
@@ -19,6 +22,7 @@ public class WebSocketCloseHandler {
         self._code = code
         self._reason = reason
     }
+    
     /// Provides close code for a given request.
     ///
     /// - Parameter request: `URLRequest?` object used to provide close code.
@@ -27,6 +31,7 @@ public class WebSocketCloseHandler {
     func code(for request: URLRequest?) -> WebSocketCloseCode {
         _code(request)
     }
+    
     /// Provides close reason for a given request.
     ///
     /// - Parameter request: `URLRequest?` object used to provide close reason.
@@ -35,4 +40,5 @@ public class WebSocketCloseHandler {
     func reason(for request: URLRequest?) -> Data? {
         _reason(request)
     }
+    
 }
