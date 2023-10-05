@@ -7,4 +7,5 @@
 
 import Foundation
 
+///  A code that indicates why a WebSocket connection closed.
 public typealias WebSocketCloseCode = URLSessionWebSocketTask.CloseCode

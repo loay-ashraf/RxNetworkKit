@@ -7,9 +7,12 @@
 
 import Foundation
 
+/// Holds details for a mulipart form upload.
 public struct UploadFormData {
+    
     /// parameters (text data fields) to be included in the form HTTP body.
     let parameters: [String: String]
     /// files to be included in the form HTTP body.
     let files: [UploadFile]
+    
 }
