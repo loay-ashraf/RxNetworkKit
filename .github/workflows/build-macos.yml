@@ -22,6 +22,7 @@ jobs:
           destination: generic/platform=macOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild docbuild
           
   example-macos:
     name: Build Example For macOS

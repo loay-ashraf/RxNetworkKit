@@ -22,6 +22,7 @@ jobs:
           destination: generic/platform=iOS Simulator
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild docbuild
           
   framework-ios:
     name: Build Framework For iOS Device
@@ -41,6 +42,7 @@ jobs:
           destination: generic/platform=iOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild docbuild
           
   example-ios-simulator:
     name: Build Example For iOS Simulator
