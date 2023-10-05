@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-13
 
     steps:
-     - name: Checkout
+      - name: Checkout
         uses: actions/checkout@v3
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
