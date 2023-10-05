@@ -35,25 +35,10 @@ jobs:
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
           $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path loay-ashraf/RxNetworkKit --output-path docs
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v3
       - name: Upload Docs artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'docs'
-#      - name: Deploy Docs artifact
-#        id: deployment
-#        uses: actions/deploy-pages@v1
-
-  deploy:
-    needs: build-deploy-docs
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy Docs artifact
         id: deployment
-        uses: actions/deploy-pages@v2
-    
+        uses: actions/deploy-pages@v1
