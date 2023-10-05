@@ -29,11 +29,12 @@ jobs:
           xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -derivedDataPath derivedData | xcpretty
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
+          zip -r RxNetworkKitDocCArchive.zip docArchives/RxNetworkKit.doccarchive
       - name: Upload Doc Archive
         uses: actions/upload-artifact@v3
         with:
-          name: doc-archive
-          path: docArchives/RxNetworkKit.doccarchive
+          name: doc-archive-zip
+          path: RxNetworkKitDocCArchive.zip
           
   deploy:
     runs-on: macos-13
@@ -45,9 +46,10 @@ jobs:
       - name: Download Derived Data
         uses: actions/download-artifact@v3
         with:
-          name: doc-archive
+          name: doc-archive-zip
       - name: Perpare Docs for Deployment
         run: |
+          unzip RxNetworkKitDocCArchive.zip
           $(xcrun --find docc) process-archive transform-for-static-hosting RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
           echo "<script>window.location.href += \"/documentation/rxnetworkkit\"</script>" > docs/index.html;
       - name: Upload Docs artifact
