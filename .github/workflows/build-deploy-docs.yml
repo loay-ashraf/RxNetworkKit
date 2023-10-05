@@ -32,14 +32,14 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
-          destination: generic/platform=iOS Simulator
         run: |
-          xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" -derivedDataPath derivedData | xcpretty;
-          echo "Copying DocC archives to docArchives...";
-          mkdir docArchives;
-          cp -R `find derivedData -type d -name "*.doccarchive"` docArchives;
-          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs;
-          echo "<script>window.location.href += \"/documentation/mypackage\"</script>" > docs/index.html;
+          xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -derivedDataPath derivedData | xcpretty
+      - name: Perpare Docs for deployment
+        run: |
+          mkdir docArchives
+          cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
+          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
+          echo "<script>window.location.href += \"/documentation/mypackage\"</script>" > docs/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
