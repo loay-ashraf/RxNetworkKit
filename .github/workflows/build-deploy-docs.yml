@@ -10,8 +10,8 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy-docs:
-    name: Build and Deploy Docs
+  build-docs:
+    name: Build Docs
     runs-on: macos-13
 
     steps:
@@ -37,8 +37,9 @@ jobs:
           path: RxNetworkKitDocCArchive.zip
           
   deploy:
+    name: Deploy Docs
     runs-on: macos-13
-    needs: build-deploy-docs
+    needs: build-docs
     
     steps:
       - name: Checkout
