@@ -27,13 +27,11 @@ jobs:
           scheme: RxNetworkKit
         run: |
           xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -derivedDataPath derivedData | xcpretty
-      - name: Perpare Docs for Deployment
-        run: |
-          mkdir docArchives
-          cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
-          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
-          echo "<script>window.location.href += \"/documentation/rxnetworkkit\"</script>" > docs/index.html;
-          
+      - name: Upload Derived Data
+        uses: actions/upload-artifact@v3
+        with:
+          name: derived-data
+          path: derivedData
           
   deploy:
     runs-on: macos-13
@@ -42,6 +40,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Download Derived Data
+        uses: actions/download-artifact@v3
+        with:
+          name: derived-data
+      - name: Perpare Docs for Deployment
+        run: |
+          mkdir docArchives
+          cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
+          $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
+          echo "<script>window.location.href += \"/documentation/rxnetworkkit\"</script>" > docs/index.html;
       - name: Upload Docs artifact
         uses: actions/upload-pages-artifact@v1
         with:
