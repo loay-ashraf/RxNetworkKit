@@ -9,10 +9,6 @@ permissions:
   pages: write
   id-token: write
 
-#concurrency:
-#  group: "pages"
-#  cancel-in-progress: true
-
 jobs:
   build-deploy-docs:
     name: Build and Deploy Docs
@@ -31,16 +27,15 @@ jobs:
           scheme: RxNetworkKit
         run: |
           xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -derivedDataPath derivedData | xcpretty
-      - name: Perpare Docs for deployment
+      - name: Perpare Docs for Deployment
         run: |
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
           $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
-          echo "<script>window.location.href += \"/documentation/mypackage\"</script>" > docs/index.html
-      - name: Upload artifact
+      - name: Upload Docs artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: 'docs'
-      - name: Deploy to GitHub Pages
+      - name: Deploy Docs artifact
         id: deployment
         uses: actions/deploy-pages@v1
