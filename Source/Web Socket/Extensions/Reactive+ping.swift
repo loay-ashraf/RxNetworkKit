@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 extension Reactive where Base: URLSessionWebSocketTask {
+    
     /// Sends a ping to the websocket server.
     ///
     /// - Returns: `Completable` observable encapsulating send ping operation.
@@ -24,4 +25,5 @@ extension Reactive where Base: URLSessionWebSocketTask {
             return Disposables.create()
         }
     }
+    
 }

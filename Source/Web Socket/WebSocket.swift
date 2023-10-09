@@ -35,6 +35,11 @@ public class WebSocket<T: Decodable> {
         setupBindings()
     }
     
+    /// Destroys current `WebSocket` instance and cancels current task.
+    deinit {
+        disconnect()
+    }
+    
     /// Resumes current task to establish the connection.
     public func connect() {
         task.resume()
@@ -49,17 +54,21 @@ public class WebSocket<T: Decodable> {
     /// Sends message to the websocket server.
     ///
     /// - Parameter message: `WebSocketMessage` to be sent to websocket server.
-    ///
-    /// - Returns: `Completable` observable encapsulating send message operation.
-    public func send(_ message: WebSocketMessage) -> Completable {
+    public func send(_ message: WebSocketMessage) {
         task.rx.send(message: message)
+            .subscribe(onError: { error in
+                self.error.accept(error)
+            })
+            .disposed(by: disposeBag)
     }
     
     /// Sends a ping to the websocket server.
-    ///
-    /// - Returns: `Completable` observable encapsulating send ping operation.
-    public func ping() -> Completable {
+    public func ping() {
         task.rx.ping()
+            .subscribe(onError: { error in
+                self.error.accept(error)
+            })
+            .disposed(by: disposeBag)
     }
     
     /// Sets up internal observable bindings.
