@@ -9,6 +9,7 @@ import Foundation
 import RxSwift
 
 extension Reactive where Base: URLSessionWebSocketTask {
+    
     /// Sends message to the websocket server.
     ///
     /// - Parameter message: `WebSocketMessage` to be sent to websocket server.
@@ -21,9 +22,10 @@ extension Reactive where Base: URLSessionWebSocketTask {
                     subscription(.completed)
                     return
                 }
-                subscription(.error(error))
+                subscription(.error(WebSocketError.send(error: error)))
             }
             return Disposables.create()
         }
     }
+    
 }

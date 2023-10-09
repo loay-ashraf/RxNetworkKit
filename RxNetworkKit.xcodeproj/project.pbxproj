@@ -63,6 +63,7 @@
 		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
 		C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */; };
 		C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */; };
+		C6B4B4C42AD47A2F009073ED /* WebSocketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */; };
 		C6BDFFE82ACDF3830022F675 /* Reactive+receive.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFE72ACDF3830022F675 /* Reactive+receive.swift */; };
 		C6BDFFEA2ACDF3D90022F675 /* Reactive+send.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFE92ACDF3D90022F675 /* Reactive+send.swift */; };
 		C6BDFFEC2ACDF4100022F675 /* Reactive+ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFEB2ACDF4100022F675 /* Reactive+ping.swift */; };
@@ -127,6 +128,7 @@
 		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
 		C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setUserAgentHTTPHeader.swift"; sourceTree = "<group>"; };
 		C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProcessInfo+operatingSystemName.swift"; sourceTree = "<group>"; };
+		C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketError.swift; sourceTree = "<group>"; };
 		C6BDFFE72ACDF3830022F675 /* Reactive+receive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+receive.swift"; sourceTree = "<group>"; };
 		C6BDFFE92ACDF3D90022F675 /* Reactive+send.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+send.swift"; sourceTree = "<group>"; };
 		C6BDFFEB2ACDF4100022F675 /* Reactive+ping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+ping.swift"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
 				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
 				C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */,
+				C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */,
 			);
 			path = "Web Socket";
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				0B77E09129D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift in Sources */,
 				C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */,
 				C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */,
+				C6B4B4C42AD47A2F009073ED /* WebSocketError.swift in Sources */,
 				0B77E0A629D965D30077FBC0 /* DefaultNetworkAPIError.swift in Sources */,
 				0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */,
 				0B77E0B229D965D30077FBC0 /* Completable+Retry.swift in Sources */,
