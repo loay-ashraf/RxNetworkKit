@@ -20,7 +20,7 @@ extension Reactive where Base: URLSessionWebSocketTask {
                     subscription(.completed)
                     return
                 }
-                subscription(.error(error))
+                subscription(.error(WebSocketError.ping(error: error)))
             }
             return Disposables.create()
         }
