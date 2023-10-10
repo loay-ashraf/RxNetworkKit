@@ -43,8 +43,9 @@ class ViewController: NSViewController {
     }
     /// Initializes ViewModel object.
     private func setupViewModel() {
-        let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-        viewModel = .init(networkManager: manager)
+        let restClient = RESTClient(configuration: .default, requestInterceptor: self, eventMonitor: self)
+        let httpClient = HTTPClient(configuration: .default, requestInterceptor: self, eventMonitor: self)
+        viewModel = .init(restClient: restClient, httpClient: httpClient)
     }
     /// Sets up views.
     private func setupUI() {

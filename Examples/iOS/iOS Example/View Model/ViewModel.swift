@@ -18,13 +18,16 @@ class ViewModel {
     private(set) var users: Driver<[Model]>!
     private(set) var error: Driver<HTTPError>!
     // MARK: Properties and Dependencies
-    private let networkManager: NetworkManager
+    private let restClient: RESTClient
+    private let httpClient: HTTPClient
     private let disposeBag = DisposeBag()
     /// Creates `ViewModel` instance
     ///
-    /// - Parameter networkManager: `NetworkManager` object used for making network API calls.
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
+    /// - Parameter restClient: `RESTClient` object used for making rest API calls.
+    /// - Parameter httpClient: `HTTPClient` object used for making http requests.
+    init(restClient: RESTClient, httpClient: HTTPClient) {
+        self.restClient = restClient
+        self.httpClient = httpClient
         bindOutput()
     }
     /// Creates observable sequence that results in image data.
@@ -33,7 +36,7 @@ class ViewModel {
     ///
     /// - Returns: observable sequence that results in image data.
     func downloadImage(_ router: DownloadRouter) -> Observable<HTTPDownloadRequestEvent> {
-        networkManager.download(router)
+        httpClient.download(router)
     }
     /// Binds output sequence to input sequence.
     private func bindOutput() {
@@ -42,7 +45,7 @@ class ViewModel {
             .filter( { ![.idle, .loading(loadType: .paginate), .error].contains($0) })
             .flatMapLatest{ [weak self] _ in
                 guard let self = self else { return Observable<[Model]>.empty().materialize() }
-                let single: Single<[Model]> = self.networkManager.request(Router.default)
+                let single: Single<[Model]> = self.restClient.request(Router.default)
                 return single
                     .asObservable()
                     .materialize()
