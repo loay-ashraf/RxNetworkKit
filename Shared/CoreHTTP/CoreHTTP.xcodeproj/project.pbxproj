@@ -28,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C623E7452AD61A2B00A20A0A /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		C658CEFB2AD5DDD7009E561D /* CoreHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C658CEFE2AD5DDD7009E561D /* CoreHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreHTTP.h; sourceTree = "<group>"; };
 		C658CF052AD5DEA1009E561D /* DefaultHTTPAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHTTPAPIError.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		C658CEF12AD5DDD7009E561D = {
 			isa = PBXGroup;
 			children = (
+				C623E7452AD61A2B00A20A0A /* Package.swift */,
 				C658CEFD2AD5DDD7009E561D /* Source */,
 				C658CEFC2AD5DDD7009E561D /* Products */,
 			);

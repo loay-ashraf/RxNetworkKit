@@ -155,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				C658D0232AD600CE009E561D /* CoreHTTP.xcodeproj */,
-				C69A78552ACEFF3200ECF092 /* Docs.docc */,
 				0B6BD87329DC0A9400502F47 /* Package.swift */,
+				C69A78552ACEFF3200ECF092 /* Docs.docc */,
 				0B77E04A29D965D30077FBC0 /* Source */,
 				0B77DFD729D964D40077FBC0 /* Products */,
 			);
