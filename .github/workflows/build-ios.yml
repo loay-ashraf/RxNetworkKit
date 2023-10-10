@@ -41,7 +41,7 @@ jobs:
           scheme: RxNetworkKit
           destination: generic/platform=iOS
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}"
           
   example-ios-simulator:
     name: Build Example For iOS Simulator
