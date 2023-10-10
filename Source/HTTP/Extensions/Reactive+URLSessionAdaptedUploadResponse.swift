@@ -17,7 +17,7 @@ extension Reactive where Base: URLSession {
     ///   - request: `URLRequest` used to create upload task and its observables.
     ///   - file: `UploadFile` object to be uploaded.
     ///   - modelType: `Decodable` type for model  in HTTP response body.
-    ///   - httpErrorType: `HTTPErrorBody` http error body type.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
     ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `UploadEvent` type.
@@ -41,7 +41,7 @@ extension Reactive where Base: URLSession {
     ///   - request: `URLRequest` used to create upload task and its observables.
     ///   - formData: `UploadFormData` object that includes parameters and files to be uploaded.
     ///   - modelType: `Decodable` type for model  in HTTP response body.
-    ///   - httpErrorType: `HTTPErrorBody` http error body type.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
     ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `UploadEvent` type.

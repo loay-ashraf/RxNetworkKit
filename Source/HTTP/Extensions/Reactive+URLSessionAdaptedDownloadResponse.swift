@@ -15,7 +15,7 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - httpErrorType: `HTTPBodyError` http error body type.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
     ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `DownloadEvent` type.
@@ -38,7 +38,7 @@ extension Reactive where Base: URLSession {
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
     ///   - url: `URL` used to save downloaded file to disk.
-    ///   - httpErrorType: `HTTPBodyError` http error body type.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
     ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `DownloadEvent` type.
