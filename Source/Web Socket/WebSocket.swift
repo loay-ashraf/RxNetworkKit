@@ -17,7 +17,7 @@ public class WebSocket<T: Decodable> {
     /// a generic `PublishRelay` object for data messages received from websocket server.
     public let data: PublishRelay<T> = .init()
     /// a `PublishRelay` object for errors encountered while receiving/sending from/to websocket server.
-    public let error: PublishRelay<Error> = .init()
+    public let error: PublishRelay<WebSocketError> = .init()
     private let task: URLSessionWebSocketTask
     private let closeHandler: WebSocketCloseHandler
     private let receiveObservable: Observable<WebSocketMessage>
@@ -35,6 +35,11 @@ public class WebSocket<T: Decodable> {
         setupBindings()
     }
     
+    /// Destroys current `WebSocket` instance and cancels current task.
+    deinit {
+        disconnect()
+    }
+    
     /// Resumes current task to establish the connection.
     public func connect() {
         task.resume()
@@ -49,17 +54,23 @@ public class WebSocket<T: Decodable> {
     /// Sends message to the websocket server.
     ///
     /// - Parameter message: `WebSocketMessage` to be sent to websocket server.
-    ///
-    /// - Returns: `Completable` observable encapsulating send message operation.
-    public func send(_ message: WebSocketMessage) -> Completable {
+    public func send(_ message: WebSocketMessage) {
         task.rx.send(message: message)
+            .subscribe(onError: { error in
+                guard let error = error as? WebSocketError else { return }
+                self.error.accept(error)
+            })
+            .disposed(by: disposeBag)
     }
     
     /// Sends a ping to the websocket server.
-    ///
-    /// - Returns: `Completable` observable encapsulating send ping operation.
-    public func ping() -> Completable {
+    public func ping() {
         task.rx.ping()
+            .subscribe(onError: { error in
+                guard let error = error as? WebSocketError else { return }
+                self.error.accept(error)
+            })
+            .disposed(by: disposeBag)
     }
     
     /// Sets up internal observable bindings.
@@ -92,6 +103,7 @@ public class WebSocket<T: Decodable> {
             .materialize()
             .compactMap({
                 guard case .error(let error) = $0 else { return nil }
+                guard let error = error as? WebSocketError else { return nil }
                 return error
             })
             .bind(to: error)

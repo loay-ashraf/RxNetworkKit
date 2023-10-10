@@ -34,4 +34,5 @@
 - ``WebSocketMessage``
 - ``WebSocketCloseCode``
 - ``WebSocketCloseHandler``
+- ``WebSocketError``
 - ``NetworkManager/webSocket(_:_:_:)``

@@ -40,7 +40,8 @@ class ViewModel {
         // Create default sequence with default API call request.
         let loadObservable = viewState
             .filter( { ![.idle, .loading(loadType: .paginate), .error].contains($0) })
-            .flatMapLatest{ _ in
+            .flatMapLatest{ [weak self] _ in
+                guard let self = self else { return Observable<[Model]>.empty().materialize() }
                 let single: Single<[Model]> = self.networkManager.request(Router.default)
                 return single
                     .asObservable()

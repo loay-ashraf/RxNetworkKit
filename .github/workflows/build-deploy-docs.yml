@@ -10,8 +10,8 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy-docs:
-    name: Build and Deploy Docs
+  build-docs:
+    name: Build Docs
     runs-on: macos-13
 
     steps:
@@ -27,11 +27,32 @@ jobs:
           scheme: RxNetworkKit
         run: |
           xcodebuild docbuild -workspace "${workspace}" -scheme "${scheme}" -derivedDataPath derivedData | xcpretty
-      - name: Perpare Docs for Deployment
-        run: |
           mkdir docArchives
           cp -R `find derivedData -type d -name "*.doccarchive"` docArchives
+          zip -r RxNetworkKitDocCArchive.zip docArchives/RxNetworkKit.doccarchive
+      - name: Upload Docs Archive
+        uses: actions/upload-artifact@v3
+        with:
+          name: doc-archive-zip
+          path: RxNetworkKitDocCArchive.zip
+          
+  deploy-docs:
+    name: Deploy Docs
+    runs-on: macos-13
+    needs: build-docs
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Download Docs Archive
+        uses: actions/download-artifact@v3
+        with:
+          name: doc-archive-zip
+      - name: Perpare Docs for Deployment
+        run: |
+          unzip RxNetworkKitDocCArchive.zip
           $(xcrun --find docc) process-archive transform-for-static-hosting docArchives/RxNetworkKit.doccarchive --hosting-base-path RxNetworkKit --output-path docs
+          echo "<script>window.location.href += \"/documentation/rxnetworkkit\"</script>" > docs/index.html;
       - name: Upload Docs artifact
         uses: actions/upload-pages-artifact@v1
         with:

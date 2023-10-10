@@ -23,16 +23,13 @@ extension Reactive where Base: URLSessionWebSocketTask {
                     subscription.onNext(message)
                     receive(subscription: subscription)
                 case .failure(let error):
-                    subscription.onError(error)
+                    subscription.onError(WebSocketError.receive(error: error))
                 }
             }
         }
         return Observable<WebSocketMessage>.create { subscription in
             receive(subscription: subscription)
-            return Disposables.create {
-                let request = base.currentRequest
-                base.cancel(with: closeHandler.code(for: request), reason: closeHandler.reason(for: request))
-            }
+            return Disposables.create()
         }
         .share()
     }
