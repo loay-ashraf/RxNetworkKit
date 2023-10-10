@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/// Entry point for creating rest requests.
 class RESTClient {
     
     /// Principal `URLSession` used to create request tasks.

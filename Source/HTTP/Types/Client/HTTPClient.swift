@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 
+/// Entry point for creating http requests.
 class HTTPClient {
     
     /// Principal `URLSession` used to create request tasks.
