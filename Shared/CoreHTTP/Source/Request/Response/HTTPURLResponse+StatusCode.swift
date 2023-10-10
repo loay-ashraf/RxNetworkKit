@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension HTTPURLResponse {
+public extension HTTPURLResponse {
     var status: HTTPStatusCode? {
         return HTTPStatusCode(rawValue: statusCode)
     }

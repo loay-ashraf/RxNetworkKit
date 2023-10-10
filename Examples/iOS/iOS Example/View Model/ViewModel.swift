@@ -10,6 +10,7 @@ import RxSwift
 import RxCocoa
 import RxNetworkKit
 
+
 class ViewModel {
     // MARK: Input
     // Input sequence is the same as view state (only for loading states)

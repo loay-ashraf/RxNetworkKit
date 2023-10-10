@@ -12,6 +12,7 @@ import RxDataSources
 import SafariServices
 import RxNetworkKit
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reachbilityView: UIView!

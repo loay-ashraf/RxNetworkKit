@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C623E7162AD6117200A20A0A /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C623E7142AD6116A00A20A0A /* RxNetworkKit.framework */; };
+		C623E7172AD6117200A20A0A /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C623E7142AD6116A00A20A0A /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C639752A2A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975132A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift */; };
 		C639752B2A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */; };
 		C639752C2A95166A00D0AC13 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975162A95166A00D0AC13 /* ViewState.swift */; };
@@ -20,14 +22,12 @@
 		C69FBA1A2A9408740062BFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA192A9408740062BFD7 /* ViewController.swift */; };
 		C69FBA1C2A9408770062BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1B2A9408770062BFD7 /* Assets.xcassets */; };
 		C69FBA1F2A9408770062BFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1D2A9408770062BFD7 /* Main.storyboard */; };
-		C69FBA322A940B090062BFD7 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */; };
-		C69FBA332A940B090062BFD7 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C639750F2A9513FF00D0AC13 /* PBXContainerItemProxy */ = {
+		C623E7132AD6116A00A20A0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C69FBA262A9409900062BFD7 /* RxNetworkKit.xcodeproj */;
+			containerPortal = C623E70F2AD6116A00A20A0A /* RxNetworkKit.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 0B77DFD629D964D40077FBC0;
 			remoteInfo = RxNetworkKit;
@@ -35,13 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		C69FBA342A940B090062BFD7 /* Embed Frameworks */ = {
+		C623E7192AD6117300A20A0A /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C69FBA332A940B090062BFD7 /* RxNetworkKit.framework in Embed Frameworks */,
+				C623E7172AD6117200A20A0A /* RxNetworkKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +49,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C623E70F2AD6116A00A20A0A /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
+		C623E7182AD6117200A20A0A /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63975132A95166A00D0AC13 /* ViewController+NetworkRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkRequestInterceptor.swift"; sourceTree = "<group>"; };
 		C63975142A95166A00D0AC13 /* ViewController+NetworkEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkEventMonitor.swift"; sourceTree = "<group>"; };
 		C63975162A95166A00D0AC13 /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
@@ -58,14 +60,11 @@
 		C639751E2A95166A00D0AC13 /* DownloadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRouter.swift; sourceTree = "<group>"; };
 		C639751F2A95166A00D0AC13 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		C63975212A95166A00D0AC13 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		C69FBA142A9408740062BFD7 /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FBA172A9408740062BFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69FBA192A9408740062BFD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C69FBA1B2A9408770062BFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C69FBA1E2A9408770062BFD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C69FBA202A9408770062BFD7 /* macOS_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS_Example.entitlements; sourceTree = "<group>"; };
-		C69FBA262A9409900062BFD7 /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
-		C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,17 +72,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69FBA322A940B090062BFD7 /* RxNetworkKit.framework in Frameworks */,
+				C623E7162AD6117200A20A0A /* RxNetworkKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C639750C2A9513F900D0AC13 /* Products */ = {
+		C623E7102AD6116A00A20A0A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C63975102A9513FF00D0AC13 /* RxNetworkKit.framework */,
+				C623E7142AD6116A00A20A0A /* RxNetworkKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,22 +143,21 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		C67D5AA02AD60F16002F588A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C623E7182AD6117200A20A0A /* macOS Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C69FBA0B2A9408740062BFD7 = {
 			isa = PBXGroup;
 			children = (
-				C69FBA262A9409900062BFD7 /* RxNetworkKit.xcodeproj */,
+				C623E70F2AD6116A00A20A0A /* RxNetworkKit.xcodeproj */,
 				C69FBA162A9408740062BFD7 /* macOS Example */,
-				C69FBA152A9408740062BFD7 /* Products */,
-				C69FBA302A940B090062BFD7 /* Frameworks */,
+				C67D5AA02AD60F16002F588A /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		C69FBA152A9408740062BFD7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C69FBA142A9408740062BFD7 /* macOS Example.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C69FBA162A9408740062BFD7 /* macOS Example */ = {
@@ -175,14 +173,6 @@
 			path = "macOS Example";
 			sourceTree = "<group>";
 		};
-		C69FBA302A940B090062BFD7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C69FBA312A940B090062BFD7 /* RxNetworkKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,7 +183,7 @@
 				C69FBA102A9408740062BFD7 /* Sources */,
 				C69FBA112A9408740062BFD7 /* Frameworks */,
 				C69FBA122A9408740062BFD7 /* Resources */,
-				C69FBA342A940B090062BFD7 /* Embed Frameworks */,
+				C623E7192AD6117300A20A0A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,7 +193,7 @@
 			packageProductDependencies = (
 			);
 			productName = "macOS Example";
-			productReference = C69FBA142A9408740062BFD7 /* macOS Example.app */;
+			productReference = C623E7182AD6117200A20A0A /* macOS Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -232,12 +222,12 @@
 			mainGroup = C69FBA0B2A9408740062BFD7;
 			packageReferences = (
 			);
-			productRefGroup = C69FBA152A9408740062BFD7 /* Products */;
+			productRefGroup = C69FBA0B2A9408740062BFD7;
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C639750C2A9513F900D0AC13 /* Products */;
-					ProjectRef = C69FBA262A9409900062BFD7 /* RxNetworkKit.xcodeproj */;
+					ProductGroup = C623E7102AD6116A00A20A0A /* Products */;
+					ProjectRef = C623E70F2AD6116A00A20A0A /* RxNetworkKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -248,11 +238,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C63975102A9513FF00D0AC13 /* RxNetworkKit.framework */ = {
+		C623E7142AD6116A00A20A0A /* RxNetworkKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RxNetworkKit.framework;
-			remoteRef = C639750F2A9513FF00D0AC13 /* PBXContainerItemProxy */;
+			remoteRef = C623E7132AD6116A00A20A0A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

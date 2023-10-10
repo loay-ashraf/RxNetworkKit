@@ -16,7 +16,7 @@ public enum HTTPError: Error {
     /// Creates `NetworkError` instance.
     ///
     /// - Parameter response: `HTTPURLResponse` used to get response status code.
-    init?<E: HTTPBodyError>(_ response: HTTPURLResponse?, data: Data?, errorType: E.Type) {
+    public init?<E: HTTPBodyError>(_ response: HTTPURLResponse?, data: Data?, errorType: E.Type) {
         if let response = response,
            let httpStatusCode = response.status {
             // Get Error body from response data if possible.

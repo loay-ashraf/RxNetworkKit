@@ -8,6 +8,7 @@
 import Foundation
 import RxNetworkKit
 
+
 extension ViewController: HTTPRequestInterceptor {
     func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest {
         return request

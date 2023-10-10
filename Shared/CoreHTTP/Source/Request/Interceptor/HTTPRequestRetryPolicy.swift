@@ -18,7 +18,7 @@ public enum HTTPRequestRetryPolicy {
     case custom(closure: (Int) -> Double)
 }
 
-extension HTTPRequestRetryPolicy {
+public extension HTTPRequestRetryPolicy {
     /// Creates time interavel (`Double`) from current policy and given attempt count.
     ///
     /// - Parameter attempt: current attempt count.
