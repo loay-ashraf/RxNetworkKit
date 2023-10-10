@@ -8,7 +8,7 @@
 import Foundation
 import RxNetworkKit
 
-extension ViewController: NetworkEventMonitor {
+extension ViewController: HTTPEventMonitor {
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         debugPrint("")
     }

@@ -8,7 +8,7 @@
 import Foundation
 import RxNetworkKit
 
-enum DownloadRouter: NetworkDownloadRouter {
+enum DownloadRouter: HTTPDownloadRequestRouter {
     case `default`(url: URL)
     var scheme: HTTPScheme {
         .https

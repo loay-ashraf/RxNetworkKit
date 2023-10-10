@@ -16,7 +16,7 @@ class ViewModel {
     private(set) var viewState: PublishRelay<ViewState> = .init()
     // MARK: Output
     private(set) var users: Driver<[Model]>!
-    private(set) var error: Driver<NetworkError>!
+    private(set) var error: Driver<HTTPError>!
     // MARK: Properties and Dependencies
     private let networkManager: NetworkManager
     private let disposeBag = DisposeBag()
@@ -32,7 +32,7 @@ class ViewModel {
     /// - Parameter router: `DownloadRouter` used to download image data.
     ///
     /// - Returns: observable sequence that results in image data.
-    func downloadImage(_ router: DownloadRouter) -> Observable<DownloadEvent> {
+    func downloadImage(_ router: DownloadRouter) -> Observable<HTTPDownloadRequestEvent> {
         networkManager.download(router)
     }
     /// Binds output sequence to input sequence.
@@ -53,8 +53,8 @@ class ViewModel {
             .compactMap { $0.element }
             .asDriver(onErrorJustReturn: [])
         self.error = loadObservable
-            .compactMap { $0.error as? NetworkError }
-            .asDriver(onErrorJustReturn: NetworkError.client(.transport(NSError(domain: "", code: 1, userInfo: nil))))
+            .compactMap { $0.error as? HTTPError }
+            .asDriver(onErrorJustReturn: HTTPError.client(.transport(NSError(domain: "", code: 1, userInfo: nil))))
         // Bind output sequence to input sequence (view state)
         self.users
             .asObservable()

@@ -8,7 +8,7 @@
 import Foundation
 import RxNetworkKit
 
-enum Router: NetworkRouter {
+enum Router: HTTPRequestRouter {
     case `default`
     var scheme: HTTPScheme {
         .https
