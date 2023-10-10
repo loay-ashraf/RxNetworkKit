@@ -174,16 +174,16 @@
 		0B77E04A29D965D30077FBC0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				C6BDFFE62ACDF3260022F675 /* Web Socket */,
 				0B77E04B29D965D30077FBC0 /* Custom Requests */,
-				0B77E05929D965D30077FBC0 /* Request Interceptor */,
-				0B77E05F29D965D30077FBC0 /* Manager */,
-				0B77E06129D965D30077FBC0 /* HTTP */,
-				0B77E06729D965D30077FBC0 /* Reachability */,
-				0B77E06E29D965D30077FBC0 /* Event Monitor */,
 				0B77E07029D965D30077FBC0 /* Error */,
-				0B77E07629D965D30077FBC0 /* Rx Extensions */,
+				0B77E06E29D965D30077FBC0 /* Event Monitor */,
+				0B77E06129D965D30077FBC0 /* HTTP */,
+				0B77E05F29D965D30077FBC0 /* Manager */,
+				0B77E06729D965D30077FBC0 /* Reachability */,
+				0B77E05929D965D30077FBC0 /* Request Interceptor */,
 				0B77E08529D965D30077FBC0 /* Router */,
+				0B77E07629D965D30077FBC0 /* Rx Extensions */,
+				C6BDFFE62ACDF3260022F675 /* Web Socket */,
 				C6049B152A95307800E5727E /* RxNetworkKit.h */,
 			);
 			path = Source;
@@ -202,9 +202,9 @@
 			isa = PBXGroup;
 			children = (
 				0B77E04E29D965D30077FBC0 /* DownloadEvent.swift */,
-				0B77E04F29D965D30077FBC0 /* URLSession+DownloadTask.swift */,
-				0B77E04D29D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift */,
 				0B77E05029D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift */,
+				0B77E04D29D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift */,
+				0B77E04F29D965D30077FBC0 /* URLSession+DownloadTask.swift */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -212,13 +212,13 @@
 		0B77E05129D965D30077FBC0 /* Upload */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E05229D965D30077FBC0 /* UploadFormData.swift */,
-				0B77E05329D965D30077FBC0 /* UploadFile.swift */,
-				0B77E05429D965D30077FBC0 /* URLSession+UploadTask.swift */,
 				0B77E05529D965D30077FBC0 /* Data+AppendString.swift */,
-				0B77E05729D965D30077FBC0 /* UploadEvent.swift */,
-				0B77E05829D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift */,
 				0B77E05629D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift */,
+				0B77E05829D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift */,
+				0B77E05729D965D30077FBC0 /* UploadEvent.swift */,
+				0B77E05329D965D30077FBC0 /* UploadFile.swift */,
+				0B77E05229D965D30077FBC0 /* UploadFormData.swift */,
+				0B77E05429D965D30077FBC0 /* URLSession+UploadTask.swift */,
 			);
 			path = Upload;
 			sourceTree = "<group>";
@@ -226,10 +226,10 @@
 		0B77E05929D965D30077FBC0 /* Request Interceptor */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E05A29D965D30077FBC0 /* RequestInterceptor.swift */,
-				0B77E05B29D965D30077FBC0 /* RequestRetryPolicy.swift */,
 				0B77E05C29D965D30077FBC0 /* RequestAdapter.swift */,
+				0B77E05A29D965D30077FBC0 /* RequestInterceptor.swift */,
 				0B77E05D29D965D30077FBC0 /* RequestRetrier.swift */,
+				0B77E05B29D965D30077FBC0 /* RequestRetryPolicy.swift */,
 			);
 			path = "Request Interceptor";
 			sourceTree = "<group>";
@@ -238,9 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				0B77E06029D965D30077FBC0 /* NetworkManager.swift */,
+				C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */,
 				C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */,
 				C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */,
-				C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -250,8 +250,8 @@
 			children = (
 				C6A9BEF52A93E2AE00459E32 /* DefaultHTTPErrorBody.swift */,
 				C6A9BEF72A93E2D600459E32 /* HTTPErrorBody.swift */,
-				0B77E06229D965D30077FBC0 /* HTTPMIMEType.swift */,
 				0B77E06329D965D30077FBC0 /* HTTPMethod.swift */,
+				0B77E06229D965D30077FBC0 /* HTTPMIMEType.swift */,
 				0B77E06429D965D30077FBC0 /* HTTPScheme.swift */,
 				0B77E06629D965D30077FBC0 /* HTTPStatusCode.swift */,
 				0B77E06529D965D30077FBC0 /* HTTPURLResponse+StatusCode.swift */,
@@ -262,12 +262,12 @@
 		0B77E06729D965D30077FBC0 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E06829D965D30077FBC0 /* NWPath+InterfaceType.swift */,
-				0B77E06929D965D30077FBC0 /* NetworkReachabilityStatus.swift */,
-				0B77E06A29D965D30077FBC0 /* NWInterfaceType+RawRepresentable.swift */,
-				0B77E06B29D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift */,
 				0B77E06C29D965D30077FBC0 /* NetworkInterfaceType.swift */,
 				0B77E06D29D965D30077FBC0 /* NetworkReachability.swift */,
+				0B77E06929D965D30077FBC0 /* NetworkReachabilityStatus.swift */,
+				0B77E06B29D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift */,
+				0B77E06A29D965D30077FBC0 /* NWInterfaceType+RawRepresentable.swift */,
+				0B77E06829D965D30077FBC0 /* NWPath+InterfaceType.swift */,
 			);
 			path = Reachability;
 			sourceTree = "<group>";
@@ -284,10 +284,10 @@
 			isa = PBXGroup;
 			children = (
 				0B77E07129D965D30077FBC0 /* DefaultNetworkAPIError.swift */,
-				0B77E07229D965D30077FBC0 /* NetworkServerError.swift */,
+				0B77E07529D965D30077FBC0 /* NetworkAPIError.swift */,
 				0B77E07329D965D30077FBC0 /* NetworkClientError.swift */,
 				0B77E07429D965D30077FBC0 /* NetworkError.swift */,
-				0B77E07529D965D30077FBC0 /* NetworkAPIError.swift */,
+				0B77E07229D965D30077FBC0 /* NetworkServerError.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -314,11 +314,11 @@
 		0B77E07829D965D30077FBC0 /* Single */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E07929D965D30077FBC0 /* Single+Retry.swift */,
-				0B77E07A29D965D30077FBC0 /* Single+Decode.swift */,
 				0B77E07B29D965D30077FBC0 /* Single+CatchErrors.swift */,
-				0B77E07C29D965D30077FBC0 /* Single+VerifyResponse.swift */,
 				0B77E07D29D965D30077FBC0 /* Single+Decodable.swift */,
+				0B77E07A29D965D30077FBC0 /* Single+Decode.swift */,
+				0B77E07929D965D30077FBC0 /* Single+Retry.swift */,
+				0B77E07C29D965D30077FBC0 /* Single+VerifyResponse.swift */,
 			);
 			path = Single;
 			sourceTree = "<group>";
@@ -326,8 +326,8 @@
 		0B77E07E29D965D30077FBC0 /* Observable */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E07F29D965D30077FBC0 /* Observable+Retry.swift */,
 				0B77E08029D965D30077FBC0 /* Observable+Decodable.swift */,
+				0B77E07F29D965D30077FBC0 /* Observable+Retry.swift */,
 			);
 			path = Observable;
 			sourceTree = "<group>";
@@ -363,10 +363,10 @@
 			children = (
 				C6BDFFF12ACDF4CB0022F675 /* Extensions */,
 				C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */,
-				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
-				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
 				C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */,
+				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
 				C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */,
+				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
 			);
 			path = "Web Socket";
 			sourceTree = "<group>";
