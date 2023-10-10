@@ -22,7 +22,7 @@ jobs:
           scheme: RxNetworkKit
           destination: generic/platform=iOS Simulator
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
   framework-ios:
     name: Build Framework For iOS Device
@@ -41,7 +41,7 @@ jobs:
           scheme: RxNetworkKit
           destination: generic/platform=iOS
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}"
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
   example-ios-simulator:
     name: Build Example For iOS Simulator
