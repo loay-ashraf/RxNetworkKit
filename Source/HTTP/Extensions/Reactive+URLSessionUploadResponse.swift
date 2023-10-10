@@ -15,7 +15,7 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - file: `UploadFile` object to be uploaded.
+    ///   - file: `HTTPUploadRequestFile` object to be uploaded.
     ///
     /// - Returns: a tuple of progress `PublishSubject` and response and data `Single`.
     func uploadResponse(request: URLRequest, file: HTTPUploadRequestFile) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {
@@ -66,7 +66,7 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - formData: `UploadFormData` object that includes parameters and files to be uploaded.
+    ///   - formData: `HTTPUploadRequestFormData` object that includes parameters and files to be uploaded.
     ///
     /// - Returns: a tuple of progress `PublishSubject` and response and data `Single`.
     func uploadResponse(request: URLRequest, formData: HTTPUploadRequestFormData) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {

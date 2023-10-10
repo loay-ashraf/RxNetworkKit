@@ -7,5 +7,5 @@
 
 import Foundation
 
-/// HTTP error body type.
+/// HTTP body error type.
 public protocol HTTPBodyError: Decodable { }

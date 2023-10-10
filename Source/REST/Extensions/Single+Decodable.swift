@@ -13,7 +13,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
     /// Creates `Completable` observable + handles transport errors.
     ///
     /// - Parameters:
-    ///   - httpErrorType: `Decodable` http error body type.
+    ///   - httpErrorType: `Decodable` http body error type.
     ///   - apiErrorType: `Decodable` api error type.
     ///
     /// - Returns: Observable to be observed for values.
@@ -29,7 +29,7 @@ extension PrimitiveSequence where Trait == SingleTrait, Element == (response: HT
     /// Creates `Single` observable with the same element type + handles transport errors.
     ///
     /// - Parameters:
-    ///   - httpErrorType: `Decodable` http error body type.
+    ///   - httpErrorType: `Decodable` http body error type.
     ///   - apiErrorType: `Decodable` api error type.
     ///
     /// - Returns: Observable to be observed for values.

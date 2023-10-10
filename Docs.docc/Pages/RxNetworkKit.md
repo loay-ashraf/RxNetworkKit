@@ -18,34 +18,35 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 
 ### Foundation
 
-- ``NetworkManager``
+- ``RESTClient``
+- ``HTTPClient``
 
 ### HTTP
 
 - ``HTTPScheme``
 - ``HTTPMethod``
 - ``HTTPStatusCode``
-- ``HTTPErrorBody``
-- ``DefaultHTTPErrorBody``
+- ``HTTPBodyError``
+- ``DefaultHTTPBodyError``
 
 ### Error
 
-- ``NetworkError``
-- ``NetworkAPIError``
-- ``DefaultNetworkAPIError``
-- ``NetworkClientError``
-- ``NetworkServerError``
+- ``HTTPError``
+- ``HTTPAPIError``
+- ``DefaultHTTPAPIError``
+- ``HTTPClientError``
+- ``HTTPServerError``
 
 ### Request Interceptor
 
-- ``NetworkRequestInterceptor``
-- ``NetworkRequestAdapter``
-- ``NetworkRequestRetrier``
-- ``NetworkRequestRetryPolicy``
+- ``HTTPRequestInterceptor``
+- ``HTTPRequestAdapter``
+- ``HTTPRequestRetrier``
+- ``HTTPRequestRetryPolicy``
 
 ### Event Monitor
 
-- ``NetworkEventMonitor``
+- ``HTTPRequestEventMonitor``
 
 ### Network Reachability
 

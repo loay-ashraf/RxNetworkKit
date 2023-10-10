@@ -15,10 +15,10 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - file: `UploadFile` object to be uploaded.
+    ///   - file: `HTTPUploadRequestFile` object to be uploaded.
     ///   - modelType: `Decodable` type for model  in HTTP response body.
     ///   - httpErrorType: `HTTPBodyError` http body error type.
-    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///   - apiErrorType: `HTTPAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `UploadEvent` type.
     func uploadResponse<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(request: URLRequest, file: HTTPUploadRequestFile, modelType: T.Type, httpErrorType: E.Type, apiErrorType: AE.Type) -> Observable<HTTPUploadRequestEvent<T>> {
@@ -39,10 +39,10 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - formData: `UploadFormData` object that includes parameters and files to be uploaded.
+    ///   - formData: `HTTPUploadRequestFormData` object that includes parameters and files to be uploaded.
     ///   - modelType: `Decodable` type for model  in HTTP response body.
     ///   - httpErrorType: `HTTPBodyError` http body error type.
-    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///   - apiErrorType: `HTTPAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `UploadEvent` type.
     func uploadResponse<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(request: URLRequest, formData: HTTPUploadRequestFormData, modelType: T.Type, httpErrorType: E.Type, apiErrorType: AE.Type) -> Observable<HTTPUploadRequestEvent<T>> {

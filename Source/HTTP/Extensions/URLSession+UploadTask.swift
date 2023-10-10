@@ -12,7 +12,7 @@ extension URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create data task.
-    ///   - file: `File` object that includes name, data, url and HTTP MIME type.
+    ///   - file: `HTTPUploadRequestFile` object that includes name, data, url and HTTP MIME type.
     ///   - completionHandler: completion handler to be called on task completion.
     ///
     /// - Returns: upload`URLSessionDataTask` created using given request and file.
@@ -26,7 +26,7 @@ extension URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create data task.
-    ///   - formData: `FormData` object that includes text data fields and files to be uploaded.
+    ///   - formData: `HTTPUploadRequestFormData` object that includes text data fields and files to be uploaded.
     ///   - completionHandler: completion handler to be called on task completion.
     ///
     /// - Returns: upload`URLSessionDataTask` created using given request and form data.
@@ -57,7 +57,7 @@ extension URLSession {
     
     /// Exxtracts data from file object.
     ///
-    /// - Parameter file: `File` object that includes data or url.
+    /// - Parameter file: `HTTPUploadRequestFile` object that includes data or url.
     ///
     /// - Returns: `Data` object representing the file.
     fileprivate func extractFileData(_ file: HTTPUploadRequestFile) -> Data? {
@@ -73,7 +73,7 @@ extension URLSession {
     /// Creates HTTP body data using given form data and boundary.
     ///
     /// - Parameters:
-    ///   - formData: `FormData` object used to create HTTP body.
+    ///   - formData: `HTTPUploadRequestFormData` object used to create HTTP body.
     ///   - boundary: `String` boundary used to mark start of body section.
     ///
     /// - Returns: `Data` object representing HTTP body.

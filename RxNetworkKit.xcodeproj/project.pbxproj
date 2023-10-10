@@ -33,7 +33,7 @@
 		0B77E0A229D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06B29D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift */; };
 		0B77E0A329D965D30077FBC0 /* NetworkInterfaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06C29D965D30077FBC0 /* NetworkInterfaceType.swift */; };
 		0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06D29D965D30077FBC0 /* NetworkReachability.swift */; };
-		0B77E0A529D965D30077FBC0 /* HTTPEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06F29D965D30077FBC0 /* HTTPEventMonitor.swift */; };
+		0B77E0A529D965D30077FBC0 /* HTTPRequestEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E06F29D965D30077FBC0 /* HTTPRequestEventMonitor.swift */; };
 		0B77E0A629D965D30077FBC0 /* DefaultHTTPAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E07129D965D30077FBC0 /* DefaultHTTPAPIError.swift */; };
 		0B77E0A729D965D30077FBC0 /* HTTPServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E07229D965D30077FBC0 /* HTTPServerError.swift */; };
 		0B77E0A829D965D30077FBC0 /* HTTPClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77E07329D965D30077FBC0 /* HTTPClientError.swift */; };
@@ -103,7 +103,7 @@
 		0B77E06B29D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NWInterfaceType+CaseIterable.swift"; sourceTree = "<group>"; };
 		0B77E06C29D965D30077FBC0 /* NetworkInterfaceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkInterfaceType.swift; sourceTree = "<group>"; };
 		0B77E06D29D965D30077FBC0 /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
-		0B77E06F29D965D30077FBC0 /* HTTPEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPEventMonitor.swift; sourceTree = "<group>"; };
+		0B77E06F29D965D30077FBC0 /* HTTPRequestEventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequestEventMonitor.swift; sourceTree = "<group>"; };
 		0B77E07129D965D30077FBC0 /* DefaultHTTPAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHTTPAPIError.swift; sourceTree = "<group>"; };
 		0B77E07229D965D30077FBC0 /* HTTPServerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServerError.swift; sourceTree = "<group>"; };
 		0B77E07329D965D30077FBC0 /* HTTPClientError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClientError.swift; sourceTree = "<group>"; };
@@ -220,7 +220,7 @@
 		0B77E06E29D965D30077FBC0 /* Event Monitor */ = {
 			isa = PBXGroup;
 			children = (
-				0B77E06F29D965D30077FBC0 /* HTTPEventMonitor.swift */,
+				0B77E06F29D965D30077FBC0 /* HTTPRequestEventMonitor.swift */,
 			);
 			path = "Event Monitor";
 			sourceTree = "<group>";
@@ -282,6 +282,7 @@
 		C6554A322AD5C64D0090DD3A /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				0B77E06E29D965D30077FBC0 /* Event Monitor */,
 				0B77E05929D965D30077FBC0 /* Interceptor */,
 				C6554A342AD5C6830090DD3A /* Event */,
 				C6554A2F2AD5C54C0090DD3A /* Error */,
@@ -349,7 +350,6 @@
 			isa = PBXGroup;
 			children = (
 				C6554A352AD5C6950090DD3A /* Client */,
-				0B77E06E29D965D30077FBC0 /* Event Monitor */,
 				C6554A322AD5C64D0090DD3A /* Request */,
 				C6BDFFE62ACDF3260022F675 /* Web Socket */,
 			);
@@ -496,7 +496,7 @@
 				0B77E0AF29D965D30077FBC0 /* Single+Decodable.swift in Sources */,
 				C69A78562ACF001400ECF092 /* Docs.docc in Sources */,
 				0B77E0A129D965D30077FBC0 /* NWInterfaceType+RawRepresentable.swift in Sources */,
-				0B77E0A529D965D30077FBC0 /* HTTPEventMonitor.swift in Sources */,
+				0B77E0A529D965D30077FBC0 /* HTTPRequestEventMonitor.swift in Sources */,
 				0B77E0B129D965D30077FBC0 /* Observable+Decodable.swift in Sources */,
 				0B77E08A29D965D30077FBC0 /* HTTPDownloadRequestEvent.swift in Sources */,
 				C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */,

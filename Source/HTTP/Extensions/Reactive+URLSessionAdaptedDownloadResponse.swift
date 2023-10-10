@@ -16,7 +16,7 @@ extension Reactive where Base: URLSession {
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
     ///   - httpErrorType: `HTTPBodyError` http body error type.
-    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///   - apiErrorType: `HTTPAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `DownloadEvent` type.
     func downloadResponse<E: HTTPBodyError, AE: HTTPAPIError>(request: URLRequest, httpErrorType: E.Type, apiErrorType: AE.Type) -> Observable<HTTPDownloadRequestEvent> {
@@ -39,7 +39,7 @@ extension Reactive where Base: URLSession {
     ///   - request: `URLRequest` used to create upload task and its observables.
     ///   - url: `URL` used to save downloaded file to disk.
     ///   - httpErrorType: `HTTPBodyError` http body error type.
-    ///   - apiErrorType: `NetworkAPIError` type for expected error in HTTP response body.
+    ///   - apiErrorType: `HTTPAPIError` type for expected error in HTTP response body.
     ///
     /// - Returns: a `Observable` object of `DownloadEvent` type.
     func downloadResponse<E: HTTPBodyError, AE: HTTPAPIError>(request: URLRequest, saveTo url: URL, httpErrorType: E.Type, apiErrorType: AE.Type) -> Observable<HTTPDownloadRequestEvent> {

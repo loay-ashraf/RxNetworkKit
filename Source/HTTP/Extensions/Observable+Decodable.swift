@@ -12,7 +12,7 @@ extension Observable where Element == (response: HTTPURLResponse, data: Data) {
     /// Creates `Completable` observable + handles transport errors.
     ///
     /// - Parameters:
-    ///   - httpErrorType: `Decodable` http error body type.
+    ///   - httpErrorType: `Decodable` http body error type.
     ///   - apiErrorType: `Decodable` api error type.
     ///
     /// - Returns: Observable to be observed for values.
@@ -29,7 +29,7 @@ extension Observable where Element == (response: HTTPURLResponse, data: Data) {
     ///
     /// - Parameters:
     ///   - modelType: `Decodable` model type.
-    ///   - httpErrorType: `Decodable` http error body type.
+    ///   - httpErrorType: `Decodable` http body error type.
     ///   - apiErrorType: `Decodable` api error type.
     ///
     /// - Returns: Observable to be observed for values.

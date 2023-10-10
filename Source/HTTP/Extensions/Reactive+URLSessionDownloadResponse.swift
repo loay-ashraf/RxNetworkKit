@@ -65,7 +65,7 @@ extension Reactive where Base: URLSession {
     ///
     /// - Parameters:
     ///   - request: `URLRequest` used to create upload task and its observables.
-    ///   - formData: `UploadFormData` object that includes parameters and files to be uploaded.
+    ///   - url: `URL` path that the downloaded file will be downloaded to.
     ///
     /// - Returns: a tuple of progress `PublishSubject` and response and data `Single`.
     func downloadResponse(request: URLRequest, saveTo url: URL) -> (PublishSubject<Progress>, Single<(response: HTTPURLResponse, data: Data)>) {

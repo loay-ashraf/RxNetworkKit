@@ -13,18 +13,18 @@ public class RESTClient {
     
     /// Principal `URLSession` used to create request tasks.
     private let session: URLSession
-    /// Principal `NetworkRequestInterceptor` used to intercept requests.
+    /// Principal `HTTPRequestInterceptor` used to intercept requests.
     private let requestInterceptor: HTTPRequestInterceptor
-    /// Principal `NetworkEventMonitor` used to monitor request tasks.
-    private let eventMonitor: HTTPEventMonitor
+    /// Principal `HTTPRequestEventMonitor` used to monitor request tasks.
+    private let eventMonitor: HTTPRequestEventMonitor
     
     /// Creates a `RESTClient` instance.
     ///
     /// - Parameters:
     ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
-    ///   - requestInterceptor: `NetworkRequestInterceptor` object used for intercepting requests.
-    ///   - eventMonitor: `NetworkEventMonitor` object for monitoring events for session.
-    public init(configuration: URLSessionConfiguration, requestInterceptor: HTTPRequestInterceptor, eventMonitor: HTTPEventMonitor) {
+    ///   - requestInterceptor: `HTTPRequestInterceptor` object used for intercepting requests.
+    ///   - eventMonitor: `HTTPRequestEventMonitor` object for monitoring events for session.
+    public init(configuration: URLSessionConfiguration, requestInterceptor: HTTPRequestInterceptor, eventMonitor: HTTPRequestEventMonitor) {
         // Apply User-Agent header as a part of HTTP aditional headers.
         configuration.setUserAgentHTTPHeader()
         // Initialize manager's properties.
@@ -39,8 +39,8 @@ public class RESTClient {
     ///
     /// - Parameters:
     ///   - router: `Router` object used to create request.
-    ///   - httpErrorType: `HTTPErrorBody` http error body type.
-    ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
+    ///   - apiErrorType: `HTTPAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Completable` observable encapsulating data request.
     public func request<E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPRequestRouter, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Completable {
@@ -65,8 +65,8 @@ public class RESTClient {
     ///
     /// - Parameters:
     ///   - router: `Router` object used to create request.
-    ///   - httpErrorType: `HTTPErrorBody` http error body type.
-    ///   - apiErrorType: `NetworkAPIError` type expected to be received in response body.
+    ///   - httpErrorType: `HTTPBodyError` http body error type.
+    ///   - apiErrorType: `HTTPAPIError` type expected to be received in response body.
     ///
     /// - Returns: `Single` observable encapsulating data request.
     public func request<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPRequestRouter, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Single<T> {
