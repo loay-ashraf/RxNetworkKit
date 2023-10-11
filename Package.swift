@@ -22,7 +22,7 @@ let package = Package(
         .package(path: "Shared/CoreHTTP")
     ],
     targets: [
-        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt",  .product(name: "RxCocoa", package: "RxSwift")], path: "Source"),
+        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt",  .product(name: "RxCocoa", package: "RxSwift"), "CoreHTTP"], path: "Source"),
     ],
     swiftLanguageVersions: [.v5]
 )
