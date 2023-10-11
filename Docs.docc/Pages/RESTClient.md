@@ -9,5 +9,5 @@
 ### Making an API Call
 
 - ``HTTPRequestRouter``
-- ``RESTClient/request(_:_:_:)-42dht``
-- ``RESTClient/request(_:_:_:)-8ppp9``
+- ``RESTClient/request(_:_:_:)-8yak0``
+- ``RESTClient/request(_:_:_:)-2spzm``

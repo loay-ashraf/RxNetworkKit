@@ -19,8 +19,8 @@
 - ``HTTPUploadRequestEvent``
 - ``HTTPUploadRequestFile``
 - ``HTTPUploadRequestFormData``
-- ``HTTPClient/upload(_:_:_:_:)-1c4oo``
-- ``HTTPClient/upload(_:_:_:_:)-5rlbx``
+- ``HTTPClient/upload(_:_:_:_:)-cavg``
+- ``HTTPClient/upload(_:_:_:_:)-2m1kr``
 
 ### Connecting to a WebSocket
 
