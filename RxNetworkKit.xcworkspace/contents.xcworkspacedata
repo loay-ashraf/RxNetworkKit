@@ -5,9 +5,6 @@
       location = "group:RxNetworkKit.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Shared/CoreHTTP/CoreHTTP.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "container:Examples/iOS/iOS Example.xcodeproj">
    </FileRef>
    <FileRef

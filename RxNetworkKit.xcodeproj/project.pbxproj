@@ -41,11 +41,10 @@
 		0B77E0BD29D968DE0077FBC0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BC29D968DE0077FBC0 /* RxSwift */; };
 		0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BF29D969370077FBC0 /* RxSwiftExt */; };
 		C6049B162A95307800E5727E /* RxNetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C6049B152A95307800E5727E /* RxNetworkKit.h */; };
+		C623E7B42AD6262A00A20A0A /* CoreHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C623E7B32AD6262A00A20A0A /* CoreHTTP */; };
 		C6554A2B2AD5BBB60090DD3A /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */; };
 		C6554A2D2AD5C1560090DD3A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6554A2C2AD5C1560090DD3A /* HTTPClient.swift */; };
 		C658CF652AD5F648009E561D /* RxNetworkKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C658CF642AD5F648009E561D /* RxNetworkKit.swift */; };
-		C658D02A2AD600F7009E561D /* CoreHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C658D0282AD600CE009E561D /* CoreHTTP.framework */; };
-		C658D02B2AD600F7009E561D /* CoreHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C658D0282AD600CE009E561D /* CoreHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C69A78562ACF001400ECF092 /* Docs.docc in Sources */ = {isa = PBXBuildFile; fileRef = C69A78552ACEFF3200ECF092 /* Docs.docc */; };
 		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
 		C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */; };
@@ -59,30 +58,6 @@
 		C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */; };
 		C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C658D0272AD600CE009E561D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C658D0232AD600CE009E561D /* CoreHTTP.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C658CEFB2AD5DDD7009E561D;
-			remoteInfo = CoreHTTP;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		C658CF6D2AD5F8B6009E561D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				C658D02B2AD600F7009E561D /* CoreHTTP.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B6BD87329DC0A9400502F47 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -120,7 +95,6 @@
 		C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		C6554A2C2AD5C1560090DD3A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		C658CF642AD5F648009E561D /* RxNetworkKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNetworkKit.swift; sourceTree = "<group>"; };
-		C658D0232AD600CE009E561D /* CoreHTTP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreHTTP.xcodeproj; path = Shared/CoreHTTP/CoreHTTP.xcodeproj; sourceTree = "<group>"; };
 		C69A78552ACEFF3200ECF092 /* Docs.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Docs.docc; sourceTree = "<group>"; };
 		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
 		C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setUserAgentHTTPHeader.swift"; sourceTree = "<group>"; };
@@ -142,7 +116,7 @@
 			files = (
 				0B77E0BD29D968DE0077FBC0 /* RxSwift in Frameworks */,
 				0B77E0BB29D968DE0077FBC0 /* RxRelay in Frameworks */,
-				C658D02A2AD600F7009E561D /* CoreHTTP.framework in Frameworks */,
+				C623E7B42AD6262A00A20A0A /* CoreHTTP in Frameworks */,
 				0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */,
 				0B77E0B929D968DE0077FBC0 /* RxCocoa in Frameworks */,
 			);
@@ -154,7 +128,6 @@
 		0B77DFCC29D964D40077FBC0 = {
 			isa = PBXGroup;
 			children = (
-				C658D0232AD600CE009E561D /* CoreHTTP.xcodeproj */,
 				0B6BD87329DC0A9400502F47 /* Package.swift */,
 				C69A78552ACEFF3200ECF092 /* Docs.docc */,
 				0B77E04A29D965D30077FBC0 /* Source */,
@@ -321,14 +294,6 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
-		C658D0242AD600CE009E561D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C658D0282AD600CE009E561D /* CoreHTTP.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C6BDFFE62ACDF3260022F675 /* Web Socket */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,7 +328,6 @@
 				0B77DFD229D964D40077FBC0 /* Sources */,
 				0B77DFD329D964D40077FBC0 /* Frameworks */,
 				0B77DFD429D964D40077FBC0 /* Resources */,
-				C658CF6D2AD5F8B6009E561D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -375,6 +339,7 @@
 				0B77E0BA29D968DE0077FBC0 /* RxRelay */,
 				0B77E0BC29D968DE0077FBC0 /* RxSwift */,
 				0B77E0BF29D969370077FBC0 /* RxSwiftExt */,
+				C623E7B32AD6262A00A20A0A /* CoreHTTP */,
 			);
 			productName = RxNetworkKit;
 			productReference = 0B77DFD629D964D40077FBC0 /* RxNetworkKit.framework */;
@@ -406,31 +371,16 @@
 			packageReferences = (
 				0B77E0B729D968DE0077FBC0 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				0B77E0BE29D969370077FBC0 /* XCRemoteSwiftPackageReference "RxSwiftExt" */,
+				C623E7B22AD6262A00A20A0A /* XCRemoteSwiftPackageReference "CoreHTTP" */,
 			);
 			productRefGroup = 0B77DFCC29D964D40077FBC0;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C658D0242AD600CE009E561D /* Products */;
-					ProjectRef = C658D0232AD600CE009E561D /* CoreHTTP.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				0B77DFD529D964D40077FBC0 /* RxNetworkKit */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C658D0282AD600CE009E561D /* CoreHTTP.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CoreHTTP.framework;
-			remoteRef = C658D0272AD600CE009E561D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		0B77DFD429D964D40077FBC0 /* Resources */ = {
@@ -737,6 +687,14 @@
 				minimumVersion = 6.2.0;
 			};
 		};
+		C623E7B22AD6262A00A20A0A /* XCRemoteSwiftPackageReference "CoreHTTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/loay-ashraf/CoreHTTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -759,6 +717,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B77E0BE29D969370077FBC0 /* XCRemoteSwiftPackageReference "RxSwiftExt" */;
 			productName = RxSwiftExt;
+		};
+		C623E7B32AD6262A00A20A0A /* CoreHTTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C623E7B22AD6262A00A20A0A /* XCRemoteSwiftPackageReference "CoreHTTP" */;
+			productName = CoreHTTP;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
