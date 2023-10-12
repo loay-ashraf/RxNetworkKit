@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct Model: Decodable {
-    let id: Int
-    let avatarURL: URL
-    let htmlURL: URL
-    let login: String
+public struct Model: Decodable {
+    public let id: Int
+    public let avatarURL: URL
+    public let htmlURL: URL
+    public let login: String
     enum CodingKeys: String, CodingKey {
         case id
         case avatarURL = "avatar_url"

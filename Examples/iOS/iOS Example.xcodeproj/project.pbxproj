@@ -9,31 +9,23 @@
 /* Begin PBXBuildFile section */
 		1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 819F858F2F093441234733F7 /* RxDataSources */; };
 		39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */; };
-		3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3894E572FDCE188F82EDC /* ViewState.swift */; };
-		3B7E472276BAE43EC318CEE7 /* ViewController+NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */; };
-		3E8F01214A2EDFF7FF36B4CF /* ViewLoadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */; };
 		51A80F9B659EA32FC640A1BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */; };
-		57A194118E15AE6C872A9752 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452311597B38423B82E0C41 /* Router.swift */; };
 		5AB3A2AD0715912AF77C0664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3031CC8044F79028730604 /* Main.storyboard */; };
 		68B891FE4C701A7ACED986C8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */; };
-		72DA0B2700DBA4EFD95DC6FB /* DownloadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */; };
-		72F38840BBCBADB2424F0B21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */; };
 		8960867AA957F939239DF713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70ECA8262019A9E34A028A99 /* LaunchScreen.storyboard */; };
-		9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C68630CA1328C530E000D /* ViewModel.swift */; };
-		A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */; };
 		BBC4FB455DB9EFC760A182E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23795F79829D049A83D55440 /* Assets.xcassets */; };
-		C683C95B2AD60E210061B4F2 /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C683C9592AD60E190061B4F2 /* RxNetworkKit.framework */; };
-		C683C95C2AD60E210061B4F2 /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C683C9592AD60E190061B4F2 /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C62E153B2AD77FCB003CB8FA /* CoreExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62E15392AD77FC1003CB8FA /* CoreExample.framework */; };
+		C62E153C2AD77FCB003CB8FA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C62E15392AD77FC1003CB8FA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C683C9582AD60E190061B4F2 /* PBXContainerItemProxy */ = {
+		C62E15382AD77FC1003CB8FA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C683C9542AD60E190061B4F2 /* RxNetworkKit.xcodeproj */;
+			containerPortal = C62E15342AD77FC1003CB8FA /* CoreExample.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 0B77DFD629D964D40077FBC0;
-			remoteInfo = RxNetworkKit;
+			remoteGlobalIDString = C62E15172AD77B8F003CB8FA;
+			remoteInfo = CoreExample;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -44,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C683C95C2AD60E210061B4F2 /* RxNetworkKit.framework in Embed Frameworks */,
+				C62E153C2AD77FCB003CB8FA /* CoreExample.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,19 +48,11 @@
 		417337DBE1D0E25D426FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		513860401B08F9CC5147DACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkEventMonitor.swift"; sourceTree = "<group>"; };
-		636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkRequestInterceptor.swift"; sourceTree = "<group>"; };
 		78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9452311597B38423B82E0C41 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadType.swift; sourceTree = "<group>"; };
-		A9C3894E572FDCE188F82EDC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		C683C9542AD60E190061B4F2 /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
+		C62E15342AD77FC1003CB8FA /* CoreExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreExample.xcodeproj; path = ../../Shared/CoreExample/CoreExample.xcodeproj; sourceTree = "<group>"; };
 		C69B8C042AD60477006DAA47 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E147CA829E5E766A25250CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRouter.swift; sourceTree = "<group>"; };
-		ED4C68630CA1328C530E000D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C683C95B2AD60E210061B4F2 /* RxNetworkKit.framework in Frameworks */,
+				C62E153B2AD77FCB003CB8FA /* CoreExample.framework in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,10 +74,7 @@
 			children = (
 				36E7F1463C2C9E9F2036FAA5 /* App */,
 				1FDF345BB924980CA278023D /* Controller */,
-				4B89E8498C8B58EE28C3C891 /* Model */,
-				25BB99B2F9A2D2F5C444E953 /* Network */,
 				4A90A627BF6330AF8C9D1785 /* View */,
-				BA9109AFAC6C900555940948 /* View Model */,
 			);
 			path = "iOS Example";
 			sourceTree = "<group>";
@@ -102,19 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */,
-				5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */,
-				636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		25BB99B2F9A2D2F5C444E953 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */,
-				9452311597B38423B82E0C41 /* Router.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		36E7F1463C2C9E9F2036FAA5 /* App */ = {
@@ -134,26 +104,16 @@
 			children = (
 				DB3031CC8044F79028730604 /* Main.storyboard */,
 				78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */,
-				A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */,
-				A9C3894E572FDCE188F82EDC /* ViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		4B89E8498C8B58EE28C3C891 /* Model */ = {
+		C62E15352AD77FC1003CB8FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */,
+				C62E15392AD77FC1003CB8FA /* CoreExample.framework */,
 			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BA9109AFAC6C900555940948 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				ED4C68630CA1328C530E000D /* ViewModel.swift */,
-			);
-			path = "View Model";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C683C9172AD6089D0061B4F3 /* Products */ = {
@@ -164,18 +124,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C683C9552AD60E190061B4F2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C683C9592AD60E190061B4F2 /* RxNetworkKit.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		EDB69B1E108A08763BE6EEC7 = {
 			isa = PBXGroup;
 			children = (
-				C683C9542AD60E190061B4F2 /* RxNetworkKit.xcodeproj */,
+				C62E15342AD77FC1003CB8FA /* CoreExample.xcodeproj */,
 				045E34205091BBFDC877D65F /* iOS Example */,
 				C683C9172AD6089D0061B4F3 /* Products */,
 			);
@@ -237,8 +189,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = C683C9552AD60E190061B4F2 /* Products */;
-					ProjectRef = C683C9542AD60E190061B4F2 /* RxNetworkKit.xcodeproj */;
+					ProductGroup = C62E15352AD77FC1003CB8FA /* Products */;
+					ProjectRef = C62E15342AD77FC1003CB8FA /* CoreExample.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -249,11 +201,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C683C9592AD60E190061B4F2 /* RxNetworkKit.framework */ = {
+		C62E15392AD77FC1003CB8FA /* CoreExample.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = RxNetworkKit.framework;
-			remoteRef = C683C9582AD60E190061B4F2 /* PBXContainerItemProxy */;
+			path = CoreExample.framework;
+			remoteRef = C62E15382AD77FC1003CB8FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -277,17 +229,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */,
-				72DA0B2700DBA4EFD95DC6FB /* DownloadRouter.swift in Sources */,
-				72F38840BBCBADB2424F0B21 /* Model.swift in Sources */,
-				57A194118E15AE6C872A9752 /* Router.swift in Sources */,
 				DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */,
 				68B891FE4C701A7ACED986C8 /* TableViewCell.swift in Sources */,
-				3B7E472276BAE43EC318CEE7 /* ViewController+NetworkEventMonitor.swift in Sources */,
-				A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */,
 				51A80F9B659EA32FC640A1BD /* ViewController.swift in Sources */,
-				3E8F01214A2EDFF7FF36B4CF /* ViewLoadType.swift in Sources */,
-				9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */,
-				3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,8 +10,8 @@
 		C62E151A2AD77B8F003CB8FA /* CoreExample.h in Headers */ = {isa = PBXBuildFile; fileRef = C62E15192AD77B8F003CB8FA /* CoreExample.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C62E151F2AD77BAD003CB8FA /* CoreExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E151E2AD77BAD003CB8FA /* CoreExample.swift */; };
 		C62E15202AD77BCC003CB8FA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D22AD7771E003CB8FA /* Model.swift */; };
-		C62E15212AD77BD3003CB8FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D42AD77729003CB8FA /* Router.swift */; };
-		C62E15222AD77BD3003CB8FA /* DownloadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D52AD77729003CB8FA /* DownloadRouter.swift */; };
+		C62E15212AD77BD3003CB8FA /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D42AD77729003CB8FA /* RequestRouter.swift */; };
+		C62E15222AD77BD3003CB8FA /* DownloadRequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D52AD77729003CB8FA /* DownloadRequestRouter.swift */; };
 		C62E15232AD77BDA003CB8FA /* ViewLoadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D92AD77736003CB8FA /* ViewLoadType.swift */; };
 		C62E15242AD77BDA003CB8FA /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14D82AD77736003CB8FA /* ViewState.swift */; };
 		C62E15252AD77BDF003CB8FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14DC2AD77747003CB8FA /* ViewModel.swift */; };
@@ -19,6 +19,8 @@
 		C62E15292AD77C39003CB8FA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C62E15282AD77C39003CB8FA /* RxSwift */; };
 		C62E15302AD77CB6003CB8FA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62E152F2AD77CA6003CB8FA /* RxNetworkKit.framework */; };
 		C62E15312AD77CB6003CB8FA /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C62E152F2AD77CA6003CB8FA /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C62E153E2AD78417003CB8FA /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */; };
+		C62E15402AD78483003CB8FA /* RequestEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,8 +49,8 @@
 
 /* Begin PBXFileReference section */
 		C62E14D22AD7771E003CB8FA /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		C62E14D42AD77729003CB8FA /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		C62E14D52AD77729003CB8FA /* DownloadRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRouter.swift; sourceTree = "<group>"; };
+		C62E14D42AD77729003CB8FA /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		C62E14D52AD77729003CB8FA /* DownloadRequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadRequestRouter.swift; sourceTree = "<group>"; };
 		C62E14D82AD77736003CB8FA /* ViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		C62E14D92AD77736003CB8FA /* ViewLoadType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLoadType.swift; sourceTree = "<group>"; };
 		C62E14DC2AD77747003CB8FA /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -57,6 +59,8 @@
 		C62E15192AD77B8F003CB8FA /* CoreExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreExample.h; sourceTree = "<group>"; };
 		C62E151E2AD77BAD003CB8FA /* CoreExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreExample.swift; sourceTree = "<group>"; };
 		C62E152A2AD77CA6003CB8FA /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
+		C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
+		C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +119,10 @@
 		C62E14CF2AD776F7003CB8FA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C62E14D52AD77729003CB8FA /* DownloadRouter.swift */,
-				C62E14D42AD77729003CB8FA /* Router.swift */,
+				C62E14D52AD77729003CB8FA /* DownloadRequestRouter.swift */,
+				C62E14D42AD77729003CB8FA /* RequestRouter.swift */,
+				C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */,
+				C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -259,11 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62E15222AD77BD3003CB8FA /* DownloadRouter.swift in Sources */,
+				C62E15222AD77BD3003CB8FA /* DownloadRequestRouter.swift in Sources */,
 				C62E151F2AD77BAD003CB8FA /* CoreExample.swift in Sources */,
 				C62E15242AD77BDA003CB8FA /* ViewState.swift in Sources */,
+				C62E153E2AD78417003CB8FA /* RequestInterceptor.swift in Sources */,
 				C62E15232AD77BDA003CB8FA /* ViewLoadType.swift in Sources */,
-				C62E15212AD77BD3003CB8FA /* Router.swift in Sources */,
+				C62E15212AD77BD3003CB8FA /* RequestRouter.swift in Sources */,
+				C62E15402AD78483003CB8FA /* RequestEventMonitor.swift in Sources */,
 				C62E15202AD77BCC003CB8FA /* Model.swift in Sources */,
 				C62E15252AD77BDF003CB8FA /* ViewModel.swift in Sources */,
 			);

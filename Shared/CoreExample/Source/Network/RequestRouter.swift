@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  RequestRouter.swift
 //  RxNetworkKit
 //
 //  Created by Loay Ashraf on 01/04/2023.
@@ -7,30 +7,30 @@
 
 import Foundation
 
-enum Router: HTTPRequestRouter {
+public enum RequestRouter: HTTPRequestRouter {
     case `default`
-    var scheme: HTTPScheme {
+    public var scheme: HTTPScheme {
         .https
     }
-    var method: HTTPMethod {
+    public var method: HTTPMethod {
         .get
     }
-    var domain: String {
+    public var domain: String {
         "api.github.com"
     }
-    var path: String {
+    public var path: String {
         "users"
     }
-    var headers: [String : String] {
+    public var headers: [String : String] {
         ["Accept": "application/vnd.github+json"]
     }
-    var parameters: [String : String]? {
+    public var parameters: [String : String]? {
         nil
     }
-    var body: [String : Any]? {
+    public var body: [String : Any]? {
         nil
     }
-    var url: URL? {
+    public var url: URL? {
         let urlString = scheme.rawValue + domain + "/" + path
         return URL(string: urlString)
     }

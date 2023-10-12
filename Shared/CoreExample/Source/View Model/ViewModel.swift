@@ -7,13 +7,13 @@
 
 import Foundation
 
-class ViewModel {
+public class ViewModel {
     // MARK: Input
     // Input sequence is the same as view state (only for loading states)
-    private(set) var viewState: PublishRelay<ViewState> = .init()
+    public private(set) var viewState: PublishRelay<ViewState> = .init()
     // MARK: Output
-    private(set) var users: Driver<[Model]>!
-    private(set) var error: Driver<HTTPError>!
+    public private(set) var users: Driver<[Model]>!
+    public private(set) var error: Driver<HTTPError>!
     // MARK: Properties and Dependencies
     private let restClient: RESTClient
     private let httpClient: HTTPClient
@@ -22,7 +22,7 @@ class ViewModel {
     ///
     /// - Parameter restClient: `RESTClient` object used for making rest API calls.
     /// - Parameter httpClient: `HTTPClient` object used for making http requests.
-    init(restClient: RESTClient, httpClient: HTTPClient) {
+    public init(restClient: RESTClient, httpClient: HTTPClient) {
         self.restClient = restClient
         self.httpClient = httpClient
         bindOutput()
@@ -32,7 +32,7 @@ class ViewModel {
     /// - Parameter router: `DownloadRouter` used to download image data.
     ///
     /// - Returns: observable sequence that results in image data.
-    func downloadImage(_ router: DownloadRouter) -> Observable<HTTPDownloadRequestEvent> {
+    public func downloadImage(_ router: DownloadRequestRouter) -> Observable<HTTPDownloadRequestEvent> {
         httpClient.download(router)
     }
     /// Binds output sequence to input sequence.
@@ -42,7 +42,7 @@ class ViewModel {
             .filter( { ![.idle, .loading(loadType: .paginate), .error].contains($0) })
             .flatMapLatest{ [weak self] _ in
                 guard let self = self else { return Observable<[Model]>.empty().materialize() }
-                let single: Single<[Model]> = self.restClient.request(Router.default)
+                let single: Single<[Model]> = self.restClient.request(RequestRouter.default)
                 return single
                     .asObservable()
                     .materialize()
