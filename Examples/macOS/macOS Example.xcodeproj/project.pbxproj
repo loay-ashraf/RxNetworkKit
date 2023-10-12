@@ -12,8 +12,7 @@
 		C63EEB3F2AD7C29F003A64CA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C63EEB412AD7C2A4003A64CA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */; };
 		C63EEB422AD7C2A4003A64CA /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C63EEB462AD7C348003A64CA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C63EEB452AD7C348003A64CA /* RxSwift */; };
-		C63EEB4C2AD7C4CE003A64CA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C63EEB4B2AD7C4CE003A64CA /* RxCocoa */; };
+		C68473832AD7CFA90071B1F6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C68473822AD7CFA90071B1F6 /* RxCocoa */; };
 		C69FBA182A9408740062BFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA172A9408740062BFD7 /* AppDelegate.swift */; };
 		C69FBA1A2A9408740062BFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA192A9408740062BFD7 /* ViewController.swift */; };
 		C69FBA1C2A9408770062BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1B2A9408770062BFD7 /* Assets.xcassets */; };
@@ -52,9 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68473832AD7CFA90071B1F6 /* RxCocoa in Frameworks */,
 				C63EEB412AD7C2A4003A64CA /* RxNetworkKit.framework in Frameworks */,
-				C63EEB462AD7C348003A64CA /* RxSwift in Frameworks */,
-				C63EEB4C2AD7C4CE003A64CA /* RxCocoa in Frameworks */,
 				C63EEB3E2AD7C29F003A64CA /* CoreExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,8 +141,7 @@
 			);
 			name = "macOS Example";
 			packageProductDependencies = (
-				C63EEB452AD7C348003A64CA /* RxSwift */,
-				C63EEB4B2AD7C4CE003A64CA /* RxCocoa */,
+				C68473822AD7CFA90071B1F6 /* RxCocoa */,
 			);
 			productName = "macOS Example";
 			productReference = C623E7182AD6117200A20A0A /* macOS Example.app */;
@@ -439,12 +436,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		C63EEB452AD7C348003A64CA /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		C63EEB4B2AD7C4CE003A64CA /* RxCocoa */ = {
+		C68473822AD7CFA90071B1F6 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
