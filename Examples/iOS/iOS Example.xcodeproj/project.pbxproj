@@ -18,6 +18,8 @@
 		C63EEB392AD7BE61003A64CA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB372AD7BE61003A64CA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C63EEB3B2AD7C046003A64CA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */; };
 		C63EEB3C2AD7C046003A64CA /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C68473852AD7D7930071B1F6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C68473842AD7D7930071B1F6 /* RxSwift */; };
+		C68473872AD7D7990071B1F6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C68473862AD7D7990071B1F6 /* RxCocoa */; };
 		DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 			files = (
 				C63EEB3B2AD7C046003A64CA /* RxNetworkKit.framework in Frameworks */,
 				C63EEB382AD7BE61003A64CA /* CoreExample.framework in Frameworks */,
+				C68473872AD7D7990071B1F6 /* RxCocoa in Frameworks */,
+				C68473852AD7D7930071B1F6 /* RxSwift in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +152,8 @@
 			name = "iOS Example";
 			packageProductDependencies = (
 				819F858F2F093441234733F7 /* RxDataSources */,
+				C68473842AD7D7930071B1F6 /* RxSwift */,
+				C68473862AD7D7990071B1F6 /* RxCocoa */,
 			);
 			productName = RxNetworkKitExample;
 			productReference = C69B8C042AD60477006DAA47 /* iOS Example.app */;
@@ -478,6 +484,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1380ADB47BEE21E098AC60ED /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		C68473842AD7D7930071B1F6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C68473862AD7D7990071B1F6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
