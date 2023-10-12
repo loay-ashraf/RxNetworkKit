@@ -3,28 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C62E15482AD786AF003CB8FA /* CoreExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62E15462AD78600003CB8FA /* CoreExample.framework */; };
-		C62E15492AD786AF003CB8FA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C62E15462AD78600003CB8FA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C639752E2A95166A00D0AC13 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63975182A95166A00D0AC13 /* TableCellView.swift */; };
+		C63EEB3E2AD7C29F003A64CA /* CoreExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */; };
+		C63EEB3F2AD7C29F003A64CA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C63EEB412AD7C2A4003A64CA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */; };
+		C63EEB422AD7C2A4003A64CA /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C63EEB462AD7C348003A64CA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C63EEB452AD7C348003A64CA /* RxSwift */; };
+		C63EEB4C2AD7C4CE003A64CA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C63EEB4B2AD7C4CE003A64CA /* RxCocoa */; };
 		C69FBA182A9408740062BFD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA172A9408740062BFD7 /* AppDelegate.swift */; };
 		C69FBA1A2A9408740062BFD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69FBA192A9408740062BFD7 /* ViewController.swift */; };
 		C69FBA1C2A9408770062BFD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1B2A9408770062BFD7 /* Assets.xcassets */; };
 		C69FBA1F2A9408770062BFD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FBA1D2A9408770062BFD7 /* Main.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C62E15452AD78600003CB8FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C62E15412AD785FF003CB8FA /* CoreExample.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C62E15172AD77B8F003CB8FA;
-			remoteInfo = CoreExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C623E7192AD6117300A20A0A /* Embed Frameworks */ = {
@@ -33,7 +27,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C62E15492AD786AF003CB8FA /* CoreExample.framework in Embed Frameworks */,
+				C63EEB422AD7C2A4003A64CA /* RxNetworkKit.framework in Embed Frameworks */,
+				C63EEB3F2AD7C29F003A64CA /* CoreExample.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,8 +37,9 @@
 
 /* Begin PBXFileReference section */
 		C623E7182AD6117200A20A0A /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C62E15412AD785FF003CB8FA /* CoreExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreExample.xcodeproj; path = ../../Shared/CoreExample/CoreExample.xcodeproj; sourceTree = "<group>"; };
 		C63975182A95166A00D0AC13 /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
+		C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FBA172A9408740062BFD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C69FBA192A9408740062BFD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C69FBA1B2A9408770062BFD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,21 +52,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62E15482AD786AF003CB8FA /* CoreExample.framework in Frameworks */,
+				C63EEB412AD7C2A4003A64CA /* RxNetworkKit.framework in Frameworks */,
+				C63EEB462AD7C348003A64CA /* RxSwift in Frameworks */,
+				C63EEB4C2AD7C4CE003A64CA /* RxCocoa in Frameworks */,
+				C63EEB3E2AD7C29F003A64CA /* CoreExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C62E15422AD785FF003CB8FA /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C62E15462AD78600003CB8FA /* CoreExample.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		C63975112A95166A00D0AC13 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +89,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		C63EEAFF2AD7A40E003A64CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */,
+				C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C67D5AA02AD60F16002F588A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,9 +109,9 @@
 		C69FBA0B2A9408740062BFD7 = {
 			isa = PBXGroup;
 			children = (
-				C62E15412AD785FF003CB8FA /* CoreExample.xcodeproj */,
 				C69FBA162A9408740062BFD7 /* macOS Example */,
 				C67D5AA02AD60F16002F588A /* Products */,
+				C63EEAFF2AD7A40E003A64CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,6 +143,8 @@
 			);
 			name = "macOS Example";
 			packageProductDependencies = (
+				C63EEB452AD7C348003A64CA /* RxSwift */,
+				C63EEB4B2AD7C4CE003A64CA /* RxCocoa */,
 			);
 			productName = "macOS Example";
 			productReference = C623E7182AD6117200A20A0A /* macOS Example.app */;
@@ -164,7 +166,7 @@
 				};
 			};
 			buildConfigurationList = C69FBA0F2A9408740062BFD7 /* Build configuration list for PBXProject "macOS Example" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -173,31 +175,16 @@
 			);
 			mainGroup = C69FBA0B2A9408740062BFD7;
 			packageReferences = (
+				C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = C69FBA0B2A9408740062BFD7;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C62E15422AD785FF003CB8FA /* Products */;
-					ProjectRef = C62E15412AD785FF003CB8FA /* CoreExample.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				C69FBA132A9408740062BFD7 /* macOS Example */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C62E15462AD78600003CB8FA /* CoreExample.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = CoreExample.framework;
-			remoteRef = C62E15452AD78600003CB8FA /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C69FBA122A9408740062BFD7 /* Resources */ = {
@@ -375,6 +362,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.2;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitMacOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -407,6 +395,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 0.0.2;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitMacOSExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -437,6 +426,30 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C63EEB452AD7C348003A64CA /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C63EEB4B2AD7C4CE003A64CA /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEB0D2AD7A43D003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C69FBA0C2A9408740062BFD7 /* Project object */;
 }

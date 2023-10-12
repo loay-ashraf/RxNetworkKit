@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxNetworkKit
 
 public enum RequestRouter: HTTPRequestRouter {
     case `default`

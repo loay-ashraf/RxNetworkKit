@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxNetworkKit
 
 public enum DownloadRequestRouter: HTTPDownloadRequestRouter {
     case `default`(url: URL)

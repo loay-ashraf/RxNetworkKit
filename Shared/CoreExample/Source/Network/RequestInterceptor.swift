@@ -5,6 +5,8 @@
 //  Created by Loay Ashraf on 12/10/2023.
 //
 
+import RxNetworkKit
+
 public class RequestInterceptor: HTTPRequestInterceptor {
     public init() { }
     public func adapt(_ request: URLRequest, for session: URLSession) -> URLRequest {

@@ -5,6 +5,8 @@
 //  Created by Loay Ashraf on 12/10/2023.
 //
 
+import RxNetworkKit
+
 public class RequestEventMonitor: NSObject, HTTPRequestEventMonitor {
     public override init() { }
     public func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
