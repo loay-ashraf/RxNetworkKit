@@ -6,9 +6,7 @@
 //
 
 import Cocoa
-import RxSwift
-import RxCocoa
-import RxNetworkKit
+import CoreExample
 
 class ViewController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
@@ -43,8 +41,10 @@ class ViewController: NSViewController {
     }
     /// Initializes ViewModel object.
     private func setupViewModel() {
-        let restClient = RESTClient(configuration: .default, requestInterceptor: self, eventMonitor: self)
-        let httpClient = HTTPClient(configuration: .default, requestInterceptor: self, eventMonitor: self)
+        let requestInterceptor = RequestInterceptor()
+        let requestEventMointor = RequestEventMonitor()
+        let restClient = RESTClient(configuration: .default, requestInterceptor: requestInterceptor, eventMonitor: requestEventMointor)
+        let httpClient = HTTPClient(configuration: .default, requestInterceptor: requestInterceptor, eventMonitor: requestEventMointor)
         viewModel = .init(restClient: restClient, httpClient: httpClient)
     }
     /// Sets up views.
@@ -120,7 +120,7 @@ class ViewController: NSViewController {
     ///   - url: `URL` used to download image data.
     ///   - cell: `TableViewCell` that the image data will be applied to.
     private func downloadTableViewCellImage(using url: URL, applyTo cell: TableCellView) {
-        viewModel.downloadImage(DownloadRouter.default(url: url))
+        viewModel.downloadImage(DownloadRequestRouter.default(url: url))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 switch $0 {
