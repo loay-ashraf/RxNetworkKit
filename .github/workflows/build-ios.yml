@@ -15,7 +15,7 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: 'latest-stable'
       - name: Build Framework
         env:
           workspace: RxNetworkKit.xcworkspace
@@ -34,7 +34,7 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: 'latest-stable'
       - name: Build Framework
         env:
           workspace: RxNetworkKit.xcworkspace
@@ -54,7 +54,7 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: 'latest-stable'
       - name: Build Example
         env:
           workspace: RxNetworkKit.xcworkspace
@@ -74,7 +74,7 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: 'latest-stable'
       - name: Build Example
         env:
           workspace: RxNetworkKit.xcworkspace
