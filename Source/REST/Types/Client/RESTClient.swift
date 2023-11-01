@@ -19,10 +19,6 @@ public class RESTClient {
     }
     /// Principal `HTTPRequestInterceptor` object used to intercept requests.
     private let requestInterceptor: HTTPRequestInterceptor
-    /// Principal `HTTPRequestEventMonitor` object used to monitor request tasks.
-    private var eventMonitor: HTTPRequestEventMonitor {
-        session.eventMonitor
-    }
     
     /// Creates a `RESTClient` instance.
     ///
