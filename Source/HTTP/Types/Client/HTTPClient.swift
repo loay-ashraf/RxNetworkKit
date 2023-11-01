@@ -11,27 +11,28 @@ import RxSwift
 /// Entry point for creating http requests.
 public class HTTPClient {
     
-    /// Principal `URLSession` used to create request tasks.
-    private let session: URLSession
-    /// Principal `HTTPRequestInterceptor` used to intercept requests.
+    /// Principal `Session` object that encapsulates `URLSession` instance.
+    private let session: Session
+    /// Principal `URLSession` object used to create request tasks.
+    private var urlSession: URLSession {
+        session.urlSession
+    }
+    /// Principal `HTTPRequestInterceptor` object used to intercept requests.
     private let requestInterceptor: HTTPRequestInterceptor
-    /// Principal `HTTPRequestEventMonitor` used to monitor request tasks.
-    private let eventMonitor: HTTPRequestEventMonitor
+    /// Principal `HTTPRequestEventMonitor` object used to monitor request tasks.
+    private var eventMonitor: HTTPRequestEventMonitor {
+        session.eventMonitor
+    }
     
-    /// Creates a `HTTPClient` instance.
+    /// Creates a `RESTClient` instance.
     ///
     /// - Parameters:
-    ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
+    ///   - session: `Session` object that encapsulates `URLSession` instance.
     ///   - requestInterceptor: `HTTPRequestInterceptor` object used for intercepting requests.
-    ///   - eventMonitor: `HTTPRequestEventMonitor` object for monitoring events for session.
-    public init(configuration: URLSessionConfiguration, requestInterceptor: HTTPRequestInterceptor, eventMonitor: HTTPRequestEventMonitor) {
-        // Apply User-Agent header as a part of HTTP aditional headers.
-        configuration.setUserAgentHTTPHeader()
+    public init(session: Session, requestInterceptor: HTTPRequestInterceptor) {
         // Initialize manager's properties.
-        URLSession.rx.shouldLogRequest = { _ in false }
-        self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
+        self.session = session
         self.requestInterceptor = requestInterceptor
-        self.eventMonitor = eventMonitor
     }
     
     /// Creates a `Observable` object encapsulating download request using given `Router`.
@@ -45,13 +46,13 @@ public class HTTPClient {
     /// - Returns: `Observable` object encapsulating download request.
     public func download<E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPDownloadRequestRouter, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Observable<HTTPDownloadRequestEvent> {
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .downloadResponse(request: adaptedRequest, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
@@ -70,13 +71,13 @@ public class HTTPClient {
     /// - Returns: `Observable` object encapsulating download request.
     public func download<E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPDownloadRequestRouter, _ fileURL: URL, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Observable<HTTPDownloadRequestEvent> {
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .downloadResponse(request: adaptedRequest, saveTo: fileURL, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
@@ -95,13 +96,13 @@ public class HTTPClient {
     /// - Returns: `Observable` object encapsulating upload request.
     public func upload<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPUploadRequestRouter, _ file: HTTPUploadRequestFile, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Observable<HTTPUploadRequestEvent<T>> {
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .uploadResponse(request: adaptedRequest, file: file, modelType: T.self, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
@@ -120,13 +121,13 @@ public class HTTPClient {
     /// - Returns: `Observable` object encapsulating upload request.
     public func upload<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPUploadRequestRouter, _ formData: HTTPUploadRequestFormData, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Observable<HTTPUploadRequestEvent<T>> {
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .uploadResponse(request: adaptedRequest, formData: formData, modelType: T.self, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
@@ -142,7 +143,7 @@ public class HTTPClient {
     ///
     /// - Returns: `WebSocket` object that represents the connection.
     public func webSocket<T: Decodable>(_ url: URL, _ protocols: [String], _ closeHandler: WebSocketCloseHandler) -> WebSocket<T> {
-        let task = session.webSocketTask(with: url, protocols: protocols)
+        let task = urlSession.webSocketTask(with: url, protocols: protocols)
         let webSocket = WebSocket<T>(task: task, closeHandler: closeHandler)
         return webSocket
     }

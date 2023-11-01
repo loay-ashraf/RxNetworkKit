@@ -11,27 +11,28 @@ import RxSwift
 /// Entry point for creating rest requests.
 public class RESTClient {
     
-    /// Principal `URLSession` used to create request tasks.
-    private let session: URLSession
-    /// Principal `HTTPRequestInterceptor` used to intercept requests.
+    /// Principal `Session` object that encapsulates `URLSession` instance.
+    private let session: Session
+    /// Principal `URLSession` object used to create request tasks.
+    private var urlSession: URLSession {
+        session.urlSession
+    }
+    /// Principal `HTTPRequestInterceptor` object used to intercept requests.
     private let requestInterceptor: HTTPRequestInterceptor
-    /// Principal `HTTPRequestEventMonitor` used to monitor request tasks.
-    private let eventMonitor: HTTPRequestEventMonitor
+    /// Principal `HTTPRequestEventMonitor` object used to monitor request tasks.
+    private var eventMonitor: HTTPRequestEventMonitor {
+        session.eventMonitor
+    }
     
     /// Creates a `RESTClient` instance.
     ///
     /// - Parameters:
-    ///   - configuration: `URLSessionConfiguration` object used to create `URLSession` instance.
+    ///   - session: `Session` object that encapsulates `URLSession` instance.
     ///   - requestInterceptor: `HTTPRequestInterceptor` object used for intercepting requests.
-    ///   - eventMonitor: `HTTPRequestEventMonitor` object for monitoring events for session.
-    public init(configuration: URLSessionConfiguration, requestInterceptor: HTTPRequestInterceptor, eventMonitor: HTTPRequestEventMonitor) {
-        // Apply User-Agent header as a part of HTTP aditional headers.
-        configuration.setUserAgentHTTPHeader()
+    public init(session: Session, requestInterceptor: HTTPRequestInterceptor) {
         // Initialize manager's properties.
-        URLSession.rx.shouldLogRequest = { _ in false }
-        self.session = .init(configuration: configuration, delegate: eventMonitor, delegateQueue: nil)
+        self.session = session
         self.requestInterceptor = requestInterceptor
-        self.eventMonitor = eventMonitor
     }
     
     /// Creates a `Completable` observable encapsulating data request using given `Router`.
@@ -46,13 +47,13 @@ public class RESTClient {
     public func request<E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPRequestRouter, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Completable {
         
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .response(request: adaptedRequest)
             .decodable(E.self, apiErrorType: AE.self)
@@ -71,13 +72,13 @@ public class RESTClient {
     /// - Returns: `Single` observable encapsulating data request.
     public func request<T: Decodable, E: HTTPBodyError, AE: HTTPAPIError>(_ router: HTTPRequestRouter, _ httpErrorType: E.Type = DefaultHTTPBodyError.self, _ apiErrorType: AE.Type = DefaultHTTPAPIError.self) -> Single<T> {
         let originalRequest = router.asURLRequest()
-        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: session)
-        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: session)
-        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: session)
+        let adaptedRequest = requestInterceptor.adapt(originalRequest, for: urlSession)
+        let retryMaxAttempts = requestInterceptor.retryMaxAttempts(adaptedRequest, for: urlSession)
+        let retryPolicy = requestInterceptor.retryPolicy(adaptedRequest, for: urlSession)
         let shouldRetry = { (error: HTTPError) in
-            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.session, dueTo: error)
+            self.requestInterceptor.shouldRetry(adaptedRequest, for: self.urlSession, dueTo: error)
         }
-        let observable = session
+        let observable = urlSession
             .rx
             .response(request: adaptedRequest)
             .decodable(T.self, httpErrorType: E.self, apiErrorType: AE.self)
