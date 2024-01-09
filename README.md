@@ -1,9 +1,9 @@
 # RxNetworkKit
 ![Swift](https://img.shields.io/badge/Swift-5.3-orange)
-![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS-yellowgreen)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS%20watchOS-yellowgreen)
 ![iOS](https://img.shields.io/badge/iOS-14.0%2B-black)
 ![macOS](https://img.shields.io/badge/macOS-11.0%2B-black)
-![Cocoapods](https://img.shields.io/badge/Cocoapods-compatible-red)
+![watchOS](https://img.shields.io/badge/watchOS-7.0%2B-black)
 ![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
 [![Twitter](https://img.shields.io/badge/Twitter-%40lashraf96-blue)](https://twitter.com/lashraf96)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-loay--ashraf-blue)](https://linkedin.com/in/loay-ashraf)
