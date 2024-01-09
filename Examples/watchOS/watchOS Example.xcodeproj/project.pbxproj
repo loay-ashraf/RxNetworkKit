@@ -109,8 +109,8 @@
 		C60BAE612B4DC64A00C2338B /* watchOS Example */ = {
 			isa = PBXGroup;
 			children = (
-				C66F79BD2B4DCEE100FDA1AC /* View */,
 				C66F79BC2B4DCAD000FDA1AC /* App */,
+				C66F79BD2B4DCEE100FDA1AC /* View */,
 			);
 			path = "watchOS Example";
 			sourceTree = "<group>";
@@ -127,9 +127,9 @@
 		C66F79BC2B4DCAD000FDA1AC /* App */ = {
 			isa = PBXGroup;
 			children = (
-				C60BAE652B4DC64A00C2338B /* Preview Assets.xcassets */,
 				C60BAE632B4DC64A00C2338B /* Assets.xcassets */,
 				C60BAE622B4DC64A00C2338B /* ExampleApp.swift */,
+				C60BAE652B4DC64A00C2338B /* Preview Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 			isa = PBXGroup;
 			children = (
 				C60BAE662B4DC64A00C2338B /* MainView.swift */,
-				C66F79C32B4DF9FA00FDA1AC /* RxImageDownloadBindingMediator.swift */,
-				C66F79C52B4DFA3300FDA1AC /* RxBindingMediator.swift */,
 				C66F79C72B4DFA7000FDA1AC /* RemoteImage.swift */,
+				C66F79C52B4DFA3300FDA1AC /* RxBindingMediator.swift */,
+				C66F79C32B4DF9FA00FDA1AC /* RxImageDownloadBindingMediator.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
