@@ -4,7 +4,7 @@
 
 ### Creating a REST Client
 
-- ``RESTClient/init(configuration:requestInterceptor:eventMonitor:)``
+- ``RESTClient/init(session:requestInterceptor:)``
 
 ### Making an API Call
 

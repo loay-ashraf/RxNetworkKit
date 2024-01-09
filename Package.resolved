@@ -2,12 +2,21 @@
   "object": {
     "pins": [
       {
+        "package": "CoreHTTP",
+        "repositoryURL": "https://github.com/loay-ashraf/CoreHTTP",
+        "state": {
+          "branch": null,
+          "revision": "17b030a4a10ac9449e6c107bce13f112280aae6b",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
-          "version": "6.5.0"
+          "revision": "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+          "version": "6.6.0"
         }
       },
       {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/RxSwiftCommunity/RxSwiftExt",
         "state": {
           "branch": null,
-          "revision": "827bd11853983383b708feaf7da95c560982b2b8",
-          "version": "6.0.1"
+          "revision": "eb4adf9f00a21b3efc3869a5218a6d7517e95222",
+          "version": "6.2.1"
         }
       }
     ]

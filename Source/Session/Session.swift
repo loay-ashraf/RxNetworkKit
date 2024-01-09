@@ -27,7 +27,7 @@ public class Session {
         // Initialize session's properties.
         self.eventMonitor = eventMonitor
         self.eventMonitorQueue = .init()
-        eventMonitorQueue.name = "Session(\(UUID().uuidString))/Event Monitor Queue"
+        eventMonitorQueue.name = "RxNetworkKit/Session(\(UUID().uuidString))/Event Monitor Queue"
         eventMonitorQueue.qualityOfService = .utility
         eventMonitorQueue.maxConcurrentOperationCount = 20
         self.urlSession = .init(configuration: configuration,

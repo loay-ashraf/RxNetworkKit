@@ -4,7 +4,7 @@
 
 ### Creating a HTTP Client
 
-- ``HTTPClient/init(configuration:requestInterceptor:eventMonitor:)``
+- ``HTTPClient/init(session:requestInterceptor:)``
 
 ### Downloading a File
 
