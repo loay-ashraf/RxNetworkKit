@@ -1,0 +1,85 @@
+name: Build watchOS
+
+on:
+  workflow_call:
+  
+jobs:
+
+  framework-watchos-simulator:
+    name: Build Framework For watchOS Simulator
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Framework
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: RxNetworkKit
+          destination: generic/platform=watchOS Simulator
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  framework-watchos:
+    name: Build Framework For watchOS Device
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Framework
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: RxNetworkKit
+          destination: generic/platform=watchOS
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-watchos-simulator:
+    name: Build Example For watchOS Simulator
+    runs-on: macos-13
+    needs: framework-watchos-simulator
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Example
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: watchOS Example
+          destination: generic/platform=watchOS Simulator
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-watchos:
+    name: Build Example For watchOS Device
+    runs-on: macos-13
+    needs: framework-watchos
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Example
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: watchOS Example
+          destination: generic/platform=watchOS
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+

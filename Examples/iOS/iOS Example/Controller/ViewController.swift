@@ -138,7 +138,7 @@ class ViewController: UIViewController {
                     return
                 }
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: disposeBag)
     }
     /// Bind activityIndicator's isAnimating property to view state.
     private func bindActivityIndicatorIsAnimating() {
