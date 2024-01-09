@@ -9,42 +9,29 @@
 /* Begin PBXBuildFile section */
 		1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 819F858F2F093441234733F7 /* RxDataSources */; };
 		39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */; };
-		3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C3894E572FDCE188F82EDC /* ViewState.swift */; };
-		3B7E472276BAE43EC318CEE7 /* ViewController+NetworkEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */; };
-		3E8F01214A2EDFF7FF36B4CF /* ViewLoadType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */; };
 		51A80F9B659EA32FC640A1BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */; };
-		57A194118E15AE6C872A9752 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452311597B38423B82E0C41 /* Router.swift */; };
 		5AB3A2AD0715912AF77C0664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3031CC8044F79028730604 /* Main.storyboard */; };
 		68B891FE4C701A7ACED986C8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */; };
-		72DA0B2700DBA4EFD95DC6FB /* DownloadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */; };
-		72F38840BBCBADB2424F0B21 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */; };
 		8960867AA957F939239DF713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70ECA8262019A9E34A028A99 /* LaunchScreen.storyboard */; };
-		9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C68630CA1328C530E000D /* ViewModel.swift */; };
-		A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */; };
 		BBC4FB455DB9EFC760A182E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23795F79829D049A83D55440 /* Assets.xcassets */; };
-		C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; platformFilter = ios; };
-		C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C68C3F682A9401960036FF9D /* RxNetworkKit.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C63EEB382AD7BE61003A64CA /* CoreExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB372AD7BE61003A64CA /* CoreExample.framework */; };
+		C63EEB392AD7BE61003A64CA /* CoreExample.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB372AD7BE61003A64CA /* CoreExample.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C63EEB3B2AD7C046003A64CA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */; };
+		C63EEB3C2AD7C046003A64CA /* RxNetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C68473852AD7D7930071B1F6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C68473842AD7D7930071B1F6 /* RxSwift */; };
+		C68473872AD7D7990071B1F6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C68473862AD7D7990071B1F6 /* RxCocoa */; };
 		DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		C68C3F672A9401960036FF9D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0B77DFD629D964D40077FBC0;
-			remoteInfo = RxNetworkKit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		0B568E5A29DEDBEC00E51B21 /* Embed Frameworks */ = {
+		C658CF5F2AD5F09D009E561D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C68C3F6A2A9402DC0036FF9D /* RxNetworkKit.framework in Embed Frameworks */,
+				C63EEB3C2AD7C046003A64CA /* RxNetworkKit.framework in Embed Frameworks */,
+				C63EEB392AD7BE61003A64CA /* CoreExample.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,24 +39,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxNetworkKit.xcodeproj; path = ../../RxNetworkKit.xcodeproj; sourceTree = "<group>"; };
-		0B77E10429D97A3E0077FBC0 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		23795F79829D049A83D55440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		417337DBE1D0E25D426FCAD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		513860401B08F9CC5147DACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkEventMonitor.swift"; sourceTree = "<group>"; };
-		636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+NetworkRequestInterceptor.swift"; sourceTree = "<group>"; };
 		78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		7D82BA0503FE7CC526E5586A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9452311597B38423B82E0C41 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLoadType.swift; sourceTree = "<group>"; };
-		A9C3894E572FDCE188F82EDC /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
-		DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		C63EEB372AD7BE61003A64CA /* CoreExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C69B8C042AD60477006DAA47 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E147CA829E5E766A25250CC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadRouter.swift; sourceTree = "<group>"; };
-		ED4C68630CA1328C530E000D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EF62C70BEC0D6E6B113DF07D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,7 +57,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C68C3F692A9402DC0036FF9D /* RxNetworkKit.framework in Frameworks */,
+				C63EEB3B2AD7C046003A64CA /* RxNetworkKit.framework in Frameworks */,
+				C63EEB382AD7BE61003A64CA /* CoreExample.framework in Frameworks */,
+				C68473872AD7D7990071B1F6 /* RxCocoa in Frameworks */,
+				C68473852AD7D7930071B1F6 /* RxSwift in Frameworks */,
 				1A78320FA3392498E8F9EA82 /* RxDataSources in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,47 +73,17 @@
 			children = (
 				36E7F1463C2C9E9F2036FAA5 /* App */,
 				1FDF345BB924980CA278023D /* Controller */,
-				4B89E8498C8B58EE28C3C891 /* Model */,
-				25BB99B2F9A2D2F5C444E953 /* Network */,
 				4A90A627BF6330AF8C9D1785 /* View */,
-				BA9109AFAC6C900555940948 /* View Model */,
 			);
 			path = "iOS Example";
-			sourceTree = "<group>";
-		};
-		0B568E4B29DED67300E51B21 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0B568E4C29DED67300E51B21 /* RxNetworkKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0B77E10529D97A3E0077FBC0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0B77E10429D97A3E0077FBC0 /* iOS Example.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		1FDF345BB924980CA278023D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				4C88A69CA6F5F2FCCE6E09D6 /* ViewController.swift */,
-				5C980771BC25F36E3B043532 /* ViewController+NetworkEventMonitor.swift */,
-				636BE87DD1664C2D7FAECEDF /* ViewController+NetworkRequestInterceptor.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		25BB99B2F9A2D2F5C444E953 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				EA2AB00F9F48BF1E7763F5CE /* DownloadRouter.swift */,
-				9452311597B38423B82E0C41 /* Router.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		36E7F1463C2C9E9F2036FAA5 /* App */ = {
@@ -151,32 +103,23 @@
 			children = (
 				DB3031CC8044F79028730604 /* Main.storyboard */,
 				78DA3F5B1FB69E1E8AC1985D /* TableViewCell.swift */,
-				A907DFBE8FCCD6C0B43E63D6 /* ViewLoadType.swift */,
-				A9C3894E572FDCE188F82EDC /* ViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		4B89E8498C8B58EE28C3C891 /* Model */ = {
+		C63EEAE32AD7A03E003A64CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DE9E3440BC86CB6E6DE5AFB8 /* Model.swift */,
+				C63EEB3A2AD7C046003A64CA /* RxNetworkKit.framework */,
+				C63EEB372AD7BE61003A64CA /* CoreExample.framework */,
 			);
-			path = Model;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA9109AFAC6C900555940948 /* View Model */ = {
+		C683C9172AD6089D0061B4F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ED4C68630CA1328C530E000D /* ViewModel.swift */,
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		C68C3F642A9401920036FF9D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C68C3F682A9401960036FF9D /* RxNetworkKit.framework */,
+				C69B8C042AD60477006DAA47 /* iOS Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,10 +127,9 @@
 		EDB69B1E108A08763BE6EEC7 = {
 			isa = PBXGroup;
 			children = (
-				0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */,
 				045E34205091BBFDC877D65F /* iOS Example */,
-				0B77E10529D97A3E0077FBC0 /* Products */,
-				0B568E4B29DED67300E51B21 /* Frameworks */,
+				C683C9172AD6089D0061B4F3 /* Products */,
+				C63EEAE32AD7A03E003A64CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,7 +143,7 @@
 				97EC71B25102A34723F5A8C0 /* Sources */,
 				DB03F5F61AE8A3039BD18A18 /* Resources */,
 				0624E543E0F1109CF4C762FE /* Frameworks */,
-				0B568E5A29DEDBEC00E51B21 /* Embed Frameworks */,
+				C658CF5F2AD5F09D009E561D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,9 +152,11 @@
 			name = "iOS Example";
 			packageProductDependencies = (
 				819F858F2F093441234733F7 /* RxDataSources */,
+				C68473842AD7D7930071B1F6 /* RxSwift */,
+				C68473862AD7D7990071B1F6 /* RxCocoa */,
 			);
-			productName = RxNetworkingExample;
-			productReference = 0B77E10429D97A3E0077FBC0 /* iOS Example.app */;
+			productName = RxNetworkKitExample;
+			productReference = C69B8C042AD60477006DAA47 /* iOS Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -242,31 +186,16 @@
 			mainGroup = EDB69B1E108A08763BE6EEC7;
 			packageReferences = (
 				1380ADB47BEE21E098AC60ED /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
-			productRefGroup = 0B77E10529D97A3E0077FBC0 /* Products */;
+			productRefGroup = EDB69B1E108A08763BE6EEC7;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = C68C3F642A9401920036FF9D /* Products */;
-					ProjectRef = 0B77E0FA29D977390077FBC0 /* RxNetworkKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				26E9FD5EEA5FDD0B3C83D665 /* iOS Example */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		C68C3F682A9401960036FF9D /* RxNetworkKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = RxNetworkKit.framework;
-			remoteRef = C68C3F672A9401960036FF9D /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DB03F5F61AE8A3039BD18A18 /* Resources */ = {
@@ -287,17 +216,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				39055093EB07D0FE09141EEC /* AppDelegate.swift in Sources */,
-				72DA0B2700DBA4EFD95DC6FB /* DownloadRouter.swift in Sources */,
-				72F38840BBCBADB2424F0B21 /* Model.swift in Sources */,
-				57A194118E15AE6C872A9752 /* Router.swift in Sources */,
 				DD59F1300712C00933636CC2 /* SceneDelegate.swift in Sources */,
 				68B891FE4C701A7ACED986C8 /* TableViewCell.swift in Sources */,
-				3B7E472276BAE43EC318CEE7 /* ViewController+NetworkEventMonitor.swift in Sources */,
-				A592421CEFFDBE0D3F6A504D /* ViewController+NetworkRequestInterceptor.swift in Sources */,
 				51A80F9B659EA32FC640A1BD /* ViewController.swift in Sources */,
-				3E8F01214A2EDFF7FF36B4CF /* ViewLoadType.swift in Sources */,
-				9083E2B5C56C9978FA9A88AF /* ViewModel.swift in Sources */,
-				3AEB576B0CFFB902AAB9A011 /* ViewState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,10 +317,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -413,6 +331,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.2;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
@@ -435,10 +354,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Z3SPAA69G7;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "iOS Example/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -452,6 +368,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.2;
+				OTHER_CODE_SIGN_FLAGS = "--deep";
 				PRODUCT_BUNDLE_IDENTIFIER = com.las.RxNetworkKitExample;
 				PRODUCT_NAME = "iOS Example";
 				SDKROOT = iphoneos;
@@ -552,6 +469,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -559,6 +484,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1380ADB47BEE21E098AC60ED /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		C68473842AD7D7930071B1F6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		C68473862AD7D7990071B1F6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C63EEAE62AD7A2B9003A64CA /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
