@@ -46,7 +46,7 @@ jobs:
   example-watchos-simulator:
     name: Build Example For watchOS Simulator
     runs-on: macos-13
-    needs: framework-ios-simulator
+    needs: framework-watchos-simulator
     
     steps:
       - name: Checkout
@@ -66,7 +66,7 @@ jobs:
   example-watchos:
     name: Build Example For watchOS Device
     runs-on: macos-13
-    needs: framework-ios
+    needs: framework-watchos
     
     steps:
       - name: Checkout
