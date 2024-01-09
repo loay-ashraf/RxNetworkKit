@@ -55,6 +55,7 @@ extension Reactive where Base: URLSession {
                     taskProgressSubject.onCompleted()
                 }
             }
+            _ = taskProgressObservation
             task.resume()
             return Disposables.create(with: task.cancel)
         }
@@ -106,6 +107,7 @@ extension Reactive where Base: URLSession {
                     taskProgressSubject.onCompleted()
                 }
             }
+            _ = taskProgressObservation
             task.resume()
             return Disposables.create(with: task.cancel)
         }
