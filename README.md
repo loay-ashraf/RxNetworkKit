@@ -114,7 +114,7 @@ uploadObservable
 
 | Platform | Minimum Swift Version | Installation | Status |
 | --- | --- | --- | --- |
-| iOS 14.0+ / macOS 11.0+ | 5.3 | [CocoaPods](#cocoapods), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
+| iOS(iPadOS) 14.0+ / macOS 11.0+ / watchOS 7.0+ | 5.3 | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
 
