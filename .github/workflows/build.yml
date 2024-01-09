@@ -26,6 +26,10 @@ jobs:
     name: Build For macOS
     uses: ./.github/workflows/build-macos.yml
     
+  build-watchos:
+    name: Build For watchOS
+    uses: ./.github/workflows/build-watchos.yml
+    
   build-deploy-docs:
     name: Build and Deploy Docs
     uses: ./.github/workflows/build-deploy-docs.yml
