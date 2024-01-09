@@ -29,4 +29,3 @@ jobs:
   build-deploy-docs:
     name: Build and Deploy Docs
     uses: ./.github/workflows/build-deploy-docs.yml
-    if: github.ref == 'refs/heads/main'
