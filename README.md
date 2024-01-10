@@ -30,12 +30,14 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 ### Simple API Call:
 
 ```
-// Create 'Network Manager' instance.
-let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-// Create request router object.
+// Create `Session` instance.
+let session = Session(configuration: .default, eventMonitor: self)
+// Create 'RESTClient' instance.
+let restClient = RESTClient(session: session, requestInterceptor: self)
+// Create `RequestRouter` instance.
 let router = Router.default
 // Make request observable sequence using request router.
-let single: Single<Model> = manager.request(router)
+let single: Single<Model> = restClient.request(router)
 // Subscrible to sequence and observe events.
 single
     .observe(on: MainScheduler.instance)
@@ -54,12 +56,14 @@ single
 ### Download Request:
 
 ```
-// Create 'Network Manager' instance.
-let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-// Create download request router object.
+// Create `Session` instance.
+let session = Session(configuration: .default, eventMonitor: self)
+// Create 'HTTPClient' instance.
+let httpClient = HTTPClient(session: session, requestInterceptor: self)
+// Create `HTTPDownloadRequestRouter` instance.
 let router = DownloadRouter.default
 // Make download request observable sequence using request router.
-let downloadObservable: Observable<DownloadEvent> = manager.download(router)
+let downloadObservable: Observable<HTTPDownloadRequestEvent> = httpClient.download(router)
 // Subscrible to sequence and observe events.
 downloadObservable
     .observe(on: MainScheduler.instance)
@@ -83,15 +87,17 @@ downloadObservable
 ### Upload Request:
 
 ```
-// Create 'Network Manager' instance.
-let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-// Create upload request router object.
+// Create `Session` instance.
+let session = Session(configuration: .default, eventMonitor: self)
+// Create 'HTTPClient' instance.
+let httpClient = HTTPClient(session: session, requestInterceptor: self)
+// Create `HTTPUploadRequestRouter` instance.
 let router = UploadRouter.default
-// Make 'UploadFile' object.
+// Make 'HTTPUploadRequestFile' instance.
 let fileData = Data()
 guard let file = UploadFile(forKey: UUID().uuidString, withName: "testFile.txt", withData: fileData) else { return }
-// Make upload request observable sequence using request router and uploa file object.
-let uploadObservable: Observable<UploadEvent<UploadModel>> = manager.upload(router, file)
+// Make upload request observable sequence using request router and upload file object.
+let uploadObservable: Observable<HTTPUploadRequestEvent<UploadModel>> = httpClient.upload(router, file)
 // Subscrible to sequence and observe events.
 uploadObservable
     .observe(on: MainScheduler.instance)

@@ -27,7 +27,7 @@ public struct HTTPUploadRequestFile {
     ///   - key: file key or id.
     ///   - name: file name.
     ///   - data: `Data` object for file.
-    init?(forKey key: String, withName name: String, withData data: Data) {
+    public init?(forKey key: String, withName name: String, withData data: Data) {
         self.key = key
         self.name = name
         self.url = nil
@@ -41,7 +41,7 @@ public struct HTTPUploadRequestFile {
     /// - Parameters:
     ///   - key: file key or id.
     ///   - url: local `URL` for the file.
-    init?(forKey key: String, withURL url: URL) {
+    public init?(forKey key: String, withURL url: URL) {
         let name = url.lastPathComponent
         self.key = key
         self.name = name
