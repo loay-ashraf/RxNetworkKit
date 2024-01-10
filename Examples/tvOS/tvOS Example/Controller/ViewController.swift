@@ -1,12 +1,11 @@
 //
 //  ViewController.swift
-//  RxNetworkKit
+//  tvOS Example
 //
-//  Created by Loay Ashraf on 31/03/2023.
+//  Created by Loay Ashraf on 10/01/2024.
 //
 
 import UIKit
-import SafariServices
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -22,14 +21,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorRetryButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    private var tableViewRefreshControl: UIRefreshControl!
     private var viewModel: ViewModel!
     private let disposeBag: DisposeBag = .init()
     /// View has loaded successfully.
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewModel()
-        setupUI()
         bindUI()
     }
     /// View is about to appear on screen.
@@ -48,11 +45,6 @@ class ViewController: UIViewController {
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         viewModel = .init(restClient: restClient, httpClient: httpClient)
     }
-    /// Sets up views.
-    private func setupUI() {
-        tableViewRefreshControl = UIRefreshControl()
-        tableView.refreshControl = tableViewRefreshControl
-    }
     // MARK: - Bindings
     /// Binds view state and events.
     private func bindUI() {
@@ -63,7 +55,6 @@ class ViewController: UIViewController {
     /// Binds view state.
     private func bindUIState() {
         bindTableViewIsHidden()
-        bindTableViewRefreshControlIsRefreshing()
         bindTableViewItems()
         bindActivityIndicatorIsAnimating()
         bindErrorViewIsHidden()
@@ -91,10 +82,6 @@ class ViewController: UIViewController {
     // MARK: UI Events Bindings
     /// Binds view events.
     private func bindUIEvents() {
-        // Bind tableView's item selection to user profile navigation action.
-        bindTableViewSelectionEvent()
-        // Bind tableView's refreshControl to viewModel's viewState.
-        bindTableViewRefreshControlEvent()
         // Bind errorView's retryButton to viewModel's viewState.
         bindErrorViewRetryEvent()
     }
@@ -103,13 +90,6 @@ class ViewController: UIViewController {
         viewModel.viewState
             .map({ $0 == .loading(loadType: .initial) || $0 == .error })
             .bind(to: tableView.rx.isHidden)
-            .disposed(by: disposeBag)
-    }
-    /// Bind tableViewRefreshControl's isRefreshing property to view state.
-    private func bindTableViewRefreshControlIsRefreshing() {
-        viewModel.viewState
-            .map({ $0 == .loading(loadType: .refresh) })
-            .bind(to: tableViewRefreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }
     /// Bind viewModel's users sequence to tableView's items.
@@ -170,40 +150,12 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    /// Bind tableView's item selection to user profile navigation action.
-    private func bindTableViewSelectionEvent() {
-        let itemSelected = tableView.rx
-            .itemSelected
-        let modelSelected = tableView.rx
-            .modelSelected(Model.self)
-        Observable.zip(itemSelected, modelSelected)
-            .bind(onNext: { selctedIndex, selectedModel in
-                self.tableView.deselectRow(at: selctedIndex, animated: true)
-                self.navigateToUserProfile(with: selectedModel.htmlURL)
-            })
-            .disposed(by: disposeBag)
-    }
-    /// Bind tableView's item selection to user profile navigation action.
-    private func bindTableViewRefreshControlEvent() {
-        tableViewRefreshControl.rx
-            .controlEvent(.valueChanged)
-            .map({ .loading(loadType: .refresh) })
-            .bind(to: viewModel.viewState)
-            .disposed(by: disposeBag)
-    }
     /// Bind errorView's retryButton to viewModel's viewState.
     private func bindErrorViewRetryEvent() {
         errorRetryButton.rx
-            .tap
+            .primaryAction
             .map({ .loading(loadType: .initial) })
             .bind(to: viewModel.viewState)
             .disposed(by: disposeBag)
-    }
-    /// Navigates to user profile.
-    ///
-    /// - Parameter url: HTML `URL` to user profile.
-    private func navigateToUserProfile(with url: URL) {
-        let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true, completion: nil)
     }
 }

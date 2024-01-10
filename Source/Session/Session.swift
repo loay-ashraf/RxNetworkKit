@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Wrapper object for `URLSession` and `HTTPRequestEventMonitor` that can be shared between multiple clients.
 public class Session {
     
     /// Principal `URLSession`object used to create request tasks.

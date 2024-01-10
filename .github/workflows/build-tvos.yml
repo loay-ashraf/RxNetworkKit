@@ -1,0 +1,86 @@
+name: Build tvOS
+
+on:
+  workflow_call:
+  
+jobs:
+
+  framework-tvos-simulator:
+    name: Build Framework For tvOS Simulator
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Framework
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: RxNetworkKit
+          destination: generic/platform=tvOS Simulator
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  framework-tvos:
+    name: Build Framework For tvOS Device
+    runs-on: macos-13
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Framework
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: RxNetworkKit
+          destination: generic/platform=tvOS
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-tvos-simulator:
+    name: Build Example For tvOS Simulator
+    runs-on: macos-13
+    needs: framework-tvos-simulator
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Example
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: tvOS Example
+          destination: generic/platform=tvOS Simulator
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+          
+  example-tvos:
+    name: Build Example For tvOS Device
+    runs-on: macos-13
+    needs: framework-tvos
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set Xcode Version
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '15.1.0'
+      - name: Build Example
+        env:
+          workspace: RxNetworkKit.xcworkspace
+          scheme: tvOS Example
+          destination: generic/platform=tvOS
+        run: |
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
+
+
