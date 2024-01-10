@@ -27,14 +27,14 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 - ``HTTPScheme``
 - ``HTTPMethod``
 - ``HTTPStatusCode``
-- ``HTTPBodyError``
-- ``DefaultHTTPBodyError``
 
 ### Error
 
 - ``HTTPError``
 - ``HTTPAPIError``
 - ``DefaultHTTPAPIError``
+- ``HTTPBodyError``
+- ``DefaultHTTPBodyError``
 - ``HTTPClientError``
 - ``HTTPServerError``
 
