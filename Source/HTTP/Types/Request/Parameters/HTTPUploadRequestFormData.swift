@@ -15,7 +15,6 @@ public struct HTTPUploadRequestFormData {
     /// files to be included in the form HTTP body.
     let files: [HTTPUploadRequestFile]
     
-    
     /// Creates `HTTPUploadRequestFormData` instance.
     ///
     /// - Parameters:
