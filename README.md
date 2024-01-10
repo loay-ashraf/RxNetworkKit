@@ -1,8 +1,9 @@
 # RxNetworkKit
 ![Swift](https://img.shields.io/badge/Swift-5.3-orange)
-![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS%20watchOS-yellowgreen)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS%20tvOS%20watchOS-yellowgreen)
 ![iOS](https://img.shields.io/badge/iOS-14.0%2B-black)
 ![macOS](https://img.shields.io/badge/macOS-11.0%2B-black)
+![tvOS](https://img.shields.io/badge/tvOS-14.0%2B-black)
 ![watchOS](https://img.shields.io/badge/watchOS-7.0%2B-black)
 ![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
 [![Twitter](https://img.shields.io/badge/Twitter-%40lashraf96-blue)](https://twitter.com/lashraf96)
@@ -114,7 +115,7 @@ uploadObservable
 
 | Platform | Minimum Swift Version | Installation | Status |
 | --- | --- | --- | --- |
-| iOS(iPadOS) 14.0+ / macOS 11.0+ / watchOS 7.0+ | 5.3 | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
+| iOS(iPadOS) 14.0+ / macOS 11.0+ / tvOS 14.0+ / watchOS 7.0+ | 5.3 | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
 
