@@ -27,6 +27,10 @@ jobs:
     uses: ./.github/workflows/build-macos.yml
     
   build-watchos:
+    name: Build For tvOS
+    uses: ./.github/workflows/build-tvos.yml
+    
+  build-watchos:
     name: Build For watchOS
     uses: ./.github/workflows/build-watchos.yml
     
