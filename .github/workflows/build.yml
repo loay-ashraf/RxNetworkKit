@@ -26,7 +26,7 @@ jobs:
     name: Build For macOS
     uses: ./.github/workflows/build-macos.yml
     
-  build-watchos:
+  build-tvos:
     name: Build For tvOS
     uses: ./.github/workflows/build-tvos.yml
     
