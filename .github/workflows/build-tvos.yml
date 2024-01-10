@@ -20,7 +20,7 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
-          destination: generic/platform=watchOS Simulator
+          destination: generic/platform=tvOS Simulator
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
@@ -39,7 +39,7 @@ jobs:
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
-          destination: generic/platform=watchOS
+          destination: generic/platform=tvOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
@@ -58,8 +58,8 @@ jobs:
       - name: Build Example
         env:
           workspace: RxNetworkKit.xcworkspace
-          scheme: watchOS Example
-          destination: generic/platform=watchOS Simulator
+          scheme: tvOS Example
+          destination: generic/platform=tvOS Simulator
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
@@ -78,8 +78,8 @@ jobs:
       - name: Build Example
         env:
           workspace: RxNetworkKit.xcworkspace
-          scheme: watchOS Example
-          destination: generic/platform=watchOS
+          scheme: tvOS Example
+          destination: generic/platform=tvOS
         run: |
           xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
 
