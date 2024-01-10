@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SafariServices
 import RxSwift
 import RxCocoa
 import RxDataSources
-import SafariServices
 import RxNetworkKit
+import CoreExample
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -40,8 +41,12 @@ class ViewController: UIViewController {
     }
     /// Initializes ViewModel object.
     private func setupViewModel() {
-        let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-        viewModel = .init(networkManager: manager)
+        let requestInterceptor = RequestInterceptor()
+        let requestEventMointor = RequestEventMonitor()
+        let session = Session(configuration: .default, eventMonitor: requestEventMointor)
+        let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
+        let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
+        viewModel = .init(restClient: restClient, httpClient: httpClient)
     }
     /// Sets up views.
     private func setupUI() {
@@ -122,7 +127,7 @@ class ViewController: UIViewController {
     ///   - url: `URL` used to download image data.
     ///   - cell: `TableViewCell` that the image data will be applied to.
     private func downloadTableViewCellImage(using url: URL, applyTo cell: TableViewCell) {
-        viewModel.downloadImage(DownloadRouter.default(url: url))
+        viewModel.downloadImage(DownloadRequestRouter.default(url: url))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 switch $0 {
@@ -133,7 +138,7 @@ class ViewController: UIViewController {
                     return
                 }
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: disposeBag)
     }
     /// Bind activityIndicator's isAnimating property to view state.
     private func bindActivityIndicatorIsAnimating() {
@@ -199,6 +204,6 @@ class ViewController: UIViewController {
     /// - Parameter url: HTML `URL` to user profile.
     private func navigateToUserProfile(with url: URL) {
         let safariVC = SFSafariViewController(url: url)
-        self.present(safariVC, animated: true, completion: nil)
+        present(safariVC, animated: true, completion: nil)
     }
 }

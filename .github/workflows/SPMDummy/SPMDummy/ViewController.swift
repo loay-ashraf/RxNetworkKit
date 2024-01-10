@@ -5,7 +5,7 @@
 //  Created by Loay Ashraf on 25/08/2023.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 class ViewController: UIViewController {

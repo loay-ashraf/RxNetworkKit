@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "corehttp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/loay-ashraf/CoreHTTP",
+      "state" : {
+        "revision" : "17b030a4a10ac9449e6c107bce13f112280aae6b",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "rxdatasources",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/RxSwiftCommunity/RxDataSources",

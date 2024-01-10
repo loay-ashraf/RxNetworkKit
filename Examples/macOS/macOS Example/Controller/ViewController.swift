@@ -7,8 +7,9 @@
 
 import Cocoa
 import RxSwift
-import RxCocoa
+import RxRelay
 import RxNetworkKit
+import CoreExample
 
 class ViewController: NSViewController {
     @IBOutlet weak var tableView: NSTableView!
@@ -43,8 +44,12 @@ class ViewController: NSViewController {
     }
     /// Initializes ViewModel object.
     private func setupViewModel() {
-        let manager = NetworkManager(configuration: .default, requestInterceptor: self, eventMonitor: self)
-        viewModel = .init(networkManager: manager)
+        let requestInterceptor = RequestInterceptor()
+        let requestEventMointor = RequestEventMonitor()
+        let session = Session(configuration: .default, eventMonitor: requestEventMointor)
+        let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
+        let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
+        viewModel = .init(restClient: restClient, httpClient: httpClient)
     }
     /// Sets up views.
     private func setupUI() {
@@ -119,7 +124,7 @@ class ViewController: NSViewController {
     ///   - url: `URL` used to download image data.
     ///   - cell: `TableViewCell` that the image data will be applied to.
     private func downloadTableViewCellImage(using url: URL, applyTo cell: TableCellView) {
-        viewModel.downloadImage(DownloadRouter.default(url: url))
+        viewModel.downloadImage(DownloadRequestRouter.default(url: url))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
                 switch $0 {
@@ -130,7 +135,7 @@ class ViewController: NSViewController {
                     return
                 }
             })
-            .disposed(by: self.disposeBag)
+            .disposed(by: disposeBag)
     }
     /// Bind activityIndicator's isAnimating property to view state.
     private func bindActivityIndicatorIsAnimating() {

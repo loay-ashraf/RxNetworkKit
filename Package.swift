@@ -11,7 +11,7 @@ import PackageDescription
 let package = Package(
     name: "RxNetworkKit",
     platforms: [
-        .iOS(.v14), .macOS(.v11)
+        .iOS(.v14), .macOS(.v11), .tvOS(.v14), .watchOS(.v7)
     ],
     products: [
         .library(name: "RxNetworkKit", targets: ["RxNetworkKit"]),
@@ -19,9 +19,10 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.6.0")),
         .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt", .upToNextMajor(from: "6.2.0")),
+        .package(url: "https://github.com/loay-ashraf/CoreHTTP", .upToNextMajor(from: "1.0.0"))
     ],
     targets: [
-        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt",  .product(name: "RxCocoa", package: "RxSwift")], path: "Source"),
+        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt", .product(name: "RxCocoa", package: "RxSwift"), "CoreHTTP"], path: "Source"),
     ],
     swiftLanguageVersions: [.v5]
 )

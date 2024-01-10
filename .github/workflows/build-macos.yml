@@ -14,14 +14,14 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: '15.1.0'
       - name: Build Framework
         env:
           workspace: RxNetworkKit.xcworkspace
           scheme: RxNetworkKit
           destination: generic/platform=macOS
         run: |
-          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" docbuild | xcpretty && exit ${PIPESTATUS[0]}
+          xcodebuild clean build -workspace "${workspace}" -scheme "${scheme}" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
           
   example-macos:
     name: Build Example For macOS
@@ -34,7 +34,7 @@ jobs:
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
-          xcode-version: '15.0.0'
+          xcode-version: '15.1.0'
       - name: Build Example
         env:
           workspace: RxNetworkKit.xcworkspace

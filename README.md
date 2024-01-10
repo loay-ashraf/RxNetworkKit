@@ -1,9 +1,10 @@
 # RxNetworkKit
 ![Swift](https://img.shields.io/badge/Swift-5.3-orange)
-![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS-yellowgreen)
+![Platforms](https://img.shields.io/badge/Platforms-iOS%20macOS%20tvOS%20watchOS-yellowgreen)
 ![iOS](https://img.shields.io/badge/iOS-14.0%2B-black)
 ![macOS](https://img.shields.io/badge/macOS-11.0%2B-black)
-![Cocoapods](https://img.shields.io/badge/Cocoapods-compatible-red)
+![tvOS](https://img.shields.io/badge/tvOS-14.0%2B-black)
+![watchOS](https://img.shields.io/badge/watchOS-7.0%2B-black)
 ![SPM](https://img.shields.io/badge/SPM-compatible-brightgreen)
 [![Twitter](https://img.shields.io/badge/Twitter-%40lashraf96-blue)](https://twitter.com/lashraf96)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-loay--ashraf-blue)](https://linkedin.com/in/loay-ashraf)
@@ -114,18 +115,9 @@ uploadObservable
 
 | Platform | Minimum Swift Version | Installation | Status |
 | --- | --- | --- | --- |
-| iOS 14.0+ / macOS 11.0+ | 5.3 | [CocoaPods](#cocoapods), [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
+| iOS(iPadOS) 14.0+ / macOS 11.0+ / tvOS 14.0+ / watchOS 7.0+ | 5.3 | [Swift Package Manager](#swift-package-manager), [Manual](#manually) | Fully Tested |
 
 ## Installation
-
-### CocoaPods
-
-[CocoaPods](https://cocoapods.org) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate RxNetworkKit into your Xcode project using CocoaPods, specify it in your `Podfile`:
-
-```ruby
-pod 'RxNetworkKitX'
-```
-P.S: We had to postfix with 'X' as there's a pod on trunk with same name but different case 🤦‍♂️
 
 ### Swift Package Manager
 
@@ -138,10 +130,6 @@ dependencies: [
     .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "0.0.1"))
 ]
 ```
-
-### Carthage
-
-Support for Carthage is coming soon.
 
 ### Manually
 

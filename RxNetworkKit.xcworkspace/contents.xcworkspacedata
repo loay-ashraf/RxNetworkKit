@@ -2,12 +2,21 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "container:RxNetworkKit.xcodeproj">
+      location = "group:RxNetworkKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Shared/CoreExample/CoreExample.xcodeproj">
    </FileRef>
    <FileRef
       location = "container:Examples/iOS/iOS Example.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Examples/macOS/macOS Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/tvOS/tvOS Example.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/watchOS/watchOS Example.xcodeproj">
    </FileRef>
 </Workspace>
