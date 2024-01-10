@@ -34,7 +34,7 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 let session = Session(configuration: .default, eventMonitor: self)
 // Create 'RESTClient' instance.
 let restClient = RESTClient(session: session, requestInterceptor: self)
-// Create `RequestRouter` instance.
+// Create `HTTPRequestRouter` instance.
 let router = Router.default
 // Make request observable sequence using request router.
 let single: Single<Model> = restClient.request(router)
@@ -133,7 +133,7 @@ Once you have your Swift package set up, adding RxNetworkKit as a dependency is 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "0.0.1"))
+    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 

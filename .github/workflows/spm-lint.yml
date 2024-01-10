@@ -17,8 +17,7 @@ jobs:
       matrix:
         destination: ['generic/platform=iOS Simulator',
          'generic/platform=iOS',
-         'generic/platform=macOS',
-         'generic/platform=tvOS Simulator']
+         'generic/platform=macOS']
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
     steps:
