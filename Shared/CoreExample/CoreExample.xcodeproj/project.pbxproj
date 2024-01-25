@@ -16,7 +16,6 @@
 		C62E15252AD77BDF003CB8FA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E14DC2AD77747003CB8FA /* ViewModel.swift */; };
 		C62E15292AD77C39003CB8FA /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C62E15282AD77C39003CB8FA /* RxSwift */; };
 		C62E153E2AD78417003CB8FA /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */; };
-		C62E15402AD78483003CB8FA /* RequestEventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */; };
 		C63EEB352AD7BE17003A64CA /* RxNetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62E15042AD77AA4003CB8FA /* RxNetworkKit.framework */; };
 		C63EEB4A2AD7C4B6003A64CA /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C63EEB492AD7C4B6003A64CA /* RxCocoa */; };
 /* End PBXBuildFile section */
@@ -32,7 +31,6 @@
 		C62E15172AD77B8F003CB8FA /* CoreExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62E15192AD77B8F003CB8FA /* CoreExample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreExample.h; sourceTree = "<group>"; };
 		C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
-		C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEventMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 				C62E14D52AD77729003CB8FA /* DownloadRequestRouter.swift */,
 				C62E14D42AD77729003CB8FA /* RequestRouter.swift */,
 				C62E153D2AD78417003CB8FA /* RequestInterceptor.swift */,
-				C62E153F2AD78483003CB8FA /* RequestEventMonitor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -215,7 +212,6 @@
 				C62E153E2AD78417003CB8FA /* RequestInterceptor.swift in Sources */,
 				C62E15232AD77BDA003CB8FA /* ViewLoadType.swift in Sources */,
 				C62E15212AD77BD3003CB8FA /* RequestRouter.swift in Sources */,
-				C62E15402AD78483003CB8FA /* RequestEventMonitor.swift in Sources */,
 				C62E15202AD77BCC003CB8FA /* Model.swift in Sources */,
 				C62E15252AD77BDF003CB8FA /* ViewModel.swift in Sources */,
 			);

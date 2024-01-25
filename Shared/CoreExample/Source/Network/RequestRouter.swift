@@ -31,8 +31,4 @@ public enum RequestRouter: HTTPRequestRouter {
     public var body: [String : Any]? {
         nil
     }
-    public var url: URL? {
-        let urlString = scheme.rawValue + domain + "/" + path
-        return URL(string: urlString)
-    }
 }
