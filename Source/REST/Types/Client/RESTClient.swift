@@ -51,7 +51,7 @@ public class RESTClient {
         }
         let observable = urlSession
             .rx
-            .response(request: adaptedRequest)
+            .restResponse(request: adaptedRequest)
             .decodable(E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable
@@ -76,7 +76,7 @@ public class RESTClient {
         }
         let observable = urlSession
             .rx
-            .response(request: adaptedRequest)
+            .restResponse(request: adaptedRequest)
             .decodable(T.self, httpErrorType: E.self, apiErrorType: AE.self)
             .retry(retryMaxAttempts, delay: retryPolicy, shouldRetry: shouldRetry)
         return observable

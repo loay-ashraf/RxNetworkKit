@@ -23,23 +23,12 @@ extension Reactive where Base: URLSession {
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()
         let taskResponseSingle = Single<(response: HTTPURLResponse, data: Data)>.create { single in
-            // smart compiler should be able to optimize this out
-            let d: Date?
-            if URLSession.rx.shouldLogRequest(request) {
-                d = Date()
-            } else {
-                d = nil
-            }
             let task = self.base.fileUploadTask(with: request, from: file) { data, response, error in
-                if URLSession.rx.shouldLogRequest(request) {
-                    let interval = Date().timeIntervalSince(d ?? Date())
-                    print(convertURLRequestToCurlCommand(request))
-#if os(Linux)
-                    print(convertResponseToString(response, error.flatMap { $0 as NSError }, interval))
-#else
-                    print(convertResponseToString(response, error.map { $0 as NSError }, interval))
-#endif
+#if DEBUG
+                if URLSession.logRequests {
+                    HTTPRequestLogger.shared.log(response: (response, data, error))
                 }
+#endif
                 guard let response = response, let data = data else {
                     single(.failure(error ?? RxCocoaURLError.unknown))
                     return
@@ -75,23 +64,12 @@ extension Reactive where Base: URLSession {
         var taskProgressObservation: NSKeyValueObservation?
         let taskProgressSubject = PublishSubject<Progress>()
         let taskResponseSingle = Single<(response: HTTPURLResponse, data: Data)>.create { single in
-            // smart compiler should be able to optimize this out
-            let d: Date?
-            if URLSession.rx.shouldLogRequest(request) {
-                d = Date()
-            } else {
-                d = nil
-            }
             let task = self.base.formDataUploadTask(with: request, from: formData) { data, response, error in
-                if URLSession.rx.shouldLogRequest(request) {
-                    let interval = Date().timeIntervalSince(d ?? Date())
-                    print(convertURLRequestToCurlCommand(request))
-#if os(Linux)
-                    print(convertResponseToString(response, error.flatMap { $0 as NSError }, interval))
-#else
-                    print(convertResponseToString(response, error.map { $0 as NSError }, interval))
-#endif
+#if DEBUG
+                if URLSession.logRequests {
+                    HTTPRequestLogger.shared.log(response: (response, data, error))
                 }
+#endif
                 guard let response = response, let data = data else {
                     single(.failure(error ?? RxCocoaURLError.unknown))
                     return

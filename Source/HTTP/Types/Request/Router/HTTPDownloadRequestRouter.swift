@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /// Holds download request details.
 public protocol HTTPDownloadRequestRouter: HTTPRequestRouter { }
 
