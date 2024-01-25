@@ -19,6 +19,13 @@ extension URLSession {
     func fileUploadTask(with request: URLRequest, from file: HTTPUploadRequestFile, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
         let fileData = extractFileData(file)
         let request = adaptUploadRequest(originalRequest: request, withContentType: file.mimeType.rawValue, withBody: fileData)
+#if DEBUG
+        if URLSession.logRequests {
+            let outgoingRequest = outgoingRequest(for: request)
+            HTTPRequestLogger.shared.log(request: outgoingRequest, bodyPlaceholder: "[File Body]")
+            
+        }
+#endif
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
     }
@@ -34,6 +41,12 @@ extension URLSession {
         let boundary = generateFormBoundary()
         let dataBody = createFormDataBody(formData: formData, boundary: boundary)
         let request = adaptUploadRequest(originalRequest: request, withContentType: "multipart/form-data; boundary=\(boundary)", withBody: dataBody)
+#if DEBUG
+        if URLSession.logRequests {
+            let outgoingRequest = outgoingRequest(for: request)
+            HTTPRequestLogger.shared.log(request: outgoingRequest)
+        }
+#endif
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
     }

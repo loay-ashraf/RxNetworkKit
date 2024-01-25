@@ -16,6 +16,6 @@ extension URLSessionConfiguration {
         let frameworkBundleVersion = frameworkBundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let osName = ProcessInfo.processInfo.operatingSystemName
         let osVersion = ProcessInfo.processInfo.operatingSystemVersionString
-        setAdditionalHTTPHeader("User-Agent", value: "RxNetworkKit/\(frameworkBundleVersion) (\(osName) \(osVersion)-\(mainBundleIndentifier))")
+        setAdditionalHTTPHeader("User-Agent", value: "RxNetworkKit/\(frameworkBundleVersion) (\(osName) \(osVersion)) (\(mainBundleIndentifier))")
     }
 }
