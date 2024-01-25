@@ -31,7 +31,7 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 
 ```
 // Create `Session` instance.
-let session = Session(configuration: .default, eventMonitor: self)
+let session = Session(configuration: .default)
 // Create 'RESTClient' instance.
 let restClient = RESTClient(session: session, requestInterceptor: self)
 // Create `HTTPRequestRouter` instance.
@@ -57,7 +57,7 @@ single
 
 ```
 // Create `Session` instance.
-let session = Session(configuration: .default, eventMonitor: self)
+let session = Session(configuration: .default)
 // Create 'HTTPClient' instance.
 let httpClient = HTTPClient(session: session, requestInterceptor: self)
 // Create `HTTPDownloadRequestRouter` instance.
@@ -88,7 +88,7 @@ downloadObservable
 
 ```
 // Create `Session` instance.
-let session = Session(configuration: .default, eventMonitor: self)
+let session = Session(configuration: .default)
 // Create 'HTTPClient' instance.
 let httpClient = HTTPClient(session: session, requestInterceptor: self)
 // Create `HTTPUploadRequestRouter` instance.
@@ -133,7 +133,7 @@ Once you have your Swift package set up, adding RxNetworkKit as a dependency is 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/loay-ashraf/RxNetworkKit.git", .upToNextMajor(from: "2.0.0"))
 ]
 ```
 
