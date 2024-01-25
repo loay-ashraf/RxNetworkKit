@@ -39,8 +39,7 @@ class ViewController: UIViewController {
     /// Initializes ViewModel object.
     private func setupViewModel() {
         let requestInterceptor = RequestInterceptor()
-        let requestEventMointor = RequestEventMonitor()
-        let session = Session(configuration: .default, eventMonitor: requestEventMointor)
+        let session = Session(configuration: .default)
         let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         viewModel = .init(restClient: restClient, httpClient: httpClient)
