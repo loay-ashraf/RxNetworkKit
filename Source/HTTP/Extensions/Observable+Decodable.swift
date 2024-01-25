@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 extension Observable where Element == (response: HTTPURLResponse, data: Data) {
     /// Creates `Completable` observable + handles transport errors.

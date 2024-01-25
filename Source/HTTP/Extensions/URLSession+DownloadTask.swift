@@ -16,6 +16,12 @@ extension URLSession {
     ///
     /// - Returns: download`URLSessionDataTask` created using given request.
     func fileDownloadTask(with request: URLRequest, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+#if DEBUG
+        if URLSession.logRequests {
+            let outgoingRequest = outgoingRequest(for: request)
+            HTTPRequestLogger.shared.log(request: outgoingRequest)
+        }
+#endif
         let task = dataTask(with: request, completionHandler: completionHandler)
         return task
     }
@@ -28,6 +34,12 @@ extension URLSession {
     ///
     /// - Returns: download`URLSessionDataTask` created using given request and local url.
     func fileDownloadTask(with request: URLRequest, saveTo url: URL, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+#if DEBUG
+        if URLSession.logRequests {
+            let outgoingRequest = outgoingRequest(for: request)
+            HTTPRequestLogger.shared.log(request: outgoingRequest)
+        }
+#endif
         let task = dataTask(with: request) { data, response, error in
             do {
                 if let data = data {

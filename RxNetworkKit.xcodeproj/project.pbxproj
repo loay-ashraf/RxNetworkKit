@@ -41,6 +41,13 @@
 		0B77E0BD29D968DE0077FBC0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BC29D968DE0077FBC0 /* RxSwift */; };
 		0B77E0C029D969370077FBC0 /* RxSwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = 0B77E0BF29D969370077FBC0 /* RxSwiftExt */; };
 		C6049B162A95307800E5727E /* RxNetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C6049B152A95307800E5727E /* RxNetworkKit.h */; };
+		C61A7E242B6276F800407C38 /* HTTPRequestLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E232B6276F800407C38 /* HTTPRequestLogger.swift */; };
+		C61A7E262B62782D00407C38 /* Reactive+RESTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E252B62782D00407C38 /* Reactive+RESTResponse.swift */; };
+		C61A7E2A2B62794900407C38 /* URLSession+OutgoingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E292B62794900407C38 /* URLSession+OutgoingRequest.swift */; };
+		C61A7E2C2B62798800407C38 /* URLRequest+CURLCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E2B2B62798800407C38 /* URLRequest+CURLCommand.swift */; };
+		C61A7E2E2B6279C700407C38 /* Data+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E2D2B6279C700407C38 /* Data+JSON.swift */; };
+		C61A7E302B627B3000407C38 /* SessionConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E2F2B627B3000407C38 /* SessionConfiguration.swift */; };
+		C61A7E322B62885F00407C38 /* URLSession+LogRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */; };
 		C61CB5642AF2CFDD006A203A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61CB5632AF2CFDD006A203A /* Session.swift */; };
 		C623E7B42AD6262A00A20A0A /* CoreHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C623E7B32AD6262A00A20A0A /* CoreHTTP */; };
 		C6554A2B2AD5BBB60090DD3A /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */; };
@@ -93,6 +100,13 @@
 		0B77E08629D965D30077FBC0 /* HTTPDownloadRequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPDownloadRequestRouter.swift; sourceTree = "<group>"; };
 		0B77E08829D965D30077FBC0 /* HTTPUploadRequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPUploadRequestRouter.swift; sourceTree = "<group>"; };
 		C6049B152A95307800E5727E /* RxNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxNetworkKit.h; sourceTree = "<group>"; };
+		C61A7E232B6276F800407C38 /* HTTPRequestLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequestLogger.swift; sourceTree = "<group>"; };
+		C61A7E252B62782D00407C38 /* Reactive+RESTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+RESTResponse.swift"; sourceTree = "<group>"; };
+		C61A7E292B62794900407C38 /* URLSession+OutgoingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+OutgoingRequest.swift"; sourceTree = "<group>"; };
+		C61A7E2B2B62798800407C38 /* URLRequest+CURLCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+CURLCommand.swift"; sourceTree = "<group>"; };
+		C61A7E2D2B6279C700407C38 /* Data+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+JSON.swift"; sourceTree = "<group>"; };
+		C61A7E2F2B627B3000407C38 /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
+		C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+LogRequests.swift"; sourceTree = "<group>"; };
 		C61CB5632AF2CFDD006A203A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		C6554A2C2AD5C1560090DD3A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -180,10 +194,38 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		C61CB5622AF2CF31006A203A /* Session */ = {
+		C61A7E222B6276D900407C38 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				C61A7E232B6276F800407C38 /* HTTPRequestLogger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		C61A7E272B6278A900407C38 /* Types */ = {
 			isa = PBXGroup;
 			children = (
 				C61CB5632AF2CFDD006A203A /* Session.swift */,
+				C61A7E2F2B627B3000407C38 /* SessionConfiguration.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C61A7E282B6278B500407C38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */,
+				C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */,
+				C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C61CB5622AF2CF31006A203A /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				C61A7E282B6278B500407C38 /* Extensions */,
+				C61A7E272B6278A900407C38 /* Types */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -220,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				C6554A342AD5C6830090DD3A /* Event */,
+				C61A7E222B6276D900407C38 /* Logger */,
 				C6554A2E2AD5C4F30090DD3A /* Parameters */,
 				C6554A312AD5C5940090DD3A /* Router */,
 			);
@@ -247,9 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				0B77E05529D965D30077FBC0 /* Data+AppendString.swift */,
+				C61A7E2D2B6279C700407C38 /* Data+JSON.swift */,
 				0B77E08029D965D30077FBC0 /* Observable+Decodable.swift */,
 				0B77E07F29D965D30077FBC0 /* Observable+Retry.swift */,
-				C6A9BEFE2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift */,
 				0B77E08429D965D30077FBC0 /* Reactive+Curl.swift */,
 				0B77E05029D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift */,
 				0B77E05629D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift */,
@@ -258,10 +301,11 @@
 				C6BDFFEB2ACDF4100022F675 /* Reactive+WebSocketPing.swift */,
 				C6BDFFE72ACDF3830022F675 /* Reactive+WebSocketReceive.swift */,
 				C6BDFFE92ACDF3D90022F675 /* Reactive+WebSocketSend.swift */,
+				C61A7E2B2B62798800407C38 /* URLRequest+CURLCommand.swift */,
 				0B77E04F29D965D30077FBC0 /* URLSession+DownloadTask.swift */,
+				C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */,
+				C61A7E292B62794900407C38 /* URLSession+OutgoingRequest.swift */,
 				0B77E05429D965D30077FBC0 /* URLSession+UploadTask.swift */,
-				C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */,
-				C6A9BEFC2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,10 +313,11 @@
 		C6554A372AD5C7AD0090DD3A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0B77E08229D965D30077FBC0 /* Completable+Retry.swift */,
+				C61A7E252B62782D00407C38 /* Reactive+RESTResponse.swift */,
 				0B77E07B29D965D30077FBC0 /* Single+CatchErrors.swift */,
 				0B77E07D29D965D30077FBC0 /* Single+Decodable.swift */,
 				0B77E07A29D965D30077FBC0 /* Single+Decode.swift */,
-				0B77E08229D965D30077FBC0 /* Completable+Retry.swift */,
 				0B77E07929D965D30077FBC0 /* Single+Retry.swift */,
 				0B77E07C29D965D30077FBC0 /* Single+VerifyResponse.swift */,
 			);
@@ -421,6 +466,7 @@
 				C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */,
 				0B77E08E29D965D30077FBC0 /* HTTPUploadRequestFile.swift in Sources */,
 				0B77E08D29D965D30077FBC0 /* HTTPUploadRequestFormData.swift in Sources */,
+				C61A7E262B62782D00407C38 /* Reactive+RESTResponse.swift in Sources */,
 				0B77E0AF29D965D30077FBC0 /* Single+Decodable.swift in Sources */,
 				C69A78562ACF001400ECF092 /* Docs.docc in Sources */,
 				0B77E0A129D965D30077FBC0 /* NWInterfaceType+RawRepresentable.swift in Sources */,
@@ -431,6 +477,8 @@
 				0B77E09129D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift in Sources */,
 				C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */,
 				C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */,
+				C61A7E242B6276F800407C38 /* HTTPRequestLogger.swift in Sources */,
+				C61A7E302B627B3000407C38 /* SessionConfiguration.swift in Sources */,
 				C6B4B4C42AD47A2F009073ED /* WebSocketError.swift in Sources */,
 				0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */,
 				0B77E0B229D965D30077FBC0 /* Completable+Retry.swift in Sources */,
@@ -439,6 +487,7 @@
 				C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */,
 				0B77E0B629D965D30077FBC0 /* HTTPUploadRequestRouter.swift in Sources */,
 				0B77E0AB29D965D30077FBC0 /* Single+Retry.swift in Sources */,
+				C61A7E2C2B62798800407C38 /* URLRequest+CURLCommand.swift in Sources */,
 				0B77E08F29D965D30077FBC0 /* URLSession+UploadTask.swift in Sources */,
 				0B77E08C29D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift in Sources */,
 				0B77E0A229D965D30077FBC0 /* NWInterfaceType+CaseIterable.swift in Sources */,
@@ -446,12 +495,15 @@
 				C61CB5642AF2CFDD006A203A /* Session.swift in Sources */,
 				0B77E09329D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift in Sources */,
 				0B77E0AC29D965D30077FBC0 /* Single+Decode.swift in Sources */,
+				C61A7E2E2B6279C700407C38 /* Data+JSON.swift in Sources */,
 				0B77E0A329D965D30077FBC0 /* NetworkInterfaceType.swift in Sources */,
 				0B77E09229D965D30077FBC0 /* HTTPUploadRequestEvent.swift in Sources */,
 				0B77E09029D965D30077FBC0 /* Data+AppendString.swift in Sources */,
 				C6BDFFE82ACDF3830022F675 /* Reactive+WebSocketReceive.swift in Sources */,
+				C61A7E322B62885F00407C38 /* URLSession+LogRequests.swift in Sources */,
 				0B77E08929D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift in Sources */,
 				C6554A2D2AD5C1560090DD3A /* HTTPClient.swift in Sources */,
+				C61A7E2A2B62794900407C38 /* URLSession+OutgoingRequest.swift in Sources */,
 				C6BDFFEC2ACDF4100022F675 /* Reactive+WebSocketPing.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -708,7 +760,7 @@
 			repositoryURL = "https://github.com/loay-ashraf/CoreHTTP";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/loay-ashraf/CoreHTTP",
       "state" : {
-        "revision" : "17b030a4a10ac9449e6c107bce13f112280aae6b",
-        "version" : "1.0.0"
+        "revision" : "d38c3063412e7121bbb5a1fcef3089d847865266",
+        "version" : "2.0.1"
       }
     },
     {
