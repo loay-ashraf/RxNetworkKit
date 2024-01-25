@@ -15,17 +15,17 @@ public class SessionConfiguration {
         .init(urlSessionConfiguration: .default, setUserAgentHeader: true, logRequests: true)
     }
     
-    /// `URLSessionConfiguration`object used to create `URLSession` object.
+    /// `URLSessionConfiguration` object used to create `URLSession` object.
     let urlSessionConfiguration: URLSessionConfiguration
     /// `Bool` flag that indicates wether a `URLSession` should add `User-Agent` header to outgoing requests.
     let setUserAgentHeader: Bool
     /// `Bool` flag that indicates wether a `URLSession` should print outgoing requests to the console.
     let logRequests: Bool
     
-    /// Description
+    /// Creates a `SessionConfiguration` instance.
     ///
     /// - Parameters:
-    ///   - urlSessionConfiguration: `URLSessionConfiguration`object used to create `URLSession` object.
+    ///   - urlSessionConfiguration: `URLSessionConfiguration` object used to create `URLSession` object.
     ///   - setUserAgentHeader: `Bool` flag that indicates wether a `URLSession` should add `User-Agent` header to outgoing requests.
     ///   - logRequests: `Bool` flag that indicates wether a `URLSession` should print outgoing requests to the console.
     public init(urlSessionConfiguration: URLSessionConfiguration, setUserAgentHeader: Bool, logRequests: Bool) {
