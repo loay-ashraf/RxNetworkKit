@@ -19,6 +19,7 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 ### Foundation
 
 - ``Session``
+- ``SessionConfiguration``
 - ``RESTClient``
 - ``HTTPClient``
 
@@ -44,10 +45,6 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 - ``HTTPRequestAdapter``
 - ``HTTPRequestRetrier``
 - ``HTTPRequestRetryPolicy``
-
-### Event Monitor
-
-- ``HTTPRequestEventMonitor``
 
 ### Network Reachability
 
