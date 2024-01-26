@@ -1,4 +1,4 @@
-# Getting Started With RxNetworkKit
+# Getting Started
 
 Add **RxNetworkKit** and the essential networking code to your project.
 
