@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Holds details for a mulipart form upload.
+/// Holds details for a mulipart form upload request.
 public struct HTTPUploadRequestFormData {
     
     /// parameters (text data fields) to be included in the form HTTP body.

@@ -4,7 +4,7 @@ Connect to a web socket server with **RxNetworkKit**
 
 ## Overview
 
-In this article we will walk you through on how to connect to a web socket server and how to send/receive messages and data.
+In this article we will walk you through on how to connect to a web socket server and how to send/receive messages.
 
 ### Creating a http client
 
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 
 ### Connecting to a websocket server
 
-In this section, you will create a ``WebSocket`` and send/receive messages and data to/from the server.
+In this section, you will create a ``WebSocket`` and send/receive messages to/from the server.
 
 - First, call the `HTTPClient.websocket` method and pass the server url, protocols and close handler as arguments.
 
@@ -91,9 +91,9 @@ class ViewController: UIViewController {
 }
 ```
 
-- Optionally, you can send messages and data via the `WebSocket.send(_:)` method.
+- Optionally, you can send messages to the server via the `WebSocket.send(_:)` method.
 
-- That's it, you are connected to a web socket server and ready to send/receive messages and data.
+- That's it, you are connected to a web socket server and ready to send/receive messages.
 
 - Tip: You can disconnect from the web socket server at any time by calling the `WebSocket.disconnect` method.
 
