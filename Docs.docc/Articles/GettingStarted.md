@@ -10,7 +10,7 @@ You also need to create ``Session`` and ``RESTClient`` objects so you can start 
 
 ### Adding RxNetworkKit to your project
 
-In this section, you will be adding RxNetworkKit to our project via Swift Package Manager.
+In this section, you will be adding RxNetworkKit to your project via Swift Package Manager.
 
 - First, open the dependencies tab of your project.
 
@@ -32,17 +32,15 @@ In this section, you will be adding RxNetworkKit to our project via Swift Packag
 
 ![Xcode has finished resolving the package graph and RxNetworkKit can be used in the project.](article-getting-started-#3.png)
 
-### Adding required networking code to your project
+### Adding required networking code
 
 In this section, you will be creating ``Session`` and ``RESTClient`` objects.
 
 - First, add a new Swift file to your project and name it *RequestInterceptor.swift*.
 
-![RequestInyterceptor.swift is open and empty.](article-getting-started-#4.png)
-
 - Second, add an import statement for **RxNetworkKit** to the top of the newly created file.
 
-- Add a new class with the name *RequestInterceptor* and conforms to the ``HTTPRequestInterceptor`` protocol as done below:
+- Add a new class with the name `RequestInterceptor` that conforms to the ``HTTPRequestInterceptor`` protocol as done below:
 
 ```swift
 import Foundation
@@ -69,9 +67,7 @@ class RequestInterceptor: HTTPRequestInterceptor {
 }
 ```
 
-![RequestInyterceptor.swift is open and contains RequestInterceptor class.](article-getting-started-#5.png)
-
-- Finally, add an import statement for **RxNetworkKit** in *ViewController.swift* file and create ``SessionConfiguration``, ``Session`` and ``RESTClient`` objects in the *viewDidLoad* method as done below:
+- Finally, add an import statement for **RxNetworkKit** in *ViewController.swift* file and create ``SessionConfiguration``, ``Session`` and ``RESTClient`` objects in the `viewDidLoad` method as done below:
 
 ```swift
 import UIKit
@@ -91,9 +87,7 @@ class ViewController: UIViewController {
 }
 ```
 
-![RequestInyterceptor.swift is open and contains RequestInterceptor class.](article-getting-started-#6.png)
-
-- Alternatively, you can override the default ``SessionConfiguration`` by creating your own instance and providing different property values as done below:.
+- Alternatively, you can override the default ``SessionConfiguration`` by creating your own instance and providing different property values as done below:
 
 ```swift
 import UIKit
@@ -115,10 +109,11 @@ class ViewController: UIViewController {
 }
 ```
 
-![RequestInyterceptor.swift is open and contains RequestInterceptor class.](article-getting-started-#7.png)
-
 ## Conclusion
 
-Now you are one step away from making requests using **RxNetworkKit** in your project.
+Now you are one step away from making a request using **RxNetworkKit**.
 
-In the next article, you will learn how to create a ``HTTPRequestRouter`` and use it with ``RESTClient`` to make requests.
+In the next article, you will learn how to create a ``HTTPRequestRouter`` and a `Decodable` model and use them with ``RESTClient`` to make a request.
+
+You can read the next article here:
+- <doc:MakingFirstRequest>
