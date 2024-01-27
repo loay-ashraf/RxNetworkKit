@@ -4,7 +4,7 @@ Make download requests with **RxNetworkKit**
 
 ## Overview
 
-In this article, we will walk you through on how to add a ``HTTPDownloadRequestRouter`` and use it with ``HTTPClient`` to make download requests.
+In this article, we will walk you through on how to make download requests.
 
 ### Adding a download request router
 
@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         let sessionConfiguration = SessionConfiguration.default
         let session = Session(configuration: sessionConfiguration)
         let requestInterceptor = RequestInterceptor()
-        let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         // Replace with your download url
         let downloadRequestRouter = DownloadRequestRouter.default(url: URL(string: "https://example.com/image/2435454.png")!)
@@ -103,7 +102,7 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
-        }
+    }
 
 }
 ```
@@ -114,7 +113,7 @@ class ViewController: UIViewController {
 
 - Note: If you choose to save the downloaded file to the disk, you will receive the `completed` download event instead of the `completedWithData` download event.
 
-- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to an unexpected behavior or a crash).
+- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to unexpected behavior or crashes).
 
 ## Conclusion
 

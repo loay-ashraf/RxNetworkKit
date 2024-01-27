@@ -4,7 +4,7 @@ Make multipart form upload requests with **RxNetworkKit**
 
 ## Overview
 
-In this article, we will walk you through on how to add a ``HTTPUploadRequestRouter`` and use it with ``HTTPClient`` to make multipart form upload requests.
+In this article, we will walk you through on how to make multipart form upload requests.
 
 ### Adding an upload request router
 
@@ -60,7 +60,7 @@ enum UploadRequestRouter: HTTPUploadRequestRouter {
 
 In this section, you will create a ``HTTPClient`` and use the ``HTTPUploadRequestRouter`` you created in the previous section with it to make a upload request.
 
-- First, go to *ViewController.swift* file and create a ``HTTPClient`` using a ``Session`` in the `viewDidLoad` method
+- First, go to *ViewController.swift* file and create a ``HTTPClient`` using a ``Session`` in the `viewDidLoad` method.
 
 - Second, Create an `UploadRequestRouter`, a one ore more file `Data`, a one or more ``HTTPUploadRequestFile`` and a ``HTTPUploadRequestFormData``.
 
@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         let sessionConfiguration = SessionConfiguration.default
         let session = Session(configuration: sessionConfiguration)
         let requestInterceptor = RequestInterceptor()
-        let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         // Replace with your upload url
         let uploadRequestRouter = UploadRequestRouter.default(url: URL(string: "https://example.com/upload/multi")!)
@@ -107,7 +106,7 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
-        }
+    }
 
 }
 ```
@@ -120,7 +119,7 @@ class ViewController: UIViewController {
 
 - Note: You can specify additional text fields for the multipart from data through the `parameters` parameter.
 
-- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to an unexpected behavior or a crash).
+- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to unexpected behavior or crashes).
 
 ## Conclusion
 

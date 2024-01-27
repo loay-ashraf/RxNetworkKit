@@ -41,6 +41,7 @@ RxNetworkKit is a generic reactive networking framework that leverages the stabi
 - <doc:MakingDownloadRequest>
 - <doc:MakingUploadRequest>
 - <doc:MakingMultipartFormUploadRequest>
+- <doc:ConnectingToWebSocket>
 
 ### Foundation
 

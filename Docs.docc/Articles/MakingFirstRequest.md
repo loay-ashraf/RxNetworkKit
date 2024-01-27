@@ -4,7 +4,7 @@ Make your first request with **RxNetworkKit**
 
 ## Overview
 
-In this article, we will walk you through on how to add a ``HTTPRequestRouter`` and use it with ``RESTClient`` to make a request.
+In this article, we will walk you through on how to make a request.
 
 ### Adding a request router
 
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
 
 - Note: It is best to apply an architectural pattern (like MVVM, MVP, VIPER, etc.) rather than making requests in the `ViewController` directly, but that is not done in the above example for the sake of simplicity.
 
-- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to an unexpected behavior or a crash).
+- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to unexpected behavior or crashes).
 
 ## Conclusion
 

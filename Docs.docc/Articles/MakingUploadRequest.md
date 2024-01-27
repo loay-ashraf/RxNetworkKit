@@ -4,7 +4,7 @@ Make upload requests with **RxNetworkKit**
 
 ## Overview
 
-In this article, we will walk you through on how to add a ``HTTPUploadRequestRouter`` and use it with ``HTTPClient`` to make upload requests.
+In this article, we will walk you through on how to make upload requests.
 
 ### Adding an upload request router
 
@@ -83,7 +83,6 @@ class ViewController: UIViewController {
         let sessionConfiguration = SessionConfiguration.default
         let session = Session(configuration: sessionConfiguration)
         let requestInterceptor = RequestInterceptor()
-        let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         // Replace with your upload url
         let uploadRequestRouter = UploadRequestRouter.default(url: URL(string: "https://example.com/upload")!)
@@ -104,7 +103,7 @@ class ViewController: UIViewController {
                 print(error.localizedDescription)
             })
             .disposed(by: disposeBag)
-        }
+    }
 
 }
 ```
@@ -115,7 +114,7 @@ class ViewController: UIViewController {
 
 - Note: If you choose to upload a file from the disk, you don't have to specify the file name as it will be extracted from the provided file url.
 
-- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to an unexpected behavior or a crash).
+- Warning: If you intend to make updates to the UI, you must use the `observe(on: MainScheduler.instance)` operator to avoid updating the UI on a background thread (which may lead to unexpected behavior or crashes).
 
 ## Conclusion
 
