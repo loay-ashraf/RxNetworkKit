@@ -14,7 +14,7 @@ a reactive networking framework based on URLSession and RxSwift.
 
 RxNetworkKit is a generic reactive networking framework that leverages the stability and reliability of both URLSession and RxSwift.
 
-### RxNetwrkKit can be used to:
+### RxNetworkKit can be used to:
 
 - Make simple REST API calls.
 - Make download and upload requests while also tracking the progress.
@@ -24,24 +24,13 @@ RxNetworkKit is a generic reactive networking framework that leverages the stabi
 
 ## Featured
 
-@Links(visualStyle: detailedGrid) {
+@Links(visualStyle: list) {
     - <doc:GettingStarted>
     - <doc:MakingFirstRequest>
+    - <doc:MonitoringNetworkReachability>
 }
 
 ## Topics
-
-### Essentials
-
-- <doc:GettingStarted>
-- <doc:MakingFirstRequest>
-
-### Advanced
-
-- <doc:MakingDownloadRequest>
-- <doc:MakingUploadRequest>
-- <doc:MakingMultipartFormUploadRequest>
-- <doc:ConnectingToWebSocket>
 
 ### Foundation
 
@@ -78,3 +67,13 @@ RxNetworkKit is a generic reactive networking framework that leverages the stabi
 - ``NetworkReachability``
 - ``NetworkReachabilityStatus``
 - ``NetworkInterfaceType``
+
+### Articles
+
+- <doc:GettingStarted>
+- <doc:MakingFirstRequest>
+- <doc:MakingDownloadRequest>
+- <doc:MakingUploadRequest>
+- <doc:MakingMultipartFormUploadRequest>
+- <doc:ConnectingToWebSocket>
+- <doc:MonitoringNetworkReachability>

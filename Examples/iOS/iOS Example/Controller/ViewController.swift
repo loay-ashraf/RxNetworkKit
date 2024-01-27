@@ -46,6 +46,14 @@ class ViewController: UIViewController {
         let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         viewModel = .init(restClient: restClient, httpClient: httpClient)
+        NetworkReachability.shared.didBecomeReachable
+            .subscribe(onNext: {
+                // print that the network became reachable
+                print("Network did become reachable!")
+            })
+            .disposed(by: disposeBag)
+        NetworkReachability.shared.setInterfaceTypes(NetworkInterfaceType.allCases)
+        NetworkReachability.shared.start()
     }
     /// Sets up views.
     private func setupUI() {
