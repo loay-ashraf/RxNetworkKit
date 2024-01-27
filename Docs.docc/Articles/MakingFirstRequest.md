@@ -4,7 +4,7 @@ Make your first request with **RxNetworkKit**
 
 ## Overview
 
-You will need to add a ``HTTPRequestRouter`` so that ``RESTClient`` can map api endpoints to a `URLRequest` and make the actual request.
+In this article, we will walk you through on how to add a ``HTTPRequestRouter`` and use it with ``RESTClient`` to make a request.
 
 ### Adding a request router
 
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         let requestInterceptor = RequestInterceptor()
         let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let requestRouter = RequestRouter.default
-        restClient.request(router: requestRouter)
+        restClient.request(requestRouter)
             .subscribe(onSuccess: { (model: Model) in
                 // dump the received response body
                 dump(model)

@@ -46,6 +46,27 @@ class ViewController: UIViewController {
         let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)
         let httpClient = HTTPClient(session: session, requestInterceptor: requestInterceptor)
         viewModel = .init(restClient: restClient, httpClient: httpClient)
+        let uploadRequestRouter = UploadRequestRouter.default(url: URL(string: "https://example.com/upload/multi")!)
+        let file1Data = "Example file 1".data(using: .utf8)!
+        let file2Data = "Example file 2".data(using: .utf8)!
+        let file1 = HTTPUploadRequestFile(forKey: "file1", withName: "example1.txt", withData: file1Data)!
+        let file2 = HTTPUploadRequestFile(forKey: "file2", withName: "example2.txt", withData: file1Data)!
+        let formData = HTTPUploadRequestFormData(parameters: [:], files: [file1, file2])
+        httpClient.upload(uploadRequestRouter, formData)
+            .subscribe(onNext: { (event: HTTPUploadRequestEvent<Model>) in
+                switch event {
+                case .progress(let progress):
+                    // print upload progress
+                    print("Uploading: \(progress.fractionCompleted)%")
+                case .completed(let model):
+                    // dump the received response body
+                    dump(model)
+                }
+            }, onError: { error in
+                // print the error description (if any)
+                print(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
     }
     /// Sets up views.
     private func setupUI() {
