@@ -1,18 +1,34 @@
 # ``RxNetworkKit``
 
-a lightweight networking framework based on URLSession and RxSwift.
+a reactive networking framework based on URLSession and RxSwift.
+
+@Metadata {
+    @Available(iOS, introduced: "14.0")
+    @Available(macOS, introduced: "11.0")
+    @Available(tvOS, introduced: "14.0")
+    @Available(watchOS, introduced: "7.0")
+    @PageColor(purple)
+}
 
 ## Overview
 
-RxNetworkKit fits nicely in your project if you use RxSwift and RxCocoa mainly in your project.
+RxNetworkKit is a generic reactive networking framework that leverages the stability and reliability of both URLSession and RxSwift.
 
-It makes use of RxSwift's traits at request level to acheive a high level of specialization for observed request sequence and expected output from it.
+### RxNetworkKit can be used to:
 
-### Full of Goodies:
-- includes download and upload capabillity with progress tracking all within the same observable sequence.
-- includes websocket capabillity for observing remote data updates.
-- includes a request interceptor protocol that can be implemented for request adaptation and retry on failure.
-- comes with a reachability class that you can observe from anywhere for reachability status.
+- Make simple REST API calls.
+- Make download and upload requests while also tracking the progress.
+- Connect to websocket and listen to remote data changes.
+- Intercept requests for adaptation or retry on failure.
+- Observe network reachability status.
+
+## Featured
+
+@Links(visualStyle: list) {
+    - <doc:GettingStarted>
+    - <doc:MakingFirstRequest>
+    - <doc:MonitoringNetworkReachability>
+}
 
 ## Topics
 
@@ -51,3 +67,13 @@ It makes use of RxSwift's traits at request level to acheive a high level of spe
 - ``NetworkReachability``
 - ``NetworkReachabilityStatus``
 - ``NetworkInterfaceType``
+
+### Articles
+
+- <doc:GettingStarted>
+- <doc:MakingFirstRequest>
+- <doc:MakingDownloadRequest>
+- <doc:MakingUploadRequest>
+- <doc:MakingMultipartFormUploadRequest>
+- <doc:ConnectingToWebSocket>
+- <doc:MonitoringNetworkReachability>

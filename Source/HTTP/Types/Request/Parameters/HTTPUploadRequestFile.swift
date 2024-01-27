@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Holds file details for multipart form upload,
+/// Holds file details for upload request.
 public struct HTTPUploadRequestFile {
     
     /// key used for file record.
