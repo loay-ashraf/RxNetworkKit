@@ -65,6 +65,17 @@
 		C6BDFFF02ACDF4AB0022F675 /* WebSocketCloseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */; };
 		C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */; };
 		C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */; };
+		C6C643012BE6C7B30071C2CC /* TLSTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */; };
+		C6C643032BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */; };
+		C6C643052BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */; };
+		C6C643072BE6C88A0071C2CC /* TLSTrustChainLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */; };
+		C6C643092BE6C9340071C2CC /* SecCertificate+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643082BE6C9340071C2CC /* SecCertificate+Bundle.swift */; };
+		C6C6430B2BE6C9510071C2CC /* SecCertificate+PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6430A2BE6C9510071C2CC /* SecCertificate+PublicKey.swift */; };
+		C6C6430D2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6430C2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift */; };
+		C6C6430F2BE6C9A40071C2CC /* SecKey+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6430E2BE6C9A40071C2CC /* SecKey+Bundle.swift */; };
+		C6C643112BE6C9EC0071C2CC /* Set+SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643102BE6C9EC0071C2CC /* Set+SecCertificate.swift */; };
+		C6C643132BE6CA080071C2CC /* Set+SecKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643122BE6CA080071C2CC /* Set+SecKey.swift */; };
+		C6C643152BE6CA830071C2CC /* Data+SecCertificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643142BE6CA830071C2CC /* Data+SecCertificate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +134,17 @@
 		C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketCloseHandler.swift; sourceTree = "<group>"; };
 		C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketMessage.swift; sourceTree = "<group>"; };
 		C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketCloseCode.swift; sourceTree = "<group>"; };
+		C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluator.swift; sourceTree = "<group>"; };
+		C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluatorConfiguration.swift; sourceTree = "<group>"; };
+		C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluationPolicy.swift; sourceTree = "<group>"; };
+		C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustChainLevel.swift; sourceTree = "<group>"; };
+		C6C643082BE6C9340071C2CC /* SecCertificate+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecCertificate+Bundle.swift"; sourceTree = "<group>"; };
+		C6C6430A2BE6C9510071C2CC /* SecCertificate+PublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecCertificate+PublicKey.swift"; sourceTree = "<group>"; };
+		C6C6430C2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecKey+ExternalRepresentation.swift"; sourceTree = "<group>"; };
+		C6C6430E2BE6C9A40071C2CC /* SecKey+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecKey+Bundle.swift"; sourceTree = "<group>"; };
+		C6C643102BE6C9EC0071C2CC /* Set+SecCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+SecCertificate.swift"; sourceTree = "<group>"; };
+		C6C643122BE6CA080071C2CC /* Set+SecKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Set+SecKey.swift"; sourceTree = "<group>"; };
+		C6C643142BE6CA830071C2CC /* Data+SecCertificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+SecCertificate.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C61CB5622AF2CF31006A203A /* Session */,
+				C6C642FF2BE6C78E0071C2CC /* TLS */,
 				C6554A292AD5B5600090DD3A /* REST */,
 				0B77E06129D965D30077FBC0 /* HTTP */,
 				0B77E06729D965D30077FBC0 /* Reachability */,
@@ -362,6 +385,40 @@
 			path = "Web Socket";
 			sourceTree = "<group>";
 		};
+		C6C642FF2BE6C78E0071C2CC /* TLS */ = {
+			isa = PBXGroup;
+			children = (
+				C6C643162BE6CACF0071C2CC /* Extensions */,
+				C6C643172BE6CAFE0071C2CC /* Types */,
+			);
+			path = TLS;
+			sourceTree = "<group>";
+		};
+		C6C643162BE6CACF0071C2CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6C643142BE6CA830071C2CC /* Data+SecCertificate.swift */,
+				C6C643082BE6C9340071C2CC /* SecCertificate+Bundle.swift */,
+				C6C6430A2BE6C9510071C2CC /* SecCertificate+PublicKey.swift */,
+				C6C6430E2BE6C9A40071C2CC /* SecKey+Bundle.swift */,
+				C6C6430C2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift */,
+				C6C643102BE6C9EC0071C2CC /* Set+SecCertificate.swift */,
+				C6C643122BE6CA080071C2CC /* Set+SecKey.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C6C643172BE6CAFE0071C2CC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */,
+				C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */,
+				C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */,
+				C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -460,10 +517,14 @@
 				0B77E09F29D965D30077FBC0 /* NWPath+InterfaceType.swift in Sources */,
 				0B77E0A029D965D30077FBC0 /* NetworkReachabilityStatus.swift in Sources */,
 				0B77E0AE29D965D30077FBC0 /* Single+VerifyResponse.swift in Sources */,
+				C6C643092BE6C9340071C2CC /* SecCertificate+Bundle.swift in Sources */,
 				0B77E0B429D965D30077FBC0 /* HTTPDownloadRequestRouter.swift in Sources */,
+				C6C643132BE6CA080071C2CC /* Set+SecKey.swift in Sources */,
 				0B77E09A29D965D30077FBC0 /* HTTPMIMEType.swift in Sources */,
 				C658CF652AD5F648009E561D /* RxNetworkKit.swift in Sources */,
 				C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */,
+				C6C643072BE6C88A0071C2CC /* TLSTrustChainLevel.swift in Sources */,
+				C6C643032BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift in Sources */,
 				0B77E08E29D965D30077FBC0 /* HTTPUploadRequestFile.swift in Sources */,
 				0B77E08D29D965D30077FBC0 /* HTTPUploadRequestFormData.swift in Sources */,
 				C61A7E262B62782D00407C38 /* Reactive+RESTResponse.swift in Sources */,
@@ -471,13 +532,18 @@
 				C69A78562ACF001400ECF092 /* Docs.docc in Sources */,
 				0B77E0A129D965D30077FBC0 /* NWInterfaceType+RawRepresentable.swift in Sources */,
 				0B77E0B129D965D30077FBC0 /* Observable+Decodable.swift in Sources */,
+				C6C6430F2BE6C9A40071C2CC /* SecKey+Bundle.swift in Sources */,
+				C6C643152BE6CA830071C2CC /* Data+SecCertificate.swift in Sources */,
 				0B77E08A29D965D30077FBC0 /* HTTPDownloadRequestEvent.swift in Sources */,
 				C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */,
 				C6554A2B2AD5BBB60090DD3A /* RESTClient.swift in Sources */,
+				C6C643052BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift in Sources */,
 				0B77E09129D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift in Sources */,
+				C6C643012BE6C7B30071C2CC /* TLSTrustEvaluator.swift in Sources */,
 				C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */,
 				C6BDFFF32ACDF5100022F675 /* WebSocketMessage.swift in Sources */,
 				C61A7E242B6276F800407C38 /* HTTPRequestLogger.swift in Sources */,
+				C6C6430B2BE6C9510071C2CC /* SecCertificate+PublicKey.swift in Sources */,
 				C61A7E302B627B3000407C38 /* SessionConfiguration.swift in Sources */,
 				C6B4B4C42AD47A2F009073ED /* WebSocketError.swift in Sources */,
 				0B77E0A429D965D30077FBC0 /* NetworkReachability.swift in Sources */,
@@ -487,6 +553,7 @@
 				C6BDFFF52ACDF5250022F675 /* WebSocketCloseCode.swift in Sources */,
 				0B77E0B629D965D30077FBC0 /* HTTPUploadRequestRouter.swift in Sources */,
 				0B77E0AB29D965D30077FBC0 /* Single+Retry.swift in Sources */,
+				C6C643112BE6C9EC0071C2CC /* Set+SecCertificate.swift in Sources */,
 				C61A7E2C2B62798800407C38 /* URLRequest+CURLCommand.swift in Sources */,
 				0B77E08F29D965D30077FBC0 /* URLSession+UploadTask.swift in Sources */,
 				0B77E08C29D965D30077FBC0 /* Reactive+URLSessionAdaptedDownloadResponse.swift in Sources */,
@@ -497,6 +564,7 @@
 				0B77E0AC29D965D30077FBC0 /* Single+Decode.swift in Sources */,
 				C61A7E2E2B6279C700407C38 /* Data+JSON.swift in Sources */,
 				0B77E0A329D965D30077FBC0 /* NetworkInterfaceType.swift in Sources */,
+				C6C6430D2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift in Sources */,
 				0B77E09229D965D30077FBC0 /* HTTPUploadRequestEvent.swift in Sources */,
 				0B77E09029D965D30077FBC0 /* Data+AppendString.swift in Sources */,
 				C6BDFFE82ACDF3830022F675 /* Reactive+WebSocketReceive.swift in Sources */,
@@ -570,8 +638,10 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 14.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Debug;
 		};
@@ -627,9 +697,11 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 14.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -666,6 +738,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";
@@ -707,6 +780,7 @@
 				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx watchos watchsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,3,4";

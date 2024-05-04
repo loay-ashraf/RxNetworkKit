@@ -15,12 +15,17 @@ public class SessionConfiguration {
         .init(urlSessionConfiguration: .default)
     }
     
+    public static var ephemeral: SessionConfiguration {
+        .init(urlSessionConfiguration: .ephemeral)
+    }
+    
     /// `URLSessionConfiguration` object used to create `URLSession` object.
     let urlSessionConfiguration: URLSessionConfiguration
     /// `Bool` flag that indicates wether a `URLSession` should add `User-Agent` header to outgoing requests.
     public var setUserAgentHeader: Bool = true
     /// `Bool` flag that indicates wether a `URLSession` should print outgoing requests to the console.
     public var logRequests: Bool = true
+    public var tlsTrustEvaluatorConfiguration: TLSTrustEvaluatorConfiguration = .default
     
     /// Creates a `SessionConfiguration` instance.
     ///
@@ -28,6 +33,10 @@ public class SessionConfiguration {
     ///   - urlSessionConfiguration: `URLSessionConfiguration` object used to create `URLSession` object.
     public init(urlSessionConfiguration: URLSessionConfiguration) {
         self.urlSessionConfiguration = urlSessionConfiguration
+    }
+    
+    public static func background(withIdentifier identifier: String) -> SessionConfiguration {
+        .init(urlSessionConfiguration: .background(withIdentifier: identifier))
     }
     
 }

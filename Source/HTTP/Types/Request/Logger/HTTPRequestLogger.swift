@@ -29,9 +29,9 @@ class HTTPRequestLogger {
     /// Prints incoming response to console.
     ///
     /// - Parameters:
-    ///   - response: `(URLResponse?, Data?, Error?)` to be printed to console.
+    ///   - response: `(URL?, URLResponse?, Data?, Error?)` to be printed to console.
     ///   - bodyPlaceholder: `String?` placeholder to be printed in place of actual body.
-    func log(response: (URLResponse?, Data?, Error?), bodyPlaceholder: String? = nil) {
+    func log(response: (URL?, URLResponse?, Data?, Error?), bodyPlaceholder: String? = nil) {
         let logMessage = makeLogMessage(for: response, bodyPlaceholder: bodyPlaceholder)
         print(logMessage)
     }
@@ -48,17 +48,19 @@ class HTTPRequestLogger {
         
         logMessage += "* * * * * * * * * * OUTGOING REQUEST * * * * * * * * * *\n"
         
-        let urlAsString = request.url?.absoluteString ?? ""
-        let urlComponents = URLComponents(string: urlAsString)
+        let urlString = request.url?.absoluteString ?? ""
+        let urlComponents = URLComponents(string: urlString)
         let method = request.httpMethod != nil ? "\(request.httpMethod ?? "")" : ""
         let path = "\(urlComponents?.path ?? "")"
         let query = "\(urlComponents?.query ?? "")"
         let host = "\(urlComponents?.host ?? "")"
+        
         var requestDetails = """
-       \n\(urlAsString) \n
+       \n\(urlString) \n
        \(method) \(path)?\(query) HTTP/1.1 \n
        HOST: \(host)\n
        """
+        
         for (key,value) in request.allHTTPHeaderFields ?? [:] {
             requestDetails += "\(key): \(value) \n"
         }
@@ -87,38 +89,43 @@ class HTTPRequestLogger {
     /// Make console message for incoming response.
     /// 
     /// - Parameters:
-    ///   - response: `(URLResponse?, Data?, Error?)` to be included in message.
+    ///   - response: `(URL?, URLResponse?, Data?, Error?)` to be included in message.
     ///   - bodyPlaceholder: `String?` placeholder to be included in message in place of actual body.
     ///
     /// - Returns: `String` of incoming response message.
-    private func makeLogMessage(for response: (URLResponse?, Data?, Error?), bodyPlaceholder: String?) -> String {
+    private func makeLogMessage(for response: (URL?, URLResponse?, Data?, Error?), bodyPlaceholder: String?) -> String {
         var logMessage: String = ""
         
         logMessage += "* * * * * * * * * * INCOMING RESPONSE * * * * * * * * * *\n"
         
-        let httpResponse = response.0 as? HTTPURLResponse
-        let responseBody = response.1
-        let responseError = response.2
+        let url = response.0
+        let httpResponse = response.1 as? HTTPURLResponse
+        let responseBody = response.2
+        let responseError = response.3
         
-        let urlString = httpResponse?.url?.absoluteString
-        let components = URLComponents(string: urlString ?? "")
-        let path = "\(components?.path ?? "")"
-        let query = "\(components?.query ?? "")"
+        
+        let urlString = url?.absoluteString ?? ""
+        let urlComponents = URLComponents(string: urlString)
+        let host = "\(urlComponents?.host ?? "")"
+        let path = "\(urlComponents?.path ?? "")"
+        let query = "\(urlComponents?.query ?? "")"
+        
         var responseDetails = ""
-        if let urlString = urlString {
-            responseDetails += "\n\(urlString)"
-            responseDetails += "\n\n"
-        }
+        
+        responseDetails += "\n\(urlString)"
+        responseDetails += "\n\n"
+        
         if let statusCode = httpResponse?.statusCode {
             responseDetails += "HTTP \(statusCode) \(path)?\(query)\n"
         }
-        if let host = components?.host {
-            responseDetails += "Host: \(host)\n"
-        }
+        
+        responseDetails += "Host: \(host)\n"
+        
         for (key, value) in httpResponse?.allHeaderFields ?? [:] {
             responseDetails += "\(key): \(value)\n"
         }
-        if let bodyPlaceholder = bodyPlaceholder {
+        if let bodyPlaceholder = bodyPlaceholder,
+           responseError == nil {
             responseDetails += "\n\(bodyPlaceholder)\n"
         } else if let body = responseBody {
             if let jsonString = body.json {
@@ -128,7 +135,14 @@ class HTTPRequestLogger {
             }
         }
         if let responseError = responseError {
-            responseDetails += "\nError: \(responseError.localizedDescription)\n"
+            let errorCode = (responseError as NSError).code
+            if errorCode == -999,
+               TLSTrustEvaluator.getBlockedHosts().contains(host) {
+                responseDetails += "\nError: TLS trust evaluation failed for the specified host, you may need to update the pinned certificates or public keys.\n"
+            } else {
+                responseDetails += "\nError: \(responseError.localizedDescription)\n"
+            }
+            
         }
         
         logMessage += responseDetails

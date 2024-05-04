@@ -26,7 +26,7 @@ extension Reactive where Base: URLSession {
             let task = self.base.fileUploadTask(with: request, from: file) { data, response, error in
 #if DEBUG
                 if URLSession.logRequests {
-                    HTTPRequestLogger.shared.log(response: (response, data, error))
+                    HTTPRequestLogger.shared.log(response: (request.url, response, data, error))
                 }
 #endif
                 guard let response = response, let data = data else {
@@ -67,7 +67,7 @@ extension Reactive where Base: URLSession {
             let task = self.base.formDataUploadTask(with: request, from: formData) { data, response, error in
 #if DEBUG
                 if URLSession.logRequests {
-                    HTTPRequestLogger.shared.log(response: (response, data, error))
+                    HTTPRequestLogger.shared.log(response: (request.url, response, data, error))
                 }
 #endif
                 guard let response = response, let data = data else {
