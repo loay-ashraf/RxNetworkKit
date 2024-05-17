@@ -8,7 +8,6 @@
 import Foundation
 import RxSwift
 import RxCocoa
-import CoreHTTP
 
 // This extension is inspired by Alex Grebenyuk's excellent blog https://kean.blog/post/smart-retry
 // Here's Alex's twitter: https://twitter.com/a_grebenyuk
