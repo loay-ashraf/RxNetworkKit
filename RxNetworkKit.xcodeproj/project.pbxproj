@@ -50,6 +50,7 @@
 		C61A7E322B62885F00407C38 /* URLSession+LogRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */; };
 		C61CB5642AF2CFDD006A203A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61CB5632AF2CFDD006A203A /* Session.swift */; };
 		C623E7B42AD6262A00A20A0A /* CoreHTTP in Frameworks */ = {isa = PBXBuildFile; productRef = C623E7B32AD6262A00A20A0A /* CoreHTTP */; };
+		C6513B812BF76C7000A19EBC /* WebSocketClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6513B802BF76C7000A19EBC /* WebSocketClient.swift */; };
 		C6554A2B2AD5BBB60090DD3A /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */; };
 		C6554A2D2AD5C1560090DD3A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6554A2C2AD5C1560090DD3A /* HTTPClient.swift */; };
 		C658CF652AD5F648009E561D /* RxNetworkKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C658CF642AD5F648009E561D /* RxNetworkKit.swift */; };
@@ -118,6 +119,7 @@
 		C61A7E2F2B627B3000407C38 /* SessionConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionConfiguration.swift; sourceTree = "<group>"; };
 		C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+LogRequests.swift"; sourceTree = "<group>"; };
 		C61CB5632AF2CFDD006A203A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C6513B802BF76C7000A19EBC /* WebSocketClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketClient.swift; sourceTree = "<group>"; };
 		C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		C6554A2C2AD5C1560090DD3A /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		C658CF642AD5F648009E561D /* RxNetworkKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxNetworkKit.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				C6C642FF2BE6C78E0071C2CC /* TLS */,
 				C6554A292AD5B5600090DD3A /* REST */,
 				0B77E06129D965D30077FBC0 /* HTTP */,
+				C6513B7B2BF76BDC00A19EBC /* WebSocket */,
 				0B77E06729D965D30077FBC0 /* Reachability */,
 				C6049B152A95307800E5727E /* RxNetworkKit.h */,
 				C658CF642AD5F648009E561D /* RxNetworkKit.swift */,
@@ -249,6 +252,54 @@
 				C61A7E272B6278A900407C38 /* Types */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		C6513B7B2BF76BDC00A19EBC /* WebSocket */ = {
+			isa = PBXGroup;
+			children = (
+				C6513B7C2BF76BF000A19EBC /* Extensions */,
+				C6513B7D2BF76BF700A19EBC /* Types */,
+			);
+			path = WebSocket;
+			sourceTree = "<group>";
+		};
+		C6513B7C2BF76BF000A19EBC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C6BDFFEB2ACDF4100022F675 /* Reactive+WebSocketPing.swift */,
+				C6BDFFE72ACDF3830022F675 /* Reactive+WebSocketReceive.swift */,
+				C6BDFFE92ACDF3D90022F675 /* Reactive+WebSocketSend.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C6513B7D2BF76BF700A19EBC /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				C6513B7E2BF76C3A00A19EBC /* Client */,
+				C6513B7F2BF76C4800A19EBC /* Connection */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		C6513B7E2BF76C3A00A19EBC /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				C6513B802BF76C7000A19EBC /* WebSocketClient.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		C6513B7F2BF76C4800A19EBC /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */,
+				C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */,
+				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
+				C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */,
+				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
+			);
+			path = Connection;
 			sourceTree = "<group>";
 		};
 		C6554A292AD5B5600090DD3A /* REST */ = {
@@ -319,9 +370,6 @@
 				0B77E05629D965D30077FBC0 /* Reactive+URLSessionAdaptedUploadResponse.swift */,
 				0B77E04D29D965D30077FBC0 /* Reactive+URLSessionDownloadResponse.swift */,
 				0B77E05829D965D30077FBC0 /* Reactive+URLSessionUploadResponse.swift */,
-				C6BDFFEB2ACDF4100022F675 /* Reactive+WebSocketPing.swift */,
-				C6BDFFE72ACDF3830022F675 /* Reactive+WebSocketReceive.swift */,
-				C6BDFFE92ACDF3D90022F675 /* Reactive+WebSocketSend.swift */,
 				C61A7E2B2B62798800407C38 /* URLRequest+CURLCommand.swift */,
 				0B77E04F29D965D30077FBC0 /* URLSession+DownloadTask.swift */,
 				C61A7E312B62885F00407C38 /* URLSession+LogRequests.swift */,
@@ -350,7 +398,6 @@
 			children = (
 				C6554A352AD5C6950090DD3A /* Client */,
 				C6554A322AD5C64D0090DD3A /* Request */,
-				C6BDFFE62ACDF3260022F675 /* Web Socket */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -369,18 +416,6 @@
 				C6554A2A2AD5BBB60090DD3A /* RESTClient.swift */,
 			);
 			path = Client;
-			sourceTree = "<group>";
-		};
-		C6BDFFE62ACDF3260022F675 /* Web Socket */ = {
-			isa = PBXGroup;
-			children = (
-				C6BDFFED2ACDF46A0022F675 /* WebSocket.swift */,
-				C6BDFFF42ACDF5250022F675 /* WebSocketCloseCode.swift */,
-				C6BDFFEF2ACDF4AB0022F675 /* WebSocketCloseHandler.swift */,
-				C6B4B4C32AD47A2F009073ED /* WebSocketError.swift */,
-				C6BDFFF22ACDF50F0022F675 /* WebSocketMessage.swift */,
-			);
-			path = "Web Socket";
 			sourceTree = "<group>";
 		};
 		C6C642FF2BE6C78E0071C2CC /* TLS */ = {
@@ -530,6 +565,7 @@
 				0B77E0B129D965D30077FBC0 /* Observable+Decodable.swift in Sources */,
 				C6C6430F2BE6C9A40071C2CC /* SecKey+Bundle.swift in Sources */,
 				C6C643152BE6CA830071C2CC /* Data+SecCertificate.swift in Sources */,
+				C6513B812BF76C7000A19EBC /* WebSocketClient.swift in Sources */,
 				0B77E08A29D965D30077FBC0 /* HTTPDownloadRequestEvent.swift in Sources */,
 				C6A9BEFD2A93FAF100459E32 /* URLSessionConfiguration+setUserAgentHTTPHeader.swift in Sources */,
 				C6554A2B2AD5BBB60090DD3A /* RESTClient.swift in Sources */,
