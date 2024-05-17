@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Policy for TLS server trust evaluation.
+/// Policy for TLS server trust evaluation for a specific host.
 public enum TLSTrustEvaluationPolicy {
     /// Use the given certificates to evaluate the TLS server trust.
     case certificates(_ certificates: Set<SecCertificate> = .default)

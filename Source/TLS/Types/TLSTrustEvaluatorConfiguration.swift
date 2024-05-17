@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Configuration object for TLS server trust evaluation.
+/// Configuration object for TLS server trust evaluator.
 public class TLSTrustEvaluatorConfiguration {
     
     /// Default `TLSTrustEvaluatorConfiguration` object.

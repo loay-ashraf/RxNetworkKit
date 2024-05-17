@@ -8,7 +8,7 @@
 import Foundation
 
 /// Wrapper object for `URLSession` that can be shared between multiple clients.
-public class Session {
+public final class Session {
     
     /// Principal `URLSession`object used to create request tasks.
     let urlSession: URLSession
