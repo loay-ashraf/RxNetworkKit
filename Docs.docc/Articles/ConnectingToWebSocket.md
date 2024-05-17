@@ -40,7 +40,7 @@ class ViewController: UIViewController {
 
 In this section, you will create a ``WebSocket`` and send/receive messages to/from the server.
 
-- First, call the `WebSocketClient.websocket` method and pass the server url, protocols and close handler as arguments.
+- First, call the `WebSocketClient.webSocket` method and pass the server url, protocols and close handler as arguments.
 
 - Second, Subscribe to the output `Observable`s and call `WebSocket.connect` method as done below:
 
