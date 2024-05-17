@@ -8,10 +8,15 @@
 import Foundation
 
 /// Wrapper object for `URLSession` that can be shared between multiple clients.
-public class Session {
+public final class Session {
     
     /// Principal `URLSession`object used to create request tasks.
     let urlSession: URLSession
+    
+    /// Principal `TLSTrustEvaluator` object used to evaluate TLS server trust.
+    private let tlsTrustEvaluator: TLSTrustEvaluator
+    /// `OperationQueue` used by the TLS trust evaluator object.
+    private let tlsTrustEvaluatorQueue: OperationQueue
     
     /// Creates a `Session` instance.
     ///
@@ -24,8 +29,14 @@ public class Session {
             urlSessionConfiguration.setUserAgentHTTPHeader()
         }
         URLSession.logRequests = configuration.logRequests
+        tlsTrustEvaluator = .init(configuration: configuration.tlsTrustEvaluatorConfiguration)
+        tlsTrustEvaluatorQueue = .init()
+        tlsTrustEvaluatorQueue.name = "RxNetworkKit - TLSTrustEvaluator"
+        tlsTrustEvaluatorQueue.qualityOfService = .utility
         // Initialize `URLSession`.
-        urlSession = .init(configuration: urlSessionConfiguration)
+        urlSession = .init(configuration: urlSessionConfiguration,
+                           delegate: tlsTrustEvaluator,
+                           delegateQueue: tlsTrustEvaluatorQueue)
     }
     
 }

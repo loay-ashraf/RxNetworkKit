@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         let sessionConfiguration = SessionConfiguration(urlSessionConfiguration: .default)
         sessionConfiguration.setUserAgentHeader = false
-        sessionConfiguration.setUserAgentHeader = false
+        sessionConfiguration.logRequests = false
         let session = Session(configuration: sessionConfiguration)
         let requestInterceptor = RequestInterceptor()
         let restClient = RESTClient(session: session, requestInterceptor: requestInterceptor)

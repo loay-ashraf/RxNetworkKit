@@ -18,11 +18,10 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.6.0")),
-        .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt", .upToNextMajor(from: "6.2.0")),
-        .package(url: "https://github.com/loay-ashraf/CoreHTTP", .upToNextMajor(from: "2.0.0"))
+        .package(url: "https://github.com/RxSwiftCommunity/RxSwiftExt", .upToNextMajor(from: "6.2.0"))
     ],
     targets: [
-        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt", .product(name: "RxCocoa", package: "RxSwift"), "CoreHTTP"], path: "Source"),
+        .target(name: "RxNetworkKit", dependencies: ["RxSwift", "RxSwiftExt", .product(name: "RxCocoa", package: "RxSwift")], path: "Source"),
     ],
     swiftLanguageVersions: [.v5]
 )

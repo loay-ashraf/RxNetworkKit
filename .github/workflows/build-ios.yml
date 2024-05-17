@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
@@ -50,7 +50,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:
@@ -70,7 +70,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set Xcode Version
         uses: maxim-lobanov/setup-xcode@v1
         with:

@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "CoreHTTP",
-        "repositoryURL": "https://github.com/loay-ashraf/CoreHTTP",
-        "state": {
-          "branch": null,
-          "revision": "17b030a4a10ac9449e6c107bce13f112280aae6b",
-          "version": "1.0.0"
-        }
-      },
-      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
