@@ -35,7 +35,7 @@ extension Reactive where Base: URLSession {
             let task = self.base.dataTask(with: request) { data, response, error in
 #if DEBUG
                 if URLSession.logRequests {
-                    HTTPRequestLogger.shared.log(response: (response, data, error))
+                    HTTPRequestLogger.shared.log(response: (request.url, response, data, error))
                 }
 #endif
                 
