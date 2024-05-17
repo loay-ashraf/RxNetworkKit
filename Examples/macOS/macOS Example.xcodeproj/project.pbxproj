@@ -37,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		C623E7182AD6117200A20A0A /* macOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C625C4D92BF7791A00761FD6 /* CoreHTTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreHTTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63975182A95166A00D0AC13 /* TableCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CoreExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxNetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +93,7 @@
 		C63EEAFF2AD7A40E003A64CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C625C4D92BF7791A00761FD6 /* CoreHTTP.framework */,
 				C63EEB402AD7C2A4003A64CA /* RxNetworkKit.framework */,
 				C63EEB3D2AD7C29F003A64CA /* CoreExample.framework */,
 			);

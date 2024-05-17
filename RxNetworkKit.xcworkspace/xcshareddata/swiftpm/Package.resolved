@@ -1,14 +1,6 @@
 {
+  "originHash" : "0de4ac07bf4deb2bff179bbf81665f083753da360913fe8b8ff4a56936e57591",
   "pins" : [
-    {
-      "identity" : "corehttp",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/loay-ashraf/CoreHTTP",
-      "state" : {
-        "revision" : "d38c3063412e7121bbb5a1fcef3089d847865266",
-        "version" : "2.0.1"
-      }
-    },
     {
       "identity" : "rxdatasources",
       "kind" : "remoteSourceControl",
