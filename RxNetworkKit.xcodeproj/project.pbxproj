@@ -68,7 +68,6 @@
 		C6C643012BE6C7B30071C2CC /* TLSTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */; };
 		C6C643032BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */; };
 		C6C643052BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */; };
-		C6C643072BE6C88A0071C2CC /* TLSTrustChainLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */; };
 		C6C643092BE6C9340071C2CC /* SecCertificate+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C643082BE6C9340071C2CC /* SecCertificate+Bundle.swift */; };
 		C6C6430B2BE6C9510071C2CC /* SecCertificate+PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6430A2BE6C9510071C2CC /* SecCertificate+PublicKey.swift */; };
 		C6C6430D2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6430C2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift */; };
@@ -137,7 +136,6 @@
 		C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluator.swift; sourceTree = "<group>"; };
 		C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluatorConfiguration.swift; sourceTree = "<group>"; };
 		C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustEvaluationPolicy.swift; sourceTree = "<group>"; };
-		C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLSTrustChainLevel.swift; sourceTree = "<group>"; };
 		C6C643082BE6C9340071C2CC /* SecCertificate+Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecCertificate+Bundle.swift"; sourceTree = "<group>"; };
 		C6C6430A2BE6C9510071C2CC /* SecCertificate+PublicKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecCertificate+PublicKey.swift"; sourceTree = "<group>"; };
 		C6C6430C2BE6C98B0071C2CC /* SecKey+ExternalRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecKey+ExternalRepresentation.swift"; sourceTree = "<group>"; };
@@ -411,7 +409,6 @@
 		C6C643172BE6CAFE0071C2CC /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				C6C643062BE6C88A0071C2CC /* TLSTrustChainLevel.swift */,
 				C6C643042BE6C8770071C2CC /* TLSTrustEvaluationPolicy.swift */,
 				C6C643002BE6C7B30071C2CC /* TLSTrustEvaluator.swift */,
 				C6C643022BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift */,
@@ -523,7 +520,6 @@
 				0B77E09A29D965D30077FBC0 /* HTTPMIMEType.swift in Sources */,
 				C658CF652AD5F648009E561D /* RxNetworkKit.swift in Sources */,
 				C6A9BEFF2A93FB1D00459E32 /* ProcessInfo+operatingSystemName.swift in Sources */,
-				C6C643072BE6C88A0071C2CC /* TLSTrustChainLevel.swift in Sources */,
 				C6C643032BE6C8580071C2CC /* TLSTrustEvaluatorConfiguration.swift in Sources */,
 				0B77E08E29D965D30077FBC0 /* HTTPUploadRequestFile.swift in Sources */,
 				0B77E08D29D965D30077FBC0 /* HTTPUploadRequestFormData.swift in Sources */,

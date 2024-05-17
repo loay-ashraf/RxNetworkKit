@@ -12,7 +12,10 @@ public class Session {
     
     /// Principal `URLSession`object used to create request tasks.
     let urlSession: URLSession
+    
+    /// Principal `TLSTrustEvaluator` object used to evaluate TLS server trust.
     private let tlsTrustEvaluator: TLSTrustEvaluator
+    /// `OperationQueue` used by the TLS trust evaluator object.
     private let tlsTrustEvaluatorQueue: OperationQueue
     
     /// Creates a `Session` instance.

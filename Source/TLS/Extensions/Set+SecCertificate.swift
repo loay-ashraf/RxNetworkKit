@@ -9,6 +9,8 @@ import Foundation
 
 public extension Set where Element == SecCertificate {
     
+    /// A set of all the certificates that can be read from the main bundle
+    /// `cer`, `der`, `crt` and `pem` file extensions are supported.
     static var `default`: Set<SecCertificate> {
         var certificates: Set<SecCertificate> = []
         
@@ -55,6 +57,13 @@ public extension Set where Element == SecCertificate {
         return certificates
     }
     
+    /// Reads a single certificate from the main bundle.
+    ///
+    /// - Parameters:
+    ///   - name: name of the certificate file.
+    ///   - `extension`: extension of the certificate file.
+    ///
+    /// - Returns: a set containing a single certificate object read from the main bundle using the provided name and extension.
     static func singleFromBundle(_ name: String, _ `extension`: String) -> Set<SecCertificate> {
         Set([.fromBundle(name, `extension`)!])
     }

@@ -7,19 +7,31 @@
 
 import Foundation
 
+/// The object responsible for evaluating TLS server trust for hosts using the provided policies.
 final class TLSTrustEvaluator: NSObject {
     
+    /// Set of hosts that did not pass the TLS server trust evaluation.
     fileprivate static var blockedHosts: Set<String> = []
+    /// Configuration for TLS server trust evaluation.
     fileprivate let configuration: TLSTrustEvaluatorConfiguration
     
+    /// Creates a `TLSTrustEvaluator` instance.
+    ///
+    /// - Parameter configuration: `TLSTrustEvaluatorConfiguration` object used to configure and create tthe `TLSTrustEvaluator` instance.
     init(configuration: TLSTrustEvaluatorConfiguration) {
         self.configuration = configuration
     }
     
+    /// Returns the blocked hosts.
+    ///
+    /// - Returns: `Set<String>` hosts that did not pass the TLS server trust evaluation.
     static func getBlockedHosts() -> Set<String> {
         return blockedHosts
     }
     
+    /// Adds a new blocked host.
+    ///
+    /// - Parameter host: `String` host that did not pass the TLS server trust evaluation.
     fileprivate static func insertBlockedHost(host: String) {
         blockedHosts.insert(host)
     }

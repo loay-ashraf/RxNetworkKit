@@ -9,6 +9,7 @@ import Foundation
 
 extension Data {
     
+    /// Certificate for this `Data` object.
     var certificate: SecCertificate? {
         guard let base64String = String(data: self, encoding: .utf8)?.replacingOccurrences(of: "-----BEGIN CERTIFICATE-----", with: "").replacingOccurrences(of: "-----END CERTIFICATE-----", with: ""),
               let base64DecodedData = Data(base64Encoded: base64String, options: .ignoreUnknownCharacters) else {

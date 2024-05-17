@@ -9,6 +9,7 @@ import Foundation
 
 public extension SecCertificate {
     
+    /// Public key for this `SecCertificate` object.
     var publicKey: SecKey? {
         SecCertificateCopyKey(self)
     }

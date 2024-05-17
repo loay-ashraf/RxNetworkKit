@@ -9,6 +9,13 @@ import Foundation
 
 public extension SecKey {
     
+    /// Reads public key of a certificate from the main bundle.
+    ///
+    /// - Parameters:
+    ///   - name: name of the certificate file.
+    ///   - `extension`: extension of the certificate file.
+    ///
+    /// - Returns: `SecKey` object read from the main bundle using the provided name and extension.
     static func fromBundle(_ name: String, _ `extension`: String) -> SecKey? {
         guard let fileURL = Bundle.main.url(forResource: name, withExtension: `extension`),
               let certificateData = try? Data(contentsOf: fileURL),
