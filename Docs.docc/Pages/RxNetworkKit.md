@@ -40,6 +40,7 @@ RxNetworkKit is a generic reactive networking framework that leverages the stabi
 - ``TLSTrustEvaluationPolicy``
 - ``RESTClient``
 - ``HTTPClient``
+- ``WebSocketClient``
 
 ### HTTP
 
