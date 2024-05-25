@@ -54,7 +54,7 @@ public struct HTTPUploadRequestFile {
         let fileName = url.lastPathComponent
         let (name, `extension`) = fileName.splitNameAndExtension()
         self.name = name
-        if #available(macOS 13, *) {
+        if #available(iOS 16, macOS 13, tvOS 16, watchOS 9, *) {
             self.path = url.path()
         } else {
             self.path = url.path
