@@ -8,27 +8,6 @@
 import Foundation
 
 extension URLSession {
-    /// Creates a data task with HTTP body of given file data.
-    ///
-    /// - Parameters:
-    ///   - request: `URLRequest` used to create data task.
-    ///   - file: `HTTPUploadRequestFile` object that includes name, data, url and HTTP MIME type.
-    ///   - completionHandler: completion handler to be called on task completion.
-    ///
-    /// - Returns: upload`URLSessionDataTask` created using given request and file.
-    func fileUploadTask(with request: URLRequest, from file: HTTPUploadRequestFile, completionHandler: @escaping @Sendable (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        let fileData = extractFileData(file)
-        let request = adaptUploadRequest(originalRequest: request, withContentType: file.mimeType.rawValue, withBody: fileData)
-#if DEBUG
-        if URLSession.logRequests {
-            let outgoingRequest = outgoingRequest(for: request)
-            HTTPRequestLogger.shared.log(request: outgoingRequest, bodyPlaceholder: "[File Body]")
-            
-        }
-#endif
-        let task = dataTask(with: request, completionHandler: completionHandler)
-        return task
-    }
     /// Creates a data task with HTTP body of given form data.
     ///
     /// - Parameters:
@@ -43,8 +22,8 @@ extension URLSession {
         let request = adaptUploadRequest(originalRequest: request, withContentType: "multipart/form-data; boundary=\(boundary)", withBody: dataBody)
 #if DEBUG
         if URLSession.logRequests {
-            let outgoingRequest = outgoingRequest(for: request)
-            HTTPRequestLogger.shared.log(request: outgoingRequest)
+            let finalRequest = finalRequest(for: request)
+            HTTPLogger.shared.log(request: finalRequest)
         }
 #endif
         let task = dataTask(with: request, completionHandler: completionHandler)
@@ -73,7 +52,7 @@ extension URLSession {
     /// - Parameter file: `HTTPUploadRequestFile` object that includes data or url.
     ///
     /// - Returns: `Data` object representing the file.
-    fileprivate func extractFileData(_ file: HTTPUploadRequestFile) -> Data? {
+    fileprivate func extractFileData(_ file: HTTPUploadRequestFormFile) -> Data? {
         var data: Data? = nil
         if let fileData = file.data {
             data = fileData

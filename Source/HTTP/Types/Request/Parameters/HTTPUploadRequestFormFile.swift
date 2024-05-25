@@ -1,23 +1,23 @@
 //
-//  HTTPUploadRequestFile.swift
+//  HTTPUploadRequestFormFile.swift
 //  RxNetworkKit
 //
-//  Created by Loay Ashraf on 24/03/2023.
+//  Created by Loay Ashraf on 21/05/2024.
 //
 
 import Foundation
 
-/// Holds file details for upload request.
-public struct HTTPUploadRequestFile {
+/// Holds file details for multipart upload request.
+public struct HTTPUploadRequestFormFile {
     
+    /// key used for file record.
+    let key: String
     /// name of the file.
     let name: String
-    /// absolute path of the file.
-    let path: String?
     /// data of the file.
     let data: Data?
-    /// input stream of the file.
-    let inputStream: InputStream?
+    /// local url of the file.
+    let url: URL?
     /// MIME type of the file.
     let mimeType: HTTPMIMEType
     /// size of the file.
@@ -26,14 +26,15 @@ public struct HTTPUploadRequestFile {
     /// Creates `File` instance, use this initializer for relativley small files (< 20MB).
     ///
     /// - Parameters:
+    ///   - key: file key or id.
     ///   - name: file name.
     ///   - extension: file extension.
     ///   - data: `Data` object for file.
-    public init?(withName name: String, withExtension `extension`: String, withData data: Data) {
+    public init?(forKey key: String, withName name: String, withExtension `extension`: String,  withData data: Data) {
+        self.key = key
         self.name = name
-        self.path = nil
         self.data = data
-        self.inputStream = nil
+        self.url = nil
         guard let mime = HTTPMIMEType(fileExtension: `extension`) else { return nil }
         self.mimeType = mime
         self.size = Int64(data.count)
@@ -49,18 +50,15 @@ public struct HTTPUploadRequestFile {
     /// Creates `File` instance, use this initializer for relativley large files (> 20MB).
     ///
     /// - Parameters:
+    ///   - key: file key or id.
     ///   - url: local `URL` for the file.
-    public init?(withURL url: URL) {
+    public init?(forKey key: String, withURL url: URL) {
         let fileName = url.lastPathComponent
         let (name, `extension`) = fileName.splitNameAndExtension()
+        self.key = key
         self.name = name
-        if #available(macOS 13, *) {
-            self.path = url.path()
-        } else {
-            self.path = url.path
-        }
         self.data = nil
-        self.inputStream = .init(url: url)
+        self.url = url
         guard let mime = HTTPMIMEType(fileExtension: `extension`) else { return nil }
         self.mimeType = mime
         guard let size = FileManager.default.sizeOfFile(atURL: url) else { return nil }

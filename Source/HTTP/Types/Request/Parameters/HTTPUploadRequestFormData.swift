@@ -13,14 +13,14 @@ public struct HTTPUploadRequestFormData {
     /// parameters (text data fields) to be included in the form HTTP body.
     let parameters: [String: String]
     /// files to be included in the form HTTP body.
-    let files: [HTTPUploadRequestFile]
+    let files: [HTTPUploadRequestFormFile]
     
     /// Creates `HTTPUploadRequestFormData` instance.
     ///
     /// - Parameters:
     ///   - parameters: `[String: String]` parameters (text data fields) to be included in the form HTTP body.
-    ///   - files: `[HTTPUploadRequestFile]` files to be included in the form HTTP body.
-    public init(parameters: [String: String], files: [HTTPUploadRequestFile]) {
+    ///   - files: `[HTTPUploadRequestFormFile]` files to be included in the form HTTP body.
+    public init(parameters: [String: String], files: [HTTPUploadRequestFormFile]) {
         self.parameters = parameters
         self.files = files
     }

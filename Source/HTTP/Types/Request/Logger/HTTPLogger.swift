@@ -1,5 +1,5 @@
 //
-//  HTTPRequestLogger.swift
+//  HTTPLogger.swift
 //  RxNetworkKit
 //
 //  Created by Loay Ashraf on 25/01/2024.
@@ -8,10 +8,10 @@
 import Foundation
 
 /// Object responsible for logging outgoing requests and incoming responses.
-class HTTPRequestLogger {
+final class HTTPLogger {
     
-    /// Shared `HTTPRequestLogger` instance.
-    static let shared: HTTPRequestLogger = .init()
+    /// Shared `HTTPLogger` instance.
+    static let shared: HTTPLogger = .init()
     
     /// Private initializer to ensure only one instance is created.
     private init() { }
@@ -21,29 +21,29 @@ class HTTPRequestLogger {
     /// - Parameters:
     ///   - request: `URLRequest` to be printed to console.
     ///   - bodyPlaceholder: `String?` placeholder to be printed in place of actual body.
-    func log(request: URLRequest, bodyPlaceholder: String? = nil) {
-        let logMessage = makeLogMessage(for: request, bodyPlaceholder: bodyPlaceholder)
+    func log(request: URLRequest, bodyLogMessage: String? = nil, curlBodyOption: String? = nil) {
+        let logMessage = makeLogMessage(for: request, bodyLogMessage: bodyLogMessage, curlBodyOption: curlBodyOption)
         print(logMessage)
     }
     
     /// Prints incoming response to console.
     ///
     /// - Parameters:
-    ///   - response: `(URL?, URLResponse?, Data?, Error?)` to be printed to console.
+    ///   - responseArguments: `(URL?, URLResponse?, Data?, Error?)` to be printed to console.
     ///   - bodyPlaceholder: `String?` placeholder to be printed in place of actual body.
-    func log(response: (URL?, URLResponse?, Data?, Error?), bodyPlaceholder: String? = nil) {
-        let logMessage = makeLogMessage(for: response, bodyPlaceholder: bodyPlaceholder)
+    func log(responseArguments: (URL?, Data?, URLResponse?, Error?), bodyLogMessage: String? = nil) {
+        let logMessage = makeLogMessage(for: responseArguments, bodyLogMessage: bodyLogMessage)
         print(logMessage)
     }
     
-    /// Make console message for outgoing request.
-    /// 
+    /// Makes console message for outgoing request.
+    ///
     /// - Parameters:
     ///   - request: `URLRequest` to be included in message.
-    ///   - bodyPlaceholder: `String?` placeholder to be included in message in place of actual body.
+    ///   - bodyLogMessage: `String?` placeholder to be included in message in place of actual body.
     ///
     /// - Returns: `String` of outgoing request message.
-    private func makeLogMessage(for request: URLRequest, bodyPlaceholder: String?) -> String {
+    private func makeLogMessage(for request: URLRequest, bodyLogMessage: String?, curlBodyOption: String? = nil) -> String {
         var logMessage: String = ""
         
         logMessage += "* * * * * * * * * * OUTGOING REQUEST * * * * * * * * * *\n"
@@ -64,8 +64,8 @@ class HTTPRequestLogger {
         for (key,value) in request.allHTTPHeaderFields ?? [:] {
             requestDetails += "\(key): \(value) \n"
         }
-        if let bodyPlaceholder = bodyPlaceholder {
-            requestDetails += "\n\(bodyPlaceholder)\n"
+        if let bodyLogMessage = bodyLogMessage {
+            requestDetails += "\n\(bodyLogMessage)\n"
         } else if let body = request.httpBody {
             if let jsonString = body.json {
                 requestDetails += "\n\(jsonString)\n"
@@ -77,7 +77,7 @@ class HTTPRequestLogger {
         var curlCommand = """
         \n- - - - - - - - - - - CURL COMMAND - - - - - - - - - - -\n
         """
-        curlCommand += "\n\(request.curlCommand)\n"
+        curlCommand += "\n\(request.curlCommand(bodyOption: curlBodyOption))\n"
         
         logMessage += requestDetails
         logMessage += curlCommand
@@ -86,22 +86,22 @@ class HTTPRequestLogger {
         return logMessage
     }
     
-    /// Make console message for incoming response.
+    /// Makes console message for incoming response.
     /// 
     /// - Parameters:
     ///   - response: `(URL?, URLResponse?, Data?, Error?)` to be included in message.
-    ///   - bodyPlaceholder: `String?` placeholder to be included in message in place of actual body.
+    ///   - bodyLogMessage: `String?` placeholder to be included in message in place of actual body.
     ///
     /// - Returns: `String` of incoming response message.
-    private func makeLogMessage(for response: (URL?, URLResponse?, Data?, Error?), bodyPlaceholder: String?) -> String {
+    private func makeLogMessage(for responseArguments: (URL?, Data?, URLResponse?, Error?), bodyLogMessage: String?) -> String {
         var logMessage: String = ""
         
         logMessage += "* * * * * * * * * * INCOMING RESPONSE * * * * * * * * * *\n"
         
-        let url = response.0
-        let httpResponse = response.1 as? HTTPURLResponse
-        let responseBody = response.2
-        let responseError = response.3
+        let url = responseArguments.0
+        let httpResponse = responseArguments.2 as? HTTPURLResponse
+        let responseBody = responseArguments.1
+        let responseError = responseArguments.3
         
         
         let urlString = url?.absoluteString ?? ""
@@ -124,9 +124,9 @@ class HTTPRequestLogger {
         for (key, value) in httpResponse?.allHeaderFields ?? [:] {
             responseDetails += "\(key): \(value)\n"
         }
-        if let bodyPlaceholder = bodyPlaceholder,
+        if let bodyLogMessage = bodyLogMessage,
            responseError == nil {
-            responseDetails += "\n\(bodyPlaceholder)\n"
+            responseDetails += "\n\(bodyLogMessage)\n"
         } else if let body = responseBody {
             if let jsonString = body.json {
                 responseDetails += "\n\(jsonString)\n"
