@@ -57,6 +57,7 @@
 		C68FB9C42C022A0800A52FC5 /* FileManager+SizeOfFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FB9C32C022A0800A52FC5 /* FileManager+SizeOfFile.swift */; };
 		C68FB9C62C022A7A00A52FC5 /* String+SplitNameAndExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FB9C52C022A7A00A52FC5 /* String+SplitNameAndExtension.swift */; };
 		C68FB9C82C024FEC00A52FC5 /* HTTPUploadLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FB9C72C024FEC00A52FC5 /* HTTPUploadLogger.swift */; };
+		C68FB9CA2C02643000A52FC5 /* MemoryLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68FB9C92C02643000A52FC5 /* MemoryLogger.swift */; };
 		C69A78562ACF001400ECF092 /* Docs.docc in Sources */ = {isa = PBXBuildFile; fileRef = C69A78552ACEFF3200ECF092 /* Docs.docc */; };
 		C69BDD082BFD0817007B4CEB /* HTTPUploadRequestFormFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69BDD072BFD0817007B4CEB /* HTTPUploadRequestFormFile.swift */; };
 		C6A9BEFA2A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */; };
@@ -148,6 +149,7 @@
 		C68FB9C32C022A0800A52FC5 /* FileManager+SizeOfFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+SizeOfFile.swift"; sourceTree = "<group>"; };
 		C68FB9C52C022A7A00A52FC5 /* String+SplitNameAndExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+SplitNameAndExtension.swift"; sourceTree = "<group>"; };
 		C68FB9C72C024FEC00A52FC5 /* HTTPUploadLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUploadLogger.swift; sourceTree = "<group>"; };
+		C68FB9C92C02643000A52FC5 /* MemoryLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryLogger.swift; sourceTree = "<group>"; };
 		C69A78552ACEFF3200ECF092 /* Docs.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Docs.docc; sourceTree = "<group>"; };
 		C69BDD072BFD0817007B4CEB /* HTTPUploadRequestFormFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPUploadRequestFormFile.swift; sourceTree = "<group>"; };
 		C6A9BEF92A93F16200459E32 /* URLSessionConfiguration+setAdditionalHTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+setAdditionalHTTPHeader.swift"; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			children = (
 				C61A7E232B6276F800407C38 /* HTTPLogger.swift */,
 				C68FB9C72C024FEC00A52FC5 /* HTTPUploadLogger.swift */,
+				C68FB9C92C02643000A52FC5 /* MemoryLogger.swift */,
 			);
 			path = Logger;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				C6EAFAEC2BF77B00008D3C2B /* HTTPRequestRetryPolicy.swift in Sources */,
 				0B77E0AE29D965D30077FBC0 /* Single+VerifyResponse.swift in Sources */,
 				C6EAFAED2BF77B00008D3C2B /* HTTPMethod.swift in Sources */,
+				C68FB9CA2C02643000A52FC5 /* MemoryLogger.swift in Sources */,
 				C6C643092BE6C9340071C2CC /* SecCertificate+Bundle.swift in Sources */,
 				0B77E0B429D965D30077FBC0 /* HTTPDownloadRequestRouter.swift in Sources */,
 				C68FB9C42C022A0800A52FC5 /* FileManager+SizeOfFile.swift in Sources */,
