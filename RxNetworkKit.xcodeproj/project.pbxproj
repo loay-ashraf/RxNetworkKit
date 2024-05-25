@@ -394,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				C6554A342AD5C6830090DD3A /* Event */,
-				C61A7E222B6276D900407C38 /* Logger */,
 				C6554A2E2AD5C4F30090DD3A /* Parameters */,
 				C6554A312AD5C5940090DD3A /* Router */,
 			);
@@ -571,6 +570,7 @@
 			children = (
 				C6EAFAD32BF77B00008D3C2B /* Error */,
 				C6EAFAD82BF77B00008D3C2B /* Interceptor */,
+				C61A7E222B6276D900407C38 /* Logger */,
 				C6EAFADB2BF77B00008D3C2B /* Parameters */,
 				C6EAFADE2BF77B00008D3C2B /* Response */,
 				C6EAFAE02BF77B00008D3C2B /* Router */,
