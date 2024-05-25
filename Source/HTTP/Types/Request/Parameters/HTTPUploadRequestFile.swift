@@ -38,9 +38,9 @@ public struct HTTPUploadRequestFile {
         self.mimeType = mime
         self.size = Int64(data.count)
 #if DEBUG
-        if size > 20_971_520 {
+        if size > 10_485_760 {
             print("* * * * * * * * * * MEMORY WARNING * * * * * * * * * *\n")
-            print("Holding a large file for upload in the device memory (> 20MB)\nPerformance may be reduced if the available memory is low.")
+            print("Holding a large file for upload in the device memory (> 10 MB)\nPerformance may be reduced if the available memory is low.")
             print("\n* * * * * * * * * * * * * END * * * * * * * * * * * * *\n")
         }
 #endif

@@ -55,7 +55,7 @@ final class HTTPUploadLogger {
         } else if file.data != nil {
             let fileName = file.name
             let fileType = file.mimeType.rawValue
-            let fileSize = file.size
+            let fileSize = file.size.formattedSize
             bodyLogMessage += "{ File From Memory }\n"
             bodyLogMessage += "- Name: \(fileName)\n"
             bodyLogMessage += "- Type: \(fileType)\n"
